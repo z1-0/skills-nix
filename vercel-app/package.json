@@ -1,0 +1,9 @@
+{
+  "name": "skills-nix-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/oidc": "^3.8.0"
+  }
+}

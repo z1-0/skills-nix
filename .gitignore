@@ -1,0 +1,7 @@
+**/.nixos-test-history
+.direnv
+.vercel
+CLAUDE.md
+docs/
+result
+result-*
