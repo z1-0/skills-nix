@@ -1,145 +1,248 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, pkgs, ... }:
 
 let
   cfg = config.skills;
 
   registryJson = builtins.fromJSON (builtins.readFile ./registry.json);
 
-  parseSkill =
-    skill:
+  # Resolve ~ to home directory
+  resolvePath = path:
+    if lib.hasPrefix "~" path then
+      "${config.home.homeDirectory}${lib.removePrefix "~" path}"
+    else path;
+
+  # Parse "owner/repo" or "owner/repo/path" into structured form
+  parseSkill = skill:
     let
-      parts = lib.splitString "@" skill;
+      parts = lib.splitString "/" skill;
+      len = builtins.length parts;
       owner = lib.toLower (builtins.elemAt parts 0);
-      repo = lib.toLower (builtins.elemAt subparts 0);
-      repoAndSubdir = builtins.elemAt parts 1;
-      subparts = lib.splitString "/" repoAndSubdir;
-      subdirParts = lib.filter (p: p != "") (lib.drop 1 subparts);
-      subdir = if subdirParts != [ ] then lib.concatStringsSep "/" subdirParts else null;
-      name = if subdir != null then lib.last (lib.splitString "/" subdir) else repo;
+      repo = lib.toLower (builtins.elemAt parts 1);
+      pathParts = lib.drop 2 parts;
+      path = if pathParts != [] then lib.concatStringsSep "/" pathParts else null;
+      name = if path != null then lib.last (lib.splitString "/" path) else repo;
+      registryKey = "${owner}/${repo}";
     in
-    {
-      inherit
-        owner
-        repo
-        name
-        subdir
-        ;
+    if len < 2 then
+      throw "Invalid skill format '${skill}': expected 'owner/repo' or 'owner/repo/path'"
+    else {
+      inherit owner repo name path registryKey;
     };
 
-  getSkillHash =
-    skill:
+  # Look up repo in registry (case-insensitive)
+  getRegistryEntry = skill:
     let
       parsed = parseSkill skill;
-      repoKey = "${parsed.owner}/${parsed.repo}";
-      hash = registryJson.repos.${repoKey} or null;
+      key = parsed.registryKey;
+      entry = registryJson.repos.${key} or null;
     in
-    if hash == null then throw "Skill repo '${repoKey}' not found in registry" else hash;
+    if entry == null then
+      throw "Skill repo '${key}' not found in registry. Available repos: ${lib.concatStringsSep ", " (builtins.attrNames registryJson.repos)}"
+    else entry;
 
-  getSkillSource =
-    skill:
+  # Fetch repo from GitHub
+  fetchRepo = skill:
     let
       parsed = parseSkill skill;
-      hash = getSkillHash skill;
-      repo = pkgs.fetchFromGitHub {
-        inherit (parsed) owner repo;
-        rev = "main";
-        sha256 = hash;
-      };
+      entry = getRegistryEntry skill;
     in
-    if parsed.subdir != null then "${repo}/${parsed.subdir}" else repo;
+    pkgs.fetchFromGitHub {
+      owner = parsed.owner;
+      repo = parsed.repo;
+      rev = entry.rev;
+      hash = entry.hash;
+    };
 
-  skillsAbsPath =
-    if lib.hasPrefix "/" cfg.skillsDir then
-      cfg.skillsDir
-    else
-      "${config.home.homeDirectory}/${cfg.skillsDir}";
-
-  agentDirectories = {
-    "claude-code" = ".claude/skills";
-    "codex" = ".codex/skills";
-    "copilot" = ".copilot/skills";
-    "cursor" = ".cursor/skills";
-    "gemini" = ".gemini/skills";
-    "opencode" = ".config/opencode/skills";
-    "roo" = ".roo/skills";
-    "windsurf" = ".codeium/windsurf/skills";
-  };
-
-  enabledAgentDirs = lib.filterAttrs (_: path: path != cfg.skillsDir) (
-    if cfg.linkToAgents == [ "*" ] then
-      agentDirectories
-    else
-      lib.filterAttrs (name: _: builtins.elem name cfg.linkToAgents) agentDirectories
-  );
-
-  buildSkillSource =
-    skill:
-    let
-      parsed = parseSkill skill;
-      source = getSkillSource skill;
-    in
-    lib.nameValuePair "${cfg.skillsDir}/${parsed.name}" {
+  # Install a single skill directory
+  installSkill = name: source:
+    lib.nameValuePair "${resolvedDir}/${name}" {
       source = source;
       recursive = true;
     };
 
-  allFileEntries = lib.listToAttrs (map buildSkillSource cfg.fetch);
+  # Find SKILL.md files in a directory (1 level deep)
+  findSkillsAtRoot = dir:
+    let
+      entries = builtins.readDir dir;
+      dirs = lib.filterAttrs (n: v: v == "directory") entries;
+      hasSkillMd = name:
+        let
+          subEntries = builtins.readDir "${dir}/${name}";
+        in
+        builtins.hasAttr "SKILL.md" subEntries;
+      skillDirs = lib.filterAttrs (n: _: hasSkillMd n) dirs;
+    in
+    lib.mapAttrsToList (name: _: { inherit name; path = name; }) skillDirs;
 
-  agentSymlinks = lib.mapAttrs' (
-    _: path:
-    lib.nameValuePair path {
-      source = config.lib.file.mkOutOfStoreSymlink skillsAbsPath;
-    }
-  ) enabledAgentDirs;
+  # Find SKILL.md files in skills/ directory (recursive, depth-limited)
+  findSkillsInDir = dir: depth:
+    let
+      entries = builtins.readDir dir;
+      dirs = lib.filterAttrs (n: v: v == "directory") entries;
+      subdirs = lib.mapAttrsToList (name: path: {
+        inherit name;
+        path = name;
+      }) dirs;
+      # Check each subdir for SKILL.md
+      checkDir = entry:
+        let
+          subEntries = builtins.readDir "${dir}/${entry.name}";
+        in
+        if builtins.hasAttr "SKILL.md" subEntries then
+          [ entry ]
+        else if depth != 0 then
+          # Recurse into subdirectories
+          let
+            deeperEntries = builtins.readDir "${dir}/${entry.name}";
+            deeperDirs = lib.filterAttrs (n: v: v == "directory") deeperEntries;
+            deeperResults = lib.mapAttrsToList (n: _: {
+              name = n;
+              path = "${entry.path}/${n}";
+            }) deeperDirs;
+          in
+          if builtins.length (builtins.attrNames deeperDirs) > 0 && depth > 0 then
+            findSkillsInDir "${dir}/${entry.name}" (depth - 1)
+          else
+            []
+        else
+          [];
+    in
+    lib.concatMap checkDir subdirs;
+
+  # Discover all skills from a repo (no path specified)
+  discoverSkills = repoPath:
+    let
+      rootSkills = findSkillsAtRoot repoPath;
+      skillsDir = "${repoPath}/skills";
+      skillsDirExists = builtins.pathExists skillsDir;
+      depthSkills = if skillsDirExists then findSkillsInDir skillsDir cfg.depth else [];
+      allSkills = rootSkills ++ depthSkills;
+      # Handle naming conflicts
+      resolveConflict = skills: skill:
+        let
+          existingNames = map (s: s.name) skills;
+          uniqueName = if builtins.elem skill.name existingNames then
+            # Append parent directory name to resolve conflict
+            let parts = lib.splitString "/" skill.path;
+            in if builtins.length parts > 1 then
+              lib.last (lib.init parts) + "-" + skill.name
+            else
+              skill.name + "-1"
+          else
+            skill.name;
+        in
+        { name = uniqueName; path = skill.path; };
+    in
+    if allSkills == [] then
+      throw "No skills found in repository (no SKILL.md files discovered)"
+    else
+      # Fold to resolve conflicts
+      let
+        resolved = lib.foldl' (acc: skill: acc ++ [ (resolveConflict acc skill) ]) [] allSkills;
+      in
+      resolved;
+
+  # Resolve the install directory
+  resolvedDir = resolvePath cfg.dir;
+
+  # Process a single install entry
+  processEntry = skill:
+    let
+      parsed = parseSkill skill;
+      repoPath = fetchRepo skill;
+    in
+    if parsed.path != null then
+      # Direct path: install the specified subdirectory
+      let
+        skillSource = "${repoPath}/${parsed.path}";
+        skillName = parsed.name;
+      in
+      [ (installSkill skillName skillSource) ]
+    else
+      # Discovery: find all skills in the repo
+      let
+        discovered = discoverSkills repoPath;
+        skillEntries = map (s: installSkill s.name "${repoPath}/${s.path}") discovered;
+      in
+      skillEntries;
+
+  # Process all install entries
+  allFileEntries = lib.listToAttrs (lib.concatMap processEntry cfg.install);
+
+  # Create symlinks to agent directories
+  symlinkEntries =
+    if !cfg.symlink.enable then {}
+    else
+      let
+        targets = map resolvePath cfg.symlink.targets;
+      in
+      lib.genAttrs targets (target: {
+        source = config.lib.file.mkOutOfStoreSymlink resolvedDir;
+      });
 
 in
 {
   options.skills = {
-    enable = lib.mkEnableOption "NixOS Agents Skills Manager";
+    enable = lib.mkEnableOption "Declarative AI agent skills manager";
 
-    fetch = lib.mkOption {
+    install = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [ ];
+      default = [];
       example = [
-        "vercel-labs@skills/skills/find-skills"
-        "mattpocock@skills/skills/grill-me"
+        "vercel-labs/agent-skills"
+        "mattpocock/skills/grill-me"
       ];
       description = ''
         List of skills to install.
-        Format: "owner@repo/subdir"
+        Format: "owner/repo" or "owner/repo/path"
       '';
     };
 
-    skillsDir = lib.mkOption {
+    dir = lib.mkOption {
       type = lib.types.str;
-      default = ".agents/skills";
-      description = "Installation directory for skills (relative to home or absolute)";
+      default = "~/.agents/skills";
+      description = ''
+        Installation directory for skills.
+        Supports ~ for home directory.
+      '';
     };
 
-    linkToAgents = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = [ "*" ];
-      example = [
-        "claude-code"
-        "cursor"
-        "codex"
-      ];
+    depth = lib.mkOption {
+      type = lib.types.int;
+      default = 2;
       description = ''
-        List of agents to symlink skills to.
-        Use ["*"] to link to all supported agents.
+        Search depth for skill discovery in skills/ directory.
+        Root directory is always scanned 1 level deep.
+        Use <= 0 for full recursion.
       '';
+    };
+
+    symlink = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Whether to create symlinks from target directories to the install directory.";
+      };
+
+      targets = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [
+          "~/.continue/skills"
+          "~/.cursor/skills"
+          "~/.codeium/windsurf/skills"
+        ];
+        description = ''
+          List of directories to symlink to the install directory.
+          Supports ~ for home directory.
+        '';
+      };
     };
   };
 
   config = lib.mkIf cfg.enable {
     home.file = lib.mkMerge [
       allFileEntries
-      agentSymlinks
+      symlinkEntries
     ];
   };
 }
