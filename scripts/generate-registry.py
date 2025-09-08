@@ -72,14 +72,29 @@ def resolve_ref(repo):
     return None, "Could not resolve any ref"
 
 
+def get_prefetch_cmd():
+    """Get the nix-prefetch-url command, trying PATH then nix run."""
+    import shutil
+    if shutil.which("nix-prefetch-url"):
+        return ["nix-prefetch-url"]
+    return ["nix", "run", "nixpkgs#nix-prefetch-url", "--"]
+
+
+PREFETCH_CMD = None
+
+
 def compute_hash(repo, rev):
     """Compute the Nix-compatible tarball hash."""
+    global PREFETCH_CMD
+    if PREFETCH_CMD is None:
+        PREFETCH_CMD = get_prefetch_cmd()
+
     owner, name = repo.lower().split("/", 1)
     url = f"https://github.com/{owner}/{name}/archive/{rev}.tar.gz"
 
     try:
         result = subprocess.run(
-            ["nix-prefetch-url", "--unpack", "--name", "source", url],
+            PREFETCH_CMD + ["--unpack", "--name", "source", url],
             capture_output=True, text=True, timeout=PREFETCH_TIMEOUT,
         )
         if result.returncode == 0 and result.stdout.strip():
