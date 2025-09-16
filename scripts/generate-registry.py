@@ -19,11 +19,11 @@ from datetime import datetime, timezone
 
 API_URL = "https://skills-nix.vercel.app/api/repos.json"
 REGISTRY_FILE = "registry.json"
-MAX_WORKERS = 32
+MAX_WORKERS = 8
 MAX_RETRIES = 3
 BACKOFF_BASE = 2
 LS_REMOTE_TIMEOUT = 15
-PREFETCH_TIMEOUT = 60
+PREFETCH_TIMEOUT = 120
 
 
 def fetch_repo_list():
