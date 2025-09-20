@@ -1,15 +1,7 @@
 #!/usr/bin/env python3
-"""
-Generate registry.json for skills-nix.
 
-Fetches a list of GitHub repositories, resolves their latest commit SHA
-and tarball hash, and outputs a sorted registry.json file.
-
-Designed for CI use (GitHub Actions with nix installed via cachix/install-nix-action).
-"""
-
+import argparse
 import json
-import os
 import subprocess
 import sys
 import time
@@ -18,7 +10,6 @@ from datetime import datetime, timezone
 
 
 API_URL = "https://skills-nix.vercel.app/api/repos.json"
-REGISTRY_FILE = "registry.json"
 MAX_WORKERS = 8
 MAX_RETRIES = 3
 BACKOFF_BASE = 2
@@ -73,18 +64,19 @@ def resolve_ref(repo):
 
 
 def compute_hash(repo, rev):
-    """Compute the Nix-compatible tarball hash."""
+    """Compute the Nix-compatible tarball hash (SRI format)."""
     owner, name = repo.lower().split("/", 1)
     url = f"https://github.com/{owner}/{name}/archive/{rev}.tar.gz"
 
     try:
         result = subprocess.run(
-            ["nix-prefetch-url", "--unpack", "--name", "source", url],
+            ["nix", "store", "prefetch-file", "--json", "--unpack", url],
             capture_output=True, text=True, timeout=PREFETCH_TIMEOUT,
         )
         if result.returncode == 0 and result.stdout.strip():
-            return result.stdout.strip(), None
-        return None, result.stderr.strip() or "nix-prefetch-url failed"
+            data = json.loads(result.stdout)
+            return data.get("hash"), None
+        return None, result.stderr.strip() or "nix store prefetch-file failed"
     except subprocess.TimeoutExpired:
         return None, "timeout"
     except Exception as e:
@@ -119,11 +111,15 @@ def process_repo(repo):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Generate registry.json for skills-nix")
+    parser.add_argument("-o", "--output", help="Output file path (default: stdout)")
+    args = parser.parse_args()
+
     repos = fetch_repo_list()
     if not repos:
         sys.exit(1)
 
-    print(f"Processing {len(repos)} repositories...")
+    print(f"Processing {len(repos)} repositories...", file=sys.stderr)
     results = {}
     failed = []
     start = time.time()
@@ -139,28 +135,28 @@ def main():
                 results[repo] = {"rev": rev, "hash": hash_val}
             if i % 100 == 0 or i == len(repos):
                 elapsed = time.time() - start
-                print(f"  [{i}/{len(repos)}] {elapsed:.0f}s")
+                print(f"  [{i}/{len(repos)}] {elapsed:.0f}s", file=sys.stderr)
 
     elapsed = time.time() - start
-    print(f"\nDone in {elapsed:.0f}s, {len(results)} ok, {len(failed)} failed")
+    print(f"\nDone in {elapsed:.0f}s, {len(results)} ok, {len(failed)} failed", file=sys.stderr)
 
     if failed:
-        print("\nFailed repos:")
+        print("\nFailed repos:", file=sys.stderr)
         for repo, err in sorted(failed):
-            print(f"  {repo} ({err})")
+            print(f"  {repo} ({err})", file=sys.stderr)
 
     registry = {
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "repos": dict(sorted(results.items())),
     }
 
-    path = os.path.join(os.path.dirname(os.path.dirname(__file__)), REGISTRY_FILE)
-    tmp = path + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(registry, f, indent=2)
-        f.write("\n")
-    os.replace(tmp, path)
-    print(f"Registry written to {path}")
+    output = json.dumps(registry, indent=2) + "\n"
+    if args.output:
+        with open(args.output, "w") as f:
+            f.write(output)
+        print(f"Registry written to {args.output}", file=sys.stderr)
+    else:
+        print(output, end="")
 
 
 if __name__ == "__main__":

@@ -22,11 +22,8 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
 
-      - name: Install nix-prefetch-url
-        run: nix profile install nixpkgs#nix-prefetch-url
-
       - name: Generate registry
-        run: python scripts/generate-registry.py
+        run: python scripts/generate-registry.py -o registry.json
 
       - name: Commit and push
         if: success()
