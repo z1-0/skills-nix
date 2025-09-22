@@ -1,162 +1,90 @@
 #!/usr/bin/env python3
-
-import argparse
-import json
-import subprocess
-import sys
-import time
+import argparse, json, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
-
 
 API_URL = "https://skills-nix.vercel.app/api/repos.json"
 MAX_WORKERS = 8
 MAX_RETRIES = 3
 BACKOFF_BASE = 2
-LS_REMOTE_TIMEOUT = 15
-PREFETCH_TIMEOUT = 120
+TIMEOUTS = {"git": 15, "curl": 60, "nix": 120}
 
 
-def fetch_repo_list():
-    """Fetch the list of repositories from the API."""
-    print(f"Fetching repo list from {API_URL}...")
-    result = subprocess.run(
-        ["curl", "-sfL", API_URL],
-        capture_output=True, text=True, timeout=60
-    )
-    if result.returncode != 0:
-        print(f"Error: {result.stderr}", file=sys.stderr)
-        sys.exit(1)
-    repos = json.loads(result.stdout).get("repos", [])
-    print(f"Found {len(repos)} repositories")
-    return repos
+def run(cmd, t="git"):
+    return subprocess.run(cmd, capture_output=True, text=True, timeout=TIMEOUTS[t])
+
+
+def fetch_repos():
+    r = run(["curl", "-sfL", API_URL], "curl")
+    return json.loads(r.stdout).get("repos", []) if r.returncode == 0 else sys.exit(1)
 
 
 def resolve_ref(repo):
-    """Resolve the latest commit SHA. Tries HEAD, main, master, latest tag."""
-    owner, name = repo.lower().split("/", 1)
-
+    base = f"https://github.com/{repo.lower()}.git"
     for ref in ["HEAD", "refs/heads/main", "refs/heads/master"]:
         try:
-            result = subprocess.run(
-                ["git", "ls-remote", f"https://github.com/{owner}/{name}.git", ref],
-                capture_output=True, text=True, timeout=LS_REMOTE_TIMEOUT,
-            )
-            if result.returncode == 0 and result.stdout.strip():
-                sha = result.stdout.strip().split()[0]
+            r = run(["git", "ls-remote", base, ref])
+            if r.returncode == 0 and r.stdout.strip():
+                sha = r.stdout.strip().split()[0]
                 if sha != "0" * 40:
-                    return sha, None
-        except (subprocess.TimeoutExpired, Exception):
+                    return sha
+        except Exception:
             continue
-
     try:
-        result = subprocess.run(
-            ["git", "ls-remote", "--tags", f"https://github.com/{owner}/{name}.git"],
-            capture_output=True, text=True, timeout=LS_REMOTE_TIMEOUT,
-        )
-        if result.returncode == 0 and result.stdout.strip():
-            sha = result.stdout.strip().split("\n")[-1].strip().split()[0]
-            return sha, None
-    except (subprocess.TimeoutExpired, Exception):
+        r = run(["git", "ls-remote", "--tags", base])
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip().split("\n")[-1].split()[0]
+    except Exception:
         pass
-
-    return None, "Could not resolve any ref"
+    return None
 
 
 def compute_hash(repo, rev):
-    """Compute the Nix-compatible tarball hash (SRI format)."""
-    owner, name = repo.lower().split("/", 1)
-    url = f"https://github.com/{owner}/{name}/archive/{rev}.tar.gz"
-
     try:
-        result = subprocess.run(
-            ["nix", "store", "prefetch-file", "--json", "--unpack", url],
-            capture_output=True, text=True, timeout=PREFETCH_TIMEOUT,
-        )
-        if result.returncode == 0 and result.stdout.strip():
-            data = json.loads(result.stdout)
-            return data.get("hash"), None
-        return None, result.stderr.strip() or "nix store prefetch-file failed"
-    except subprocess.TimeoutExpired:
-        return None, "timeout"
-    except Exception as e:
-        return None, str(e)
+        r = run(["nix", "store", "prefetch-file", "--json", "--unpack",
+                  f"https://github.com/{repo}/archive/{rev}.tar.gz"], "nix")
+        return json.loads(r.stdout).get("hash") if r.returncode == 0 else None
+    except Exception:
+        return None
 
 
-def process_repo(repo):
-    """Process a single repository with retries."""
+def process(repo):
     repo = repo.lower().strip()
     if "/" not in repo:
-        return repo, None, None, f"Invalid format: {repo}"
-
-    last_error = None
-    for attempt in range(MAX_RETRIES):
-        rev, err = resolve_ref(repo)
-        if rev is None:
-            last_error = err
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(BACKOFF_BASE ** (attempt + 1))
-            continue
-
-        hash_val, err = compute_hash(repo, rev)
-        if hash_val is None:
-            last_error = err
-            if attempt < MAX_RETRIES - 1:
-                time.sleep(BACKOFF_BASE ** (attempt + 1))
-            continue
-
-        return repo, rev, hash_val, None
-
-    return repo, None, None, last_error
+        return repo, None, None, "invalid"
+    for i in range(MAX_RETRIES):
+        rev = resolve_ref(repo)
+        if rev:
+            h = compute_hash(repo, rev)
+            if h:
+                return repo, rev, h, None
+        time.sleep(BACKOFF_BASE ** (i + 1))
+    return repo, None, None, "failed"
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate registry.json for skills-nix")
-    parser.add_argument("-o", "--output", help="Output file path (default: stdout)")
-    args = parser.parse_args()
-
-    repos = fetch_repo_list()
+    args = argparse.ArgumentParser().parse_args()
+    repos = fetch_repos()
     if not repos:
         sys.exit(1)
-
-    print(f"Processing {len(repos)} repositories...", file=sys.stderr)
-    results = {}
-    failed = []
-    start = time.time()
-
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process_repo, r): r for r in repos}
-        for i, future in enumerate(as_completed(futures), 1):
-            repo, rev, hash_val, error = future.result()
-            if error:
-                failed.append((repo, error))
-                print(f"  [{i}/{len(repos)}] FAIL {repo}: {error}", file=sys.stderr)
+    log = lambda m: print(m, file=sys.stderr)
+    log(f"Processing {len(repos)}...")
+    res, fail = {}, []
+    s = time.time()
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+        fs = {ex.submit(process, r): r for r in repos}
+        for i, f in enumerate(as_completed(fs), 1):
+            repo, rev, h, err = f.result()
+            if err:
+                fail.append(repo)
+                log(f"  [{i}/{len(repos)}] FAIL {repo}")
             else:
-                results[repo] = {"rev": rev, "hash": hash_val}
+                res[repo] = {"rev": rev, "hash": h}
             if i % 100 == 0 or i == len(repos):
-                elapsed = time.time() - start
-                print(f"  [{i}/{len(repos)}] {elapsed:.0f}s", file=sys.stderr)
-
-    elapsed = time.time() - start
-    print(f"\nDone in {elapsed:.0f}s, {len(results)} ok, {len(failed)} failed", file=sys.stderr)
-
-    if failed:
-        print("\nFailed repos:", file=sys.stderr)
-        for repo, err in sorted(failed):
-            print(f"  {repo} ({err})", file=sys.stderr)
-
-    registry = {
-        "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "repos": dict(sorted(results.items())),
-    }
-
-    output = json.dumps(registry, indent=2) + "\n"
-    if args.output:
-        with open(args.output, "w") as f:
-            f.write(output)
-        print(f"Registry written to {args.output}", file=sys.stderr)
-    else:
-        print(output, end="")
+                log(f"  [{i}/{len(repos)}] {time.time()-s:.0f}s")
+    log(f"\nDone {time.time()-s:.0f}s, {len(res)} ok, {len(fail)} fail")
+    reg = {"updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "repos": dict(sorted(res.items()))}
+    print(json.dumps(reg, indent=2) + "\n", end="")
 
 
 if __name__ == "__main__":
