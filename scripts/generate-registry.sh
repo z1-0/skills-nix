@@ -37,7 +37,8 @@ count=$(echo "$repos" | wc -l)
 log "Found ${count} repos"
 
 log "Finding refs..."
-touch failed.txt
+touch failed.txt urls.txt
+export -f resolve_ref
 echo "$repos" | xargs -P "$WORKERS" -I {} bash -c "resolve_ref '{}' failed.txt >> urls.txt" 2>/dev/null || true
 refs=$(wc -l <urls.txt)
 failed=$(wc -l <failed.txt)
