@@ -75,8 +75,11 @@ let
     lib.mapAttrsToList (name: _: { inherit name; path = name; }) skillDirs;
 
   # Find SKILL.md files in skills/ directory (recursive, depth-limited)
+  # depth: -1 = unlimited, 0 = stop, >0 = recurse with decrement
   findSkillsInDir = dir: depth:
     let
+      shouldRecurse = depth == -1 || depth > 0;
+      nextDepth = if depth == -1 then -1 else depth - 1;
       entries = builtins.readDir dir;
       dirs = lib.filterAttrs (n: v: v == "directory") entries;
       subdirs = lib.mapAttrsToList (name: path: {
@@ -90,8 +93,7 @@ let
         in
         if builtins.hasAttr "SKILL.md" subEntries then
           [ entry ]
-        else if depth != 0 then
-          # Recurse into subdirectories
+        else if shouldRecurse then
           let
             deeperEntries = builtins.readDir "${dir}/${entry.name}";
             deeperDirs = lib.filterAttrs (n: v: v == "directory") deeperEntries;
@@ -100,8 +102,8 @@ let
               path = "${entry.path}/${n}";
             }) deeperDirs;
           in
-          if builtins.length (builtins.attrNames deeperDirs) > 0 && depth > 0 then
-            findSkillsInDir "${dir}/${entry.name}" (depth - 1)
+          if builtins.length (builtins.attrNames deeperDirs) > 0 && nextDepth != 0 then
+            findSkillsInDir "${dir}/${entry.name}" nextDepth
           else
             []
         else
@@ -110,12 +112,13 @@ let
     lib.concatMap checkDir subdirs;
 
   # Discover all skills from a repo (no path specified)
-  discoverSkills = repoPath:
+  discoverSkills = skill: repoPath:
     let
       rootSkills = findSkillsAtRoot repoPath;
       skillsDir = "${repoPath}/skills";
       skillsDirExists = builtins.pathExists skillsDir;
-      depthSkills = if skillsDirExists then findSkillsInDir skillsDir cfg.depth else [];
+      searchDepth = if cfg.depth <= 0 then -1 else cfg.depth;
+      depthSkills = if skillsDirExists then findSkillsInDir skillsDir searchDepth else [];
       allSkills = rootSkills ++ depthSkills;
       # Handle naming conflicts
       resolveConflict = skills: skill:
@@ -134,7 +137,7 @@ let
         { name = uniqueName; path = skill.path; };
     in
     if allSkills == [] then
-      throw "No skills found in '${repoPath}' (no SKILL.md files discovered)"
+      throw "No skills found in '${skill}' (${repoPath}) - no SKILL.md files discovered"
     else
       # Fold to resolve conflicts
       let
@@ -161,7 +164,7 @@ let
     else
       # Discovery: find all skills in the repo
       let
-        discovered = discoverSkills repoPath;
+        discovered = discoverSkills skill repoPath;
         skillEntries = map (s: installSkill s.name "${repoPath}/${s.path}") discovered;
       in
       skillEntries;
