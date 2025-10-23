@@ -37,7 +37,7 @@ let
       entry = registryJson.repos.${key} or null;
     in
     if entry == null then
-      throw "Skill repo '${key}' not found in registry. Available repos: ${lib.concatStringsSep ", " (builtins.attrNames registryJson.repos)}"
+      throw "Skill repo '${key}' not found in registry. See ${toString ./registry.json} for available repos."
     else entry;
 
   # Fetch repo from GitHub
