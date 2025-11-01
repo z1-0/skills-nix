@@ -97,13 +97,9 @@ let
           let
             deeperEntries = builtins.readDir "${dir}/${entry.name}";
             deeperDirs = lib.filterAttrs (n: v: v == "directory") deeperEntries;
-            deeperResults = lib.mapAttrsToList (n: _: {
-              name = n;
-              path = "${entry.path}/${n}";
-            }) deeperDirs;
           in
           if builtins.length (builtins.attrNames deeperDirs) > 0 && nextDepth != 0 then
-            findSkillsInDir "${dir}/${entry.name}" nextDepth
+            map (s: s // { path = "${entry.path}/${s.path}"; }) (findSkillsInDir "${dir}/${entry.name}" nextDepth)
           else
             []
         else
