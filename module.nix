@@ -60,9 +60,11 @@ let
     in
     if !builtins.pathExists mdPath then defaultName else
     let
-      content = builtins.readFile mdPath;
-      parts = lib.splitString "---" content;
-      frontmatter = if builtins.length parts >= 3 then builtins.elemAt parts 1 else "";
+      parts = lib.splitString "---" (builtins.readFile mdPath);
+    in
+    if builtins.length parts < 3 then defaultName else
+    let
+      frontmatter = builtins.elemAt parts 1;
       lines = lib.splitString "\n" frontmatter;
       nameLine = lib.findFirst (line:
         builtins.substring 0 5 (builtins.replaceStrings [" " "\t"] ["" ""] line) == "name:"
@@ -70,8 +72,19 @@ let
     in
     if nameLine != null then
       let
-        value = builtins.substring 5 (builtins.stringLength nameLine - 5) nameLine;
-        name = builtins.replaceStrings ["\"" "'" " "] ["" "" ""] value;
+        raw = builtins.substring 5 (builtins.stringLength nameLine - 5) nameLine;
+        withoutLeading = if builtins.substring 0 1 raw == " " then
+          builtins.substring 1 (builtins.stringLength raw - 1) raw
+        else raw;
+        name = if builtins.stringLength withoutLeading >= 2
+            && builtins.substring 0 1 withoutLeading == "\""
+            && builtins.substring (builtins.stringLength withoutLeading - 1) 1 withoutLeading == "\""
+          then builtins.substring 1 (builtins.stringLength withoutLeading - 2) withoutLeading
+          else if builtins.stringLength withoutLeading >= 2
+            && builtins.substring 0 1 withoutLeading == "'"
+            && builtins.substring (builtins.stringLength withoutLeading - 1) 1 withoutLeading == "'"
+          then builtins.substring 1 (builtins.stringLength withoutLeading - 2) withoutLeading
+          else withoutLeading;
       in
       if name != "" then name else defaultName
     else defaultName;
@@ -83,21 +96,7 @@ let
       recursive = true;
     };
 
-  # Find SKILL.md files in a directory (1 level deep)
-  findSkillsAtRoot = dir:
-    let
-      entries = builtins.readDir dir;
-      dirs = lib.filterAttrs (n: v: v == "directory") entries;
-      hasSkillMd = name:
-        let
-          subEntries = builtins.readDir "${dir}/${name}";
-        in
-        builtins.hasAttr "SKILL.md" subEntries;
-      skillDirs = lib.filterAttrs (n: _: hasSkillMd n) dirs;
-    in
-    lib.mapAttrsToList (name: _: { inherit name; path = name; }) skillDirs;
-
-  # Find SKILL.md files in skills/ directory (recursive, depth-limited)
+  # Find SKILL.md files in a directory (recursive, depth-limited)
   # depth: -1 = unlimited, 0 = stop, >0 = recurse with decrement
   findSkillsInDir = dir: depth:
     let
@@ -109,22 +108,16 @@ let
         inherit name;
         path = name;
       }) dirs;
-      # Check each subdir for SKILL.md
       checkDir = entry:
         let
           subEntries = builtins.readDir "${dir}/${entry.name}";
         in
         if builtins.hasAttr "SKILL.md" subEntries then
           [ entry ]
-        else if shouldRecurse then
-          let
-            deeperEntries = builtins.readDir "${dir}/${entry.name}";
-            deeperDirs = lib.filterAttrs (n: v: v == "directory") deeperEntries;
-          in
-          if builtins.length (builtins.attrNames deeperDirs) > 0 && nextDepth != 0 then
-            map (s: s // { path = "${entry.path}/${s.path}"; }) (findSkillsInDir "${dir}/${entry.name}" nextDepth)
-          else
-            []
+        else if shouldRecurse && nextDepth != 0
+          && builtins.length (builtins.attrNames (lib.filterAttrs (n: v: v == "directory") subEntries)) > 0
+        then
+          map (s: s // { path = "${entry.path}/${s.path}"; }) (findSkillsInDir "${dir}/${entry.name}" nextDepth)
         else
           [];
     in
@@ -134,11 +127,10 @@ let
   discoverSkills = skill: repoPath:
     let
       # Scan repo/*/SKILL.md — flat subdirectories at root
-      flatSkills = findSkillsAtRoot repoPath;
+      flatSkills = findSkillsInDir repoPath 1;
       hasRootSkill = builtins.pathExists "${repoPath}/SKILL.md";
-      rootSkillName = (parseSkill skill).name;
       # Scan repo/SKILL.md — root itself is the skill
-      rootSkill = if hasRootSkill then [{ name = rootSkillName; path = "."; }] else [];
+      rootSkill = if hasRootSkill then [{ name = (parseSkill skill).name; path = "."; }] else [];
       skillsDir = "${repoPath}/skills";
       skillsDirExists = builtins.pathExists skillsDir;
       searchDepth = if cfg.depth <= 0 then -1 else cfg.depth;
@@ -199,7 +191,11 @@ let
       if validCandidates == [] then
         throw "Skill '${parsed.path}' not found in '${skill}'"
       else
-        [ (installSkill parsed.name (builtins.head validCandidates)) ]
+        let
+          skillSource = builtins.head validCandidates;
+          skillName = readSkillName parsed.name skillSource;
+        in
+        [ (installSkill skillName skillSource) ]
     else
       # Discovery: find all skills in the repo
       let
