@@ -6,7 +6,9 @@ let
   cfg = config.skills;
   resolvedDir = cfg.dir;
   entries = shared.buildAllFileEntries cfg resolvedDir;
-in {
+in
+
+{
   inherit (opts) options;
 
   config = lib.mkIf cfg.enable {

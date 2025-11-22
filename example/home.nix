@@ -11,10 +11,7 @@
 #   imports = [ inputs.skills-nix.homeModules.default ];
 #
 # And configure skills:
-
-{ config, ... }:
-
-{
+{ config, ... }: {
   skills = {
     # Enable the skills manager
     enable = true;

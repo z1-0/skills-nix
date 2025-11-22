@@ -6,7 +6,7 @@
 
     install = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [];
+      default = [ ];
       example = [
         "vercel-labs/agent-skills"
         "mattpocock/skills/grill-me"
