@@ -195,31 +195,26 @@ let
     cfg: resolvedDir: lib.concatMap (skill: processEntry cfg skill resolvedDir) cfg.install;
 
   # Generate activation script for NixOS/darwin (creates symlinks + cleans orphans)
+  # resolvedDir must be an absolute path; ~ is only resolved by home-manager at Nix eval time
   mkActivationScript =
     cfg: entries: resolvedDir:
     let
-      # Proper shell quoting: double-quote if $HOME, single-quote otherwise
-      bashArg =
-        path: if lib.hasPrefix "~" path then "\"$HOME${lib.removePrefix "~" path}\"" else "'${path}'";
-      # Bare path with $HOME for case pattern matching (bash expands $HOME)
-      casePath = path: if lib.hasPrefix "~" path then "$HOME${lib.removePrefix "~" path}" else path;
-      bashDir = bashArg resolvedDir;
-      bashExpected = lib.concatStringsSep " " (map (e: casePath e.name) entries);
+      expectedPaths = map (e: e.name) entries;
     in
     ''
-      mkdir -p ${bashDir}
+      mkdir -p '${resolvedDir}'
     ''
     + lib.concatStringsSep "\n" (
       map (e: ''
-        mkdir -p "$(dirname ${bashArg e.name})"
-        ln -sfn '${e.storePath}' ${bashArg e.name}
+        mkdir -p "$(dirname '${e.name}')"
+        ln -sfn '${e.storePath}' '${e.name}'
       '') entries
     )
     + lib.optionalString (entries != [ ]) ''
-      if [ -d ${bashDir} ]; then
-        for entry in ${bashDir}/*; do
+      if [ -d '${resolvedDir}' ]; then
+        for entry in '${resolvedDir}'/*; do
           [ -L "$entry" ] || continue
-          case " ${bashExpected} " in
+          case " ${lib.concatStringsSep " " expectedPaths} " in
             *" $entry "* ) ;;
             * ) rm -f "$entry" ;;
           esac
@@ -228,13 +223,13 @@ let
     ''
     + lib.optionalString cfg.symlink.enable (
       let
-        bashTargets = map (t: bashArg t) cfg.symlink.targets;
+        targets = cfg.symlink.targets;
       in
       lib.concatStringsSep "\n" (
         map (target: ''
-          mkdir -p "$(dirname ${target})"
-          ln -sfn ${bashDir} ${target}
-        '') bashTargets
+          mkdir -p "$(dirname '${target}')"
+          ln -sfn '${resolvedDir}' '${target}'
+        '') targets
       )
     );
 

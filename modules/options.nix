@@ -22,7 +22,8 @@
       default = "~/.agents/skills";
       description = ''
         Installation directory for skills.
-        Supports ~ for home directory.
+        Supports ~ for home directory (home-manager only).
+        On NixOS/nix-darwin, use an absolute path.
       '';
     };
 
@@ -43,18 +44,19 @@
         description = "Whether to create symlinks from target directories to the install directory.";
       };
 
-      targets = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [
-          "~/.continue/skills"
-          "~/.cursor/skills"
-          "~/.codeium/windsurf/skills"
-        ];
-        description = ''
-          List of directories to symlink to the install directory.
-          Supports ~ for home directory.
-        '';
-      };
+targets = lib.mkOption {
+          type = lib.types.listOf lib.types.str;
+          default = [
+            "~/.continue/skills"
+            "~/.cursor/skills"
+            "~/.codeium/windsurf/skills"
+          ];
+          description = ''
+            List of directories to symlink to the install directory.
+            Supports ~ for home directory (home-manager only).
+            On NixOS/nix-darwin, use absolute paths.
+          '';
+        };
     };
   };
 }
