@@ -1,4 +1,4 @@
-{ lib, pkgs, }:
+{ lib, pkgs }:
 
 let
   registryJson = builtins.fromJSON (builtins.readFile ../registry.json);
@@ -99,27 +99,6 @@ let
     in
     lib.concatMap checkDir subdirs;
 
-  resolveConflict =
-    skills: skill:
-    let
-      existingNames = map (s: s.name) skills;
-      uniqueName =
-        if builtins.elem skill.name existingNames then
-          let
-            parts = lib.splitString "/" skill.path;
-          in
-          if builtins.length parts > 1 then
-            lib.last (lib.init parts) + "-" + skill.name
-          else
-            skill.name + "-1"
-        else
-          skill.name;
-    in
-    {
-      name = uniqueName;
-      path = skill.path;
-    };
-
   discoverSkills =
     parsed: repoPath: depth:
     let
@@ -150,9 +129,8 @@ let
     else
       let
         withNames = map (s: s // { name = readSkillName s.name "${repoPath}/${s.path}"; }) allSkills;
-        resolved = lib.foldl' (acc: skill: acc ++ [ (resolveConflict acc skill) ]) [ ] withNames;
       in
-      resolved;
+      withNames;
 
   processEntry =
     cfg: skill: resolvedDir:
@@ -180,6 +158,7 @@ let
           {
             name = "${resolvedDir}/${skillName}";
             storePath = skillSource;
+            source = skill;
           }
         ]
     else
@@ -189,10 +168,49 @@ let
       map (s: {
         name = "${resolvedDir}/${s.name}";
         storePath = "${repoPath}/${s.path}";
+        source = skill;
       }) discovered;
 
+  detectConflicts =
+    entries:
+    let
+      getName = e: lib.last (lib.splitString "/" e.name);
+      grouped = lib.foldl' (
+        acc: e:
+        let
+          n = getName e;
+        in
+        acc // { ${n} = (acc.${n} or [ ]) ++ [ e ]; }
+      ) { } entries;
+      conflicts = lib.filterAttrs (_: g: builtins.length g > 1) grouped;
+    in
+    if conflicts == { } then
+      entries
+    else
+      let
+        lines = lib.concatStringsSep "\n" (
+          lib.flatten (
+            lib.mapAttrsToList (
+              name: group:
+              [
+                "  \"${name}\" fourni par :"
+              ]
+              ++ map (e: "    - ${e.source}") group
+            ) conflicts
+          )
+        );
+      in
+      throw ''
+        Conflits de noms de skills détectés :
+
+        ${lines}
+
+        Solution : utilisez un chemin explicite (owner/repo/path) pour désambiguïser.
+      '';
+
   buildAllFileEntries =
-    cfg: resolvedDir: lib.concatMap (skill: processEntry cfg skill resolvedDir) cfg.install;
+    cfg: resolvedDir:
+    detectConflicts (lib.concatMap (skill: processEntry cfg skill resolvedDir) cfg.install);
 
   # Generate activation script for NixOS/darwin (creates symlinks + cleans orphans)
   # resolvedDir must be an absolute path; ~ is only resolved by home-manager at Nix eval time
@@ -236,7 +254,7 @@ let
   resolvePath =
     path: homeDir: if lib.hasPrefix "~" path then "${homeDir}${lib.removePrefix "~" path}" else path;
 in
-  
+
 {
   inherit
     parseSkill
@@ -244,10 +262,10 @@ in
     fetchRepo
     readSkillName
     findSkillsInDir
-    resolveConflict
     discoverSkills
     processEntry
     buildAllFileEntries
+    detectConflicts
     mkActivationScript
     resolvePath
     ;
