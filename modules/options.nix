@@ -13,7 +13,7 @@
       ];
       description = ''
         List of skills to install.
-        Format: "owner/repo" or "owner/repo/path"
+        Format: "owner/repo", "owner/repo/path", or "owner/repo@skillName"
       '';
     };
 

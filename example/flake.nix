@@ -45,8 +45,11 @@
                 # Install all skills from a repo
                 "vercel-labs/agent-skills"
 
-                # Install a specific skill
-                "mattpocock/skills/grill-me"
+                # Install a specific skill by name
+                "mattpocock/skills@grill-me"
+
+                # Discover all skills under a repo sub-path
+                "mattpocock/skills/some-subtree"
               ];
 
               # Installation directory

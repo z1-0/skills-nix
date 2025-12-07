@@ -6,17 +6,29 @@ let
   parseSkill =
     skill:
     let
-      parts = lib.splitString "/" skill;
+      atParts = lib.splitString "@" skill;
+      hasAt = builtins.length atParts > 1;
+      repoRef = builtins.elemAt atParts 0;
+      targetName = if hasAt then builtins.elemAt atParts 1 else null;
+      parts = lib.splitString "/" repoRef;
       len = builtins.length parts;
       owner = lib.toLower (builtins.elemAt parts 0);
       repo = lib.toLower (builtins.elemAt parts 1);
       pathParts = lib.drop 2 parts;
       path = if pathParts != [ ] then lib.concatStringsSep "/" pathParts else null;
-      name = if path != null then lib.last (lib.splitString "/" path) else repo;
+      name =
+        if targetName != null then
+          targetName
+        else if path != null then
+          lib.last (lib.splitString "/" path)
+        else
+          repo;
       registryKey = "${owner}/${repo}";
     in
     if len < 2 then
-      throw "Invalid skill format '${skill}': expected 'owner/repo' or 'owner/repo/path'"
+      throw "Invalid skill format '${skill}': expected 'owner/repo', 'owner/repo/path', or 'owner/repo@skillName'"
+    else if hasAt && len > 2 then
+      throw "Invalid skill format '${skill}': '@' notation expects 'owner/repo@skillName' (no path before '@')"
     else
       {
         inherit
@@ -24,6 +36,7 @@ let
           repo
           name
           path
+          targetName
           registryKey
           ;
       };
@@ -99,22 +112,26 @@ let
     in
     lib.concatMap checkDir subdirs;
 
-  discoverSkills =
-    parsed: repoPath: depth:
+  discoverSkillsInDir =
+    {
+      baseDir,
+      defaultName,
+      depth,
+    }:
     let
-      flatSkills = findSkillsInDir repoPath 1;
-      hasRootSkill = builtins.pathExists "${repoPath}/SKILL.md";
+      flatSkills = findSkillsInDir baseDir 1;
+      hasRootSkill = builtins.pathExists "${baseDir}/SKILL.md";
       rootSkill =
         if hasRootSkill then
           [
             {
-              name = parsed.name;
+              name = defaultName;
               path = ".";
             }
           ]
         else
           [ ];
-      skillsDir = "${repoPath}/skills";
+      skillsDir = "${baseDir}/skills";
       skillsDirExists = builtins.pathExists skillsDir;
       searchDepth = if depth <= 0 then -1 else depth;
       nestedSkills =
@@ -125,12 +142,20 @@ let
       allSkills = flatSkills ++ nestedSkills ++ rootSkill;
     in
     if allSkills == [ ] then
-      throw "No skills found in '${parsed.registryKey}' (${repoPath}) - no SKILL.md files discovered"
+      throw "No skills found in '${baseDir}'"
     else
       let
-        withNames = map (s: s // { name = readSkillName s.name "${repoPath}/${s.path}"; }) allSkills;
+        withNames = map (s: s // { name = readSkillName s.name "${baseDir}/${s.path}"; }) allSkills;
       in
       withNames;
+
+  discoverSkills =
+    parsed: repoPath: depth:
+    discoverSkillsInDir {
+      baseDir = repoPath;
+      defaultName = parsed.name;
+      inherit depth;
+    };
 
   processEntry =
     cfg: skill: resolvedDir:
@@ -139,28 +164,43 @@ let
       entry = getRegistryEntry parsed;
       repoPath = fetchRepo parsed entry;
     in
-    if parsed.path != null then
+    if parsed.targetName != null then
+      let
+        discovered = discoverSkills parsed repoPath cfg.depth;
+        matched = builtins.filter (s: s.name == parsed.targetName) discovered;
+      in
+      if matched == [ ] then
+        throw "Skill '${parsed.targetName}' not found in '${parsed.registryKey}'"
+      else
+        map (s: {
+          name = "${resolvedDir}/${s.name}";
+          storePath = "${repoPath}/${s.path}";
+          source = skill;
+        }) matched
+    else if parsed.path != null then
       let
         candidates = [
           "${repoPath}/skills/${parsed.path}"
           "${repoPath}/${parsed.path}"
         ];
-        validCandidates = builtins.filter (p: builtins.pathExists "${p}/SKILL.md") candidates;
+        valid = builtins.filter builtins.pathExists candidates;
       in
-      if validCandidates == [ ] then
-        throw "Skill '${parsed.path}' not found in '${skill}'"
+      if valid == [ ] then
+        throw "Path '${parsed.path}' not found in '${skill}' (tried: ${lib.concatStringsSep ", " candidates})"
       else
         let
-          skillSource = builtins.head validCandidates;
-          skillName = readSkillName parsed.name skillSource;
+          subDir = builtins.head valid;
+          discovered = discoverSkillsInDir {
+            baseDir = subDir;
+            defaultName = parsed.name;
+            depth = cfg.depth;
+          };
         in
-        [
-          {
-            name = "${resolvedDir}/${skillName}";
-            storePath = skillSource;
-            source = skill;
-          }
-        ]
+        map (s: {
+          name = "${resolvedDir}/${s.name}";
+          storePath = "${subDir}/${s.path}";
+          source = skill;
+        }) discovered
     else
       let
         discovered = discoverSkills parsed repoPath cfg.depth;
@@ -262,6 +302,7 @@ in
     fetchRepo
     readSkillName
     findSkillsInDir
+    discoverSkillsInDir
     discoverSkills
     processEntry
     buildAllFileEntries
