@@ -5,7 +5,7 @@ let
   opts = import ./options.nix { inherit lib; };
   cfg = config.skills;
   resolvedDir = cfg.dir;
-  entries = shared.buildAllFileEntries cfg resolvedDir;
+  entries = shared.buildAllFileEntries cfg.install cfg.depth resolvedDir;
 
   hasTilde = lib.hasPrefix "~";
 in
@@ -31,6 +31,6 @@ in
       }
     ];
 
-    system.activationScripts.skills.text = shared.mkActivationScript cfg entries resolvedDir;
+    system.activationScripts.skills.text = shared.mkActivationScript cfg.symlink.enable cfg.symlink.targets entries resolvedDir;
   };
 }

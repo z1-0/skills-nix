@@ -158,7 +158,7 @@ let
     };
 
   processEntry =
-    cfg: skill: resolvedDir:
+    depth: skill: resolvedDir:
     let
       parsed = parseSkill skill;
       entry = getRegistryEntry parsed;
@@ -166,7 +166,7 @@ let
     in
     if parsed.targetName != null then
       let
-        discovered = discoverSkills parsed repoPath cfg.depth;
+        discovered = discoverSkills parsed repoPath depth;
         matched = builtins.filter (s: s.name == parsed.targetName) discovered;
       in
       if matched == [ ] then
@@ -193,7 +193,7 @@ let
           discovered = discoverSkillsInDir {
             baseDir = subDir;
             defaultName = parsed.name;
-            depth = cfg.depth;
+            inherit depth;
           };
         in
         map (s: {
@@ -203,7 +203,7 @@ let
         }) discovered
     else
       let
-        discovered = discoverSkills parsed repoPath cfg.depth;
+        discovered = discoverSkills parsed repoPath depth;
       in
       map (s: {
         name = "${resolvedDir}/${s.name}";
@@ -249,13 +249,13 @@ let
       '';
 
   buildAllFileEntries =
-    cfg: resolvedDir:
-    detectConflicts (lib.concatMap (skill: processEntry cfg skill resolvedDir) cfg.install);
+    install: depth: resolvedDir:
+    detectConflicts (lib.concatMap (skill: processEntry depth skill resolvedDir) install);
 
   # Generate activation script for NixOS/darwin (creates symlinks + cleans orphans)
   # resolvedDir must be an absolute path; ~ is only resolved by home-manager at Nix eval time
   mkActivationScript =
-    cfg: entries: resolvedDir:
+    symlinkEnable: symlinkTargets: entries: resolvedDir:
     let
       expectedPaths = map (e: e.name) entries;
     in
@@ -279,9 +279,9 @@ let
         done
       fi
     ''
-    + lib.optionalString cfg.symlink.enable (
+    + lib.optionalString symlinkEnable (
       let
-        targets = cfg.symlink.targets;
+        targets = symlinkTargets;
       in
       lib.concatStringsSep "\n" (
         map (target: ''

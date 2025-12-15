@@ -14,7 +14,7 @@ let
         source = e.storePath;
         recursive = true;
       }
-    ) (shared.buildAllFileEntries cfg resolvedDir)
+    ) (shared.buildAllFileEntries cfg.install cfg.depth resolvedDir)
   );
 
   symlinkTargets = map shared.resolvePath cfg.symlink.targets;
