@@ -9,11 +9,11 @@
       default = [ ];
       example = [
         "vercel-labs/agent-skills"
-        "mattpocock/skills/grill-me"
+        "mattpocock/skills@grill-me"
       ];
       description = ''
         List of skills to install.
-        Format: "owner/repo", "owner/repo/path", or "owner/repo@skillName"
+        Format: "owner/repo" or "owner/repo@skillName"
       '';
     };
 

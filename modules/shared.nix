@@ -14,28 +14,17 @@ let
       len = builtins.length parts;
       owner = lib.toLower (builtins.elemAt parts 0);
       repo = lib.toLower (builtins.elemAt parts 1);
-      pathParts = lib.drop 2 parts;
-      path = if pathParts != [ ] then lib.concatStringsSep "/" pathParts else null;
-      name =
-        if targetName != null then
-          targetName
-        else if path != null then
-          lib.last (lib.splitString "/" path)
-        else
-          repo;
+      name = if targetName != null then targetName else repo;
       registryKey = "${owner}/${repo}";
     in
-    if len < 2 then
-      throw "Invalid skill format '${skill}': expected 'owner/repo', 'owner/repo/path', or 'owner/repo@skillName'"
-    else if hasAt && len > 2 then
-      throw "Invalid skill format '${skill}': '@' notation expects 'owner/repo@skillName' (no path before '@')"
+    if len != 2 then
+      throw "Invalid skill format '${skill}': expected 'owner/repo' or 'owner/repo@skillName'"
     else
       {
         inherit
           owner
           repo
           name
-          path
           targetName
           registryKey
           ;
@@ -177,30 +166,6 @@ let
           storePath = "${repoPath}/${s.path}";
           source = skill;
         }) matched
-    else if parsed.path != null then
-      let
-        candidates = [
-          "${repoPath}/skills/${parsed.path}"
-          "${repoPath}/${parsed.path}"
-        ];
-        valid = builtins.filter builtins.pathExists candidates;
-      in
-      if valid == [ ] then
-        throw "Path '${parsed.path}' not found in '${skill}' (tried: ${lib.concatStringsSep ", " candidates})"
-      else
-        let
-          subDir = builtins.head valid;
-          discovered = discoverSkillsInDir {
-            baseDir = subDir;
-            defaultName = parsed.name;
-            inherit depth;
-          };
-        in
-        map (s: {
-          name = "${resolvedDir}/${s.name}";
-          storePath = "${subDir}/${s.path}";
-          source = skill;
-        }) discovered
     else
       let
         discovered = discoverSkills parsed repoPath depth;
@@ -245,7 +210,7 @@ let
 
         ${lines}
 
-        Solution : utilisez un chemin explicite (owner/repo/path) pour désambiguïser.
+        Solution : utilisez owner/repo@skillName pour désambiguïser.
       '';
 
   buildAllFileEntries =

@@ -17,7 +17,7 @@
     enable = true;
 
     # List of skills to install
-    # Format: "owner/repo", "owner/repo/path", or "owner/repo@skillName"
+    # Format: "owner/repo" or "owner/repo@skillName"
     install = [
       # Install all skills from a repo
       # The module scans for SKILL.md files automatically
@@ -25,9 +25,6 @@
 
       # Install a specific skill from a multi-skill repo by name
       "mattpocock/skills@grill-me"
-
-      # Discover all skills under a specific sub-path
-      "mattpocock/skills/some-subtree"
     ];
 
     # Installation directory (supports ~ for home directory)
