@@ -101,23 +101,15 @@ let
     in
     lib.concatMap checkDir subdirs;
 
-  discoverSkillsInDir =
-    {
-      baseDir,
-      defaultName,
-      depth,
-    }:
+  discoverSkills =
+    parsed: repoPath: depth:
     let
+      baseDir = repoPath;
       flatSkills = findSkillsInDir baseDir 1;
       hasRootSkill = builtins.pathExists "${baseDir}/SKILL.md";
       rootSkill =
         if hasRootSkill then
-          [
-            {
-              name = defaultName;
-              path = ".";
-            }
-          ]
+          [{ name = parsed.name; path = "."; }]
         else
           [ ];
       skillsDir = "${baseDir}/skills";
@@ -133,18 +125,7 @@ let
     if allSkills == [ ] then
       throw "No skills found in '${baseDir}'"
     else
-      let
-        withNames = map (s: s // { name = readSkillName s.name "${baseDir}/${s.path}"; }) allSkills;
-      in
-      withNames;
-
-  discoverSkills =
-    parsed: repoPath: depth:
-    discoverSkillsInDir {
-      baseDir = repoPath;
-      defaultName = parsed.name;
-      inherit depth;
-    };
+      map (s: s // { name = readSkillName s.name "${baseDir}/${s.path}"; }) allSkills;
 
   processEntry =
     depth: skill: resolvedDir:
@@ -152,29 +133,21 @@ let
       parsed = parseSkill skill;
       entry = getRegistryEntry parsed;
       repoPath = fetchRepo parsed entry;
+      discovered = discoverSkills parsed repoPath depth;
+      matched =
+        if parsed.targetName != null then
+          builtins.filter (s: s.name == parsed.targetName) discovered
+        else
+          discovered;
     in
-    if parsed.targetName != null then
-      let
-        discovered = discoverSkills parsed repoPath depth;
-        matched = builtins.filter (s: s.name == parsed.targetName) discovered;
-      in
-      if matched == [ ] then
-        throw "Skill '${parsed.targetName}' not found in '${parsed.registryKey}'"
-      else
-        map (s: {
-          name = "${resolvedDir}/${s.name}";
-          storePath = "${repoPath}/${s.path}";
-          source = skill;
-        }) matched
+    if parsed.targetName != null && matched == [ ] then
+      throw "Skill '${parsed.targetName}' not found in '${parsed.registryKey}'"
     else
-      let
-        discovered = discoverSkills parsed repoPath depth;
-      in
       map (s: {
         name = "${resolvedDir}/${s.name}";
         storePath = "${repoPath}/${s.path}";
         source = skill;
-      }) discovered;
+      }) matched;
 
   detectConflicts =
     entries:
@@ -206,11 +179,11 @@ let
         );
       in
       throw ''
-        Conflits de noms de skills détectés :
+        Conflicting skill names detected:
 
         ${lines}
 
-        Solution : utilisez owner/repo@skillName pour désambiguïser.
+        Fix: use owner/repo@skillName to disambiguate.
       '';
 
   buildAllFileEntries =
@@ -267,7 +240,6 @@ in
     fetchRepo
     readSkillName
     findSkillsInDir
-    discoverSkillsInDir
     discoverSkills
     processEntry
     buildAllFileEntries
