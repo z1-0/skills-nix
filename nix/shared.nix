@@ -229,22 +229,30 @@ let
       )
     );
 
-  resolvePath =
-    path: homeDir: if lib.hasPrefix "~" path then "${homeDir}${lib.removePrefix "~" path}" else path;
+in
+
+  mkTildeAssertions = cfg: [
+    {
+      assertion = !lib.hasPrefix "~" cfg.dir;
+      message = ''
+        skills.dir "${cfg.dir}" uses '~' which is not expanded here.
+        Use an absolute path instead.
+      '';
+    }
+    {
+      assertion = lib.all (t: !lib.hasPrefix "~" t) cfg.symlink.targets;
+      message = ''
+        skills.symlink.targets contains '~' paths which are not expanded here.
+        Use absolute paths instead.
+      '';
+    }
+  ];
 in
 
 {
   inherit
-    parseSkill
-    getRegistryEntry
-    fetchRepo
-    readSkillName
-    findSkillsInDir
-    discoverSkills
-    processEntry
     buildAllFileEntries
-    detectConflicts
     mkActivationScript
-    resolvePath
+    mkTildeAssertions
     ;
 }
