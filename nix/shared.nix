@@ -171,7 +171,7 @@ let
             lib.mapAttrsToList (
               name: group:
               [
-                "  \"${name}\" fourni par :"
+                "  \"${name}\" provided by:"
               ]
               ++ map (e: "    - ${e.source}") group
             ) conflicts
@@ -190,69 +190,10 @@ let
     install: depth: resolvedDir:
     detectConflicts (lib.concatMap (skill: processEntry depth skill resolvedDir) install);
 
-  # Generate activation script for NixOS/darwin (creates symlinks + cleans orphans)
-  # resolvedDir must be an absolute path; ~ is only resolved by home-manager at Nix eval time
-  mkActivationScript =
-    symlinkEnable: symlinkTargets: entries: resolvedDir:
-    let
-      expectedPaths = map (e: e.name) entries;
-    in
-    ''
-      mkdir -p '${resolvedDir}'
-    ''
-    + lib.concatStringsSep "\n" (
-      map (e: ''
-        mkdir -p "$(dirname '${e.name}')"
-        ln -sfn '${e.storePath}' '${e.name}'
-      '') entries
-    )
-    + lib.optionalString (entries != [ ]) ''
-      if [ -d '${resolvedDir}' ]; then
-        for entry in '${resolvedDir}'/*; do
-          [ -L "$entry" ] || continue
-          case " ${lib.concatStringsSep " " expectedPaths} " in
-            *" $entry "* ) ;;
-            * ) rm -f "$entry" ;;
-          esac
-        done
-      fi
-    ''
-    + lib.optionalString symlinkEnable (
-      let
-        targets = symlinkTargets;
-      in
-      lib.concatStringsSep "\n" (
-        map (target: ''
-          mkdir -p "$(dirname '${target}')"
-          ln -sfn '${resolvedDir}' '${target}'
-        '') targets
-      )
-    );
-
-in
-
-  mkTildeAssertions = cfg: [
-    {
-      assertion = !lib.hasPrefix "~" cfg.dir;
-      message = ''
-        skills.dir "${cfg.dir}" uses '~' which is not expanded here.
-        Use an absolute path instead.
-      '';
-    }
-    {
-      assertion = lib.all (t: !lib.hasPrefix "~" t) cfg.symlink.targets;
-      message = ''
-        skills.symlink.targets contains '~' paths which are not expanded here.
-        Use absolute paths instead.
-      '';
-    }
-  ];
 in
 
 {
   inherit
     buildAllFileEntries
-    mkActivationScript
-    mkTildeAssertions
     ;
 }
