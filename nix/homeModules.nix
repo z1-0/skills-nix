@@ -34,7 +34,7 @@ let
 in
 
 {
-  options = import ./options.nix { inherit lib; };
+  imports = [ ./options.nix ];
 
   config = lib.mkIf cfg.enable {
     home.file = lib.mkMerge [

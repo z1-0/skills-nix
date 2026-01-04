@@ -73,8 +73,6 @@ let
   findSkillsInDir =
     dir: depth:
     let
-      shouldRecurse = depth == -1 || depth > 0;
-      nextDepth = if depth == -1 then -1 else depth - 1;
       entries = builtins.readDir dir;
       dirs = lib.filterAttrs (n: v: v == "directory") entries;
       subdirs = lib.mapAttrsToList (name: path: {
@@ -85,12 +83,12 @@ let
         entry:
         let
           subEntries = builtins.readDir "${dir}/${entry.name}";
+          nextDepth = if depth == -1 then -1 else depth - 1;
         in
         if builtins.hasAttr "SKILL.md" subEntries then
           [ entry ]
         else if
-          shouldRecurse
-          && nextDepth != 0
+          (depth < 0 || depth > 1)
           && builtins.length (builtins.attrNames (lib.filterAttrs (n: v: v == "directory") subEntries)) > 0
         then
           map (s: s // { path = "${entry.path}/${s.path}"; }) (
@@ -104,15 +102,15 @@ let
   discoverSkills =
     parsed: repoPath: depth:
     let
-      baseDir = repoPath;
-      flatSkills = findSkillsInDir baseDir 1;
-      hasRootSkill = builtins.pathExists "${baseDir}/SKILL.md";
+
+      flatSkills = findSkillsInDir repoPath 1;
+      hasRootSkill = builtins.pathExists "${repoPath}/SKILL.md";
       rootSkill =
         if hasRootSkill then
           [{ name = parsed.name; path = "."; }]
         else
           [ ];
-      skillsDir = "${baseDir}/skills";
+      skillsDir = "${repoPath}/skills";
       skillsDirExists = builtins.pathExists skillsDir;
       searchDepth = if depth <= 0 then -1 else depth;
       nestedSkills =
@@ -123,9 +121,9 @@ let
       allSkills = flatSkills ++ nestedSkills ++ rootSkill;
     in
     if allSkills == [ ] then
-      throw "No skills found in '${baseDir}'"
+      throw "No skills found in '${repoPath}'"
     else
-      map (s: s // { name = readSkillName s.name "${baseDir}/${s.path}"; }) allSkills;
+      map (s: s // { name = readSkillName s.name "${repoPath}/${s.path}"; }) allSkills;
 
   processEntry =
     depth: skill: resolvedDir:
@@ -166,17 +164,11 @@ let
       entries
     else
       let
-        lines = lib.concatStringsSep "\n" (
-          lib.flatten (
-            lib.mapAttrsToList (
-              name: group:
-              [
-                "  \"${name}\" provided by:"
-              ]
-              ++ map (e: "    - ${e.source}") group
-            ) conflicts
-          )
-        );
+        lines = lib.concatMapStringsSep "\n" (
+          { name, group }:
+          "  \"${name}\" provided by:\n"
+          + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") group
+        ) (lib.mapAttrsToList (name: group: { inherit name group; }) conflicts);
       in
       throw ''
         Conflicting skill names detected:

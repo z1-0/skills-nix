@@ -1,7 +1,7 @@
 {
   outputs = _: {
-    homeModules.default = import ./modules/home.nix;
-    nixosModules.default = import ./modules/osModules.nix;
-    darwinModules.default = import ./modules/osModules.nix;
+    homeModules.default = import ./nix/homeModules.nix;
+    nixosModules.default = import ./nix/osModules.nix;
+    darwinModules.default = import ./nix/osModules.nix;
   };
 }
