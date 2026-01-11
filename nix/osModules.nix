@@ -6,39 +6,39 @@
 }:
 
 let
-  shared = import ./shared.nix { inherit lib pkgs; };
-  entries = shared.buildAllFileEntries cfg.install cfg.depth cfg.dir;
-
   cfg = config.skills;
+
+  inherit (import ./shared.nix { inherit lib pkgs; }) buildAllFileEntries;
+  entries = buildAllFileEntries cfg.install cfg.depth cfg.dir;
+
+  entryNames = lib.concatMapStringsSep " " (e: e.name) entries;
 in
 
 {
   imports = [ ./options.nix ];
 
-  config = lib.mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = !lib.hasPrefix "~" cfg.dir;
-        message = ''
-          skills.dir "${cfg.dir}" uses '~' which is not expanded here.
-          Use an absolute path instead.
-        '';
-      }
-      {
-        assertion = lib.all (t: !lib.hasPrefix "~" t) cfg.symlink.targets;
-        message = ''
-          skills.symlink.targets contains '~' paths which are not expanded here.
-          Use absolute paths instead.
-        '';
-      }
-    ];
+  config =
+    lib.mkIf cfg.enable {
 
-    system.activationScripts.skills.text =
-      let
-        resolvedDir = cfg.dir;
-      in
-      ''
-        mkdir -p '${resolvedDir}'
+      assertions = [
+        {
+          assertion = !lib.hasPrefix "~" cfg.dir;
+          message = ''
+            skills.dir "${cfg.dir}" uses '~' which is not expanded here.
+            Use an absolute path instead.
+          '';
+        }
+        {
+          assertion = lib.all (t: !lib.hasPrefix "~" t) cfg.symlink.targets;
+          message = ''
+            skills.symlink.targets contains '~' paths which are not expanded here.
+            Use absolute paths instead.
+          '';
+        }
+      ];
+
+      system.activationScripts.skills.text = ''
+        mkdir -p '${cfg.dir}'
       ''
       + lib.concatStringsSep "\n" (
         map (e: ''
@@ -47,10 +47,10 @@ in
         '') entries
       )
       + lib.optionalString (entries != [ ]) ''
-        if [ -d '${resolvedDir}' ]; then
-          for entry in '${resolvedDir}'/*; do
+        if [ -d '${cfg.dir}' ]; then
+          for entry in '${cfg.dir}'/*; do
             [ -L "$entry" ] || continue
-            case " ${lib.concatStringsSep " " (map (e: e.name) entries)} " in
+            case " ${entryNames} " in
               *" $entry "* ) ;;
               * ) rm -f "$entry" ;;
             esac
@@ -61,9 +61,19 @@ in
         lib.concatStringsSep "\n" (
           map (target: ''
             mkdir -p "$(dirname '${target}')"
-            ln -sfn '${resolvedDir}' '${target}'
+            ln -sfn '${cfg.dir}' '${target}'
           '') cfg.symlink.targets
         )
       );
-  };
+    }
+    // lib.mkIf (!cfg.enable) {
+      system.activationScripts.skills-cleanup.text =
+        lib.concatStringsSep "\n" (map (e: "rm -f '${e.name}'") entries)
+        + ''
+          rm -rf '${cfg.dir}'
+        ''
+        + lib.optionalString cfg.symlink.enable (
+          lib.concatStringsSep "\n" (map (target: "rm -f '${target}'") cfg.symlink.targets)
+        );
+    };
 }
