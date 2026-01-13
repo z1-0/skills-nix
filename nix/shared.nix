@@ -3,7 +3,7 @@
 let
   registryJson = builtins.fromJSON (builtins.readFile ../registry.json);
 
-  parseSkill =
+  parse =
     skill:
     let
       atParts = lib.splitString "@" skill;
@@ -49,7 +49,7 @@ let
       hash = entry.hash;
     };
 
-  readSkillName =
+  extractNameFromSKILL =
     defaultName: skillDir:
     let
       mdPath = "${skillDir}/SKILL.md";
@@ -102,12 +102,16 @@ let
   discoverSkills =
     parsed: repoPath: depth:
     let
-
       flatSkills = findSkillsInDir repoPath 1;
       hasRootSkill = builtins.pathExists "${repoPath}/SKILL.md";
       rootSkill =
         if hasRootSkill then
-          [{ name = parsed.name; path = "."; }]
+          [
+            {
+              name = parsed.name;
+              path = ".";
+            }
+          ]
         else
           [ ];
       skillsDir = "${repoPath}/skills";
@@ -123,12 +127,12 @@ let
     if allSkills == [ ] then
       throw "No skills found in '${repoPath}'"
     else
-      map (s: s // { name = readSkillName s.name "${repoPath}/${s.path}"; }) allSkills;
+      map (s: s // { name = extractNameFromSKILL s.name "${repoPath}/${s.path}"; }) allSkills;
 
-  processEntry =
+  resolveSkill =
     depth: skill: resolvedDir:
     let
-      parsed = parseSkill skill;
+      parsed = parse skill;
       entry = getRegistryEntry parsed;
       repoPath = fetchRepo parsed entry;
       discovered = discoverSkills parsed repoPath depth;
@@ -147,7 +151,7 @@ let
         source = skill;
       }) matched;
 
-  detectConflicts =
+  assertNoConflicts =
     entries:
     let
       getName = e: lib.last (lib.splitString "/" e.name);
@@ -166,8 +170,7 @@ let
       let
         lines = lib.concatMapStringsSep "\n" (
           { name, group }:
-          "  \"${name}\" provided by:\n"
-          + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") group
+          "  \"${name}\" provided by:\n" + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") group
         ) (lib.mapAttrsToList (name: group: { inherit name group; }) conflicts);
       in
       throw ''
@@ -180,7 +183,7 @@ let
 
   buildAllFileEntries =
     install: depth: resolvedDir:
-    detectConflicts (lib.concatMap (skill: processEntry depth skill resolvedDir) install);
+    assertNoConflicts (lib.concatMap (skill: resolveSkill depth skill resolvedDir) install);
 
 in
 
