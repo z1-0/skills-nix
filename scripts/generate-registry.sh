@@ -2,68 +2,91 @@
 set -euo pipefail
 
 API_URL="https://skills-nix.vercel.app/api/repos.json"
-WORKERS=16
+BATCH=25
+MAX_RETRIES=3
 
 log() { echo "$*" >&2; }
 
-resolve_ref() {
-  local repo="$1" failed_file="$2"
-  local owner="${repo%%/*}" name="${repo##*/}"
-  owner="${owner,,}" name="${name,,}"
-  local base="https://github.com/${owner}/${name}.git"
+fetch_batch() {
+  local query="$1"
+  local attempt=0
 
-  for ref in HEAD refs/heads/main refs/heads/master; do
-    local sha
-    sha=$(git ls-remote "$base" "$ref" 2>/dev/null | head -1 | cut -f1)
-    if [[ -n "$sha" ]]; then
-      echo "https://github.com/${owner}/${name}/archive/${sha}.tar.gz"
+  while (( attempt < MAX_RETRIES )); do
+    local resp
+    if resp=$(gh api graphql -f query="$query" 2>&1); then
+      echo "$resp"
       return 0
+    fi
+
+    attempt=$((attempt + 1))
+    if (( attempt < MAX_RETRIES )); then
+      log "    Retry ${attempt}/${MAX_RETRIES}..."
+      sleep $((attempt * 5))
     fi
   done
 
-  local sha
-  sha=$(git ls-remote --tags "$base" 2>/dev/null | tail -1 | cut -f1)
-  if [[ -n "$sha" ]]; then
-    echo "https://github.com/${owner}/${name}/archive/${sha}.tar.gz"
-    return 0
-  fi
-  echo "$repo" >>"$failed_file"
+  log "    Failed after ${MAX_RETRIES} retries:"
+  log "    ${resp}"
   return 1
 }
 
-log "Finding repos..."
-repos=$(curl -sfL "$API_URL" | jq -r '.repos[]')
-count=$(echo "$repos" | wc -l)
-log "Found ${count} repos"
+log "Fetching repos..."
+mapfile -t repos < <(curl -sfL "$API_URL" | jq -r '.repos[]')
+total=${#repos[@]}
+batches=$(( (total + BATCH - 1) / BATCH ))
+log "Found ${total} repos, ${batches} batches"
 
-log "Finding refs..."
-touch failed.txt urls.txt
-export -f resolve_ref
-echo "$repos" | xargs -P "$WORKERS" -I {} bash -c "resolve_ref '{}' failed.txt >> urls.txt" 2>/dev/null || true
-refs=$(wc -l <urls.txt)
-failed=$(wc -l <failed.txt)
-log "Found ${refs}/${count} refs, ${failed} failed"
+log "Querying GraphQL..."
+for (( i=0; i<total; i+=BATCH )); do
+  log "  Batch $(( i / BATCH + 1 ))/${batches}..."
+
+  query="{"
+  for (( j=i; j<i+BATCH && j<total; j++ )); do
+    IFS='/' read -r owner name <<< "${repos[$j]}"
+    query+="r${j}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
+  done
+  query+="}"
+
+  resp=$(fetch_batch "$query") || continue
+
+  echo "$resp" | jq -r '
+    .data | to_entries[] |
+    select(.value.nameWithOwner != null) |
+    [.key[1:], .value.nameWithOwner, .value.defaultBranchRef.target.oid] | @tsv
+  ' | while IFS=$'\t' read -r idx canonical sha; do
+    input="${repos[$idx]}"
+    echo "https://github.com/${canonical}/archive/${sha}.tar.gz"
+
+    if [[ "$canonical" != "$input" ]]; then
+      echo "${input,,} -> ${canonical,,}" >> redirects.txt
+    fi
+  done >> urls.txt
+done
+
+log "Got $(wc -l < urls.txt) refs, $(wc -l < redirects.txt) redirects"
 
 log "Fetching hashes..."
-nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <urls.txt >hashes.json
+nix run github:z1-0/nix-bulkfetch-url -- --unpack --json < urls.txt > hashes.json
 
 log "Building registry..."
-jq -n --slurpfile hashes hashes.json '
-    ($hashes[0] | map({
-        repo: (.url | split("/") | .[3:5] | join("/")),
-        rev: (.url | split("/")[-1] | split(".tar")[0]),
-        hash: .hash
-    })) | reduce .[] as $e ({}; . + {
-        ($e.repo): { rev: $e.rev, hash: $e.hash }
-    }) | {
-        updatedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
-        repos: (to_entries | sort_by(.key) | from_entries)
-    }
-' >registry.json
-
-if [[ -s failed.txt ]]; then
-  log "Failed repos:"
-  cat failed.txt >&2
-fi
+jq -n \
+  --slurpfile hashes hashes.json \
+  --rawfile redirects redirects.txt '
+  ($hashes[0] | map({
+      key: (.url | split("/") | .[3:5] | join("/")),
+      value: {
+          rev: (.url | split("/")[-1] | split(".tar")[0]),
+          hash: .hash
+      }
+  }) | from_entries) as $hashes |
+  ([$redirects | split("\n")[] | select(length > 0) | split(" -> ") |
+    { key: .[0], value: .[1] }] | from_entries) as $redirects |
+  reduce ($redirects | to_entries[]) as $r ($hashes;
+    . + { ($r.key): $hashes[$r.value] }
+  ) | {
+    updatedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
+    repos: (to_entries | sort_by(.key) | from_entries)
+  }
+' > registry.json
 
 log "Done: registry.json"
