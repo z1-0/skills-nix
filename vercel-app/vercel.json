@@ -1,4 +1,4 @@
 {
-  "ignoreCommand": "git diff --quiet $VERCEL_GIT_PREVIOUS_SHA $VERCEL_GIT_COMMIT_SHA -- vercel-app/",
+  "ignoreCommand": "git rev-parse --verify $VERCEL_GIT_PREVIOUS_SHA >/dev/null 2>&1 && git diff --quiet $VERCEL_GIT_PREVIOUS_SHA $VERCEL_GIT_COMMIT_SHA -- vercel-app/ || exit 1",
   "rewrites": [{ "source": "/api/:path*", "destination": "/api/proxy" }]
 }

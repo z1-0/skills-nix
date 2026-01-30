@@ -53,12 +53,12 @@ for (( i=0; i<total; i+=BATCH )); do
     .data | to_entries[] |
     select(.value.nameWithOwner != null) |
     [.key[1:], .value.nameWithOwner, .value.defaultBranchRef.target.oid] | @tsv
-  ' | while IFS=$'\t' read -r idx canonical sha; do
+  ' | while IFS=$'\t' read -r idx redirect_target sha; do
     input="${repos[$idx]}"
-    echo "https://github.com/${canonical}/archive/${sha}.tar.gz"
+    echo "https://github.com/${redirect_target}/archive/${sha}.tar.gz"
 
-    if [[ "$canonical" != "$input" ]]; then
-      echo "${input,,} -> ${canonical,,}" >> redirects.txt
+    if [[ "$redirect_target" != "$input" ]]; then
+      echo "${input} -> ${redirect_target}" >> redirects.txt
     fi
   done >> urls.txt
 done
@@ -85,7 +85,7 @@ jq -n \
     . + { ($r.key): $hashes[$r.value] }
   ) | {
     updatedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
-    repos: (to_entries | sort_by(.key) | from_entries)
+    repos: (to_entries | map(.key = (.key | ascii_downcase)) | sort_by(.key) | from_entries)
   }
 ' > registry.json
 
