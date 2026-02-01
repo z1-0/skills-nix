@@ -13,7 +13,7 @@ fetch_batch() {
 
   while (( attempt < MAX_RETRIES )); do
     local resp
-    if resp=$(gh api graphql -f query="$query" 2>&1); then
+    if resp=$(gh api graphql -f query="$query" 2>/dev/null); then
       echo "$resp"
       return 0
     fi
@@ -25,8 +25,10 @@ fetch_batch() {
     fi
   done
 
-  log "    Failed after ${MAX_RETRIES} retries:"
-  log "    ${resp}"
+  log "    Failed after ${MAX_RETRIES} retries."
+  echo "$resp" | jq -r '.errors[]? | "    \(.type): \(.message)"' 2>/dev/null | while IFS= read -r line; do
+    log "$line"
+  done
   return 1
 }
 
@@ -50,15 +52,23 @@ for (( i=0; i<total; i+=BATCH )); do
   resp=$(fetch_batch "$query") || continue
 
   echo "$resp" | jq -r '
+    (.errors // []) | map({key: .path[0], message: .message}) | from_entries as $errs |
     .data | to_entries[] |
-    select(.value.nameWithOwner != null) |
-    [.key[1:], .value.nameWithOwner, .value.defaultBranchRef.target.oid] | @tsv
-  ' | while IFS=$'\t' read -r idx redirect_target sha; do
-    input="${repos[$idx]}"
-    echo "https://github.com/${redirect_target}/archive/${sha}.tar.gz"
+    if .value == null then
+      "ERR\t\(.key[1:])\t\($errs[.key] // "Unknown error")"
+    else
+      "OK\t\(.key[1:])\t\(.value.nameWithOwner)\t\(.value.defaultBranchRef.target.oid)"
+    end
+  ' 2>/dev/null | while IFS=$'\t' read -r status idx arg1 arg2; do
+    if [[ "$status" == "OK" ]]; then
+      input="${repos[$idx]}"
+      echo "https://github.com/${arg1}/archive/${arg2}.tar.gz"
 
-    if [[ "$redirect_target" != "$input" ]]; then
-      echo "${input} -> ${redirect_target}" >> redirects.txt
+      if [[ "$arg1" != "$input" ]]; then
+        echo "${input} -> ${arg1}" >> redirects.txt
+      fi
+    else
+      log "    Error: ${repos[$idx]} — ${arg1}"
     fi
   done >> urls.txt
 done
