@@ -29,7 +29,7 @@ jobs:
             experimental-features = nix-command flakes
 
       - name: Generate registry
-        run: bash scripts/generate-registry.sh
+        run: ./scripts/generate-registry.sh
 
       - name: Commit and push
         if: success()
