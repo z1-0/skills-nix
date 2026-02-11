@@ -13,24 +13,23 @@ let
     path:
     if lib.hasPrefix "~" path then "${config.home.homeDirectory}${lib.removePrefix "~" path}" else path;
 
-  allFileEntries = lib.listToAttrs (
+  resolvedDir = resolvePath cfg.dir;
+
+  skillSources = lib.listToAttrs (
     map (
       e:
       lib.nameValuePair e.name {
         source = e.storePath;
         recursive = true;
       }
-    ) (shared.buildAllFileEntries cfg.install cfg.depth (resolvePath cfg.dir))
+    ) (shared.buildAllFileEntries cfg.install cfg.depth resolvedDir)
   );
 
-  symlinkTargets = map resolvePath cfg.symlink.targets;
-  symlinkEntries =
-    if !cfg.symlink.enable then
-      { }
-    else
-      lib.genAttrs symlinkTargets (target: {
-        source = config.lib.file.mkOutOfStoreSymlink (resolvePath cfg.dir);
-      });
+  agentLinks = lib.optionalAttrs cfg.symlink.enable (
+    lib.genAttrs (map resolvePath cfg.symlink.targets) (_: {
+      source = config.lib.file.mkOutOfStoreSymlink resolvedDir;
+    })
+  );
 in
 
 {
@@ -95,8 +94,8 @@ in
 
   config = lib.mkIf cfg.enable {
     home.file = lib.mkMerge [
-      allFileEntries
-      symlinkEntries
+      skillSources
+      agentLinks
     ];
   };
 }
