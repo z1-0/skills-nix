@@ -24,20 +24,19 @@ let
       };
 
   getRegistryEntry =
-    parsed:
+    registryKey:
     let
-      entry = registryJson.repos.${parsed.registryKey} or null;
+      entry = registryJson.repos.${registryKey} or null;
     in
     if entry == null then
-      throw "Skill repo '${parsed.registryKey}' not found in registry"
+      throw "Skill repo '${registryKey}' not found in registry"
     else
       entry;
 
   fetchRepo =
-    parsed: entry:
+    owner: repo: entry:
     pkgs.fetchFromGitHub {
-      owner = parsed.owner;
-      repo = parsed.repo;
+      inherit owner repo;
       rev = entry.rev;
       hash = entry.hash;
     };
@@ -65,7 +64,7 @@ let
     if unquoted != "" then unquoted else defaultName;
 
   findSkillsInDir =
-    dir: depth:
+    dir:
     let
       entries = builtins.readDir dir;
       names = builtins.attrNames (lib.filterAttrs (n: v: v == "directory") entries);
@@ -78,29 +77,37 @@ let
         in
         if builtins.hasAttr "SKILL.md" subEntries then
           [{ inherit name; path = name; }]
-        else if depth != 0 && depth != 1 && builtins.length subdirs > 0 then
-          map (s: s // { path = "${name}/${s.path}"; }) (
-            findSkillsInDir subPath (if depth == -1 then -1 else depth - 1)
-          )
+        else if builtins.length subdirs > 0 then
+          map (s: s // { path = "${name}/${s.path}"; }) (findSkillsInDir subPath)
         else
           [ ];
     in
     lib.concatMap checkDir names;
 
   discoverSkills =
-    parsed: repoPath: depth:
+    name: repoPath:
     let
-      flatSkills = findSkillsInDir repoPath 1;
+      rootEntries = builtins.readDir repoPath;
+      rootDirs = builtins.attrNames (lib.filterAttrs (n: v: v == "directory") rootEntries);
+      flatSkills =
+        lib.concatMap
+          (dirName:
+            let subEntries = builtins.readDir "${repoPath}/${dirName}";
+            in
+            if builtins.hasAttr "SKILL.md" subEntries then
+              [{ inherit name; path = dirName; }]
+            else
+              [ ]
+          ) rootDirs;
       rootSkill =
         if builtins.pathExists "${repoPath}/SKILL.md" then
-          [{ name = parsed.name; path = "."; }]
+          [{ inherit name; path = "."; }]
         else
           [ ];
       skillsDir = "${repoPath}/skills";
-      searchDepth = if depth <= 0 then -1 else depth;
       nestedSkills =
         if builtins.pathExists skillsDir then
-          map (s: s // { path = "skills/${s.path}"; }) (findSkillsInDir skillsDir searchDepth)
+          map (s: s // { path = "skills/${s.path}"; }) (findSkillsInDir skillsDir)
         else
           [ ];
       allSkills = flatSkills ++ nestedSkills ++ rootSkill;
@@ -111,12 +118,12 @@ let
       map (s: s // { name = extractNameFromSKILL s.name "${repoPath}/${s.path}"; }) allSkills;
 
   resolveSkill =
-    depth: skill: resolvedDir:
+    skill: resolvedDir:
     let
       parsed = parse skill;
-      entry = getRegistryEntry parsed;
-      repoPath = fetchRepo parsed entry;
-      discovered = discoverSkills parsed repoPath depth;
+      entry = getRegistryEntry parsed.registryKey;
+      repoPath = fetchRepo parsed.owner parsed.repo entry;
+      discovered = discoverSkills parsed.name repoPath;
       matched =
         if parsed.specificName != null then
           builtins.filter (s: s.name == parsed.specificName) discovered
@@ -157,8 +164,8 @@ let
       '';
 
   buildAllFileEntries =
-    install: depth: resolvedDir:
-    assertNoConflicts (lib.concatMap (skill: resolveSkill depth skill resolvedDir) install);
+    install: resolvedDir:
+    assertNoConflicts (lib.concatMap (skill: resolveSkill skill resolvedDir) install);
 
 in
 

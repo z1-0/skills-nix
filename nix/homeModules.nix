@@ -15,15 +15,15 @@ let
 
   resolvedDir = resolvePath cfg.dir;
 
-  skillSources = lib.listToAttrs (
-    map (
-      e:
-      lib.nameValuePair e.name {
-        source = e.storePath;
-        recursive = true;
-      }
-    ) (shared.buildAllFileEntries cfg.install cfg.depth resolvedDir)
-  );
+   skillSources = lib.listToAttrs (
+     map (
+       e:
+       lib.nameValuePair e.name {
+         source = e.storePath;
+         recursive = true;
+       }
+     ) (shared.buildAllFileEntries cfg.install resolvedDir)
+   );
 
   agentLinks = lib.optionalAttrs cfg.symlink.enable (
     lib.genAttrs (map resolvePath cfg.symlink.targets) (_: {
@@ -59,17 +59,7 @@ in
       '';
     };
 
-    depth = lib.mkOption {
-      type = lib.types.int;
-      default = 2;
-      description = ''
-        Search depth for skill discovery in skills/ directory.
-        Root directory is always scanned 1 level deep.
-        Use <= 0 for full recursion.
-      '';
-    };
-
-    symlink = {
+     symlink = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = false;

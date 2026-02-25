@@ -31,13 +31,7 @@
     # Default: "~/.agents/skills"
     dir = "~/.agents/skills";
 
-    # Search depth for skill discovery in skills/ directory
-    # Root directory is always scanned 1 level deep
-    # Use <= 0 for full recursion
-    # Default: 2
-    depth = 2;
-
-    # Symlink configuration
+     # Symlink configuration
     symlink = {
       # Whether to create symlinks from agent directories
       # to the install directory
