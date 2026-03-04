@@ -63,6 +63,20 @@ let
     in
     if unquoted != "" then unquoted else defaultName;
 
+  findSKILLsAtLevel = dir:
+    let
+      names =
+        builtins.attrNames (lib.filterAttrs (n: v: v == "directory") (builtins.readDir dir));
+      checkDir = name:
+        let subEntries = builtins.readDir "${dir}/${name}";
+        in
+        if builtins.hasAttr "SKILL.md" subEntries then
+          [{ inherit name; path = name; }]
+        else
+          [ ];
+    in
+    lib.concatMap checkDir names;
+
   findSkillsInDir =
     dir:
     let
@@ -87,18 +101,7 @@ let
   discoverSkills =
     name: repoPath:
     let
-      rootEntries = builtins.readDir repoPath;
-      rootDirs = builtins.attrNames (lib.filterAttrs (n: v: v == "directory") rootEntries);
-      flatSkills =
-        lib.concatMap
-          (dirName:
-            let subEntries = builtins.readDir "${repoPath}/${dirName}";
-            in
-            if builtins.hasAttr "SKILL.md" subEntries then
-              [{ inherit name; path = dirName; }]
-            else
-              [ ]
-          ) rootDirs;
+      flatSkills = findSKILLsAtLevel repoPath;
       rootSkill =
         if builtins.pathExists "${repoPath}/SKILL.md" then
           [{ inherit name; path = "."; }]
@@ -124,14 +127,15 @@ let
       entry = getRegistryEntry parsed.registryKey;
       repoPath = fetchRepo parsed.owner parsed.repo entry;
       discovered = discoverSkills parsed.name repoPath;
+      specificName = parsed.specificName;
       matched =
-        if parsed.specificName != null then
-          builtins.filter (s: s.name == parsed.specificName) discovered
+        if specificName != null then
+          builtins.filter (s: s.name == specificName) discovered
         else
           discovered;
     in
-    if parsed.specificName != null && matched == [ ] then
-      throw "Skill '${parsed.specificName}' not found in '${parsed.registryKey}'"
+    if specificName != null && matched == [ ] then
+      throw "Skill '${specificName}' not found in '${parsed.registryKey}'"
     else
       map (s: {
         name = "${resolvedDir}/${s.name}";
@@ -148,9 +152,9 @@ let
         in acc // { ${n} = (acc.${n} or [ ]) ++ [ e ]; }
       ) { } entries;
       conflicts = lib.filterAttrs (_: g: builtins.length g > 1) grouped;
-      formatConflict = { name, group }:
-        "  \"${name}\" provided by:\n"
-        + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") group;
+       formatConflict = { name, value }:
+         "  \"${name}\" provided by:\n"
+         + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") value;
     in
     if conflicts == { } then
       entries
@@ -158,7 +162,7 @@ let
       throw ''
         Conflicting skill names detected:
 
-        ${lib.concatMapStringsSep "\n" formatConflict (lib.mapAttrsToList (name: group: { inherit name group; }) conflicts)}
+        ${lib.concatMapStringsSep "\n" formatConflict (lib.attrsToList conflicts)}
 
         Fix: use owner/repo@skillName to disambiguate.
       '';

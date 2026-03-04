@@ -15,14 +15,14 @@ let
 
   resolvedDir = resolvePath cfg.dir;
 
-   skillSources = lib.listToAttrs (
-     map (
-       e:
-       lib.nameValuePair e.name {
-         source = e.storePath;
-         recursive = true;
-       }
-     ) (shared.buildAllFileEntries cfg.install resolvedDir)
+  skillSources = lib.listToAttrs (
+    map (
+      e:
+      lib.nameValuePair e.name {
+        source = e.storePath;
+        recursive = true;
+      }
+    ) (shared.buildAllFileEntries cfg.install resolvedDir)
    );
 
   agentLinks = lib.optionalAttrs cfg.symlink.enable (
