@@ -63,20 +63,6 @@ let
     in
     if unquoted != "" then unquoted else defaultName;
 
-  findSKILLsAtLevel = dir:
-    let
-      names =
-        builtins.attrNames (lib.filterAttrs (n: v: v == "directory") (builtins.readDir dir));
-      checkDir = name:
-        let subEntries = builtins.readDir "${dir}/${name}";
-        in
-        if builtins.hasAttr "SKILL.md" subEntries then
-          [{ inherit name; path = name; }]
-        else
-          [ ];
-    in
-    lib.concatMap checkDir names;
-
   findSkillsInDir =
     dir:
     let
@@ -101,7 +87,18 @@ let
   discoverSkills =
     name: repoPath:
     let
-      flatSkills = findSKILLsAtLevel repoPath;
+      rootEntries = builtins.readDir repoPath;
+      rootDirs = builtins.attrNames (lib.filterAttrs (n: v: v == "directory") rootEntries);
+      flatSkills =
+        lib.concatMap
+          (dirName:
+            let subEntries = builtins.readDir "${repoPath}/${dirName}";
+            in
+            if builtins.hasAttr "SKILL.md" subEntries then
+              [{ inherit name; path = dirName; }]
+            else
+              [ ]
+          ) rootDirs;
       rootSkill =
         if builtins.pathExists "${repoPath}/SKILL.md" then
           [{ inherit name; path = "."; }]
