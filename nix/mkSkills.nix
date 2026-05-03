@@ -19,29 +19,24 @@ let
     if builtins.length parts != 2 then
       throw "Invalid skill format '${skill}': expected 'owner/repo' or 'owner/repo@skillName'"
     else
-      {
-        inherit owner repo name specificName registryKey;
-      };
+      { inherit owner repo name specificName registryKey; };
 
   getRegistryEntry =
     registryKey:
     let
       entry = registryJson.repos.${registryKey} or null;
     in
-    if entry == null then
-      throw "Skill repo '${registryKey}' not found in registry"
-    else
-      entry;
+    if entry == null then throw "Skill repo '${registryKey}' not found in registry" else entry;
 
   fetchRepo =
     owner: repo: entry:
     pkgs.fetchFromGitHub {
       inherit owner repo;
-      rev = entry.rev;
-      hash = entry.hash;
+      inherit (entry) hash rev;
     };
 
-  extractNameFromSKILL = defaultName: skillDir:
+  extractNameFromSKILL =
+    defaultName: skillDir:
     let
       mdPath = "${skillDir}/SKILL.md";
       parts =
@@ -50,20 +45,22 @@ let
         if builtins.length parts >= 3 then lib.splitString "\n" (builtins.elemAt parts 1) else [ ];
       nameLine = lib.findFirst (line: (builtins.match "[[:space:]]*name:.*" line) != null) null fmLines;
     in
-    if nameLine == null then defaultName else
-    let
-      trimmed = builtins.head (builtins.match "[[:space:]]*name:[[:space:]]*(.*)" nameLine);
-      unquoted =
-        if lib.hasPrefix "\"" trimmed then
-          builtins.head (builtins.match "\"([^\"]*)\".*" trimmed)
-        else if lib.hasPrefix "'" trimmed then
-          builtins.head (builtins.match "'([^']*)'.*" trimmed)
-        else
-          trimmed;
-    in
-    if unquoted != "" then unquoted else defaultName;
+    if nameLine == null then
+      defaultName
+    else
+      let
+        trimmed = builtins.head (builtins.match "[[:space:]]*name:[[:space:]]*(.*)" nameLine);
+        unquoted =
+          if lib.hasPrefix "\"" trimmed then
+            builtins.head (builtins.match "\"([^\"]*)\".*" trimmed)
+          else if lib.hasPrefix "'" trimmed then
+            builtins.head (builtins.match "'([^']*)'.*" trimmed)
+          else
+            trimmed;
+      in
+      if unquoted != "" then unquoted else defaultName;
 
-  findSkillsInDir =
+  findSkillDirs =
     dir:
     let
       entries = builtins.readDir dir;
@@ -76,9 +73,9 @@ let
           subdirs = builtins.attrNames (lib.filterAttrs (n: v: v == "directory") subEntries);
         in
         if builtins.hasAttr "SKILL.md" subEntries then
-          [{ inherit name; path = name; }]
+          [ { inherit name; path = name; } ]
         else if builtins.length subdirs > 0 then
-          map (s: s // { path = "${name}/${s.path}"; }) (findSkillsInDir subPath)
+          map (s: s // { path = "${name}/${s.path}"; }) (findSkillDirs subPath)
         else
           [ ];
     in
@@ -89,25 +86,25 @@ let
     let
       rootEntries = builtins.readDir repoPath;
       rootDirs = builtins.attrNames (lib.filterAttrs (n: v: v == "directory") rootEntries);
-      flatSkills =
-        lib.concatMap
-          (dirName:
-            let subEntries = builtins.readDir "${repoPath}/${dirName}";
-            in
-            if builtins.hasAttr "SKILL.md" subEntries then
-              [{ inherit name; path = dirName; }]
-            else
-              [ ]
-          ) rootDirs;
+      flatSkills = lib.concatMap (
+        dirName:
+        let
+          subEntries = builtins.readDir "${repoPath}/${dirName}";
+        in
+        if builtins.hasAttr "SKILL.md" subEntries then
+          [ { inherit name; path = dirName; } ]
+        else
+          [ ]
+      ) rootDirs;
       rootSkill =
         if builtins.pathExists "${repoPath}/SKILL.md" then
-          [{ inherit name; path = "."; }]
+          [ { inherit name; path = "."; } ]
         else
           [ ];
       skillsDir = "${repoPath}/skills";
       nestedSkills =
         if builtins.pathExists skillsDir then
-          map (s: s // { path = "skills/${s.path}"; }) (findSkillsInDir skillsDir)
+          map (s: s // { path = "skills/${s.path}"; }) (findSkillDirs skillsDir)
         else
           [ ];
       allSkills = flatSkills ++ nestedSkills ++ rootSkill;
@@ -125,11 +122,7 @@ let
       repoPath = fetchRepo parsed.owner parsed.repo entry;
       discovered = discoverSkills parsed.name repoPath;
       specificName = parsed.specificName;
-      matched =
-        if specificName != null then
-          builtins.filter (s: s.name == specificName) discovered
-        else
-          discovered;
+      matched = if specificName != null then builtins.filter (s: s.name == specificName) discovered else discovered;
     in
     if specificName != null && matched == [ ] then
       throw "Skill '${specificName}' not found in '${parsed.registryKey}'"
@@ -144,14 +137,17 @@ let
     entries:
     let
       getName = e: lib.last (lib.splitString "/" e.name);
-      grouped = lib.foldl' (acc: e:
-        let n = getName e;
-        in acc // { ${n} = (acc.${n} or [ ]) ++ [ e ]; }
+      grouped = lib.foldl' (
+        acc: e:
+        let
+          n = getName e;
+        in
+        acc // { ${n} = (acc.${n} or [ ]) ++ [ e ]; }
       ) { } entries;
       conflicts = lib.filterAttrs (_: g: builtins.length g > 1) grouped;
-       formatConflict = { name, value }:
-         "  \"${name}\" provided by:\n"
-         + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") value;
+      formatConflict =
+        { name, value }:
+        "  \"${name}\" provided by:\n" + lib.concatMapStringsSep "\n" (e: "    - ${e.source}") value;
     in
     if conflicts == { } then
       entries
@@ -164,12 +160,8 @@ let
         Fix: use owner/repo@skillName to disambiguate.
       '';
 
-  buildAllFileEntries =
-    install: resolvedDir:
-    assertNoConflicts (lib.concatMap (skill: resolveSkill skill resolvedDir) install);
-
 in
 
-{
-  inherit buildAllFileEntries;
-}
+install: resolvedDir:
+
+assertNoConflicts (lib.concatMap (skill: resolveSkill skill resolvedDir) install)

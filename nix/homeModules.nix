@@ -7,7 +7,7 @@
 
 let
   cfg = config.skills;
-  shared = import ./shared.nix { inherit lib pkgs; };
+  mkSkills = import ./mkSkills.nix { inherit lib pkgs; };
 
   resolvePath =
     path:
@@ -22,8 +22,8 @@ let
         source = e.storePath;
         recursive = true;
       }
-    ) (shared.buildAllFileEntries cfg.install resolvedDir)
-   );
+    ) (mkSkills cfg.install resolvedDir)
+  );
 
   agentLinks = lib.optionalAttrs cfg.symlink.enable (
     lib.genAttrs (map resolvePath cfg.symlink.targets) (_: {
@@ -59,7 +59,7 @@ in
       '';
     };
 
-     symlink = {
+    symlink = {
       enable = lib.mkOption {
         type = lib.types.bool;
         default = false;
