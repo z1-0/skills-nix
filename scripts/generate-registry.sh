@@ -55,7 +55,7 @@ fetch_repo_urls() {
 
     local batch_out
     batch_out=$(jq -r '
-      (.errors // []) | map({key: .path[0], message: .message}) | from_entries as $errs |
+      (.errors // [] | map({key: .path[0], value: .message}) | from_entries) as $errs |
       .data | to_entries[] |
       if .value == null then
         "ERR\t\(.key[1:])\t\($errs[.key] // "Unknown error")"
