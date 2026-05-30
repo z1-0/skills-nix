@@ -69,9 +69,23 @@ in
       targets = lib.mkOption {
         type = lib.types.listOf lib.types.str;
         default = [
-          "~/.continue/skills"
-          "~/.cursor/skills"
+          "~/.aider/skills"
+          "~/.amazonq/skills"
+          "~/.augment/skills"
+          "~/.claude/skills"
+          "~/.cline/skills"
           "~/.codeium/windsurf/skills"
+          "~/.codex/skills"
+          "~/.config/opencode/skills"
+          "~/.continue/skills"
+          "~/.copilot/skills"
+          "~/.cursor/skills"
+          "~/.gemini/skills"
+          "~/.kilocode/skills"
+          "~/.openclaw/skills"
+          "~/.pi/agent/skills"
+          "~/.roo/skills"
+          "~/.sourcegraph/skills"
         ];
         description = ''
           List of directories to symlink to the install directory.
