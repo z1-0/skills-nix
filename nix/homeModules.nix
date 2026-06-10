@@ -54,8 +54,7 @@ in
       default = "~/.agents/skills";
       description = ''
         Installation directory for skills.
-        Supports ~ for home directory (home-manager only).
-        On NixOS/nix-darwin, use an absolute path.
+        Supports ~ for home directory expansion.
       '';
     };
 
@@ -89,8 +88,7 @@ in
         ];
         description = ''
           List of directories to symlink to the install directory.
-          Supports ~ for home directory (home-manager only).
-          On NixOS/nix-darwin, use absolute paths.
+          Supports ~ for home directory expansion.
         '';
       };
     };
