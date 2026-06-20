@@ -25,8 +25,30 @@ let
     ) (mkSkills cfg.install resolvedDir)
   );
 
-  agentLinks = lib.optionalAttrs cfg.symlink.enable (
-    lib.genAttrs (map resolvePath cfg.symlink.targets) (_: {
+  agentSkillsDirs = [
+    "~/.aider/skills"
+    "~/.amazonq/skills"
+    "~/.augment/skills"
+    "~/.claude/skills"
+    "~/.cline/skills"
+    "~/.codeium/windsurf/skills"
+    "~/.codex/skills"
+    "~/.config/opencode/skills"
+    "~/.continue/skills"
+    "~/.copilot/skills"
+    "~/.cursor/skills"
+    "~/.gemini/skills"
+    "~/.kilocode/skills"
+    "~/.openclaw/skills"
+    "~/.pi/agent/skills"
+    "~/.roo/skills"
+    "~/.sourcegraph/skills"
+  ];
+
+  symlinkTargets = lib.optionals cfg.enableAgentSymlinks agentSkillsDirs ++ cfg.customSymlinkTargets;
+
+  agentLinks = lib.optionalAttrs (symlinkTargets != [ ]) (
+    lib.genAttrs (map resolvePath symlinkTargets) (_: {
       source = config.lib.file.mkOutOfStoreSymlink resolvedDir;
     })
   );
@@ -34,7 +56,7 @@ in
 
 {
   options.skills = {
-    enable = lib.mkEnableOption "Declarative AI agent skills manager";
+    enable = lib.mkEnableOption "AI agent skills manager";
 
     install = lib.mkOption {
       type = lib.types.listOf lib.types.str;
@@ -44,7 +66,7 @@ in
         "mattpocock/skills@grill-me"
       ];
       description = ''
-        List of skills to install.
+        Skills to install.
         Format: "owner/repo" or "owner/repo@skillName"
       '';
     };
@@ -53,44 +75,26 @@ in
       type = lib.types.str;
       default = "~/.agents/skills";
       description = ''
-        Installation directory for skills.
-        Supports ~ for home directory expansion.
+        Install directory.
+        ~ expands to home.
       '';
     };
 
-    symlink = {
-      enable = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-        description = "Whether to create symlinks from target directories to the install directory.";
-      };
+    enableAgentSymlinks = lib.mkEnableOption ''
+      symlinks for known AI agent skill directories:
+      aider, amazonq, augment, claude, cline, codeium/windsurf, codex,
+      opencode, continue, copilot, cursor, gemini, kilocode, openclaw,
+      pi/agent, roo, sourcegraph
+    '';
 
-      targets = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [
-          "~/.aider/skills"
-          "~/.amazonq/skills"
-          "~/.augment/skills"
-          "~/.claude/skills"
-          "~/.cline/skills"
-          "~/.codeium/windsurf/skills"
-          "~/.codex/skills"
-          "~/.config/opencode/skills"
-          "~/.continue/skills"
-          "~/.copilot/skills"
-          "~/.cursor/skills"
-          "~/.gemini/skills"
-          "~/.kilocode/skills"
-          "~/.openclaw/skills"
-          "~/.pi/agent/skills"
-          "~/.roo/skills"
-          "~/.sourcegraph/skills"
-        ];
-        description = ''
-          List of directories to symlink to the install directory.
-          Supports ~ for home directory expansion.
-        '';
-      };
+    customSymlinkTargets = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = [ ];
+      example = [ "~/.local/share/my-agent/skills" ];
+      description = ''
+        Extra directories to symlink. Use with enableAgentSymlinks.
+        ~ expands to home.
+      '';
     };
   };
 

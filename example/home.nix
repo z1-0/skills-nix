@@ -1,44 +1,25 @@
-# Example configuration for skills-nix
-#
-# Add this flake to your home-manager configuration:
+# Add skills-nix to your home-manager configuration:
 #
 #   inputs = {
 #     skills-nix.url = "github:z1-0/skills-nix";
 #   };
 #
-# Then import the module:
-#
 #   imports = [ inputs.skills-nix.homeModules.default ];
-#
-# And configure skills:
 { config, ... }: {
   skills = {
-    # Enable the skills manager
     enable = true;
 
-    # List of skills to install
-    # Format: "owner/repo" or "owner/repo@skillName"
     install = [
-      # Install all skills from a repo
-      # The module scans for SKILL.md files automatically
-      "vercel-labs/agent-skills"
-
-      # Install a specific skill from a multi-skill repo by name
-      "mattpocock/skills@grill-me"
+      # "owner/repo" or "owner/repo@skillName"
+      "vercel-labs/agent-skills"      # all skills from a repo
+      "mattpocock/skills@grill-me"    # a specific skill by name
     ];
 
-    # Installation directory (supports ~ for home directory)
-    # Default: "~/.agents/skills"
+    # Install directory. ~ expands to home.
     dir = "~/.agents/skills";
 
-     # Symlink configuration
     symlink = {
-      # Whether to create symlinks from agent directories
-      # to the install directory
       enable = true;
-
-      # Directories to symlink (supports ~ for home directory)
-      # These are the directories where agents look for skills
       targets = [
         "~/.claude/skills"
         "~/.cursor/skills"

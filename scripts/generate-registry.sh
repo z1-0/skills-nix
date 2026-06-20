@@ -70,7 +70,7 @@ fetch_repo_urls() {
         echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
         [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
       else
-        log "    Error: ${repos[$idx]} — ${name}"
+        log "    Error: ${repos[$idx]} - ${name}"
       fi
     done <<<"$batch_out"
   done

@@ -153,11 +153,11 @@ let
       entries
     else
       throw ''
-        Conflicting skill names detected:
+        Conflicting skill names:
 
         ${lib.concatMapStringsSep "\n" formatConflict (lib.attrsToList conflicts)}
 
-        Fix: use owner/repo@skillName to disambiguate.
+        Use owner/repo@skillName to pick one.
       '';
 
 in

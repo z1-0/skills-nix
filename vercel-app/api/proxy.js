@@ -31,16 +31,14 @@ function forwardHeaders(res, upstreamRes, names) {
 export default withGet(async (req, res) => {
   const raw = req.query.path;
   if (!raw || raw.length === 0) {
-    return res
-      .status(400)
-      .json({ error: "Path is required. Usage: /api/skills" });
+    return res.status(400).json({ error: "Path is required. Try /api/skills" });
   }
   const segments = (Array.isArray(raw) ? raw : [raw])
     .flatMap((s) => s.split("/"))
     .filter(Boolean);
 
   if (!validatePath(segments)) {
-    return res.status(400).json({ error: "Invalid path segments" });
+    return res.status(400).json({ error: "Path contains invalid segments" });
   }
 
   const path = segments.join("/");

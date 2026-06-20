@@ -1,6 +1,4 @@
-# Example flake.nix for end users
-#
-# This shows how to use skills-nix in your home-manager configuration.
+# Add skills-nix to your flake.
 {
   description = "Example home-manager configuration with skills-nix";
 
@@ -12,7 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Add skills-nix as a flake input
     skills-nix.url = "github:z1-0/skills-nix";
   };
 
@@ -32,33 +29,21 @@
         inherit pkgs;
 
         modules = [
-          # Import the skills-nix module
           skills-nix.homeModules.default
 
           # Your configuration
           {
-            # Enable and configure skills
             skills = {
               enable = true;
 
               install = [
-                # Install all skills from a repo
                 "vercel-labs/agent-skills"
-
-                # Install a specific skill by name
                 "mattpocock/skills@grill-me"
-
-                # Discover all skills under a repo sub-path
                 "mattpocock/skills/some-subtree"
               ];
 
-              # Installation directory
               dir = "~/.agents/skills";
-
-              # Search depth for discovery
               depth = 2;
-
-              # Symlink to agent directories
               symlink = {
                 enable = true;
                 targets = [
