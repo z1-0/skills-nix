@@ -5,9 +5,6 @@ on:
     - cron: "30 6 * * 0"
   workflow_dispatch:
 
-env:
-  REGISTRY_FILE: registry.json
-
 jobs:
   update-registry:
     runs-on: ubuntu-latest
@@ -25,95 +22,8 @@ jobs:
           extra_nix_config: |
             experimental-features = nix-command flakes
 
-      - name: Fetch repository list
-        id: fetch
-        run: |
-          set -euo pipefail
-
-          REPOS=$(curl -sfL "https://skills-nix.vercel.app/api/repos.json" | jq -r '.repos[]? // empty')
-
-          if [ -z "$REPOS" ]; then
-            echo "::error::Failed to fetch repos from API"
-            exit 1
-          fi
-
-          echo "$REPOS" > /tmp/repos_list.txt
-
-      - name: Build registry
-        id: build
-        run: |
-          set -euo pipefail
-
-          REPOS_FILE="/tmp/repos_list.txt"
-          FAILED_FILE=$(mktemp)
-          PARTS_DIR="/tmp/registry_parts"
-          mkdir -p "$PARTS_DIR"
-          trap 'rm -rf "$FAILED_FILE" "$PARTS_DIR"' EXIT
-
-          process_repo() {
-            local repo="${1,,}"
-            local idx="$2"
-            local owner="${repo%%/*}"
-            local name="${repo#*/}"
-            local hash=""
-
-            for attempt in 1 2 3; do
-              hash=$(nix-prefetch-url --unpack \
-                "https://github.com/$owner/$name/archive/main.tar.gz" \
-                2>/dev/null) && break
-
-              if [ "$attempt" -lt 3 ]; then
-                sleep $((attempt * 2))
-              fi
-            done
-
-            if [ -n "$hash" ]; then
-              printf '{"%s":"%s"}\n' "$repo" "$hash" > "$PARTS_DIR/${idx}.json"
-              echo "OK $repo"
-            else
-              printf '%s\n' "$repo" >> "$FAILED_FILE"
-              echo "FAIL $repo" >&2
-            fi
-          }
-
-          export -f process_repo
-          export FAILED_FILE PARTS_DIR
-
-          idx=0
-          while IFS= read -r repo; do
-            process_repo "$repo" "$idx" &
-            idx=$((idx + 1))
-            
-            if [ "$(jobs -r | wc -l)" -ge 32 ]; then
-              wait -n
-            fi
-          done < "$REPOS_FILE"
-
-          wait
-
-          find "$PARTS_DIR" -name '*.json' -print0 | \
-            xargs -0 -r jq -s 'add' > /tmp/merged_repos.json
-
-          jq --arg now "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-            '{updatedAt: $now, repos: (. // {} | to_entries | sort_by(.key) | from_entries)}' \
-            /tmp/merged_repos.json > "$REGISTRY_FILE"
-
-          SUCCESS=$(jq '.repos | length' "$REGISTRY_FILE" || echo 0)
-          FAILED=$(grep -c '^' "$FAILED_FILE" 2>/dev/null || echo 0)
-
-          echo "success=$SUCCESS" >> "$GITHUB_OUTPUT"
-          echo "failed=$FAILED" >> "$GITHUB_OUTPUT"
-
-          echo ""
-          echo "=== Summary ==="
-          echo "Success: $SUCCESS"
-          echo "Failed: $FAILED"
-
-          if [ -s "$FAILED_FILE" ]; then
-            echo ""
-            echo "::warning::Failed repositories:"
-            cat "$FAILED_FILE"
-          fi
+      - name: Generate registry
+        run: python scripts/generate-registry.py
 
       - name: Commit and push
         if: success()
@@ -121,11 +31,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet HEAD -- "$REGISTRY_FILE"; then
+          if git diff --quiet HEAD -- registry.json; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git add "$REGISTRY_FILE"
+          git add registry.json
           git commit -m "chore: update registry $(date -u +%Y-%m-%d)"
           git push origin main
