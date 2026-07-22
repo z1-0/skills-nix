@@ -142,7 +142,7 @@ def main():
                 print(f"  [{i}/{len(repos)}] {elapsed:.0f}s")
 
     elapsed = time.time() - start
-    print(f"\nDone in {elapsed:.0f}s — {len(results)} ok, {len(failed)} failed")
+    print(f"\nDone in {elapsed:.0f}s, {len(results)} ok, {len(failed)} failed")
 
     if failed:
         print("\nFailed repos:")
