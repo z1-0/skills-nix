@@ -23,7 +23,7 @@ jobs:
             experimental-features = nix-command flakes
 
       - name: Generate registry
-        run: python scripts/generate-registry.py -o registry.json
+        run: python scripts/generate-registry.py > registry.json
 
       - name: Commit and push
         if: success()
