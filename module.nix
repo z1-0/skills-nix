@@ -114,16 +114,15 @@ let
   # Discover all skills from a repo (no path specified)
   discoverSkills = skill: repoPath:
     let
-      rootSkills = findSkillsAtRoot repoPath;
-      # Check if repo root itself has a SKILL.md (single-skill repo)
+      flatSkills = findSkillsAtRoot repoPath;
       hasRootSkill = builtins.pathExists "${repoPath}/SKILL.md";
       rootSkillName = (parseSkill skill).name;
-      rootSkillEntry = if hasRootSkill then [{ name = rootSkillName; path = "."; }] else [];
+      rootSkill = if hasRootSkill then [{ name = rootSkillName; path = "."; }] else [];
       skillsDir = "${repoPath}/skills";
       skillsDirExists = builtins.pathExists skillsDir;
       searchDepth = if cfg.depth <= 0 then -1 else cfg.depth;
-      depthSkills = if skillsDirExists then findSkillsInDir skillsDir searchDepth else [];
-      allSkills = rootSkills ++ depthSkills ++ rootSkillEntry;
+      nestedSkills = if skillsDirExists then findSkillsInDir skillsDir searchDepth else [];
+      allSkills = flatSkills ++ nestedSkills ++ rootSkill;
       # Handle naming conflicts
       resolveConflict = skills: skill:
         let
