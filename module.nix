@@ -134,7 +134,7 @@ let
         { name = uniqueName; path = skill.path; };
     in
     if allSkills == [] then
-      throw "No skills found in repository (no SKILL.md files discovered)"
+      throw "No skills found in '${repoPath}' (no SKILL.md files discovered)"
     else
       # Fold to resolve conflicts
       let
