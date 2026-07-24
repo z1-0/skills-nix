@@ -53,6 +53,29 @@ let
       hash = entry.hash;
     };
 
+  # Read name from SKILL.md frontmatter, fall back to defaultName
+  readSkillName = defaultName: skillDir:
+    let
+      mdPath = "${skillDir}/SKILL.md";
+    in
+    if !builtins.pathExists mdPath then defaultName else
+    let
+      content = builtins.readFile mdPath;
+      parts = lib.splitString "---" content;
+      frontmatter = if builtins.length parts >= 3 then builtins.elemAt parts 1 else "";
+      lines = lib.splitString "\n" frontmatter;
+      nameLine = lib.findFirst (line:
+        builtins.substring 0 5 (builtins.replaceStrings [" " "\t"] ["" ""] line) == "name:"
+      ) null lines;
+    in
+    if nameLine != null then
+      let
+        value = builtins.substring 5 (builtins.stringLength nameLine - 5) nameLine;
+        name = builtins.replaceStrings ["\"" "'" " "] ["" "" ""] value;
+      in
+      if name != "" then name else defaultName
+    else defaultName;
+
   # Install a single skill directory
   installSkill = name: source:
     lib.nameValuePair "${resolvedDir}/${name}" {
@@ -143,9 +166,12 @@ let
     if allSkills == [] then
       throw "No skills found in '${skill}' (${repoPath}) - no SKILL.md files discovered"
     else
-      # Fold to resolve conflicts
+      # Resolve names from SKILL.md frontmatter, then fold to resolve conflicts
       let
-        resolved = lib.foldl' (acc: skill: acc ++ [ (resolveConflict acc skill) ]) [] allSkills;
+        withNames = map (s:
+          s // { name = readSkillName s.name "${repoPath}/${s.path}"; }
+        ) allSkills;
+        resolved = lib.foldl' (acc: skill: acc ++ [ (resolveConflict acc skill) ]) [] withNames;
       in
       resolved;
 
