@@ -154,6 +154,9 @@ let
   # Resolve the install directory
   resolvedDir = resolvePath cfg.dir;
 
+  # Check if a path contains a SKILL.md
+  hasSkillMd = p: builtins.pathExists "${p}/SKILL.md";
+
   # Process a single install entry
   processEntry = skill:
     let
@@ -161,12 +164,18 @@ let
       repoPath = fetchRepo skill;
     in
     if parsed.path != null then
-      # Direct path: install the specified subdirectory
+      # Specific path: find SKILL.md in repo/<path> or repo/skills/<path>
       let
-        skillSource = "${repoPath}/${parsed.path}";
-        skillName = parsed.name;
+        candidates = [
+          "${repoPath}/skills/${parsed.path}"
+          "${repoPath}/${parsed.path}"
+        ];
+        validCandidates = builtins.filter hasSkillMd candidates;
       in
-      [ (installSkill skillName skillSource) ]
+      if validCandidates == [] then
+        throw "Skill '${parsed.path}' not found in '${skill}'"
+      else
+        [ (installSkill parsed.name (builtins.head validCandidates)) ]
     else
       # Discovery: find all skills in the repo
       let
