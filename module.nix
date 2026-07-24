@@ -30,22 +30,16 @@ let
     };
 
   # Look up repo in registry (case-insensitive)
-  getRegistryEntry = skill:
+  getRegistryEntry = parsed:
     let
-      parsed = parseSkill skill;
-      key = parsed.registryKey;
-      entry = registryJson.repos.${key} or null;
+      entry = registryJson.repos.${parsed.registryKey} or null;
     in
     if entry == null then
-      throw "Skill repo '${key}' not found in registry. See ${toString ./registry.json} for available repos."
+      throw "Skill repo '${parsed.registryKey}' not found in registry. See ${toString ./registry.json} for available repos."
     else entry;
 
   # Fetch repo from GitHub
-  fetchRepo = skill:
-    let
-      parsed = parseSkill skill;
-      entry = getRegistryEntry skill;
-    in
+  fetchRepo = parsed: entry:
     pkgs.fetchFromGitHub {
       owner = parsed.owner;
       repo = parsed.repo;
@@ -123,14 +117,30 @@ let
     in
     lib.concatMap checkDir subdirs;
 
+  # Handle naming conflicts during skill discovery
+  resolveConflict = skills: skill:
+    let
+      existingNames = map (s: s.name) skills;
+      uniqueName = if builtins.elem skill.name existingNames then
+        # Append parent directory name to resolve conflict
+        let parts = lib.splitString "/" skill.path;
+        in if builtins.length parts > 1 then
+          lib.last (lib.init parts) + "-" + skill.name
+        else
+          skill.name + "-1"
+      else
+        skill.name;
+    in
+    { name = uniqueName; path = skill.path; };
+
   # Discover all skills from a repo (no path specified)
-  discoverSkills = skill: repoPath:
+  discoverSkills = parsed: repoPath:
     let
       # Scan repo/*/SKILL.md — flat subdirectories at root
       flatSkills = findSkillsInDir repoPath 1;
       hasRootSkill = builtins.pathExists "${repoPath}/SKILL.md";
       # Scan repo/SKILL.md — root itself is the skill
-      rootSkill = if hasRootSkill then [{ name = (parseSkill skill).name; path = "."; }] else [];
+      rootSkill = if hasRootSkill then [{ name = parsed.name; path = "."; }] else [];
       skillsDir = "${repoPath}/skills";
       skillsDirExists = builtins.pathExists skillsDir;
       searchDepth = if cfg.depth <= 0 then -1 else cfg.depth;
@@ -139,24 +149,9 @@ let
         map (s: s // { path = "skills/${s.path}"; }) (findSkillsInDir skillsDir searchDepth)
       else [];
       allSkills = flatSkills ++ nestedSkills ++ rootSkill;
-      # Handle naming conflicts
-      resolveConflict = skills: skill:
-        let
-          existingNames = map (s: s.name) skills;
-          uniqueName = if builtins.elem skill.name existingNames then
-            # Append parent directory name to resolve conflict
-            let parts = lib.splitString "/" skill.path;
-            in if builtins.length parts > 1 then
-              lib.last (lib.init parts) + "-" + skill.name
-            else
-              skill.name + "-1"
-          else
-            skill.name;
-        in
-        { name = uniqueName; path = skill.path; };
     in
     if allSkills == [] then
-      throw "No skills found in '${skill}' (${repoPath}) - no SKILL.md files discovered"
+      throw "No skills found in '${parsed.registryKey}' (${repoPath}) - no SKILL.md files discovered"
     else
       # Resolve names from SKILL.md frontmatter, then fold to resolve conflicts
       let
@@ -170,14 +165,13 @@ let
   # Resolve the install directory
   resolvedDir = resolvePath cfg.dir;
 
-  # Check if a path contains a SKILL.md
-  hasSkillMd = p: builtins.pathExists "${p}/SKILL.md";
 
   # Process a single install entry
   processEntry = skill:
     let
       parsed = parseSkill skill;
-      repoPath = fetchRepo skill;
+      entry = getRegistryEntry parsed;
+      repoPath = fetchRepo parsed entry;
     in
     if parsed.path != null then
       # Specific path: find SKILL.md in repo/<path> or repo/skills/<path>
@@ -186,7 +180,7 @@ let
           "${repoPath}/skills/${parsed.path}"
           "${repoPath}/${parsed.path}"
         ];
-        validCandidates = builtins.filter hasSkillMd candidates;
+        validCandidates = builtins.filter (p: builtins.pathExists "${p}/SKILL.md") candidates;
       in
       if validCandidates == [] then
         throw "Skill '${parsed.path}' not found in '${skill}'"
@@ -199,7 +193,7 @@ let
     else
       # Discovery: find all skills in the repo
       let
-        discovered = discoverSkills skill repoPath;
+        discovered = discoverSkills parsed repoPath;
         skillEntries = map (s: installSkill s.name "${repoPath}/${s.path}") discovered;
       in
       skillEntries;
