@@ -124,7 +124,9 @@ let
       skillsDirExists = builtins.pathExists skillsDir;
       searchDepth = if cfg.depth <= 0 then -1 else cfg.depth;
       # Scan repo/skills/*/.../SKILL.md — nested directory
-      nestedSkills = if skillsDirExists then findSkillsInDir skillsDir searchDepth else [];
+      nestedSkills = if skillsDirExists then
+        map (s: s // { path = "skills/${s.path}"; }) (findSkillsInDir skillsDir searchDepth)
+      else [];
       allSkills = flatSkills ++ nestedSkills ++ rootSkill;
       # Handle naming conflicts
       resolveConflict = skills: skill:
