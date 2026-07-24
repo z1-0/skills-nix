@@ -51,37 +51,22 @@ let
   readSkillName = defaultName: skillDir:
     let
       mdPath = "${skillDir}/SKILL.md";
-    in
-    if !builtins.pathExists mdPath then defaultName else
-    let
-      parts = lib.splitString "---" (builtins.readFile mdPath);
-    in
-    if builtins.length parts < 3 then defaultName else
-    let
-      frontmatter = builtins.elemAt parts 1;
-      lines = lib.splitString "\n" frontmatter;
+      parts = if !builtins.pathExists mdPath then [] else
+        lib.splitString "---" (builtins.readFile mdPath);
+      fmLines = if builtins.length parts >= 3
+        then lib.splitString "\n" (builtins.elemAt parts 1) else [];
       nameLine = lib.findFirst (line:
-        builtins.substring 0 5 (builtins.replaceStrings [" " "\t"] ["" ""] line) == "name:"
-      ) null lines;
+        (builtins.match "[[:space:]]*name:.*" line) != null
+      ) null fmLines;
+      extract = raw:
+        let
+          trimmed = builtins.head (builtins.match
+            "[[:space:]]*name:[[:space:]]*(.*)" raw);
+          unquoted = builtins.head (builtins.filter (x: x != null)
+            (builtins.match "\"([^\"]*)\"|'([^']*)'|(.*)" trimmed));
+        in if unquoted != "" then unquoted else defaultName;
     in
-    if nameLine != null then
-      let
-        raw = builtins.substring 5 (builtins.stringLength nameLine - 5) nameLine;
-        withoutLeading = if builtins.substring 0 1 raw == " " then
-          builtins.substring 1 (builtins.stringLength raw - 1) raw
-        else raw;
-        name = if builtins.stringLength withoutLeading >= 2
-            && builtins.substring 0 1 withoutLeading == "\""
-            && builtins.substring (builtins.stringLength withoutLeading - 1) 1 withoutLeading == "\""
-          then builtins.substring 1 (builtins.stringLength withoutLeading - 2) withoutLeading
-          else if builtins.stringLength withoutLeading >= 2
-            && builtins.substring 0 1 withoutLeading == "'"
-            && builtins.substring (builtins.stringLength withoutLeading - 1) 1 withoutLeading == "'"
-          then builtins.substring 1 (builtins.stringLength withoutLeading - 2) withoutLeading
-          else withoutLeading;
-      in
-      if name != "" then name else defaultName
-    else defaultName;
+    if nameLine != null then extract nameLine else defaultName;
 
   # Install a single skill directory
   installSkill = name: source:
