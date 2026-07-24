@@ -1,7 +1,6 @@
 # Example flake.nix for end users
 #
 # This shows how to use skills-nix in your home-manager configuration.
-
 {
   description = "Example home-manager configuration with skills-nix";
 
@@ -17,7 +16,13 @@
     skills-nix.url = "github:z1-0/skills-nix";
   };
 
-  outputs = { nixpkgs, home-manager, skills-nix, ... }:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      skills-nix,
+      ...
+    }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
