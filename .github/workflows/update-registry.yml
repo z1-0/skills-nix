@@ -37,11 +37,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet HEAD -- registry.json; then
+          git add registry.json
+
+          if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git add registry.json
           git commit -m "chore: update registry $(date -u +%Y-%m-%d)"
           git push origin main
