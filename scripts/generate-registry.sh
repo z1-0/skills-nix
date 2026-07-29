@@ -13,6 +13,10 @@ FAILED="failed.txt"
 
 log() { echo "$*" >&2; }
 
+split_owner_repo() {
+  IFS='/' read -r owner name <<<"$1"
+}
+
 graphql_query() {
   local query="$1" attempt=0 resp
 
@@ -78,7 +82,7 @@ retry_batch_individually() {
   log "    Batch failed, retrying repos individually..."
   for ((j = i; j < i + total_batch && j < total; j++)); do
     repo="${repos[$j]}"
-    IFS='/' read -r owner name <<<"$repo"
+    split_owner_repo "$repo"
 
     if result=$(query_repo "$owner" "$name" "$j"); then
       while IFS=$'\t' read -r status idx name rev; do
@@ -100,7 +104,7 @@ retry_batch_individually() {
 
 fetch_repo_urls() {
   log "Fetching repos..."
-  mapfile -t repos < <(curl -sfL "$API_URL" | jq -r '.repos[]')
+  mapfile -t repos < <(curl -sfL --max-time 30 "$API_URL" | jq -r '.repos[]')
   total=${#repos[@]}
   local batches=$(((total + BATCH - 1) / BATCH))
   log "Found ${total} repos, ${batches} batches"
@@ -115,7 +119,7 @@ fetch_repo_urls() {
 
     local query="{"
     for ((j = i; j < i + BATCH && j < total; j++)); do
-      IFS='/' read -r owner name <<<"${repos[$j]}"
+      split_owner_repo "${repos[$j]}"
       query+="r${j}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
     done
     query+="}"
@@ -149,27 +153,18 @@ generate_registry() {
   log "Generate registry..."
   jq -n \
     --slurpfile hashes "$HASHES" \
-    --rawfile redirects "$REDIRECTS" '
-    ($hashes[0] | map({
-        key: (.url | split("/") | .[3:5] | join("/")),
-        value: {
-            rev: (.url | split("/")[-1] | split(".tar")[0]),
-            hash: .hash
-        }
-    }) | from_entries) as $hashes |
-    ([$redirects | split("\n")[] | select(length > 0) | split(" -> ") |
-      { key: .[0], value: .[1] }] | from_entries) as $redirects |
-    reduce ($redirects | to_entries[]) as $r ($hashes;
-      . + { ($r.key): $hashes[$r.value] }
-    ) | (to_entries | map(.key = (.key | ascii_downcase)) | sort_by(.key)) as $repos | {
-      updatedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
-      count: ($repos | length),
-      repos: ($repos | from_entries)
-    }
-  ' >"$REGISTRY"
+    --rawfile redirects "$REDIRECTS" \
+    --from-file scripts/generate-registry.jq \
+    >"$REGISTRY"
   log "Done: ${REGISTRY}"
 }
 
 fetch_repo_urls
+
+if [[ ! -s "$URLS" ]]; then
+  log "ERROR: No URLs fetched, aborting"
+  exit 1
+fi
+
 fetch_hashes
 generate_registry
