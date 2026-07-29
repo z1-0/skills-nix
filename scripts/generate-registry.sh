@@ -13,10 +13,6 @@ FAILED="failed.txt"
 
 log() { echo "$*" >&2; }
 
-split_owner_repo() {
-  IFS='/' read -r owner name <<<"$1"
-}
-
 graphql_query() {
   local query="$1" attempt=0 resp
 
@@ -29,8 +25,10 @@ graphql_query() {
     ((attempt < MAX_RETRIES)) && log "    Retry ${attempt}/${MAX_RETRIES}..." && sleep $((attempt * 5))
   done
 
-  log "    Failed after ${MAX_RETRIES} retries."
-  jq -r '.errors[]? | "    \(.type): \(.message)"' <<<"${resp:-}" 2>/dev/null | while IFS= read -r line; do log "$line"; done
+  log "    Failed after ${MAX_RETRIES} attempts."
+  local errors
+  errors=$(jq -r '.errors[]? | "    \(.type): \(.message)"' <<<"${resp:-}" 2>/dev/null)
+  [[ -n "$errors" ]] && log "$errors"
   return 1
 }
 
@@ -45,6 +43,22 @@ parse_repo_response() {
       "OK\t\(.key[1:])\t\(.value.nameWithOwner)\t\(.value.defaultBranchRef.target.oid)"
     end
   ' <<<"$resp"
+}
+
+handle_batch_results() {
+  local prefix="$1" batch_out="$2"
+  local status idx name rev input
+
+  while IFS=$'\t' read -r status idx name rev; do
+    if [[ "$status" == "OK" ]]; then
+      input="${repos[$idx]}"
+      echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
+      [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
+    else
+      log "${prefix}Error: ${repos[$idx]} - ${name}"
+      echo "${repos[$idx]}" >>"$FAILED"
+    fi
+  done <<<"$batch_out"
 }
 
 query_repo() {
@@ -63,16 +77,7 @@ process_batch() {
   resp=$(graphql_query "$query") || return 1
   batch_out=$(parse_repo_response "$resp") || return 1
 
-  while IFS=$'\t' read -r status idx name rev; do
-    if [[ "$status" == "OK" ]]; then
-      local input="${repos[$idx]}"
-      echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
-      [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
-    else
-      log "    Error: ${repos[$idx]} - ${name}"
-      echo "${repos[$idx]}" >>"$FAILED"
-    fi
-  done <<<"$batch_out"
+  handle_batch_results "    " "$batch_out"
 }
 
 retry_batch_individually() {
@@ -82,19 +87,10 @@ retry_batch_individually() {
   log "    Batch failed, retrying repos individually..."
   for ((j = i; j < i + total_batch && j < total; j++)); do
     repo="${repos[$j]}"
-    split_owner_repo "$repo"
+    IFS='/' read -r owner name <<<"$repo"
 
     if result=$(query_repo "$owner" "$name" "$j"); then
-      while IFS=$'\t' read -r status idx name rev; do
-        if [[ "$status" == "OK" ]]; then
-          local input="${repos[$idx]}"
-          echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
-          [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
-        else
-          log "      Error: ${repo} - ${name}"
-          echo "${repo}" >>"$FAILED"
-        fi
-      done <<<"$result"
+      handle_batch_results "      " "$result"
     else
       log "      Failed: ${repo}"
       echo "${repo}" >>"$FAILED"
@@ -105,7 +101,7 @@ retry_batch_individually() {
 fetch_repo_urls() {
   log "Fetching repos..."
   mapfile -t repos < <(curl -sfL --max-time 30 "$API_URL" | jq -r '.repos[]')
-  total=${#repos[@]}
+  local total=${#repos[@]}
   local batches=$(((total + BATCH - 1) / BATCH))
   log "Found ${total} repos, ${batches} batches"
 
@@ -119,7 +115,7 @@ fetch_repo_urls() {
 
     local query="{"
     for ((j = i; j < i + BATCH && j < total; j++)); do
-      split_owner_repo "${repos[$j]}"
+      IFS='/' read -r owner name <<<"${repos[$j]}"
       query+="r${j}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
     done
     query+="}"
@@ -154,7 +150,7 @@ generate_registry() {
   jq -n \
     --slurpfile hashes "$HASHES" \
     --rawfile redirects "$REDIRECTS" \
-    --from-file scripts/generate-registry.jq \
+    --from-file "$(dirname "${BASH_SOURCE[0]}")/generate-registry.jq" \
     >"$REGISTRY"
   log "Done: ${REGISTRY}"
 }
