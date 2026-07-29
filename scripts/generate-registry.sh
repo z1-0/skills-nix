@@ -73,7 +73,7 @@ process_batch() {
 
 retry_batch_individually() {
   local i="$1" total_batch="$2"
-  local j repo owner name result parsed
+  local j repo owner name result
 
   log "    Batch failed, retrying repos individually..."
   for ((j = i; j < i + total_batch && j < total; j++)); do
@@ -81,7 +81,6 @@ retry_batch_individually() {
     IFS='/' read -r owner name <<<"$repo"
 
     if result=$(query_repo "$owner" "$name" "$j"); then
-      parsed=$(parse_repo_response "$result") || continue
       while IFS=$'\t' read -r status idx name rev; do
         if [[ "$status" == "OK" ]]; then
           local input="${repos[$idx]}"
@@ -91,7 +90,7 @@ retry_batch_individually() {
           log "      Error: ${repo} - ${name}"
           echo "${repo}" >>"$FAILED"
         fi
-      done <<<"$parsed"
+      done <<<"$result"
     else
       log "      Failed: ${repo}"
       echo "${repo}" >>"$FAILED"
@@ -136,7 +135,8 @@ fetch_repo_urls() {
   got_failed=$(wc -l <"$FAILED")
   log "Got ${got_refs} refs, ${got_redirects} redirects"
   if ((got_failed > 0)); then
-    log "WARNING: ${got_failed} repos failed, see ${FAILED}"
+    log "WARNING: ${got_failed} repos failed:"
+    while IFS= read -r line; do log "  - ${line}"; done <"$FAILED"
   fi
 }
 
