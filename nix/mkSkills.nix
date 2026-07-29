@@ -157,7 +157,7 @@ let
 
         ${lib.concatMapStringsSep "\n" formatConflict (lib.attrsToList conflicts)}
 
-        Use owner/repo@skillName to pick one.
+        Remove one conflicting repo, or scope both with owner/repo@skillName to pick specific skills.
       '';
 
 in
