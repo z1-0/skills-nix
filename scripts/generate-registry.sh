@@ -130,11 +130,7 @@ fetch_repo_urls() {
 
 fetch_hashes() {
   log "Fetching hashes..."
-  if ! nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <"$URLS" >"$HASHES"; then
-    log "    Some downloads failed, filtering errors..."
-    jq '[.[] | select(.hash != null)]' "$HASHES" > "${HASHES}.filtered"
-    mv "${HASHES}.filtered" "$HASHES"
-  fi
+  nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <"$URLS" >"$HASHES"
 }
 
 generate_registry() {
