@@ -153,3 +153,8 @@ A bare `"owner/repo"` installs all skills from that repo. Resolve conflicts with
 
 - **Remove** one conflicting repo from `install`.
 - **Use `@skillName` on both sides** to install only specific skills, avoiding the overlap. You must list every skill you want from each repo.
+
+## Related Projects
+
+- [nix-bulkfetch-url](https://github.com/z1-0/nix-bulkfetch-url) — bulk Nix URL fetching.
+- [vercel-labs/skills](https://github.com/vercel-labs/skills)
