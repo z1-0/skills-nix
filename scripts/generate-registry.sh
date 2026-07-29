@@ -99,9 +99,10 @@ generate_registry() {
       { key: .[0], value: .[1] }] | from_entries) as $redirects |
     reduce ($redirects | to_entries[]) as $r ($hashes;
       . + { ($r.key): $hashes[$r.value] }
-    ) | {
+    ) | (to_entries | map(.key = (.key | ascii_downcase)) | sort_by(.key)) as $repos | {
       updatedAt: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
-      repos: (to_entries | map(.key = (.key | ascii_downcase)) | sort_by(.key) | from_entries)
+      count: ($repos | length),
+      repos: ($repos | from_entries)
     }
   ' >"$REGISTRY"
   log "Done: ${REGISTRY}"
