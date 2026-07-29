@@ -2,13 +2,14 @@
 set -euo pipefail
 
 API_URL="https://skills-nix.vercel.app/api/repos.json"
-BATCH=25
+BATCH=8
 MAX_RETRIES=3
 
 URLS="urls.txt"
 REDIRECTS="redirects.txt"
 HASHES="hashes.json"
 REGISTRY="registry.json"
+FAILED="failed.txt"
 
 log() { echo "$*" >&2; }
 
@@ -29,6 +30,22 @@ graphql_query() {
   return 1
 }
 
+query_repo() {
+  local owner="$1" name="$2" idx="$3"
+  local query="{ r${idx}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } } }"
+  local resp
+  resp=$(graphql_query "$query") || return 1
+  jq -r '
+    (.errors // [] | map({key: .path[0], value: .message}) | from_entries) as $errs |
+    .data | to_entries[] |
+    if .value == null then
+      "ERR\t\(.key[1:])\t\($errs[.key] // \"Unknown error\")"
+    else
+      "OK\t\(.key[1:])\t\(.value.nameWithOwner)\t\(.value.defaultBranchRef.target.oid)"
+    end
+  ' <<<"$resp" 2>/dev/null || return 1
+}
+
 fetch_repo_urls() {
   log "Fetching repos..."
   mapfile -t repos < <(curl -sfL "$API_URL" | jq -r '.repos[]')
@@ -38,6 +55,7 @@ fetch_repo_urls() {
 
   >"$URLS"
   >"$REDIRECTS"
+  >"$FAILED"
 
   log "Querying GraphQL..."
   for ((i = 0; i < total; i += BATCH)); do
@@ -51,31 +69,63 @@ fetch_repo_urls() {
     query+="}"
 
     local resp
-    resp=$(graphql_query "$query") || continue
+    if resp=$(graphql_query "$query"); then
+      local batch_out
+      batch_out=$(jq -r '
+        (.errors // [] | map({key: .path[0], value: .message}) | from_entries) as $errs |
+        .data | to_entries[] |
+        if .value == null then
+          "ERR\t\(.key[1:])\t\($errs[.key] // \"Unknown error\")"
+        else
+          "OK\t\(.key[1:])\t\(.value.nameWithOwner)\t\(.value.defaultBranchRef.target.oid)"
+        end
+      ' <<<"$resp" 2>/dev/null) || true
 
-    local batch_out
-    batch_out=$(jq -r '
-      (.errors // [] | map({key: .path[0], value: .message}) | from_entries) as $errs |
-      .data | to_entries[] |
-      if .value == null then
-        "ERR\t\(.key[1:])\t\($errs[.key] // "Unknown error")"
-      else
-        "OK\t\(.key[1:])\t\(.value.nameWithOwner)\t\(.value.defaultBranchRef.target.oid)"
-      end
-    ' <<<"$resp" 2>/dev/null) || continue
+      while IFS=$'\t' read -r status idx name rev; do
+        if [[ "$status" == "OK" ]]; then
+          local input="${repos[$idx]}"
+          echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
+          [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
+        else
+          log "    Error: ${repos[$idx]} - ${name}"
+          echo "${repos[$idx]}" >>"$FAILED"
+        fi
+      done <<<"$batch_out"
+    else
+      log "    Batch failed, retrying repos individually..."
+      for ((j = i; j < i + BATCH && j < total; j++)); do
+        local repo="${repos[$j]}"
+        local owner name
+        IFS='/' read -r owner name <<<"$repo"
 
-    while IFS=$'\t' read -r status idx name rev; do
-      if [[ "$status" == "OK" ]]; then
-        local input="${repos[$idx]}"
-        echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
-        [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
-      else
-        log "    Error: ${repos[$idx]} - ${name}"
-      fi
-    done <<<"$batch_out"
+        local result
+        result=$(query_repo "$owner" "$name" "$j") && {
+          while IFS=$'\t' read -r status idx name rev; do
+            if [[ "$status" == "OK" ]]; then
+              local input="${repos[$idx]}"
+              echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
+              [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
+            else
+              log "      Error: ${repo} - ${name}"
+              echo "${repo}" >>"$FAILED"
+            fi
+          done <<<"$result"
+        } || {
+          log "      Failed: ${repo}"
+          echo "${repo}" >>"$FAILED"
+        }
+      done
+    fi
   done
 
-  log "Got $(wc -l <"$URLS") refs, $(wc -l <"$REDIRECTS") redirects"
+  local got_refs got_redirects got_failed
+  got_refs=$(wc -l <"$URLS")
+  got_redirects=$(wc -l <"$REDIRECTS")
+  got_failed=$(wc -l <"$FAILED")
+  log "Got ${got_refs} refs, ${got_redirects} redirects"
+  if ((got_failed > 0)); then
+    log "WARNING: ${got_failed} repos failed, see ${FAILED}"
+  fi
 }
 
 fetch_hashes() {
