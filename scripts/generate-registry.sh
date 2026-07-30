@@ -37,8 +37,9 @@ parse_repo_response() {
   jq -r '
     (.errors // [] | map({key: .path[0], value: .message}) | from_entries) as $errs |
     .data | to_entries[] |
+    ($errs[.key] // "Unknown error") as $msg |
     if .value == null then
-      "ERR\t\(.key[1:])\t\($errs[.key] // \"Unknown error\")"
+      "ERR\t\(.key[1:])\t\($msg)"
     else
       "OK\t\(.key[1:])\t\(.value.nameWithOwner)\t\(.value.defaultBranchRef.target.oid)"
     end
