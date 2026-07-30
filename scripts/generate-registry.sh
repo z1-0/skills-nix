@@ -45,12 +45,15 @@ handle_batch_results() {
     if [[ "$status" == "OK" ]]; then
       input="${repos[$idx]}"
       echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
-      [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
+      if [[ "$name" != "$input" ]]; then
+        echo "${input} -> ${name}" >>"$REDIRECTS"
+      fi
     else
       log "${prefix}${repos[$idx]} - ${name}"
-      echo "${repos[$idx]}" >>"$FAILED"
+      echo "${repos[$idx]}" >>"${FAILED}.tmp"
     fi
   done <<<"$batch_out"
+  return 0
 }
 
 process_batch() {
@@ -138,10 +141,8 @@ generate_registry() {
 process_repo_list 1 "$API_URL"
 
 if [[ -s "$FAILED" ]]; then
-  local prev
   prev=$(wc -l <"$FAILED")
   process_repo_list 2 "$FAILED"
-  local now
   now=$(wc -l <"$FAILED")
   log "Recovered $((prev - now)) of ${prev} failed repos"
 fi
