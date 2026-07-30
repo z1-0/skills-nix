@@ -17,10 +17,13 @@ graphql_query() {
   local query="$1" attempt=0 resp
 
   while ((attempt < MAX_RETRIES)); do
-    if resp=$(gh api graphql -f query="$query" 2>/dev/null); then
+    resp=$(gh api graphql -f query="$query" 2>/dev/null) || true
+
+    if jq -e '[.data[] | select(. != null)] | length > 0' <<<"${resp:-null}" >/dev/null 2>&1; then
       echo "$resp"
       return 0
     fi
+
     attempt=$((attempt + 1))
     ((attempt < MAX_RETRIES)) && log "    Retry ${attempt}/${MAX_RETRIES}..." && sleep $((attempt * 5))
   done
