@@ -2,7 +2,7 @@
 set -euo pipefail
 
 API_URL="https://skills-nix.vercel.app/api/repos.json"
-BATCH=8
+BATCH=50
 MAX_RETRIES=3
 
 URLS="urls.txt"
@@ -15,19 +15,15 @@ log() { echo "$*" >&2; }
 
 graphql_query() {
   local query="$1" attempt=0 resp
-
   while ((attempt < MAX_RETRIES)); do
     resp=$(gh api graphql -f query="$query" 2>/dev/null) || true
-
-    if jq -e '[.data[] | select(. != null)] | length > 0' <<<"${resp:-null}" >/dev/null 2>&1; then
+    if jq -e '.data' <<<"${resp:-null}" >/dev/null 2>&1; then
       echo "$resp"
       return 0
     fi
-
     attempt=$((attempt + 1))
     ((attempt < MAX_RETRIES)) && log "    Retry ${attempt}/${MAX_RETRIES}..." && sleep $((attempt * 5))
   done
-
   log "    Failed after ${MAX_RETRIES} attempts."
   local errors
   errors=$(jq -r '.errors[]? | "    \(.type): \(.message)"' <<<"${resp:-}" 2>/dev/null)
@@ -59,61 +55,44 @@ handle_batch_results() {
       echo "https://github.com/${name}/archive/${rev}.tar.gz" >>"$URLS"
       [[ "$name" != "$input" ]] && echo "${input} -> ${name}" >>"$REDIRECTS"
     else
-      log "${prefix}Error: ${repos[$idx]} - ${name}"
+      log "${prefix}${repos[$idx]} - ${name}"
       echo "${repos[$idx]}" >>"$FAILED"
     fi
   done <<<"$batch_out"
 }
 
-query_repo() {
-  local owner="$1" name="$2" idx="$3"
-  local query="{ r${idx}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } } }"
-  local resp parsed
-  resp=$(graphql_query "$query") || return 1
-  parsed=$(parse_repo_response "$resp") || return 1
-  echo "$parsed"
-}
-
 process_batch() {
-  local i="$1" query="$2" total="$3"
+  local i="$1" query="$2"
   local resp batch_out
 
-  resp=$(graphql_query "$query") || return 1
-  batch_out=$(parse_repo_response "$resp") || return 1
+  if ! resp=$(graphql_query "$query"); then
+    return 1
+  fi
 
+  batch_out=$(parse_repo_response "$resp") || return 1
   handle_batch_results "    " "$batch_out"
 }
 
-retry_batch_individually() {
-  local i="$1" total_batch="$2"
-  local j repo owner name result
+process_repo_list() {
+  local pass="$1" src="$2"
+  local -a repos
 
-  log "    Batch failed, retrying repos individually..."
-  for ((j = i; j < i + total_batch && j < total; j++)); do
-    repo="${repos[$j]}"
-    IFS='/' read -r owner name <<<"$repo"
+  if [[ "$pass" == "1" ]]; then
+    log "Fetching repos..."
+    mapfile -t repos < <(curl -sfL --max-time 30 "$src" | jq -r '.repos[]')
+  else
+    log "Retrying failed repos..."
+    mapfile -t repos <"$src"
+  fi
 
-    if result=$(query_repo "$owner" "$name" "$j"); then
-      handle_batch_results "      " "$result"
-    else
-      log "      Failed: ${repo}"
-      echo "${repo}" >>"$FAILED"
-    fi
-  done
-}
-
-fetch_repo_urls() {
-  log "Fetching repos..."
-  mapfile -t repos < <(curl -sfL --max-time 30 "$API_URL" | jq -r '.repos[]')
   local total=${#repos[@]}
+  if ((total == 0)); then return 0; fi
+
   local batches=$(((total + BATCH - 1) / BATCH))
-  log "Found ${total} repos, ${batches} batches"
+  log "Found ${total} repos, ${batches} batches (pass ${pass})"
 
-  >"$URLS"
-  >"$REDIRECTS"
-  >"$FAILED"
+  >"${FAILED}.tmp"
 
-  log "Querying GraphQL..."
   for ((i = 0; i < total; i += BATCH)); do
     log "  Batch $((i / BATCH + 1))/${batches}..."
 
@@ -124,23 +103,23 @@ fetch_repo_urls() {
     done
     query+="}"
 
-    local batch_size=$((i + BATCH < total ? BATCH : total - i))
-
-    if ! process_batch "$i" "$query" "$batch_size"; then
-      if ! retry_batch_individually "$i" "$batch_size"; then
-        log "    Still failing after individual retry"
-      fi
+    if ! process_batch "$i" "$query"; then
+      log "    Batch $((i / BATCH + 1))/${batches} failed, marking all for retry"
+      for ((j = i; j < i + BATCH && j < total; j++)); do
+        echo "${repos[$j]}" >>"${FAILED}.tmp"
+      done
     fi
   done
+
+  mv "${FAILED}.tmp" "$FAILED"
 
   local got_refs got_redirects got_failed
   got_refs=$(wc -l <"$URLS")
   got_redirects=$(wc -l <"$REDIRECTS")
   got_failed=$(wc -l <"$FAILED")
-  log "Got ${got_refs} refs, ${got_redirects} redirects"
+  log "Pass ${pass}: got ${got_refs} refs, ${got_redirects} redirects"
   if ((got_failed > 0)); then
-    log "WARNING: ${got_failed} repos failed:"
-    while IFS= read -r line; do log "  - ${line}"; done <"$FAILED"
+    log "Pass ${pass}: ${got_failed} repos failed"
   fi
 }
 
@@ -159,7 +138,21 @@ generate_registry() {
   log "Done: ${REGISTRY}"
 }
 
-fetch_repo_urls
+# ---- Main ----
+>"$URLS"
+>"$REDIRECTS"
+>"$FAILED"
+
+process_repo_list 1 "$API_URL"
+
+if [[ -s "$FAILED" ]]; then
+  local prev
+  prev=$(wc -l <"$FAILED")
+  process_repo_list 2 "$FAILED"
+  local now
+  now=$(wc -l <"$FAILED")
+  log "Recovered $((prev - now)) of ${prev} failed repos"
+fi
 
 if [[ ! -s "$URLS" ]]; then
   log "ERROR: No URLs fetched, aborting"
