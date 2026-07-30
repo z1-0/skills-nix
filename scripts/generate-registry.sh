@@ -13,8 +13,7 @@ FAILED="failed.txt"
 log() { echo "$*" >&2; }
 
 graphql_query() {
-  local query="$1"
-  local resp
+  local query="$1" resp
   resp=$(gh api graphql -f query="$query" 2>/dev/null) || true
   if jq -e '.data' <<<"${resp:-null}" >/dev/null 2>&1; then
     echo "$resp"
@@ -38,7 +37,7 @@ parse_repo_response() {
 }
 
 handle_batch_results() {
-  local prefix="$1" batch_out="$2"
+  local batch_out="$1"
   local status idx name rev input
 
   while IFS=$'\t' read -r status idx name rev; do
@@ -49,102 +48,55 @@ handle_batch_results() {
         echo "${input} -> ${name}" >>"$REDIRECTS"
       fi
     else
-      log "${prefix}${repos[$idx]} - ${name}"
-      echo "${repos[$idx]}" >>"${FAILED}.tmp"
+      log "  ${repos[$idx]} - ${name}"
+      echo "${repos[$idx]}" >>"$FAILED"
     fi
   done <<<"$batch_out"
   return 0
 }
 
 process_batch() {
-  local i="$1" query="$2"
-  local resp batch_out
-
-  if ! resp=$(graphql_query "$query"); then
-    return 1
-  fi
-
+  local i="$1" query="$2" resp batch_out
+  resp=$(graphql_query "$query") || return 1
   batch_out=$(parse_repo_response "$resp") || return 1
-  handle_batch_results "    " "$batch_out"
-}
-
-process_repo_list() {
-  local pass="$1" src="$2"
-  local -a repos
-
-  if [[ "$pass" == "1" ]]; then
-    log "Fetching repos..."
-    mapfile -t repos < <(curl -sfL --max-time 30 "$src" | jq -r '.repos[]')
-  else
-    log "Retrying failed repos..."
-    mapfile -t repos <"$src"
-  fi
-
-  local total=${#repos[@]}
-  if ((total == 0)); then return 0; fi
-
-  local batches=$(((total + BATCH - 1) / BATCH))
-  log "Found ${total} repos, ${batches} batches (pass ${pass})"
-
-  >"${FAILED}.tmp"
-
-  for ((i = 0; i < total; i += BATCH)); do
-    log "  Batch $((i / BATCH + 1))/${batches}..."
-
-    local query="{"
-    for ((j = i; j < i + BATCH && j < total; j++)); do
-      IFS='/' read -r owner name <<<"${repos[$j]}"
-      query+="r${j}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
-    done
-    query+="}"
-
-    if ! process_batch "$i" "$query"; then
-      log "    Batch $((i / BATCH + 1))/${batches} failed, marking all for retry"
-      for ((j = i; j < i + BATCH && j < total; j++)); do
-        echo "${repos[$j]}" >>"${FAILED}.tmp"
-      done
-    fi
-  done
-
-  mv "${FAILED}.tmp" "$FAILED"
-
-  local got_refs got_redirects got_failed
-  got_refs=$(wc -l <"$URLS")
-  got_redirects=$(wc -l <"$REDIRECTS")
-  got_failed=$(wc -l <"$FAILED")
-  log "Pass ${pass}: got ${got_refs} refs, ${got_redirects} redirects"
-  if ((got_failed > 0)); then
-    log "Pass ${pass}: ${got_failed} repos failed"
-  fi
-}
-
-fetch_hashes() {
-  log "Fetching hashes..."
-  nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <"$URLS" >"$HASHES"
-}
-
-generate_registry() {
-  log "Generate registry..."
-  jq -n \
-    --slurpfile hashes "$HASHES" \
-    --rawfile redirects "$REDIRECTS" \
-    --from-file "$(dirname "${BASH_SOURCE[0]}")/generate-registry.jq" \
-    >"$REGISTRY"
-  log "Done: ${REGISTRY}"
+  handle_batch_results "$batch_out"
 }
 
 # ---- Main ----
+log "Fetching repos..."
+mapfile -t repos < <(curl -sfL --max-time 30 "$API_URL" | jq -r '.repos[]')
+
+total=${#repos[@]}
+batches=$(((total + BATCH - 1) / BATCH))
+log "Found ${total} repos, ${batches} batches"
+
 >"$URLS"
 >"$REDIRECTS"
 >"$FAILED"
 
-process_repo_list 1 "$API_URL"
+for ((i = 0; i < total; i += BATCH)); do
+  log "  Batch $((i / BATCH + 1))/${batches}..."
 
-if [[ -s "$FAILED" ]]; then
-  prev=$(wc -l <"$FAILED")
-  process_repo_list 2 "$FAILED"
-  now=$(wc -l <"$FAILED")
-  log "Recovered $((prev - now)) of ${prev} failed repos"
+  query="{"
+  for ((j = i; j < i + BATCH && j < total; j++)); do
+    IFS='/' read -r owner name <<<"${repos[$j]}"
+    query+="r${j}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
+  done
+  query+="}"
+
+  if ! process_batch "$i" "$query"; then
+    log "    Batch $((i / BATCH + 1))/${batches} failed (API error)"
+    for ((j = i; j < i + BATCH && j < total; j++)); do
+      echo "${repos[$j]}" >>"$FAILED"
+    done
+  fi
+done
+
+got_refs=$(wc -l <"$URLS")
+got_failed=$(wc -l <"$FAILED")
+log "Got ${got_refs} refs, $(wc -l <"$REDIRECTS") redirects"
+if ((got_failed > 0)); then
+  log "WARNING: ${got_failed} repos failed"
 fi
 
 if [[ ! -s "$URLS" ]]; then
@@ -152,5 +104,13 @@ if [[ ! -s "$URLS" ]]; then
   exit 1
 fi
 
-fetch_hashes
-generate_registry
+log "Fetching hashes..."
+nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <"$URLS" >"$HASHES"
+
+log "Generate registry..."
+jq -n \
+  --slurpfile hashes "$HASHES" \
+  --rawfile redirects "$REDIRECTS" \
+  --from-file "$(dirname "${BASH_SOURCE[0]}")/generate-registry.jq" \
+  >"$REGISTRY"
+log "Done: ${REGISTRY}"
