@@ -3,7 +3,6 @@ set -euo pipefail
 
 API_URL="https://skills-nix.vercel.app/api/repos.json"
 BATCH=50
-MAX_RETRIES=3
 
 URLS="urls.txt"
 REDIRECTS="redirects.txt"
@@ -14,20 +13,13 @@ FAILED="failed.txt"
 log() { echo "$*" >&2; }
 
 graphql_query() {
-  local query="$1" attempt=0 resp
-  while ((attempt < MAX_RETRIES)); do
-    resp=$(gh api graphql -f query="$query" 2>/dev/null) || true
-    if jq -e '.data' <<<"${resp:-null}" >/dev/null 2>&1; then
-      echo "$resp"
-      return 0
-    fi
-    attempt=$((attempt + 1))
-    ((attempt < MAX_RETRIES)) && log "    Retry ${attempt}/${MAX_RETRIES}..." && sleep $((attempt * 5))
-  done
-  log "    Failed after ${MAX_RETRIES} attempts."
-  local errors
-  errors=$(jq -r '.errors[]? | "    \(.type): \(.message)"' <<<"${resp:-}" 2>/dev/null)
-  [[ -n "$errors" ]] && log "$errors"
+  local query="$1"
+  local resp
+  resp=$(gh api graphql -f query="$query" 2>/dev/null) || true
+  if jq -e '.data' <<<"${resp:-null}" >/dev/null 2>&1; then
+    echo "$resp"
+    return 0
+  fi
   return 1
 }
 
