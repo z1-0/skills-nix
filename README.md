@@ -8,7 +8,7 @@
 
 </div>
 
-skills-nix is a Home Manager module for AI agent skills. It uses the same discovery and installation logic as skills.sh, and supports the same repos.
+A Home Manager module for AI agent skills. It uses the same discovery and installation logic as skills.sh, and supports the same repos.
 
 ## Quick start
 
@@ -129,7 +129,7 @@ A weekly workflow scans skills.sh for GitHub-hosted skills, resolves the latest 
 
 ### Skills discovery
 
-`skills-nix` looks for skills in these locations within each fetched repo:
+Each fetched repo is scanned for skills in these locations:
 
 1. A `SKILL.md` at the repo root counts as the skill.
 2. Any subdirectory containing a `SKILL.md`.
@@ -152,7 +152,7 @@ Conflicting skill names:
 A bare `"owner/repo"` installs all skills from that repo. Resolve conflicts with either:
 
 - **Remove** one conflicting repo from `install`.
-- **Use `@skillName` on both sides** to install only specific skills, avoiding the overlap. You must list every skill you want from each repo.
+- **Use `@skillName` on both sides** to install only specific skills and avoid the overlap. You must list every skill you want from each repo.
 
 ## Related Projects
 
