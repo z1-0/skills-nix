@@ -63,7 +63,8 @@ process_batch() {
 
 # ---- Main ----
 log "Fetching repos..."
-mapfile -t repos < <(curl -sfL --max-time 30 "$API_URL" | jq -r '.repos[]')
+repos_json=$(curl -fL --max-time 60 "$API_URL")
+mapfile -t repos < <(jq -r '.repos[]' <<<"$repos_json")
 
 total=${#repos[@]}
 batches=$(((total + BATCH - 1) / BATCH))
