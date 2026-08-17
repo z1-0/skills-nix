@@ -31,6 +31,7 @@ let
   fetchRepo =
     owner: repo: entry:
     pkgs.fetchFromGitHub {
+      name = lib.strings.sanitizeDerivationName "${owner}+${repo}-source";
       inherit owner repo;
       inherit (entry) hash rev;
     };
