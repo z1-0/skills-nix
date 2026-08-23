@@ -66,6 +66,11 @@ log "Fetching repos..."
 repos_json=$(curl -fL --max-time 60 "$API_URL")
 mapfile -t repos < <(jq -r '.repos[]' <<<"$repos_json")
 
+if [[ ${#repos[@]} -eq 0 ]]; then
+  log "ERROR: no repos found from ${API_URL}"
+  exit 1
+fi
+
 total=${#repos[@]}
 batches=$(((total + BATCH - 1) / BATCH))
 log "Found ${total} repos, ${batches} batches"
@@ -105,7 +110,7 @@ if [[ ! -s "$URLS" ]]; then
 fi
 
 log "Fetching hashes..."
-nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <"$URLS" >"$HASHES"
+nix run github:z1-0/nix-bulkfetch-url -- --unpack --json --timeout 3600 <"$URLS" >"$HASHES"
 
 log "Generate registry..."
 jq -n \
@@ -129,4 +134,7 @@ reduce ($redirects | to_entries[]) as $r ($hashes;
   repos: ($repos | from_entries)
 }
 ' >"$REGISTRY"
-log "Done: ${REGISTRY}"
+
+count=$(jq -r '.count' "$REGISTRY")
+sed -i -E "s/(<!--REPO_COUNT-->)[0-9]+(<!--\/REPO_COUNT-->)/\1${count}\2/" README.md
+log "Done: ${REGISTRY} (${count} repos)"

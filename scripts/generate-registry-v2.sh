@@ -159,4 +159,7 @@ reduce ($redirects | to_entries[]) as $r ($hashes;
   repos: ($repos | from_entries)
 }
 ' >"$REGISTRY"
-log "Done: ${REGISTRY}"
+
+count=$(jq -r '.count' "$REGISTRY")
+sed -i -E "s/(<!--REPO_COUNT-->)[0-9]+(<!--\/REPO_COUNT-->)/\1${count}\2/" README.md
+log "Done: ${REGISTRY} (${count} repos)"
