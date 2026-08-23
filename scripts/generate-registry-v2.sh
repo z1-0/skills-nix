@@ -135,7 +135,7 @@ if [[ ! -s "$URLS" ]]; then
 fi
 
 log "Fetching hashes..."
-nix run github:z1-0/nix-bulkfetch-url -- --unpack --json <"$URLS" >"$HASHES"
+nix run github:z1-0/nix-bulkfetch-url -- --unpack --json --timeout 3600 <"$URLS" >"$HASHES"
 
 log "Generate registry..."
 jq -n \
