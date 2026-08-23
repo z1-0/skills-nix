@@ -8,7 +8,7 @@
 
 </div>
 
-A Home Manager module for AI agent skills. It uses the same discovery and installation logic as skills.sh, and supports the same repos.
+A Home Manager module for AI agent skills. It uses the same discovery and installation logic as skills.sh, and supports all 3008 GitHub-hosted repos on skills.sh. You can find the list of supported repos on [skills.sh](https://skills.sh) or in [registry.json](registry.json).
 
 ## Quick start
 
@@ -98,7 +98,7 @@ skills = {
 
 ## How it works
 
-A weekly workflow scans skills.sh for GitHub-hosted skills, resolves the latest commit and Nix hash, and publishes to `registry.json`. Add repos to `skills.install` to pin versions and install skills.
+Each week a workflow scans skills.sh for GitHub-hosted skills, pins the latest commit and its Nix hash, and writes the result to `registry.json`. Add repos to `skills.install` to pin versions and install skills.
 
 ```
                     ┌─────────────────────────────────┐
@@ -106,18 +106,18 @@ A weekly workflow scans skills.sh for GitHub-hosted skills, resolves the latest 
                     │    "vercel-labs/agent-skills"   │
                     │    "mattpocock/skills@grill-me" │
                     │  ];                             │
-                    └──────────┬──────────────────────┘
-                               │
-                    ┌──────────▼──────────────────────┐
-                    │        Nix build                │
+                    └───────────────┬─────────────────┘
+                                    │
+                    ┌───────────────▼─────────────────┐
+                    │            Nix build            │
                     │                                 │
                     │  fetchFromGitHub → Nix store    │
                     │  discover SKILL.md files        │
                     │  resolve name conflicts         │
-                    └──────────┬──────────────────────┘
-                               │
-                    ┌──────────▼──────────────────────┐
-                    │      Installation               │
+                    └───────────────┬─────────────────┘
+                                    │
+                    ┌───────────────▼─────────────────┐
+                    │          Installation           │
                     │                                 │
                     │  ~/.agents/skills/<name>        │
                     │  ↳ ~/.claude/skills/<name>      │
