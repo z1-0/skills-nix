@@ -8,7 +8,7 @@
 
 </div>
 
-A Home Manager module for AI agent skills. It uses the same discovery and installation logic as skills.sh, and supports all <!--REPO_COUNT-->2993<!--/REPO_COUNT--> GitHub-hosted repos on skills.sh. You can find the list of supported repos on [skills.sh](https://skills.sh) or in [registry.json](registry.json).
+A Home Manager module for AI agent skills. It uses the same discovery and installation logic as skills.sh, and supports all <!--REPO_COUNT-->2968<!--/REPO_COUNT--> GitHub-hosted repos on skills.sh. You can find the list of supported repos on [skills.sh](https://skills.sh) or in [registry.json](registry.json).
 
 ## Quick start
 
