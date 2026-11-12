@@ -1,0 +1,61 @@
+name: Stale
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: stale
+  cancel-in-progress: false
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Ensure stale label exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh label create stale --color ededed --description "No recent activity" --force
+
+      - name: Mark and close stale issues and pull requests
+        uses: actions/stale@v11
+        with:
+          days-before-issue-stale: 60
+          days-before-issue-close: 14
+          days-before-pr-stale: 30
+          days-before-pr-close: 14
+
+          stale-issue-label: stale
+          stale-pr-label: stale
+
+          stale-issue-message: >
+            This issue has been automatically marked as stale because it has not had
+            activity for 60 days. It will be closed in 14 days if no further activity
+            occurs. Comment or remove the `stale` label to keep it open.
+          stale-pr-message: >
+            This pull request has been automatically marked as stale because it has not
+            had activity for 30 days. It will be closed in 14 days if no further activity
+            occurs. Comment, push an update, or remove the `stale` label to keep it open.
+          close-issue-message: >
+            This issue was closed because it remained inactive for 14 days after being
+            marked as stale. Feel free to reopen it if the topic is still relevant.
+          close-pr-message: >
+            This pull request was closed because it remained inactive for 14 days after
+            being marked as stale. Feel free to reopen it if you plan to continue the work.
+
+          close-issue-reason: not_planned
+          exempt-issue-labels: "pinned,security,good first issue,help wanted"
+          exempt-pr-labels: "pinned,security,dependencies"
+          exempt-all-assignees: true
+          exempt-all-milestones: true
+          exempt-draft-pr: true
+          remove-stale-when-updated: true
+          operations-per-run: 100
