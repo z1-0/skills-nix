@@ -6,3 +6,14 @@ docs/
 result
 result-*
 .mimocode
+
+# registry generation intermediates (scripts/generate-registry-*.sh)
+hashes.json
+urls.txt
+redirects.txt
+redirects.jsonl
+failed.txt
+failed.jsonl
+reused.jsonl
+pending.jsonl
+registry.json.tmp
