@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-20T16:38:34Z",
-  "count": 9548,
+  "updatedAt": "2026-11-20T18:56:10Z",
+  "count": 9683,
   "repos": {
     "01000001-01001110/agent-jira-skills": {
       "rev": "074301c7a3a4bfb078ed183a1c5707b1f38802ba",
@@ -567,8 +567,8 @@
       "hash": "sha256-7+BMBklk/S7h+1NldBVIGAvis3kmFU3N7Kulc6nerDs="
     },
     "abelv22/project-foundation": {
-      "rev": "a594916e557f2598eec7a84a0afe750bccf20d45",
-      "hash": "sha256-CRYNpQcxeS9SSyX3laRPloiUk+XI+iKERe9OP11jFu0="
+      "rev": "8a700d8e473e4ef86c5f810c6ee816883f731972",
+      "hash": "sha256-ZQ/DXcRbRlJpSjJtAzlbMasLlhJojwuvpqfOHg/WFWY="
     },
     "abgne/line-dev": {
       "rev": "587f74a52231d77dd71818aa1210d1772eaaa6eb",
@@ -871,8 +871,8 @@
       "hash": "sha256-fUcKE7CntQDqMrS9jOqwAohIu6KHpEyGIoBenivPUz8="
     },
     "adobe/skills": {
-      "rev": "10b4bbb9f4495860fc269633d67353adaab34d93",
-      "hash": "sha256-MAbLSsMuxiBtTtYOITNgiYOo/MyP5lTffkGVkUOI98A="
+      "rev": "594dd871303e78381ebd86cd9ad7b02cc2f4104d",
+      "hash": "sha256-+LUr5TK97qLuQV1FmtB0V0pv61xT9d+fjr5KlideldM="
     },
     "adol1111/doc-driven-spec-workflow": {
       "rev": "66ad368e316da13095c01bd1574f345d3627d8dd",
@@ -1291,8 +1291,8 @@
       "hash": "sha256-l7OMmDmnU1bDUyzh22ZYyAGSpCEqvauxBO4YzjHJ03I="
     },
     "ahgraber/skills": {
-      "rev": "1456a06fff134ee3fdefece684053411317bf3fd",
-      "hash": "sha256-+u1TLnOC/5NSMlWFFBRC92kCrZJDRWs1SNqXKrwjiDg="
+      "rev": "b347e346d8523310d46415885cd0b6eac11ff3c6",
+      "hash": "sha256-cV3BP3kyyTCNAa0aGhrgf+lNpmWhW0p/Jrmm2h51ny8="
     },
     "ahmadabdalla/azure-cost-calculator": {
       "rev": "5081ed401d3cd8e8181cc7218a96a589ac3b32bd",
@@ -1375,8 +1375,8 @@
       "hash": "sha256-J8rPv8o+HMCNtCH/AUI30sERMRO1LliS9GGITPBitlM="
     },
     "ai-openshell/openshell": {
-      "rev": "b6e92029a918dbdbab19d9e072ce8697435930de",
-      "hash": "sha256-M1j3MBhC8ZPAojutUQkEFbVa9Hxi9MUJ2OUeYut0nf8="
+      "rev": "f73b85351273aa82beb9167e3064ae4c50345d8b",
+      "hash": "sha256-HE0VI7JDaojad4VxSZ/0eIECIeo0Dm8cu1OS4fMtCHY="
     },
     "ai-zixun/humanizer-zh": {
       "rev": "f75f1ac9735c4f10da1bba0148e0ea7228c5c3b3",
@@ -1627,8 +1627,8 @@
       "hash": "sha256-Xiw+00jJqEbw2ldckLgWpOEl+InL/U6yFodoW10eRQk="
     },
     "akillness/jeo-skills": {
-      "rev": "73f1d18b889cb7ea22a688b9649bc0d28ba62d89",
-      "hash": "sha256-RR3NJbJ+4KW8Aqa5qKzkXfAezfV6rO3TpjQlTWNygic="
+      "rev": "0eeaa80c4fa31719c953c34c7b7a53655010e769",
+      "hash": "sha256-JCpPJRWIOtKnnJZDtrDikqd2Lh2HhdWtfTZfYvnvk3E="
     },
     "akin-ozer/cc-devops-skills": {
       "rev": "276af751e659315aaf56d3ad13d7c26f4e72e28a",
@@ -1671,8 +1671,8 @@
       "hash": "sha256-d920+3rp4Hp85yek+ioMgFES5XCEwbwjE9Lg/mxg6Eo="
     },
     "akshay-diwadkar/first-four-hours": {
-      "rev": "a479fab1aa10f7d07fa3d752411ef03fcff8ac0d",
-      "hash": "sha256-D4pqNjeyGNp2jORLNV4CAUVGI5F2V9ffnwI/hhqdMlg="
+      "rev": "e5b0fb16888e1f0df02612adcb908eef6fe45f58",
+      "hash": "sha256-/wVUv8Zy9ulBoOKOois4IMBa7W3hsjZ9xmO+p9xKCWk="
     },
     "aksuharun/skills": {
       "rev": "42cf82f1c5e0bdbc88fec16db452d21f3a8ab016",
@@ -1843,8 +1843,8 @@
       "hash": "sha256-/uVi2R9VuAWO2N6Wd2zx6gNAiHnv3p5SktHf9l2wooM="
     },
     "alchemy-run/alchemy": {
-      "rev": "08fbb788b229bdc9fbd714f8abcf718c8f62205a",
-      "hash": "sha256-qR/NTDLsVKI5xvJ8XmRMlA/PVilepvwY1SG/9DjLp2g="
+      "rev": "5e54b66d13b4edb7918dae29af33e305a99a1838",
+      "hash": "sha256-xK/W5E45AMisaccZVaIkXWLUItOfHyQTkkaLowaMyTg="
     },
     "alchemyplatform/skills": {
       "rev": "add94e5059c39edc9917bb5a4585cc1a1cefeed2",
@@ -2347,8 +2347,8 @@
       "hash": "sha256-aghMMe7QGdu5aFbQjh2Ne4TLqJBT1wL7yzdAMQAYa+s="
     },
     "amd/skills": {
-      "rev": "2470f33cbd47987e1799fedf3d3001a2a15d1112",
-      "hash": "sha256-Y9cdDJ6WrW0Kg/9xniVmE26ItV1ayV6MC9ZItW4mtvA="
+      "rev": "6c17cc32376b5ea75eb867e8e92901d3a18aeef8",
+      "hash": "sha256-2ndW4DcFfPb2QTsjxzMYSBQJo9Qkl1QtTZluvtde6o4="
     },
     "amelnagdy/delegate-skills": {
       "rev": "48b53d33b53ef260de76c3d2c1313e2c62a24820",
@@ -2539,8 +2539,8 @@
       "hash": "sha256-FL8CtSz3GRtyOa6y9nZ55+VteX4at58pTpQlZRc+APk="
     },
     "anentrypoint/gm": {
-      "rev": "6c1140e62e3622c55ad740187bbd6f2edc6e622e",
-      "hash": "sha256-dkAXInNtaW3XG09fGlLKq8LaJvKzikjJGw2aUl7oxXQ="
+      "rev": "a497fedb79d1e55b5deaff6984431d9704efd698",
+      "hash": "sha256-qRDUgWp7xz/TYhiD3QAtoXQA5zhgSqFQtOoy31fG3u4="
     },
     "anentrypoint/gm-skill": {
       "rev": "5de3feda009ac49183d33c3933976adc3cace560",
@@ -2567,12 +2567,12 @@
       "hash": "sha256-mwJc9SXcFK6r4MnB8Sq0yWabLT1cGUjEeC7lLoPRthk="
     },
     "angular/angular": {
-      "rev": "34c6c98f944d427ddb583e2ae511886d95256542",
-      "hash": "sha256-Tj3SduR4/r2/xVzTQZXUSWqPNXUxsg+IAntbdcDlBvg="
+      "rev": "8b15295e8c7f1543d41dadb5955279702be52c16",
+      "hash": "sha256-UShDQKzkDet6srXI8gGxzpCZID5E/aSuCQjl3eeyBjE="
     },
     "angular/skills": {
-      "rev": "a803f498fc48c160e0b47075db49bcc304261d25",
-      "hash": "sha256-jl9bbYTAJNJX4X2AQEB7Hn/k+HKcr9QvNFwDsmj2mI8="
+      "rev": "97c663a02b376a19eccc60f75909f20f15a2c9c1",
+      "hash": "sha256-UzfZWzFWbQDrvBw/U061kDV5NKsyotuB1NbZMYYgHjY="
     },
     "angus221/ak.skills_sample": {
       "rev": "3c3574bae5f01c9281fcff1f3b8dc241aac39c3a",
@@ -2655,12 +2655,12 @@
       "hash": "sha256-r/rTY3CJqvIOH0Xp2Rf54ulSTPzLCkY7UBiQDnyVLi8="
     },
     "anomalyco/hex": {
-      "rev": "178c16fdc52eabce1cdaf98173da4dbec67110e2",
-      "hash": "sha256-Wh0cM9g4cfxlaAE4qe6LhjwhPZVvE328HB5SuUEO13s="
+      "rev": "e8d82f7101cfced1a0982c1f86ef5eb048022799",
+      "hash": "sha256-3lCNjVMbksocY9cFe+tJJ6We1JV02JXUbY08QGTuaWA="
     },
     "anomalyco/opencode": {
-      "rev": "55c6827566ed4b45dd22e2fdb5660374e87faf11",
-      "hash": "sha256-dX/kNVvGUR4UZWssJyXF68r9c6AGswCwuIsf+1UkJFw="
+      "rev": "fe8def68544c795984d9fbdde6ca7e74299230bc",
+      "hash": "sha256-P8Fwo3Y7gnuUBdUVTNyUbbNmWJjPfqzHfNIIe/6Fc3g="
     },
     "anomalyco/opentui": {
       "rev": "2738bc4b836e9db8bab1df8a7f1d5a5583ee51f1",
@@ -2695,12 +2695,12 @@
       "hash": "sha256-nHAjxoxY8QnRsFz/BgCOIqbjp8eBgoIQBQXr3SxiBZo="
     },
     "ant-design/ant-design-cli": {
-      "rev": "6c06bbdd147a0e2fb398d6f15e71585f0a94c14c",
-      "hash": "sha256-72qb+DTaKGLtdtD7ZjN24BqZ8ViKsd4jNIFE7EiXr9w="
+      "rev": "65dd81d9ec466347e55b10d28462e1258fd5faf0",
+      "hash": "sha256-IqmaSTyV+VYI+DX8DaRPN4ryCQh2xUKoAEROA2khkW8="
     },
     "ant-design/ant-design-pro": {
-      "rev": "42f2cb1d303380909ea04c73b5e60679d09c321a",
-      "hash": "sha256-k+vbNsDMjTETut/tMjXUFFIKg6AB2TgP1xKY01bxZE0="
+      "rev": "c70e0d89525933c4dab373143d486c93331392fb",
+      "hash": "sha256-gPSGEy6QiteeEBBlQZ2/jHXtK3WqoKtIoYLDNZufNCU="
     },
     "ant-design/antd-skill": {
       "rev": "e65d2d3da9a2a129885131f5aeffe2c9037f83cb",
@@ -2763,8 +2763,8 @@
       "hash": "sha256-2YSAaM+lX8ZPqepO1V/ggUPsTCIBXAK8qsXh+qH9yBc="
     },
     "anthropics/claude-plugins-official": {
-      "rev": "d7d32797e7e02708d0bb00ffe8b8f2397dc1aea6",
-      "hash": "sha256-NBpp0gP79bm8YL1FL357oYsoLp+MtjN/rzAtuqQ7mg4="
+      "rev": "1b9a8c736db2330ce1812bcc41878a6e2e288e24",
+      "hash": "sha256-ne3uveQdlmkPBMbc7qovVzN7ovL2R3SDO1C2ZJRClww="
     },
     "anthropics/claude-quickstarts": {
       "rev": "4a4224bdf0e9cfb3332167b69c90457403813625",
@@ -2915,8 +2915,8 @@
       "hash": "sha256-j9jJe/nP5WVqA60j9HzLIgTRE4P+QzTttOmUUk/vbgg="
     },
     "apache/beam": {
-      "rev": "5d834f2781bc1b73e33178d39d9e71512def2c41",
-      "hash": "sha256-ryISjJlmYgROCpM+/s280IhQaLbL7ZEZZQ9x+MTiJfs="
+      "rev": "65832ef5ddc14541ecac2f9baf53bb8cf34ce499",
+      "hash": "sha256-g9XXXHQMBGvTtV1gTv5H0ey0C+12+vMD0YRYI7h6nkA="
     },
     "apache/doris-skills": {
       "rev": "c353d71bc50d6c0baf1831dec33cbfa0abc64ef2",
@@ -2979,8 +2979,8 @@
       "hash": "sha256-yLcE57+Stj/Ab6WqzngK6WzokUG42IzuDrIlV8j5SFg="
     },
     "apify/apify-mcp-server": {
-      "rev": "e6329efeca25248f7838f9771a7fe839372d0d25",
-      "hash": "sha256-AlsAPtwlOGFIborQAvID5cjn9MXitnNoxBhO5nmUMuU="
+      "rev": "d496d5683284b5082d7c265b02ae7cfc023934a4",
+      "hash": "sha256-7nAO3QE134K9LCk7zHmqH+XtMvq+zvMJMN8SEsngJ7k="
     },
     "apify/awesome-skills": {
       "rev": "851fdfd7d4fe2ba36a9f48048ced4299a8e0512b",
@@ -3027,8 +3027,8 @@
       "hash": "sha256-u5tJpsFcsPnHJ8nUDOJJdHDKQlsrXNjZOvb8sa3gI/8="
     },
     "appandflow/stim": {
-      "rev": "0f8cb13e3cbf7ce2dec76eb57a0d33499f7a71f5",
-      "hash": "sha256-hdDZbhzOvPqhCJGRdMXLlHl2q5GB9RwgBLYwF7jPpBo="
+      "rev": "4ff38b07f8f7c7ddaffda6c0035ad6f5da8485e1",
+      "hash": "sha256-0rx0/UUVcylSrUdtnem49aQ4UVkczNiWBwQM/fkMKMc="
     },
     "appariciojunior/video-editor-skills": {
       "rev": "6709678d7d5b169149e13480428e12b0f09a47f0",
@@ -3183,8 +3183,8 @@
       "hash": "sha256-2Ial/I3tvJdTIx4XfXBUJZ72LPnAzqWCF1zOgxlzFuQ="
     },
     "arenukvern/mcp_flutter": {
-      "rev": "c05be6660ecb350c478d2d7a4961bb6c6cf73819",
-      "hash": "sha256-hiy0nhJapkGLb6psSdQZ0zlfBkQ+MU2sJGLF3lWek9A="
+      "rev": "d020f3c089be103f326b03f02ed97dda7ab00af0",
+      "hash": "sha256-Ig9cyngOtPbJhWjqd+K+vvcLqGc99rhcoq3bxJ/q+R0="
     },
     "arez-xd/ux-ui-design-taste": {
       "rev": "70c25e8258414a55cb8d09cee48c2ce9da4c1b3b",
@@ -3239,8 +3239,8 @@
       "hash": "sha256-/MZUXG6XpPntYnUry+Hwup5MgZs4cZGWxPsV62w8LJw="
     },
     "arize-ai/phoenix": {
-      "rev": "dbe4443195f1c8e8de48c8c1e53e070cc3601961",
-      "hash": "sha256-nCt1ok8+W8NdeXX4ZFaYTFXSGeln7kdMMdWMiBFf64g="
+      "rev": "ea5a6883d399ef2667421bc7008741b592c401d9",
+      "hash": "sha256-eXMeDTxCiXlZhmNZMdGtG4IoWnEHV0fMkYIWEIii/tw="
     },
     "arjenschwarz/agentic-coding": {
       "rev": "ff1c006b94972c59fd91c9d6f3c05992300d3608",
@@ -3439,8 +3439,8 @@
       "hash": "sha256-tZ+aqIM3idGfKBY5JHMNdoBRrwTAvZ11kf0A2LUgFp0="
     },
     "asgeirtj/system_prompts_leaks": {
-      "rev": "56eeb3792e700a7e2165ffcd91f93c3115b210c7",
-      "hash": "sha256-IZh8adK+JqrU9I/cxtMKkl2dkt1fTfu8Ggq+a/KCPiU="
+      "rev": "784e47a120a61a8e4fade99934d790c63b53a43e",
+      "hash": "sha256-OX5t3+oSVk44W9MhZyApUNLJ8oEWsm2swuUSE09mt68="
     },
     "ash-harris/carousel-generator": {
       "rev": "1d1f5e2f27eaada64f6e0f709d19044a815d1ff6",
@@ -3495,8 +3495,8 @@
       "hash": "sha256-pimP56ZoPp0WfhfbMPCPhDAAqvmJZf1K8LqkGwVzdzw="
     },
     "asklokesh/loki-mode": {
-      "rev": "3b7e856614c817263ac1710636543a9f23bdb26b",
-      "hash": "sha256-7sOv8Qnav5WiJ+fchAmKhWll7u+razFH31GKZ71F1cM="
+      "rev": "71d6e6cc823cda0346f4f6d374d9982c3f762569",
+      "hash": "sha256-eDTN1WiJd79cYw+/q2b5bg4BgxVEGf8W1NOKJv9SN5s="
     },
     "askroundtable/expert-skills": {
       "rev": "a7ea0121e88d6fcbf6ffc57833b0cac7cf9cab74",
@@ -3811,8 +3811,8 @@
       "hash": "sha256-LpV+q58/Ed4YZlT99ituveyXJw5eLFl2tdo20feflfc="
     },
     "automattic/studio": {
-      "rev": "7eebef00349327e0548efe0cf56377ed261b9d3e",
-      "hash": "sha256-gK+vlnodJ2zzGevGGAf8yvDZ6IEwDiEMtKcw5uNFvyo="
+      "rev": "426e97f01b6c9cbd74e9809de02c8101980185db",
+      "hash": "sha256-dm6ZQeHn+ISVcIUEXWQfwremo/ur7eaf9+CIkpKAWH0="
     },
     "automattic/wordpress-activitypub": {
       "rev": "b48ad59c89370715a643fa36f459181c6b4f78f0",
@@ -3823,8 +3823,8 @@
       "hash": "sha256-B2hR75HkqJREKIC4KGxUTzFBwT/Y0zNokOnoTQKm2hE="
     },
     "automattic/wp-calypso": {
-      "rev": "3340efb7838072ce4090ab022678623db81fe3f9",
-      "hash": "sha256-Jc8MHnxgDQKRTr80T4KJzyZfaL2sAnDrFL2tYiLwP5w="
+      "rev": "19cac629ff3672d2ee8ae303c2eea78c147ee114",
+      "hash": "sha256-LcVdggR9m/4mVw5SDrZMtyV2+Es5eDWeZTsUtGwn85I="
     },
     "automazeio/ccpm": {
       "rev": "0bcfabb516913b6d484f20a8c9e449fae8e0c0ee",
@@ -3843,8 +3843,8 @@
       "hash": "sha256-p8BD6sbVe1nN6Wrv4ss006Ox6fvmGQ/l8J7eQPwWM0c="
     },
     "autumnsgrove/lattice": {
-      "rev": "3d09a363fdd9d0caa3d776e5f39bd54efee82a27",
-      "hash": "sha256-oKPOVhjEzJoHVkL3Z74WtDS/zniEu4R7UAvwzBfoJbU="
+      "rev": "bf057f8328266830825c72fb5cbe1e24d321159f",
+      "hash": "sha256-dR8ntPOLd/vKUsmRHXwsS2rxLHDwDASEFYHX63FxBuU="
     },
     "av/facts": {
       "rev": "30911b8efe3fd4dc641463ed6de57ca5bedd0d72",
@@ -4003,8 +4003,8 @@
       "hash": "sha256-WzPhxzZZaHrqQ36FtMt6CfTSZXN5r7EKPKMyOgoJC8E="
     },
     "aws/agent-toolkit-for-aws": {
-      "rev": "faab23017866c74a4b4033bceb141cdffa28aad8",
-      "hash": "sha256-bW6YcP0HYmFXfoPvhjZJZQG6Y2ZlxRVPPIhpFCByiQs="
+      "rev": "d685372be6239c57cbead818abecbfa1ec7458da",
+      "hash": "sha256-3hDTxEfL0xgJesLen68AaVO9J/Up9+mo4g9D+sAJacQ="
     },
     "awslabs/agent-plugins": {
       "rev": "48a6f48fe50eac3838845a6e00cf63137f9c0d4a",
@@ -4171,8 +4171,8 @@
       "hash": "sha256-kOmg1c6KouJOSf5V0g5Kv/pLtkzlYXJnkXRGtEdupLE="
     },
     "backnotprop/plannotator": {
-      "rev": "f61d44dc304ad15ce68cb71acace3abbf3346de0",
-      "hash": "sha256-fach44WCAPO0HqWBfhtQ3K2jcVd5OPZughBeX8wy4N4="
+      "rev": "651803228cf8fc1e1812b1aeb0657943bc53c9ea",
+      "hash": "sha256-0arps8L9xRZ7Sg6/NNCSLeXtUQwodoj4WFVmjOUTrgI="
     },
     "backnotprop/pstack": {
       "rev": "4a4f41c46c67a006658ac17cef2d092593f6b26a",
@@ -4343,8 +4343,8 @@
       "hash": "sha256-JF9fJnuFLpqKCtPQlnGViKer9qXL8EpUo6RbPYBbMlQ="
     },
     "basecamp/basecamp-cli": {
-      "rev": "2032be2814ae5f87f63d296ec55ce68a490c4aa8",
-      "hash": "sha256-7UNGHsN4RrEEEJtN6sPM/UMcUCknFbEz0Ma9IMUBDno="
+      "rev": "43e18b9114e188f0bdbc234ac1afd05b76b2313c",
+      "hash": "sha256-bIp8uCgMYAh3EERFG99fNnk/zEXD0qB2vSvhh/HNSdI="
     },
     "basecamp/basecamp-local-agent-connector": {
       "rev": "8e4964b19215f91ad59af1104d34d2363c268290",
@@ -4355,16 +4355,16 @@
       "hash": "sha256-Yn8wJXky+XX9Jk+fFb2+cKSQ4+L5lwS/fDM21ha11jw="
     },
     "basecamp/house-skills": {
-      "rev": "03335fb0b158d6e15bddfa1c8e6db3743a834771",
-      "hash": "sha256-DqI0e3AqjTHcQR2i+WDXtOHSh1amX40mvev7/KVlf/w="
+      "rev": "103e3b1a6f40edd30aea8c661f33f57faf75e542",
+      "hash": "sha256-m6bCrUccL21lXnWam3ajg60ifyBKp9S53j/5aKjgnIA="
     },
     "basecamp/skills": {
       "rev": "13aded3f787c868115623b3fa18f4be72c4ca461",
       "hash": "sha256-wrryJTdS0rrbaqQRxZUX3nxI2DTL6Dso6KRpg/6pT6o="
     },
     "basedhardware/omi": {
-      "rev": "0906d0bf2dd462fd64753714dc7a29181ec9bba2",
-      "hash": "sha256-+5w+f5pgS+tQTd+5cclKi2MNd+r/A89z9spjRuEeiOE="
+      "rev": "cbb89959ae0c11284c2f578bf1716d9e42a48b5d",
+      "hash": "sha256-8qzERCWqn55PC2GGNVNzN+sCxr4keCXONq4am+oKXLk="
     },
     "baserproject/baser-skills": {
       "rev": "a91b026fa7dccbf636a644eb9be9aa70577235cc",
@@ -4403,8 +4403,8 @@
       "hash": "sha256-XcsAD4rG0fMrKa2P9Es8D1wjH7RTTqy7QQWBziY9iHg="
     },
     "bastani-inc/atomic": {
-      "rev": "c7ecb8ed106999654cf6fedbf916def94a5c702f",
-      "hash": "sha256-UEYSb+mhG99HADT60fJPlbldWdD5zrG0Ek2nJnn6xss="
+      "rev": "221dad8649e413221689e809388e4a9be0ff013c",
+      "hash": "sha256-br2SePilvIa5+k7UEa1IudJpunqRMJRM9BJiDWGdc2k="
     },
     "bastos/skills": {
       "rev": "93f7d2c841e806f48373d3dd8a1b7ae30d9c8eaa",
@@ -4867,8 +4867,8 @@
       "hash": "sha256-wGknajAQjHuQbhxMtnqZecKepergtvxzihofIK3Lny8="
     },
     "biomejs/biome": {
-      "rev": "29520f52524f8bc61d5276a375a3bd812a077c10",
-      "hash": "sha256-fUv7JcqVdg6LgAs9c+XkdU11OwnbeZc+2E+GPf01Pwo="
+      "rev": "9ff9ee43859575c6f299b3623e4794d45de8f755",
+      "hash": "sha256-4xDydj2AC4XSCeo5lGSALspS8U6NlxytbIf6h/nO12M="
     },
     "bitbonsai/mcpvault": {
       "rev": "5d4e68550e9fe27fc24b9e16d96b8ff5b39355d7",
@@ -4927,12 +4927,12 @@
       "hash": "sha256-2AszyPm2M6Q01/lgU8IKOAmNT9zl6RBZiDp0iU2sjrk="
     },
     "bitwarden/android": {
-      "rev": "6542cdce8a995e899997d0a228739f6fc3d506e8",
-      "hash": "sha256-80ObqemtVKWPtLY8EgRu1TgL7BYfxzB2i4daKTTs8ns="
+      "rev": "84e960da8d86774665bf60fc253879f9f1063cba",
+      "hash": "sha256-gCEeQUwdHTyvfwxXN3gMmyelF4s5cyYUAYpFJgJl/Z0="
     },
     "bitwarden/clients": {
-      "rev": "79cf596a357967bffc1fffa549c777578968cb9f",
-      "hash": "sha256-K6uH3sHswvE5O7Nn3IUb1h0wro/LC49uosEpgOf69UM="
+      "rev": "3d00ef5fb23d253f78fcab9c0cfe8ec04fc38b9e",
+      "hash": "sha256-XMCwGVEgbndJLfW+W3u9dzkNMH6aekvSZps/l/Eosdo="
     },
     "bitwize-music-studio/claude-ai-music-skills": {
       "rev": "7ea5185b7988cf8fd33c3178f96134feb7711471",
@@ -5059,8 +5059,8 @@
       "hash": "sha256-QkTSTwxV13D6TvqgY2dVQb6NFfcm49Y9p9ZolS0d5a8="
     },
     "block/buzz": {
-      "rev": "786726907c7a73b9a03c6ed195bc33ff1e84d85e",
-      "hash": "sha256-bIxGk4FsP7jj96KEoUHhKnFqbFdWKraiGEI782DCS0k="
+      "rev": "9c0bcd6239a9b5a459058c0f6f9ca6ee2dacbac7",
+      "hash": "sha256-mhLFVyA2jY81oNeqKKw5N0DJVMVr3WMmsVp9xOOhEJk="
     },
     "blockbeatsofficial/blockbeats-skill": {
       "rev": "0298a8ee0f439095d3f880bbe29eaf9399dbb899",
@@ -5335,8 +5335,8 @@
       "hash": "sha256-tXeoFM++4W8ZadOTleoVs+odBZefD5WJLAe9Us3xmbk="
     },
     "bout3fiddy/agents": {
-      "rev": "664001e3ab7f4c7a08c56cb591bd106efda60755",
-      "hash": "sha256-aa5mvjoB3/gcTAqXSXXctmhMzj8LuOlykln4+VB1nl4="
+      "rev": "64a1f7b969c00b4fbe145e11fdd69a7d0fd325a2",
+      "hash": "sha256-mEL1mTjTJNIzWhSnuzLTaqDKuxsPfYybgXc6WZf8SC4="
     },
     "bowenliang123/markdown-exporter": {
       "rev": "398597a3d45d603e3dca36b843d4e894790e19f5",
@@ -5715,8 +5715,8 @@
       "hash": "sha256-TZVa5bAbC2dhJ0v+9ts//H8ml4P9i88ghM69R+n8UiA="
     },
     "buildbuddy-io/buildbuddy": {
-      "rev": "25ad12b0779c7daa78dd1a1967bc21508e8532ea",
-      "hash": "sha256-1kULuUVdbg1L8xOFuF201mdknEydK+9FHJZQEj56dOI="
+      "rev": "eb69658c1456ef35ee7d6e9ce6b3edf257fe89a0",
+      "hash": "sha256-fwbjTdsyJh9Ioebdx9NcxORHVViNR9FBIQ+r21IuoAU="
     },
     "builderio/agent-native": {
       "rev": "cb3d88cfe0c12889a34806c8eadb9f6311ef732e",
@@ -5769,6 +5769,574 @@
     "bumgeunsong/daily-writing-friends": {
       "rev": "e1841ff7e42729d858ad949eec9cd997f6756677",
       "hash": "sha256-+lfewzcFpHoAll9o5gLJnBX7p6izzEncj8NlH2E8iGA="
+    },
+    "burkeholland/postrboard-design": {
+      "rev": "f9721b206163f1e17ebb1e65d7615bb908d5d07b",
+      "hash": "sha256-sSPOUHxr4rKA5llih6Mibskz+bggdHygniegMhcuAXU="
+    },
+    "busabase/skills": {
+      "rev": "e1c082303eacb9d1524346b97c1dc9822f5e9bde",
+      "hash": "sha256-AJRUVCv50fnwFgYd3TG0g6TUqowMaJ10aPHfZUn8S/Q="
+    },
+    "busirocket/agents-skills": {
+      "rev": "d5e3054ad20442271293fdbba8bac68b2b8668f9",
+      "hash": "sha256-Ud6T/oOmNXOIp7YyDgizn7tiERJf3FZFF1WAecsQsqo="
+    },
+    "bussgrowwithlucky-crypto/openclaw-skill-file-manager": {
+      "rev": "6396de951abcff81b35e7e78dd293e3c8ab55d3d",
+      "hash": "sha256-ZrEsoQVJU2QsJWIyh2K6OnwC3frsfFhGPS30eXju5JM="
+    },
+    "buyoung/skills": {
+      "rev": "c608cb303dea7e97152eabf84d8636644017ad91",
+      "hash": "sha256-HPcVjnLJzphg45Nb3BcR27NJDtFTW6A8BIQvetsZI8U="
+    },
+    "bvinci1-design/skill-scanner": {
+      "rev": "17367b2335e802b9468bdac550e13265c411e55c",
+      "hash": "sha256-Sf3Er1n6axjxTNpW0FT2n/TyH0evLyeK234RcpEaAIU="
+    },
+    "bxmaximum/bitrix-framework-skills": {
+      "rev": "833c13266c6e2eb0ae083c13bd4a94da9b861987",
+      "hash": "sha256-oGw2zJ/odb2J6mvq8OpTWYiRxEAoolTGnroJvE3an9I="
+    },
+    "bybit-exchange/skills": {
+      "rev": "dc98490ad49304c747252abd4ccec1e9978f07a7",
+      "hash": "sha256-mytWPf/QKX3ECSMQ0hj0SGLvAnm4SVnhBwvmsXFq0FE="
+    },
+    "bybit-exchange/svg-diagram": {
+      "rev": "c30c9e3bc9a70f2b77b60c7ea27157de3a88d81a",
+      "hash": "sha256-gv90CfIz7S8YXb3sXuwCa0potqRZZRv+4rGRllhaG6M="
+    },
+    "bybren-llc/story-systems-template": {
+      "rev": "4a9e30c641625996e8bcee7b094bd2438e32b9bc",
+      "hash": "sha256-rUSsf3vEFTufrU4ldCbwR13ulJfU20+0zLQvLz5+5/k="
+    },
+    "byheaven/byheaven-skills": {
+      "rev": "a06ac24f7505a2d3d1f992d82608bee078ea7e7f",
+      "hash": "sha256-09ky8vQtB+C6wuDy/BUgiqVWNcaZqk/n6GPhxm5amZY="
+    },
+    "bymilesai/skills": {
+      "rev": "c815a3e27c775833f2c60df2c9d1ef756c6bc67a",
+      "hash": "sha256-vjTCHoiC640BgcLpD/i+mAJO+OO+GOFmnz/uh7secWA="
+    },
+    "byreal-git/byreal-agent-skills": {
+      "rev": "a0e8426ba27630fd3362c62121b85331289d5024",
+      "hash": "sha256-jV394d8p97BfZOBrTKnSDrho5KM0NCa1jzpkjv3XZ6o="
+    },
+    "byte-me-labs/github-actions-catalog": {
+      "rev": "0ee096165b036f9e40b45bf58f43d651086f2319",
+      "hash": "sha256-XOFSiUu+Cvq8ImlQ25d09jvja/SVmtr78Jy971zjNBY="
+    },
+    "bytebase/dbhub": {
+      "rev": "1a4b7d02143fea11d9c673a951b5b0eae8789d92",
+      "hash": "sha256-gngEF4gCn5CX947Zwb379APcSJvJKU2rFA5Vu5Qn2tk="
+    },
+    "bytedance/agentkit-samples": {
+      "rev": "8546162f925315b80b17f51895e0dbd13e4a2021",
+      "hash": "sha256-9VfKoJVYIVGdBJXdegPKhefpFY3SIIwm41s1WN9Z1Hg="
+    },
+    "bytedance/deer-flow": {
+      "rev": "271f6e9ad4b4ccd0f57b4d9ef27d7d986a535fca",
+      "hash": "sha256-QJcqrfzQw0otJ4uzW/fBckSbMq+GbBgbzbCS5dG6RcM="
+    },
+    "bytelandtechnology/headless-ghidra": {
+      "rev": "9beaf6ca0379c35ed162450a95e53fdd81048bef",
+      "hash": "sha256-d1yqX2DVeF75WXHpgBGypNflfr3yxpKy/x+EUPQisPI="
+    },
+    "byterax/guodegang-skills": {
+      "rev": "92514c1fe28ea385955bfd219902b35ba97084db",
+      "hash": "sha256-amE1UC+BN3SX8O2+zc5ETtd4PU7lA/BKhHCgKU+cm3U="
+    },
+    "byzhangkui/video-processing-hub": {
+      "rev": "374e074a935b445b08b7a641f5dcf724a2f9a4a4",
+      "hash": "sha256-b0s8pCPUSjdwU+K3rKsAd9RdkLVPsUVmJ4bFz3wVAS4="
+    },
+    "c-jeril/framer-motion-skills": {
+      "rev": "837d7268fc4a3cf5b1f8904616ec97c7485e3eda",
+      "hash": "sha256-uvZAxt+Y9pteI9AkNz3Xyeq6bZuG9MCwpDceHEVd1zo="
+    },
+    "c0nant/c-skills": {
+      "rev": "7e59426afd6bb786376bcbfe26cf422a39421d55",
+      "hash": "sha256-uGuVLE5YAo3bDPqnLXcw/qa2vw8pW9SswCV+CilPbh4="
+    },
+    "c0x12c/ai-toolkit": {
+      "rev": "96b2c9d099f8507a95b9e43916f144594720a3c9",
+      "hash": "sha256-wiZcaWtLiGgPmNhTFrhrYb0GOdp32dXLpoaOkm0cVdE="
+    },
+    "c15t/skills": {
+      "rev": "fd73e26ed1a9b7b4186f426a8d78318651427ac3",
+      "hash": "sha256-rZtA3UIOUe6EaOjCXDiFbjZxenB5n9Z3w9wds7N3e+c="
+    },
+    "c3sc0-v4113/scaffold": {
+      "rev": "29d16d9453ff4e591f17da9b48c8febf4de92a38",
+      "hash": "sha256-X1EhPElUM6dRtLPt5SxRyOfe5XEbTERPEH8HkjA5vrQ="
+    },
+    "caanio/agent-skills": {
+      "rev": "e050601282cab3836f576e5f210a73d3d44bf33b",
+      "hash": "sha256-wbPoZZBONJB6LBGyMa5a1FAtd1oA9Jzdi3M3M5cyaHo="
+    },
+    "caarlos0/dotfiles": {
+      "rev": "a9e242de4148cfee271e5d606c39744a89636bad",
+      "hash": "sha256-318VdntO/peCI+hjFEZSgenyxUytvoAovTKdxBoNRgM="
+    },
+    "cabinet-fe/cat-kit": {
+      "rev": "a92c6bb400b812faec141c1d1c1511f2c9f28f92",
+      "hash": "sha256-ou1vX4+xQdc5rJTe5pLHojWo/NrVWXGg9gNX8C3Wb7o="
+    },
+    "cabinet-fe/prompt-engineering": {
+      "rev": "b7718647780ee1f91393ddcbded2cd246e204ead",
+      "hash": "sha256-uK32XMgeZkDJZoA0V4XiIPVqXDc0E/ZR5mmmCrbaxGs="
+    },
+    "cabinet-fe/ultra-ui": {
+      "rev": "2bf1e409bdb8681d09526256535f9bafb61c6ffc",
+      "hash": "sha256-TADKisCdE1V2a+Dbb37wCjNabJaNxvyaaPebslTqVIY="
+    },
+    "cablate/mcp-google-map": {
+      "rev": "47248eadd98c70daea4a2cbbe6493ecc41ebe2c8",
+      "hash": "sha256-VMAPLy2JjH94I/CZwFf1XlqMekaJ7t+pXf9mX7oM2kw="
+    },
+    "cachemoney/agent-toolkit": {
+      "rev": "f9cea03dc9f97bd9f8e8655801c3d12526d256f1",
+      "hash": "sha256-WvHokVv8u55iTW8Y9VQHYFlOzXHRcOMBQo5f4JQij9Q="
+    },
+    "cacr92/wereply": {
+      "rev": "6a2debd152a2a8850bdb14c09a678e0c9ae5c792",
+      "hash": "sha256-Ag4/wQZex950KHwVUAK8vLCjCAYo1a2y1fO6hqKxHBc="
+    },
+    "cadence-lab/artifact-cafe-skill": {
+      "rev": "71135532975d055e0502cc9734827e1b5add9ab4",
+      "hash": "sha256-N0AVcQxHbm9V95Mws9/7Y6Wv5bGHBkL8GfR+f9X/uf0="
+    },
+    "cadrianmae/claude-marketplace": {
+      "rev": "2dd8a271f2530611f334ba7c2bb269f67a50f515",
+      "hash": "sha256-qgbuTpcl1tSbmHJoI7e4eMjBDJgIVPw1Jztr1b8g6Ko="
+    },
+    "caesiumy/agents-md-optimizer": {
+      "rev": "49c1358c4ac1502ec23cf93270b58ea150fa555a",
+      "hash": "sha256-bUMWNiK98P2A1LYhVo0mvzmhGr5rN3IaOt5hukM4Vbo="
+    },
+    "caesiumy/ko-design-md": {
+      "rev": "efd90fb971fdb143a880189622acd73b06bc0110",
+      "hash": "sha256-7TKEoXNjMeLXqwUSVZGl2N2qBmrjSvnidwXtGCRxvy0="
+    },
+    "cafe3310/public-agent-skills": {
+      "rev": "cfb0d62797d030848cb58e644602b98b09865868",
+      "hash": "sha256-gPIRBeGbV9zKlvENuiv8fmvgd9BmWf2F8FF7hFO/IVc="
+    },
+    "caffeinelabs/skills": {
+      "rev": "71b29840b2a688cd7d076af52702ff57faa5ba76",
+      "hash": "sha256-dxanHHYSqiJoBKHfEIfClHQFzYcKxGYHBtVMU7iPRgw="
+    },
+    "caid-technologies/open-cad": {
+      "rev": "5cf1a47dda7b80fc6b5ac47a9f60f8d6030dba0f",
+      "hash": "sha256-CCgP7XiPkljo0PmahGhEDuFQuC/uN6iHF0WrtIKIyvo="
+    },
+    "caidanw/skills": {
+      "rev": "edc0e99a6e053856ee4e2c72079c1e4a2fcaf204",
+      "hash": "sha256-8RNluYWz6bpxoT7vKLY7RUaZ8w034bzypo/su8drPXA="
+    },
+    "caido/skills": {
+      "rev": "4867841a04bd7ed49de7ad37ace6afc4f3fbdd0d",
+      "hash": "sha256-ItUS4mEmnaIwGNG8CyLCciqO042AeYCKDK5evFnT2VE="
+    },
+    "cala-ai/cala-skill": {
+      "rev": "50a5caeefde7bc192a590e7c3cbbd9b75980317c",
+      "hash": "sha256-qApLukKqZAAzicEWmn9WNdGPa0RAaQ1NcFa5qpWG8n4="
+    },
+    "calcom/cal.diy": {
+      "rev": "ae027bb70e694e2d2c44569f398d6cbcee0389b1",
+      "hash": "sha256-/0UxPwgDadIghF0+ex/XzgOpEKCy5uJjnzQn82h3oYk="
+    },
+    "caldoai/skills": {
+      "rev": "d5b68dace378219890d821adb3685538e2c69b04",
+      "hash": "sha256-VkGhevHArTXRUV87vR5stCIOb6hPqTRJFIOsvwB68Lg="
+    },
+    "calesthio/generative-media-skills": {
+      "rev": "8c85352d5d75d4dcbe58480bd138e37b9742bab1",
+      "hash": "sha256-ruM1/7KA1lE9iuaLPFgBEUopZUf24iEdgG1XWi+NsuY="
+    },
+    "calicastle/skills": {
+      "rev": "4833b159104951e1d042fa50f8faae85355608ee",
+      "hash": "sha256-9xCJuR7ihcj8DKbak0R5EDZQfPoWevnyB0XWTjVrjHQ="
+    },
+    "calicatcn/calicat-agent-skills": {
+      "rev": "8e639bc5294e1e04e566d5ad58e7bbe13c3a8df4",
+      "hash": "sha256-gDEFMhvxUvzO/fCzcscQK4WYJHyiOKf8oN8LogHPT7E="
+    },
+    "calle-ai/call-e-integrations": {
+      "rev": "4290936202052e4a4382683a4f146fbc30ace5e2",
+      "hash": "sha256-+qFlucZgeoG3Z43Wech0ZqZTqN3Hup00494j5eWSWWs="
+    },
+    "callicrate/skills": {
+      "rev": "18c2d2fd52f3597f38f93dd18aba15804c2704f9",
+      "hash": "sha256-yy/vcqI6oY0hTDOBGWOW7dQ1uKE21cv5XU/YqGR3CmM="
+    },
+    "calliope-editor/writing-skills": {
+      "rev": "2fad031982cbbcb00c4da14c2fc9712d2daa78da",
+      "hash": "sha256-7t1kmqn/YifUbgnffVxy2Jr/ycNwhW3Bx2lSNfGSijc="
+    },
+    "callstack/agent-device": {
+      "rev": "6fb52b75dd892010bba0214e32b5d397b928a51c",
+      "hash": "sha256-ctZs2BcRhFgqV1Fo/NbgjP0MKlf7Sxoam52AqnM5CGI="
+    },
+    "callstack/react-native-testing-library": {
+      "rev": "564a84294717d8e4b0831f3e3a5e115cc3832e01",
+      "hash": "sha256-o2CSKE9Ums7PWhDbkCKHGBKDkIvWIOykbqYWZM1Ddfs="
+    },
+    "callstackincubator/agent-react-devtools": {
+      "rev": "ab30c1e051e01c9a7205f8d0be6d65227c09fb21",
+      "hash": "sha256-lyuVeop/uO2SlN7n5h8R+/AENjGztn/AJ3DgOhVvAik="
+    },
+    "callstackincubator/agent-skills": {
+      "rev": "59e9d17446a248b21d86f078fcd0bd2d36db1ca4",
+      "hash": "sha256-1xcoefiHsO6peVJLmJphEfd6GeKcipLtORZiph4vpBY="
+    },
+    "callstackincubator/ai": {
+      "rev": "1243e6a4e239ffac46b28dfb14556972f00b3253",
+      "hash": "sha256-s9SXmyxShXSS6x2W9WyiRf2AxCfTULa0xeCxRVcV1dk="
+    },
+    "callstackincubator/react-native-harness": {
+      "rev": "840a8aed6c0566c613dd19dad52c489e97116ae4",
+      "hash": "sha256-G3bbtPGgagcRuDUCak7amhutEYH3HPuApn75z6QhaYo="
+    },
+    "callstackincubator/rozenite": {
+      "rev": "becfe86544a5f61dfc06d8bec934a85ab94ff91f",
+      "hash": "sha256-pl1yK5wpnCXrEMx6M9fkH3TOp2SZR3MteUOZC394vFU="
+    },
+    "callstackincubator/voltra": {
+      "rev": "09bb8b717bb2618c8215bb20782b92ac39025669",
+      "hash": "sha256-2SwrugBXmA9A1pdvBGYytoKF0PGUMcmy1ZewL12a+h0="
+    },
+    "calm-north/seojuice-skills": {
+      "rev": "c1f633bea512365ba04477076369e418ecc82ffd",
+      "hash": "sha256-DyytvqH+YM4z9fzZrWNku4+tuuALOemYFZ3s1enDj/4="
+    },
+    "cam10001110101/claude-skills-base": {
+      "rev": "69ca8a15df330fe7b39581c6c33cd7923638c075",
+      "hash": "sha256-81HoQKd1/GqTZtVzIFxTLaEWENbIOpkFK3k9h5COG00="
+    },
+    "cameroncooke/axe": {
+      "rev": "c139415bea3e99b14ca9239aa72fa2cc29a4edd7",
+      "hash": "sha256-KmWING55AcrfZdJyNsRNYwkwSc7GTcex1hdEQuOMtbA="
+    },
+    "cameronfreer/lean4-skills": {
+      "rev": "3f913c66251b8712bb58e6ce83a453fa96e3f94f",
+      "hash": "sha256-6aPUpLW61XAvZ2+yLY9RhY1/N5zlQtBE3Em/PBANuoc="
+    },
+    "camiloespinoza/ifrs-accounting-standards-advisor": {
+      "rev": "9d93596fe30f3a17f2007624d827fd767be04014",
+      "hash": "sha256-3qhsR/d3SEPgXwVHbmKT/9vZXFxToKu3EbUkqRRV5YE="
+    },
+    "camoa/claude-skills": {
+      "rev": "bdf188b957cb5360675dbeacf47133ed89fac64d",
+      "hash": "sha256-6YL6mhNFR1LjK1oD/ylW+8PkJ21wOEOnh7St7koCCNo="
+    },
+    "campfirein/skills": {
+      "rev": "9c35d87cb823c53fe56c1a8d4f1c0912abb67c05",
+      "hash": "sha256-uF2mLHPgS4KDuFxwLKG5vCky9plE4ixV5To+ajeZy1s="
+    },
+    "campfront/camp-skills": {
+      "rev": "039934f5d143be9486a00ad51cdc63fe97697b48",
+      "hash": "sha256-X2O5r6DHsQrhB7MuO4MROQNCHB1Kcf1eRfXORRQZi7E="
+    },
+    "camunda/skills": {
+      "rev": "aa0f1cb7a42fb5f04ec9b36b149dd9b627ec70ac",
+      "hash": "sha256-eRoQ8kJodZe/zJN2Y//dK2JZ34Sq9MKKfeLltaw2stU="
+    },
+    "can4hou6joeng4/boss-agent-cli": {
+      "rev": "8a7701e15c378f599b3e2b6b178102b9fb767cb0",
+      "hash": "sha256-1359wR8nIDJXsA0yqFj/ZIyB8vqvS7VZnfDLh6htCik="
+    },
+    "cangtianhuang/humanizer-academic-zh": {
+      "rev": "9a30ac38200692916efae5e5128273def2099ae6",
+      "hash": "sha256-f4c9tj1NsyxHApnHgm2EPtgScRXcldKDomcxzKhAY+o="
+    },
+    "canine89/gonggong_hwpxskills": {
+      "rev": "618ca4c93953f5084cdbb790849433236ce85565",
+      "hash": "sha256-1OagBiB2e6Dpd0XgsZjKgvK6AWIZ4spKJTh0wS7JbZI="
+    },
+    "canine89/hwpxskill": {
+      "rev": "cb5f25b6557b47b0339398d3b5d45a57bdcb4b28",
+      "hash": "sha256-uxvo0tFssHAWG6rX9qUe+EWUomN5V1VySWy8F44DTOw="
+    },
+    "canner/wrenai": {
+      "rev": "31390f6153887e893ebebb7d5b663eb131c782d2",
+      "hash": "sha256-oM+Iy2ZumeeQUG1WROwxPmlS1EBHZ3kK29QnaztTlME="
+    },
+    "canopy-api/skills": {
+      "rev": "60527296183e8162008dda681b3860fcd65de507",
+      "hash": "sha256-CouXKqfvJbeL5FKp7iZSlbl0+a2PYTN8xZTj9V1ap5k="
+    },
+    "cantian-ai/bazi-persona-skill": {
+      "rev": "0c650bb37a368b377b87305a6040d6eb816ed0a0",
+      "hash": "sha256-Shze4KcCuNe6aTN+tTfBw+SlRFSY6ieeUr2LRQN0/zk="
+    },
+    "cantinasecurity/clawdstrike-skill": {
+      "rev": "e87e752589ad460c17d434ff56bcac4762a117c3",
+      "hash": "sha256-ZYfOlGzjEdKTrfiZcW7QlPIPfV0ead9pkZea0BCZ43E="
+    },
+    "canva-sdks/canva-skills": {
+      "rev": "508753389ae753417d776dc4e74bb5a7e1302aa1",
+      "hash": "sha256-rXg0Vv3kdtu5EEatw9cXnMoK7QrFe5ebkoMRCumGM9I="
+    },
+    "caoliao/qrcode-skills": {
+      "rev": "d5c34dd5b7bad0584a1a90788355380e38b66fa8",
+      "hash": "sha256-VmKWYoz+O9cUXncBHcoDZMljMVcF31M7wqMvR4bdkmk="
+    },
+    "caomeiyouren/momei": {
+      "rev": "1e117400cfaaf5e7f089ae751a7dc7e12e9ca7b5",
+      "hash": "sha256-roNXLvw5e8LZnTFUMPTKH3wPDMYd0P4dt8pYHcI4j+A="
+    },
+    "cap-go/capgo-skills": {
+      "rev": "e82217b8fa76e11a2b2fdb49c6a221df8359cb54",
+      "hash": "sha256-zT8K3Oug2xhU/DYxkxiQfqXRc9YhWGXIN8Ifwkxjrrg="
+    },
+    "capawesome-team/skills": {
+      "rev": "847d536b4b6b09a8c575b607beaacd864a5ca81e",
+      "hash": "sha256-wJDKkmC1eFtTrL4Qc0C/4E0oVrfYkIn0Ac2p4Ta/cdQ="
+    },
+    "caph-dev/agents-progressive-disclosure": {
+      "rev": "7ed178fadfc983a457e9364f333201f814af2d26",
+      "hash": "sha256-+cx/95be0OIfuAya8ZfvHM2P9dJnzXD6dapsk6ynkS4="
+    },
+    "capire/skills": {
+      "rev": "ea1ab1ea17b49f33e9bd65ed35e453fe7da27008",
+      "hash": "sha256-sM2IpDJunampLr/LkwpYSC/d7fas9mpxaZARSwUaKhs="
+    },
+    "capraidev/shadcn-claude-skill": {
+      "rev": "1987987e08fc1747ce58071e92ab7548d59890c9",
+      "hash": "sha256-+ASIxaMOQBqw1tGvN0JiaX0mTm6MKmhLXLASL1Xr1aU="
+    },
+    "captjt/skill-tts": {
+      "rev": "51ff049aa1c8c811fec12b1ebf6230456aa60536",
+      "hash": "sha256-7/ahUkEjBDCeuuqe8nrNwArHx74qjhD/nGuc3NbCfb8="
+    },
+    "carbon-design-system/carbon-mcp": {
+      "rev": "c8af75506de40846f0b0c3e42e068345776a43b7",
+      "hash": "sha256-7iBGbqd1tCJVbDN//+a8dkkOzTSP08VZdZVLRIb6dgU="
+    },
+    "career-ops-hq/career-ops": {
+      "rev": "34c42da9d34334317508851dd0382d1f5dc1b7f7",
+      "hash": "sha256-y43ncGT94aBU+mkHxQp1ICdg5avvSr606YFgUj2HjxU="
+    },
+    "careerhackeralex/visualize": {
+      "rev": "301077038e988088f720e8f6452c8c8e8cbea6f1",
+      "hash": "sha256-tz5BR2IkoRhU7ejZD27yNi6yHKBYfiGN6tUkU9lnyvc="
+    },
+    "carlheath/ogmios": {
+      "rev": "7b8dc31bb3d6e0a02e92e12ffbdc141e8fb589ab",
+      "hash": "sha256-Y1VDscFWeF/txbG2rqiTMJ/X5kr+utSsq4cCpoFEwyk="
+    },
+    "carlitose/agent-skills": {
+      "rev": "a172d700d8d53b0d58d7014fcb9c0c9b9cb0138e",
+      "hash": "sha256-RcogWzStRXqQElXbeQI47CsATCcz8InucKhnIkqyTI4="
+    },
+    "carmahhawwari/ui-design-brain": {
+      "rev": "38f04c5a1dee55d99c686a16643cef4e2ce0f7a2",
+      "hash": "sha256-aOeR/qpkM+gRegRDvJp/SxWVEDLwH5pW0d5FbFkv/AE="
+    },
+    "carnot-tech/jinba-consulting-pptx-skill": {
+      "rev": "3411e474d83910afe67c17d3b0164dfd793c0872",
+      "hash": "sha256-A1pc5kykF8mRb+tlBDiah+8paV/LzICe3fotZU+9f7M="
+    },
+    "carolinaaafy/travel-memory-sticker-card": {
+      "rev": "25ac9753bae206e452f1501c9a57f93f853df408",
+      "hash": "sha256-8XBzYPbUveVtqjCF0JrQ1Ovt4T6zL1KfBue+fnpWSQQ="
+    },
+    "carolinacherry/claude-first-customer-finder-skill": {
+      "rev": "2304f8730bb97adb96822e1a2fa9015ddab3a886",
+      "hash": "sha256-MQz70wYdYKP8TGmAY7LuBDIK7Lp55jl9GvnI0uWPRd0="
+    },
+    "carollili/libtv-advanced": {
+      "rev": "435a71c3cb8a59eaa1eba1a09f20918bf98d3005",
+      "hash": "sha256-0cAyIjfM/Il9RVUb6NpAC4NE4lv0tUJdNe9/6FHlcYA="
+    },
+    "carolmonroe22/lovable-cloud-to-supabase-migration": {
+      "rev": "e1def49424a1e587d6756295eaafbd8277ac4f08",
+      "hash": "sha256-yOCfOvi46WW/B55VLhqkF9OoxnXFYRLOvw+tTattNQQ="
+    },
+    "carpenter-singh-lab/vignette-catalog-skills": {
+      "rev": "87b5a2acabcb481cc1b9b23da6bcd710822b4baf",
+      "hash": "sha256-3raM5lBKnrnQ7ZzbYnnFQbRoUtRc7fFICPMydEOFfwc="
+    },
+    "carreypro/ict-trading-model": {
+      "rev": "7162437e28b1f59a4b25ea88615ee99902c9cc75",
+      "hash": "sha256-Fl+Ftr4ADbabxfBmd6XTiQHWdhpTOGlKfAsinpVcKOI="
+    },
+    "carrilloapps/skills": {
+      "rev": "233c9558b179886c12d31fe4011cfda143349b3a",
+      "hash": "sha256-Yea8aPw7wgmHlRh/m02JQY/Eh6u/TRNLpvAryYx99js="
+    },
+    "carson2222/skills": {
+      "rev": "c29af032f5bd30c1c77863bdc4a9c2583cf511fa",
+      "hash": "sha256-vrU+QF0HhN5hqu3zvD6SKV6vfRBVZIL5mmdMFW5VzVo="
+    },
+    "carsxe/skills": {
+      "rev": "560ce70daf2c993de2627fc3dd3345c988ec4416",
+      "hash": "sha256-NevzSosZoMwM1i7tctPICpOTmFLqA2WVqHAhBsvslCM="
+    },
+    "cartesia-ai/skills": {
+      "rev": "8525a2f0878244228e20ce8aa0204913f683862a",
+      "hash": "sha256-5jPZhNnpcEP3aMy6yRITuh5BNc+bm15jCWSygAnwF74="
+    },
+    "cartodb/agent-skills": {
+      "rev": "d64f4a1809ec62a7cbc7ccefd11cbb9e70c18a97",
+      "hash": "sha256-uqAGRzHV4oU6bZSRGeA4ncuGmuv6I5gOiafhqmSiu70="
+    },
+    "cartridge-gg/docs": {
+      "rev": "ef2fb22110970ceaa8696a16a44d4fea0b7aa18d",
+      "hash": "sha256-MaT6K8Sh8BvUnWeg4iIfqslRiMb1qohuFhNYP0bzSZA="
+    },
+    "caru-ini/stack-diagram": {
+      "rev": "f6c5785a3349e1baba73026948ffb6c166e71db9",
+      "hash": "sha256-0mOEUaee3WxF2VuIHdtUHKsYvfpr9JHX4ULE2BlfS3A="
+    },
+    "cascade-protocol/agentbox": {
+      "rev": "e002dcca29e41118304a6d95c80d85c298280d02",
+      "hash": "sha256-VpCYjd1+gwGk6wxHFZ7fmXcWt3rJAWPxqkws6EYqtkA="
+    },
+    "casey/just": {
+      "rev": "62784c2a6e169b8ca5f32bd69d5cfeb1d6b5e1fe",
+      "hash": "sha256-lGe0bd4Pnbj4af5Wt6hAw+2kcWR6QNog2iPfybrZDik="
+    },
+    "cashmyrr/skills": {
+      "rev": "1a31ce2f8eed2b520e0b89ac5888c9894485c887",
+      "hash": "sha256-vaI8iiBesomKDoVEiGKkBkky76eiroDxqqGQjZ3SxAI="
+    },
+    "casper-studios/casper-marketplace": {
+      "rev": "deaebe23587f3d012b99635194247d6ad838d632",
+      "hash": "sha256-hDv/8zuaz4ZtZK+Isto+X64RNh1OYo1NdfnOPxSVRR8="
+    },
+    "casperliu7/small-company-agent": {
+      "rev": "93f1a48bdaca3f33cc74f8219d63aee3f74eca44",
+      "hash": "sha256-P0iyBs5AMbmir4bjX9d6Gq2mErW4xLTDKfMsDSN+W34="
+    },
+    "casualsecurityinc/xno-skills": {
+      "rev": "5ee9797230934d0ad6ac3295e3372b6cadf4018d",
+      "hash": "sha256-O2Dqzri4HDD3dKnp8rKPgK1wvrtC1g7GTss98mcqUxk="
+    },
+    "cat-xierluo/legal-skills": {
+      "rev": "6c31b23852a997fe7001d3fe129749afc47ccd19",
+      "hash": "sha256-ehDWWezQTpuLX+Qq0bYND+tfjwaLdgJtQ1HdzukmPDA="
+    },
+    "catalyst-cooperative/agent-skills": {
+      "rev": "7e2ee1993406e5c81eb04eadd220609cb3a5acad",
+      "hash": "sha256-yUlcCYSwfnvHw6boLS9AYNFr3FoxHLhhlvU5HqGnh9M="
+    },
+    "catalystbyzoho/agent-skills": {
+      "rev": "4b6047fbf5fccdae12483f3ffd5f39cb582365a9",
+      "hash": "sha256-sb+xfqVwt/7AbNWIgV4zSnaZ2gGc3gXoXk7Fh1pn9cM="
+    },
+    "catena-labs/skills": {
+      "rev": "69462ab9ccd3894b1a097193dd7685a4af372592",
+      "hash": "sha256-xvRDLVWIbzZ5G6r6KOPKQ/U9SzkZS4HL54y5zHHWrX8="
+    },
+    "cathrynlavery/codex-build": {
+      "rev": "46dcdca136cb1ef5e6057a78b7f88ca56cbe74d0",
+      "hash": "sha256-H1dQRd1oDSCJ9GddShABkKEzHErB61vixK1Brb4oz/0="
+    },
+    "cathrynlavery/diagram-design": {
+      "rev": "d74d8c2d0c78a9e1efd43137f6a9a51182a8b5f0",
+      "hash": "sha256-q5o0YZyJ6LAM8336mMuOi6f332fORmQemJzagd0nrSo="
+    },
+    "catlog22/claude-code-workflow": {
+      "rev": "07491b04ac30c9a2d887f443661288b1b7520832",
+      "hash": "sha256-K8dEs8E5F5VX0Kq6e5codBojQZGDq/VnnvP3iTqhQxk="
+    },
+    "cauethenorio/slackfmt": {
+      "rev": "551c592e24f842ac5afd66851c67873dd965357e",
+      "hash": "sha256-EaEzzYITHqjfy2mcKhxqP/Qyd8BGejwjrgakL+bIHm0="
+    },
+    "cawcut/skill": {
+      "rev": "9f4661697c3bffe16acd67adcba11d022fd2f547",
+      "hash": "sha256-hjvcoQZB6YT/qDv+4jpUbIbqZDe70UO6Ez41HAqmSGI="
+    },
+    "cawcut/skill-cawplan": {
+      "rev": "22ec0c930ead5ef0ee4524147cf47e2e159d31b2",
+      "hash": "sha256-3qT05o0a8/nhxEdtef1dmLTNbIqbX3T8vX6gCqkWc4o="
+    },
+    "caylent/tufte-data-viz": {
+      "rev": "080e2fabec52346b8d7aaa47723a55daa0738447",
+      "hash": "sha256-xbBPkJurjWxRPIay2glG61/xK+6rfxz1mVqDWpRZ68M="
+    },
+    "cayopoku/neuroforge-nuxt": {
+      "rev": "251a78bb97fdd60b46dd3f26eb6df4a106b8a1af",
+      "hash": "sha256-rOOnmBygnK1mvH5cj+uyM16w1pELwRu9hYmSQAAQhxU="
+    },
+    "cazala/webgpu-skill": {
+      "rev": "e4398058672173cf596379a816bb99fdb67c71b8",
+      "hash": "sha256-YWNPX97JJ2yFGMybMZ89tixvE3HWFQNdiJUBiTaMOHw="
+    },
+    "ccheney/robust-skills": {
+      "rev": "0eea7b060d12e3520556a73b15fbfa79480987d1",
+      "hash": "sha256-ijbnxbPnqMyUr3HRW+i+c/ViSTSwkFa24ff4zAnDsII="
+    },
+    "cclank/lanshu-animated-architecture-diagram": {
+      "rev": "c17f5b4e5de99d3603b364530ad04d930d038d24",
+      "hash": "sha256-JZbEng9O4nzvyVBFhSvIecNcuBehQKZBfxUHv3XFAeA="
+    },
+    "cclank/lanshu-awesome-ai-video-kit": {
+      "rev": "f4c1bbd09800a0002a169465d14060e3b6a88f1e",
+      "hash": "sha256-JhLZyayF5yxqMis0cgF6DkezNV+Qcitf6HGxQEu3KlM="
+    },
+    "cclank/lanshu-create-ai-presenter-video": {
+      "rev": "762d3ee42623b75a4ec63ad6aa61ace69d78ce6e",
+      "hash": "sha256-fTQf2o/Vo97+xEZcFLg5g0qzs+WW3iYwHMLKlZNGtkg="
+    },
+    "cclank/lanshu-waytovideo": {
+      "rev": "6476f11d3c86934321a08466314c55850cf314aa",
+      "hash": "sha256-miHKfMkp3KmQWovv2Ogmi9yUbJg8FC+2RIvbrjPCSF0="
+    },
+    "cclank/news-aggregator-skill": {
+      "rev": "b639b622a79ec242669d6111708efbf863592de4",
+      "hash": "sha256-b0o0BpzxX2o9sX6yzoo2EVo4kFfiGFwwVdByQXrRDY8="
+    },
+    "cclank/recipe-generator": {
+      "rev": "d1dea3ac8179cf77da70c62364cdb2defa5d59d5",
+      "hash": "sha256-A/JSnC3ccLrQkNbGkmGQdQcq0EdNz10D+oNuNAfehGQ="
+    },
+    "cclank/xhs-cover-skill": {
+      "rev": "2f307c3e641292b33c4f68969fea09e6dc398f15",
+      "hash": "sha256-hS1HJtjrMWqFXcgek/LbFFKKkhaUoAUkDLqPckyGR0M="
+    },
+    "ccostan/home-assistantconfig": {
+      "rev": "87eef507bf650666f59f0341eb02fb579433cbb8",
+      "hash": "sha256-UPfQ+VC2SY2mOWd+mG+rGFqncwvpwNs1JOK8hHTUC9k="
+    },
+    "ccxt/ccxt": {
+      "rev": "d49e7aa7ba2d5a0bd8bcc9d32a8eb5ca5d0e37c1",
+      "hash": "sha256-pVld1IZ2VAIfrHcSAm4PYPXS6ypqU/x8DG5l2j+IjMc="
+    },
+    "cdatasoftware/cli-skills": {
+      "rev": "b0e573b4329ad161125d9b6758f71f72f13d5ba1",
+      "hash": "sha256-MpDsQSBYXurik76TBaYyfew9EbJY9X8LqL4Z7HL9Rxo="
+    },
+    "cdeistopened/content-os": {
+      "rev": "16e080f04186d892dcaa55672bea63096b0912ad",
+      "hash": "sha256-9NS9yp5SLPLyoA6oMdefd0W7A056sS0TO2kWvJKimP8="
+    },
+    "cdeistopened/skill-stack": {
+      "rev": "d607d66198b250b12c8e05c6d265ddb73d871aa5",
+      "hash": "sha256-oQ8PActXqTWs5grPENSrMw25N6XOhbHX4nhmr4z+bzw="
+    },
+    "cearley/claude-session-index": {
+      "rev": "318425c3995547e71750585ecf673f28d3740cf2",
+      "hash": "sha256-ooa/GE2DN0tG285iCRs7OzhVHDtYnrKkFZGrqQmyBY0="
+    },
+    "cedmandocdoc/awesome-skills": {
+      "rev": "ed51afaf86051315a41ca338f926792f1ea0637f",
+      "hash": "sha256-68DC1BY7iAjo14AL2Vo7Sz6dgOUlWKDSGLlb2fZc2U0="
+    },
+    "cedriccmh/claude-code-skill-scrapling": {
+      "rev": "85dd89f5f85a6326712c516bc82f84c2ceb28c19",
+      "hash": "sha256-NiRaRrjevdbRzRYBPZrC50KPCQt2UMJuRUXR66hPX7E="
+    },
+    "cekura-ai/cekura-skills": {
+      "rev": "cf50ab32280f0e3d47fb1abbab3bd5e447048a1f",
+      "hash": "sha256-zoyxkGv2hN8DQj1uohn1HDae2Ixt8jbsDVRFcRB1yKU="
+    },
+    "cele-san/vox-style-animation": {
+      "rev": "598760469edb55686208310652767a61d09f9793",
+      "hash": "sha256-vLG3b/U28e0LvHjUmQpFH3pIst56C4NT4slMKcvShCs="
     },
     "celigo/ai": {
       "rev": "2879c1a9d4b60dbb8a355829c52b6d17dc2b58e4",
@@ -5935,8 +6503,8 @@
       "hash": "sha256-A1YSl4r+6ZMF/VENnXoy1BJFM37LibmvgOtLfVRId2w="
     },
     "chanmeng666/archlang": {
-      "rev": "c749ac4edc34b03ec65308e220a554b28ebc56e4",
-      "hash": "sha256-TVrlcb59Ipv5xGjTmHw5ymOj8TEcPAuLcYR+NyiwCPA="
+      "rev": "594c1a9397fb70e19cd496bfd4898558cce9e170",
+      "hash": "sha256-zLOAth2Dd7m5vBP+G79yBWqYCBV8B3nRKgqylCks20Y="
     },
     "chann/skills": {
       "rev": "f7e4cce2f7c581dafd198a06abd868b2180b985b",
@@ -6031,8 +6599,8 @@
       "hash": "sha256-N/iXY8l81nPHApJDkJ32zdU6HaPXTv4hhN7y8IKdTB4="
     },
     "chatfire-ai/huobao-drama": {
-      "rev": "76bf15040cf5852f5696dbe08d2666253138b291",
-      "hash": "sha256-K/adVe8NfKnS91wBz2n1Mi33y70bEtG/ULxt2chlOGQ="
+      "rev": "ad18da5045a4453270a9ceda60511bb02bf48014",
+      "hash": "sha256-TXnMtiE+btlP1Z9l3IQiqsflBEMLAxN832Bk+KsoWHY="
     },
     "chatlab/chatlab": {
       "rev": "e85564960830bb402dbc9be7120d2ee695610582",
@@ -6063,8 +6631,8 @@
       "hash": "sha256-mOzIIvcm65NCxTklMVcwNkqAxgxiboIu9BslPE/6pjY="
     },
     "checkmk/checkmk": {
-      "rev": "c3eff2abf00761431fa8fc34532c643418a823cf",
-      "hash": "sha256-ud/L/4Iqd+3BAmJnrPwESHl1K6yxG9b0ZfRat1gfDiU="
+      "rev": "e94a7cb614a4e5f40dadc4ef77b4d105be482289",
+      "hash": "sha256-bfHHX4ZI2ilXmIkyziD4/pSCe1bGXars6EbQLxVOQIE="
     },
     "cheehoolabs/spureeskills": {
       "rev": "39ecba8338773757b58e47fa4f3cb77d10f34da6",
@@ -6327,8 +6895,8 @@
       "hash": "sha256-jMYAgasf5vcXInIPCARxfWaY7CliwLJMGfDs0kgVwrk="
     },
     "civitai/civitai": {
-      "rev": "3aaee4f67464fface001e07e614ceca0758403ee",
-      "hash": "sha256-EYMRNkIA2Y+wVum+FfEynn2iNz8i/9ZWAVSTLjPIC5k="
+      "rev": "9c27efc6f8f55d82b53c17ced18613b0ff13cfd4",
+      "hash": "sha256-XMajclkndsO70Y88p75OljGVFnlVxl7pxH6QFL+6uWE="
     },
     "civitai/civitai-gen-skill": {
       "rev": "ee864d6d6afb063a80d8c3f91352093c73de981c",
@@ -6463,8 +7031,8 @@
       "hash": "sha256-62jou/l7H8hsOrN4BMzq7gSUA9XP/t+ECyMKQUboH3A="
     },
     "clickhouse/clickhouse-js": {
-      "rev": "a6c13197cc395f8ee2114eeaef5df043d23f08e7",
-      "hash": "sha256-L1HRoUQRcdWewVafDpBQnNx4VCkJf9JfffV8uDqtEI0="
+      "rev": "65726e5ef959a8a90bed69b976697b906d495f47",
+      "hash": "sha256-u8rgGrbRwazLLh8P+LHTRinEyLCR0MzfS+VreKNSOi8="
     },
     "clidey/whodb": {
       "rev": "f09032a9004769a46f0602f1b40d7e46a94622ad",
@@ -6475,8 +7043,8 @@
       "hash": "sha256-4Wm91EtaohiqL+eZdv9xzwzgl63Vu3qiv1Ex4L6Zr1E="
     },
     "cline/cline": {
-      "rev": "20b042723a14412f6c1e84230b008708534d6e8c",
-      "hash": "sha256-NqyjI5+0i/T9IA2ZCreZpIS08Ocjn9EZVSaQgMJ+HBw="
+      "rev": "85d1815386dc592d20de42125aac4e64cca61f36",
+      "hash": "sha256-nPb/6Oo+k8/d3hZMLUVC9d2DkLm/neSNg5I42CYMQU8="
     },
     "cline/sdk-skill": {
       "rev": "c687e680df2cf38826f884cb56c90b68b9c48f66",
@@ -6507,8 +7075,8 @@
       "hash": "sha256-5rgcSQr+MZ6GN3/RUSqK89geCh1E43qLU3tErmo1RpU="
     },
     "clockworklabs/spacetimedb": {
-      "rev": "ddd04ee43d21d8e4ad2dbcf7367bcfa539918e89",
-      "hash": "sha256-rERZSaIClGc28pJc3ruK9OzHvHsdtoj6QGQ/no1y3U0="
+      "rev": "c3e36c4a6f06e28d38f160c2bc29b93db0a56e3e",
+      "hash": "sha256-wIfe24aN9/6evRhmlXcWzo1aCQxPRC1w7JRPb463hpU="
     },
     "clostaunau/holiday-card": {
       "rev": "96390a04e844c69c7cf06e269571d1b76638b31d",
@@ -6535,8 +7103,8 @@
       "hash": "sha256-5/In7JmWw/xGonXK1HmqIPabs6KRBuFiR4v9E1L8UMc="
     },
     "cloudflare/cloudflare-docs": {
-      "rev": "f1e03e1b53b4d425b28ca53559aea3a6c6e71f02",
-      "hash": "sha256-PXF0EQAel806Zu6wvlcA7gnkJC5atoqCt/YTBgLj3a8="
+      "rev": "dc14acb02616851d2c5087ca6d8aa6dacb6c66dd",
+      "hash": "sha256-VAcn3wY6jP+XBtWa5qpN0c9El7lWMzkKCPV1yQCRgmM="
     },
     "cloudflare/kumo": {
       "rev": "eb12be53992be2aac1e0aca79b0545c9953751ba",
@@ -6563,12 +7131,12 @@
       "hash": "sha256-/XePXa6VGAweIcy+aeURNtSOyn2hm28HLcOwSVtstp0="
     },
     "cloudflare/vinext": {
-      "rev": "124aa20f826c945b15b673466e2de1a8d3e269a6",
-      "hash": "sha256-fMBGqdJK0vc3S0DWtNZCnPo7y7FdFc4APXNpm+MDxY8="
+      "rev": "13aa3ccaea946567d3a8d75fa8a370cac585ed4f",
+      "hash": "sha256-/WmjQ6iM1miLVG76HY2ygJ04j+i/JEyP1jNhqgP9I6I="
     },
     "cloudflare/workerd": {
-      "rev": "8325eed2936c36f23b80aac91be579cef3e018d6",
-      "hash": "sha256-mUTGr7GpBPu2U9lVouwla3ViKI5AllSDfA43QTDYqyw="
+      "rev": "8df76a4825a33d83c6a6788ca122cfad6ebcfb8e",
+      "hash": "sha256-t/TcIDMPzOl1cTzPiyozyhT2ERu1mLojAKGziqRpyIY="
     },
     "cloudinary-devs/skills": {
       "rev": "c41e79f4b5e350fb994c541f6190538e838660b8",
@@ -6711,8 +7279,8 @@
       "hash": "sha256-62FVompq2bBTJF9CyT53KGSY9ytBXiV7cR7DMnghKQ8="
     },
     "codealive-ai/pragmatic-orchestration": {
-      "rev": "852078f1c6002fcb037236be707cba9ff26232c2",
-      "hash": "sha256-wpE/piLT5V3JzUBi63GQJo7QDKml+Ml5j7dj1qfr7ow="
+      "rev": "877c117dc90c76e85dc74797483038585a68f85f",
+      "hash": "sha256-ietGDQNFiNMaHcxDRk3Skbfs1mAt0xxEQSyyIB4Q/fk="
     },
     "codealive-ai/prompt-engineering-skill": {
       "rev": "4570523f4357948ce613ef48a6a1b6ba761fc1d3",
@@ -6763,8 +7331,8 @@
       "hash": "sha256-zpdQEt9Pe5I4sMOmgm4Y8C3xjvychoJSJrOFs9lKctM="
     },
     "coder/xum": {
-      "rev": "75fee6dc2322cee8aafdedd8c937d8a03af7e5aa",
-      "hash": "sha256-MYS8mVp9LRhNQtPi7Oc6aFU/jJnyTzlFfZitD5q4ZH0="
+      "rev": "fe2caafdc688ee85ef8b620ec22cf55039a568ca",
+      "hash": "sha256-pguN0bQVkVmYV9pN9XOVktYR4XUYRgAjZ9lg7GR13tQ="
     },
     "coderabbitai/skills": {
       "rev": "13c46c8f30948feb4e4f48dbdc5c7b0ae5ff8408",
@@ -6839,8 +7407,8 @@
       "hash": "sha256-iFfAhZTWJRQLchd/ym/pRwtF2gTngg0DiNe6JwYPiX4="
     },
     "codyswanngt/lisa": {
-      "rev": "f6437f0bab0ff8d0bf91e1660077934ad6ef19f7",
-      "hash": "sha256-2q+seLYg0ZBfzuBybyFyo07+83fRrHPeXYihaqThTsw="
+      "rev": "9dc3591a90b7290d9925de67a93f08a482eef36a",
+      "hash": "sha256-cXKxiEEAF3+SYkvfHCulSc2ZIYwrN5QPpk9ReUs5xzw="
     },
     "coffeefuelbump/csv-data-summarizer-claude-skill": {
       "rev": "9b3affd270f85aaf1c8a7a457f510034d5736cde",
@@ -6875,8 +7443,8 @@
       "hash": "sha256-WIDJ9gUfU0VPMvHGvZQy2Le3Pqy1/AK2g/6j+aDSbdQ="
     },
     "coinbase/cds": {
-      "rev": "f90b6e98ebffb56dfe990e7677937f823188c82b",
-      "hash": "sha256-g71aKKBvdq+vioTuS4GZgD3yhfu+TMXLUeMwveUiuZA="
+      "rev": "691fb60063c6347c73d00a5e31d6e42f07a03860",
+      "hash": "sha256-eoGWHJVBlSFy56WVdc/cgEhmtEAKOkOibss1TRR6/g4="
     },
     "coinfello/agent-cli": {
       "rev": "cbbe396d1bc62d1d7cf273a90db357c53ba59d72",
@@ -6963,8 +7531,8 @@
       "hash": "sha256-Nyh5FwezRs/hKQtLq64Qp6UQLfdYHqQVXU47/+OF510="
     },
     "comet-ml/opik": {
-      "rev": "1622f46a76088d996bb660a914fce5588a8cf0ed",
-      "hash": "sha256-Ski2v71Asu8k1NXFAccY4ACGd/8b2uwQAw3IW+S/eI8="
+      "rev": "5fa97be6c4eff6689e61e34a9ac29ea164201ab9",
+      "hash": "sha256-q/QpZorkd4glABMxVCjjxG2g6i8fhLZ47GOUO9h9SKQ="
     },
     "comet-ml/opik-skills": {
       "rev": "f0fb8b9e6439c71e8ab88f1643bcf52ef68173c5",
@@ -6979,8 +7547,8 @@
       "hash": "sha256-Ws0te535ldOzqcCa7IBZ381xeAhJaAffbtP3MBmAc98="
     },
     "comfy-org/comfy-cli": {
-      "rev": "2984f65002f614551fd5ded6eda01fcda92b022f",
-      "hash": "sha256-4phw/icWXzg1290SEXA+sjLtkNA3qqXJAyIre8lWiZg="
+      "rev": "67f49140cccb7c200e7b018ba88f74ab81a65a77",
+      "hash": "sha256-tlTd8IT4XvnPhGdYFPsFSH2P6ZSUG8bmdAt3PCE73d8="
     },
     "comfy-org/comfy-skills": {
       "rev": "88116d739487ade507ef41e711c4fbd71ed77ac9",
@@ -7003,8 +7571,8 @@
       "hash": "sha256-oAA6jPY7mdtoJK0xKpJnLGwiIqlui+VDo+LmEIzndRs="
     },
     "commonfabric/labs": {
-      "rev": "7d208d9538a6b95fe6e225686d36142718d6d72f",
-      "hash": "sha256-e4/h4dGp8TSCBOsEyPKu9TLZPFlpx2AFzM+HtVAMlNE="
+      "rev": "4e74df1d779348fc99ddee72c1ac5dd82f8b857b",
+      "hash": "sha256-1RF+CEv3LmtJbqnTRVV6ziqrwNk9sxwMgIgr1n/AFfA="
     },
     "community-access/accessibility-agents": {
       "rev": "a538edc9edfb98cdd8bae96d6b79542874b478f7",
@@ -7047,8 +7615,8 @@
       "hash": "sha256-Oi44MlNpAz/G2WaRAC/vWIQMYNXEk+Jo6UlNzn+H2zw="
     },
     "compozy/compozy": {
-      "rev": "16c26e76b3fb0e8644c0942ab6b50d842cd87841",
-      "hash": "sha256-zIUYZwvx/pzBcsPzs6QSgkdNpCY91Z98dwjobBeRg20="
+      "rev": "7080a1d0a22e6a4bc1f9777f7201f06c3d131148",
+      "hash": "sha256-+oChOiL6tJIwLgUVibRPIkVotjgxdnPcGm6N0/rAYNI="
     },
     "compozy/kb": {
       "rev": "222627b381f727003d9487ba2e86e5e49d00791d",
@@ -7179,8 +7747,8 @@
       "hash": "sha256-ui00ryms/iUL/J81u9j3UnNygaJPwXc/zmLckRSZkKg="
     },
     "coollabsio/coolify": {
-      "rev": "094f9ada2a724c34f18198a2f85cc72ba03e8a85",
-      "hash": "sha256-6N17BGi0HW6asKt2IKTXYuEjJeqG8E4XaYcrf7IuO1s="
+      "rev": "f7d753c101f51f889c44ba49f7af9309fcdd0494",
+      "hash": "sha256-ydVtuOugQ5icnc8dieD7bYTJo/LyKgK9UXZeXpWBoGw="
     },
     "coollabsio/coolify-cursor-plugin": {
       "rev": "ac477934825713d4b6a6b9701a4030afaf5978ca",
@@ -7875,8 +8443,8 @@
       "hash": "sha256-AWEZJBJjwhYy2ZN/svtL3kRDFUrsmjeU7ddG3pqCnQE="
     },
     "dan-blanchard/mtg-skills": {
-      "rev": "747a96ee3b6dd606f5a201941b076cf0e4d01d8e",
-      "hash": "sha256-roEpntwsqS6hHSoPNdidgbt/nI7FP/sds22IHEKnvKk="
+      "rev": "8688ef89df8f72cb07d1b9b4a8eb82ffb502d95a",
+      "hash": "sha256-kV3Yu6pwZ0Sqx4YLRWxvB66iG9x5n9pDWajQrIDE8dM="
     },
     "danangjoyoo/nerd": {
       "rev": "20fe1d841603f32b9b2163c95d6c4cbf5f250306",
@@ -8011,8 +8579,8 @@
       "hash": "sha256-TE1AL1c1FjYPwAyjcVns+qpVkEEYlsD0/jybqtAH/JA="
     },
     "dante-sparras/skills": {
-      "rev": "c8565be77957fdb6937f7a4aa06d3b796169ce61",
-      "hash": "sha256-XWdva4RGSXVlGjAOoN/JykVr4K7rz/VLOk7py1wkfp8="
+      "rev": "3bf200269938cc5ae689534819685a9933e9aeb7",
+      "hash": "sha256-mlTg5Ji7/DrezZtJ/rEawsyymicGDh1b9tr7H75LNDk="
     },
     "danverbraganza/jujutsu-skill": {
       "rev": "85a8376a3a0d5cf16ecb9b0fb0f3f48a48ce62c2",
@@ -8099,16 +8667,16 @@
       "hash": "sha256-F4Ur+abjgTQSbXGzx6ykezVzngWdI/5d6q0Z4AkArMk="
     },
     "datadog-labs/agent-skills": {
-      "rev": "c9195f827f3aecf0dd18dc383f2572e278ad46b9",
-      "hash": "sha256-3/HKzO8mcaPyR7CYizK+WJZykXH9i0Mr6CCmBd78Q0g="
+      "rev": "abc7b5612ab17646c771b83ddfb5b2853538633f",
+      "hash": "sha256-24Hsr6hNmWvozrosNkES5PBou+vmMyaZoG4sYV6x+Ok="
     },
     "datadog/dd-trace-java": {
-      "rev": "aec21f698321c82eda1edf7685090f1894018acc",
-      "hash": "sha256-hIU1Dbzo4bF2O6XweZvtS7pB3bggxHPeUOJR1P5rdLA="
+      "rev": "162e12d61ed53535075ef201c58c98a418b3d21a",
+      "hash": "sha256-xtEpT5zgkkhIhqk2ij0YirMie87Z97ves9I6ZWc8dq8="
     },
     "datadog/pup": {
-      "rev": "2b9c1b397d0b527663c8cc71dcc5364647f76f74",
-      "hash": "sha256-hI4HntmPoQS8XsZvkVzNXUtGr7M0x+XJ9DS1yL2FuxI="
+      "rev": "ce22d5be124831f51b7738289eff80a2efd19a0d",
+      "hash": "sha256-rLnnZttx1ogCc+TD7NrYHpOdkZl48Jog8jBTnge6nYA="
     },
     "datadrivenconstruction/ddc_skills_for_ai_agents_in_construction": {
       "rev": "410ed1e71e4a5c6fd231afd0c8d1e586a9f546e8",
@@ -8159,8 +8727,8 @@
       "hash": "sha256-W+DBz4DIVBFUunq3/U5GXGzRxmB54D1tJexiOE/ixzI="
     },
     "daviddwlee84/agent-skills": {
-      "rev": "a7aca29156c4098ee9cbc7ec70f700d2bd1f32da",
-      "hash": "sha256-sD5fyT58l5pLZl3O4zFCNFws8SkHaassiltytZKnnvM="
+      "rev": "061368aaaa4e614aabdbdab2d43e304fe11a8e2b",
+      "hash": "sha256-xE1gyk0mZ+bPmDgJj2Gs5u6sEbW7eR8HieXJo18Eg+0="
     },
     "davidfowl/dotnet-skillz": {
       "rev": "ca19e87d1118484e8259e59468c71f8982b2a090",
@@ -8215,8 +8783,8 @@
       "hash": "sha256-4qRgSCZgTgnrEWUNNnLwsf2dRqp8pp80/tDoX52U8mk="
     },
     "daymade/claude-code-skills": {
-      "rev": "0d6ec79afdd6a8edf286ccea169464c4bff2322e",
-      "hash": "sha256-aRRimr75QaInKPEA6EEOeadfz4XWuS4stawpnJaBaJE="
+      "rev": "f622088da786223d6a4ab1db10977872bc32d5f0",
+      "hash": "sha256-V5JjOcW8FUpOg0P2gTZAfFEo7e6+xbePCjYwLpm16eg="
     },
     "daytona/skills": {
       "rev": "c62797f71f2f22046992c47ca7d8eb02f4170544",
@@ -8267,8 +8835,8 @@
       "hash": "sha256-4XTj48fUJPVfpagrr8V1Nk33TP7YpTnNW+PkWmoVh7o="
     },
     "dceoy/speckit-agent-skills": {
-      "rev": "ddb4e9f392d3fb51371362cd3f194a7d03cbdfbf",
-      "hash": "sha256-i4O8Clh/MHuHjeVUb+JdRRzkhrRX7KEyhX4MDSfeTiw="
+      "rev": "6dcd44617bc4f334b9848d23cdcc155f6642d968",
+      "hash": "sha256-Q7tatO5vkiJrq1PSF5XgJ8oOIzA/BK4+GGgmlTRfytY="
     },
     "dchuk/claude-code-tauri-skills": {
       "rev": "855352dfbc2527f5a7e4ed307782d2a487bffd66",
@@ -8319,8 +8887,8 @@
       "hash": "sha256-2jBrxf6lGzUsKme+Zc4CAYyKNOW/O11kdgOx6N0QW5s="
     },
     "debpalash/voicestudio": {
-      "rev": "9dd67bd2360aeebd3e2c14a54a85d68120db24d9",
-      "hash": "sha256-Q6OQZqvuXgIDrSisk9630TPjArTHR9iH7B6CL6wHQZY="
+      "rev": "1ceb6d73285d8cf984156d0cf6fb42ff5e4ea6a2",
+      "hash": "sha256-IhmnOuqu3S3xgQlFeH+I25X0J0gsKQw7jfGn3ldEQBc="
     },
     "debs-obrien/learn-agent-skills": {
       "rev": "7438393c42a51b3254f011395a4d5749182ba396",
@@ -8503,8 +9071,8 @@
       "hash": "sha256-Gz+hWYPuOH0ymdjWbmWNJWZhBNYSgUsaI2kWet/hCls="
     },
     "derailed-dash/dazbo-agent-skills": {
-      "rev": "45d1d7d251ec5a50c36a443806620141fa49f7bf",
-      "hash": "sha256-IG5+DeipFzSAUzSEPWGpZzLXrhcddRCV2rYDwCYJ+OM="
+      "rev": "b43a03cdce9cd41d97f68821ae49b433eb038b0f",
+      "hash": "sha256-rCfWdo//9MDcWErf0RiKTFMuFsLUe6jKBzN9ewVSrIY="
     },
     "derogab/agent-kit": {
       "rev": "af25e101d0efd197e8c710827e83e787aa92d518",
@@ -8543,12 +9111,12 @@
       "hash": "sha256-G7gd14XCY8+PKboDMUG85mFt8mv8oKqXtj7OgvNdTjE="
     },
     "desplega-ai/agent-fs": {
-      "rev": "4854c22336c35028d696ceb8d92e8515ddaaf66d",
-      "hash": "sha256-nJrNJt2s/egVbPKLNqFCZyw0uBxCRqarWKlgQkI+Afc="
+      "rev": "b747db3720fe8b94850fad03a570b1d62397adc6",
+      "hash": "sha256-rIjgp470G+SRsopbLJEqsd7Jbm2o2IzS1dA+shIP8Wk="
     },
     "desplega-ai/agent-swarm": {
-      "rev": "56794d7c4826c0ba88469f80deb9a3bd0b9f18ed",
-      "hash": "sha256-YiPWnCfFNRXeUokBfG+uu0q6xfNJo8iEFg6wRXgI3n8="
+      "rev": "367fde53c06775f764f41b5a6a592219624e20be",
+      "hash": "sha256-JivRABGAqKPUziOZPmK18H0s8PzLXWmJF9qqUN+gOUU="
     },
     "desplega-ai/ai-toolbox": {
       "rev": "81611ca2de69dfd0bd57a49a4b34b74223f14944",
@@ -8799,8 +9367,8 @@
       "hash": "sha256-imDQUCYBqJKKvWaqMibDpqS3DWLqGfQ+J4gPi7D858s="
     },
     "didomarchet/dido-skills": {
-      "rev": "86daccc18e7f13688e48a3ab1ce28b82197c6816",
-      "hash": "sha256-oCv8EgRthTgQSB1IQY5QZFlaog+z9YuqDvReg8pwSgk="
+      "rev": "caf951ec4800afc32ab7fa3d77449349d44b7f57",
+      "hash": "sha256-9aD7pu8mO4PwxZ7OreVJyMhAS9AMyPhNwKkn5+WLSv0="
     },
     "diego3g/craft": {
       "rev": "2b1f0eed509173edebbfe03f7442d72c16377e45",
@@ -8831,8 +9399,8 @@
       "hash": "sha256-chU0dXwBo64i8S1k+W1iOOioLZ41xfcRHpjta9/FYrE="
     },
     "different-ai/openwork": {
-      "rev": "751af20c04bc55662b443746866f42d568b7f2af",
-      "hash": "sha256-C0Os8bC0N6X3rQwTFEffpg/XBreqh717M6kG+vZhwTk="
+      "rev": "fb4de470e9b80b73a41ca211cfe85b5846294d3f",
+      "hash": "sha256-dcKrBWJI6NAvF1eJiSdmvT6tLLvsVeOfOVHSZRKwX58="
     },
     "diffohq/diffo": {
       "rev": "21a326b258c4250c5015bc7631027152bca442f8",
@@ -9283,16 +9851,16 @@
       "hash": "sha256-JVP63dKVwFfaaxC4PSAYo8SjJbinYgflLVq4G4/D2jI="
     },
     "doomerlabs/doomer": {
-      "rev": "6ce4f6520c5af289c9701d6f52a412e6ab57e594",
-      "hash": "sha256-IOHj2s9CFB5UHSmPExsxjd48o/Y9XCHgFhJ5Ho0dSmw="
+      "rev": "f536afcf119c4e01e40b4425c9b6b5ae717da6b5",
+      "hash": "sha256-ttQXs8gXaUXfqdf7/oW++wOME6xkpsL6DbYt5QD37Hk="
     },
     "doomerlabs/skills": {
       "rev": "3b496d0ab954b5791b81a0c1e452894e3667e5a9",
       "hash": "sha256-9l/jqLIUX2CRNYjyCdEgUjdPiYC7KLVdcMBz1YxIV9I="
     },
     "doozyx/orca": {
-      "rev": "97732c8811691719f4a2976d1261a15456f2fe72",
-      "hash": "sha256-eQUTUvoqHPM9KvyilZt/5kOgPQCZzfX9BUOoaiQZf6I="
+      "rev": "5d8cacb2aea18f3678358d4949e35c3eb10abc46",
+      "hash": "sha256-MC5OHAO4u6CqTY/DKPIcdew2EJ5Ek5nm3TnnpGK+9l0="
     },
     "dophinl/ruanyifeng-weekly-skill": {
       "rev": "35998daa26a2acc47e10fce73e4bb6a4ce6f36d0",
@@ -9323,8 +9891,8 @@
       "hash": "sha256-RMrG5S6G3zYY8cuLud8NlK5v08vNkfbQRJa4aHU/VFI="
     },
     "dotnet/efcore": {
-      "rev": "0874db7a8c360905b8b1007cef15aa42e9883286",
-      "hash": "sha256-4aIegE9F5wFC91iPueCJyITdk0SGymS1U8J5evVitu0="
+      "rev": "e7a7920518232d20941923e9cffa8633dc9e71ed",
+      "hash": "sha256-qgprBls4fbVcUkJB7zGPo+2CtcmYe4YoExbPdVshTDg="
     },
     "dotnet/skills": {
       "rev": "c227688ed14de4467e3e45f95dc69a94e905e219",
@@ -9503,8 +10071,8 @@
       "hash": "sha256-f4Xe1bBV/FRTnkVxKDb2Z9gIpMIJfHWEqCvwhUU3SDE="
     },
     "dstackai/dstack": {
-      "rev": "060a3a000061b476c9a3c19d5185e7140954794c",
-      "hash": "sha256-M4EaVvh22q0vTG6eZHQhWc53KqiL0+JI4DE6G1sNPvA="
+      "rev": "78ad042e2b5c3ef2705cd1e482273bbf36f0a461",
+      "hash": "sha256-pcfyQguegK7kWIjk3kBCgj5gyWbrMth24YgvFHse74U="
     },
     "dstn2000/claude-unreal-engine-skill": {
       "rev": "d58c833a1e4a2b6cea6da8430a81ea32772cd336",
@@ -9663,8 +10231,8 @@
       "hash": "sha256-oOKSkLF+Y0mM4HFho7XsAhMT2c84Uoq66Rd+0YhDNyk="
     },
     "e2e-inc/e2e": {
-      "rev": "ef498132309c9f14bfd288aed83b19ef8d094dc1",
-      "hash": "sha256-mfMo8SR1oZ6veqbPDSRQjRzi3W+/HnMcj6dll0bRGFM="
+      "rev": "3e7d19de16ea916ddfd761be3909cc873dd08a73",
+      "hash": "sha256-BZgU5qZZcA45c8CF4YMctQwmVALtCHaVD0xhJ/MQ8ok="
     },
     "eabait/codebase-onboarding-skill": {
       "rev": "1723ff4a248ed0ac125d9f3cf478ace896f48d92",
@@ -9903,8 +10471,8 @@
       "hash": "sha256-BADn2IhmAA3HgrT7lrNuOeE+YvO+G3JYUwmZ1tao2Mk="
     },
     "electron/electron": {
-      "rev": "d613d8f96c17c59813cca160d8f4788857af2292",
-      "hash": "sha256-40bfYgX8OzU4Cc6Gex7W7+dKdwCh0idfMMQOK0fXj2c="
+      "rev": "93d4812443477fdaebc5b9291b428542eeda2d7b",
+      "hash": "sha256-KwOpHri+YDcsVnqKQtg331seRMzPmAYb7MB5xSKRUa8="
     },
     "element-ai-vue/skills": {
       "rev": "b30481d56bec5fd0e40f7d08d5c51dd5b09e364d",
@@ -9955,8 +10523,8 @@
       "hash": "sha256-VKz6xom1noa4nBOtZq+u6QMI8B4I8xPgkpVDVlj/2eA="
     },
     "elie222/inbox-zero": {
-      "rev": "3d2fd06f858b06500b25b6aa439235bc3b380cdd",
-      "hash": "sha256-nsO13tpbSJo3wUwHfMUFAARH3eVlhzlIydv03a0AE7Y="
+      "rev": "a20cd00787885ea37307820dc4acc19065eaf843",
+      "hash": "sha256-sTXhGlFo+XT9kQteymMZ2HBL5RgE5+dsjXh972S7+88="
     },
     "eligapris/software-architect": {
       "rev": "7f6f70c7e8b5b764ca27ad507f8a451e4a05eee4",
@@ -9975,8 +10543,8 @@
       "hash": "sha256-7WVAclXQVfxe0pt84OexL+hO36fvQkmPX2B3egfNYGQ="
     },
     "elizaos/eliza": {
-      "rev": "d00acaff090cb8f1c99ac1dd06cc295bac3347d6",
-      "hash": "sha256-Zr0MVYalDKmHSMd9PlkjZGiw1Hb6Go8PTdNropxUTYU="
+      "rev": "e66a28c3ea1b09fefaccb85d72486dada8f00758",
+      "hash": "sha256-Njq7kXQ95U0fpJ67pZ/ruvXu7Upmvbgr8HEvaXYG8YU="
     },
     "eljun/claude-workflow-skills": {
       "rev": "1438fb0a12977247372dcc5779475e726a866668",
@@ -10011,8 +10579,8 @@
       "hash": "sha256-HgxKG5pT1MSrykRN2vWG+3N0bDD1OdQqY+wSDsnuwIE="
     },
     "elvisun/newsjack": {
-      "rev": "f68db4a7e89ad93e7fdbb3111ba9dda16dcd4719",
-      "hash": "sha256-kuX9MtbyktBu7Z73Ku57yihpDG69Ningbshxbg3rFIM="
+      "rev": "5f470b1064b61114b291a585c93d22bd624aaa8e",
+      "hash": "sha256-E101TB32EKg8GSnxBMqgwf3ZZawXw2cticPOCLX2dI8="
     },
     "elysiajs/skills": {
       "rev": "1466d85aa4f2a0fec91f71311e65bbfa91aa7dc5",
@@ -10251,8 +10819,8 @@
       "hash": "sha256-olPpfjb7DKOIqCgw/rOOVH3/0roEYrmaT67jmuxcGMo="
     },
     "ericmjl/skills": {
-      "rev": "a289f02c15d227f99e2bd01abbeccb104cff7787",
-      "hash": "sha256-gEBZ5xgwLtihk1u2EOubFbGEHArFKVzl60K5rRxueyM="
+      "rev": "e16790b867fdda7a1d52f7f1610d700b59f5a43c",
+      "hash": "sha256-LtC/uoaFAmPBjJAa1/aQ8xAekc0d7YqzbAY0z+7FE30="
     },
     "ericosiu/ai-marketing-skills": {
       "rev": "67ebdbeef93effec5a39361e5a31738c2441a4da",
@@ -10387,8 +10955,8 @@
       "hash": "sha256-KsztWOPUb+sMDv0Ks63pqyxCHQDG1R4LBKdho0ANZlk="
     },
     "evanbacon/serve-sim": {
-      "rev": "bfe684a50cff9a83ddc35beb30a519e72f806e97",
-      "hash": "sha256-/l7L//Mwt+yWZBKQelSGtZN68/dN5YWmuKDjc29XoKg="
+      "rev": "94394ee1678b63cdba798c3c296fff8318d2ba70",
+      "hash": "sha256-cINUkZIZqraDIIDKaA5kbZkStHIt+A5uoYN1WEARkNU="
     },
     "evanca/flutter-ai-rules": {
       "rev": "ced864ab5189956dbf719a84011c24d860092116",
@@ -10475,8 +11043,8 @@
       "hash": "sha256-AsLjR76bIhYDRLya4Lp2vB289V1xGXtbEusmzeX7HvI="
     },
     "evloghq/evlog": {
-      "rev": "3554d10e5e9bf4874da88c0eb5a5c6209113153d",
-      "hash": "sha256-NfypL9AuoL/dRa6yo0HVCSAv4jq+WvDCA/JRIzunhwg="
+      "rev": "3c54d50d6053b98bf1b3e18cb0c6d762cfb9300c",
+      "hash": "sha256-dJ/ALIATO0YSWmCRhw+EzIEmhNp/vKfhKGBeL2c/0no="
     },
     "evo-hq/evo": {
       "rev": "ef9d8695b04a65e1aa958c94a987cbb0f2b6296f",
@@ -10539,16 +11107,16 @@
       "hash": "sha256-hnX305KpZugK0iqKI6pKRUyreHeAv/HHW22pTzytVlk="
     },
     "exmergo/dex": {
-      "rev": "8962c263a6624efb69a1e0fbb44253f3aa735cca",
-      "hash": "sha256-lT9aOb90DUbE7S9g4ZJNCHise3oivYTFIFyiOOFHgdg="
+      "rev": "0cb425f0e094105628ba7e277bb21fde1914a9cc",
+      "hash": "sha256-/mDjV+83v8id4Q4wH39ITcJYLaKNVzic4b2QbVvUGjY="
     },
     "exopriors/skills": {
       "rev": "933fb746755b2efe6f6bb0b13ee069a546da09eb",
       "hash": "sha256-RZ6fQBu0URCzepu5cbtB4vK0URo+5DQdN0pl8GkzsRA="
     },
     "expensify/app": {
-      "rev": "a88d637fd18522a186c5060ecbfb284e37ef85d6",
-      "hash": "sha256-bdsYWWT9lmd5vCsgNL2Fm2fhi/rdU4y+XZEa6fhK/84="
+      "rev": "fc897c6a1cdb9c0c9483ec1f9237d66eab62b812",
+      "hash": "sha256-+jLqCeOfysPnL/rZSFfF0k6NPMkhK/baUaczueIYRUk="
     },
     "exploreomni/omni-agent-skills": {
       "rev": "2f7b84b80964124a1cd191933337051fe6bd75b9",
@@ -10563,8 +11131,8 @@
       "hash": "sha256-HwkiS5Y6+dKltU6URw6FjdkoivP5CEJrMWxvOJZAQeU="
     },
     "expo/expo": {
-      "rev": "aaa5c5cd151c2d92b4ac03e7facaf04e21bde6c1",
-      "hash": "sha256-l3rhG6VxNHKHXF2ZnwaQyWXiEgyJwjJYvkTYsxK6X2Y="
+      "rev": "00bdc518833b89b42239b1d74b50a8dfc18341bb",
+      "hash": "sha256-BvGXIVtBVaTsJy9eyRqLCOIk0aOqdn3oA+fZLbLbJ/w="
     },
     "expo/skills": {
       "rev": "88d9bd79f3fa8452a778fbac65bae162c0b32ce4",
@@ -10639,8 +11207,8 @@
       "hash": "sha256-JKHYReS3QJXyvpBl+A9N3Ix2+UcCPxyUus7lS0okgYc="
     },
     "fabricioctelles/skills": {
-      "rev": "c491efea06e200e847c416effb87e566d6face3b",
-      "hash": "sha256-RsvGe166yLWFyUSJz5j5reqxhaYRfrCbYXFh5xAGauw="
+      "rev": "a9671baf7f51fc9faddbe785d958bf2aa6edc161",
+      "hash": "sha256-FYTAfGapMh7dNzhEoaFuVGjZ+TKT/p4zwm5zcrtB6PY="
     },
     "fabriciofs/mcp-postgres": {
       "rev": "d5441431bcd0018da93e6a0de549b53ab1bc14d6",
@@ -10715,8 +11283,8 @@
       "hash": "sha256-Bf9eRja3N+SNeRy4JuxyG65jmIdWdZ5r0/jY9MYwY9E="
     },
     "fallow-rs/fallow": {
-      "rev": "599c9ba2ea62c15643ce9bb4a99177784974d3f0",
-      "hash": "sha256-I5xFvTC/UjIUR8T27bTuSR9hiCGyf/9sPssA1P5tgAk="
+      "rev": "e1ec18b1d88ba0b0fbab0c32a329670803e4fa6e",
+      "hash": "sha256-t30eoN/D8cwbzthQ6imhLK5ZbKVvBqIWWAyI8D/86j0="
     },
     "fallow-rs/fallow-skills": {
       "rev": "2f85c6fc2e1f29ed98471ef45e9007e60cff6731",
@@ -10743,8 +11311,8 @@
       "hash": "sha256-VadfnCEP+NFaQiqIlkWUZvp1EFa0wN+wcyRDokJNV/c="
     },
     "fandhe-ai/agent-reference-skills": {
-      "rev": "5f2e988e14f160ab1dd102756db8be00718049cd",
-      "hash": "sha256-t9mETT8xhGoYEFyi6MgVO05L2TYYJDyfkAmuXCckL+Q="
+      "rev": "fc09384fd530345715ce9019e3ccc28b417eb5ae",
+      "hash": "sha256-rzpEM305VoMj6qbUH8u+Tx+a6OfVsqxkk/9d4sr53X0="
     },
     "fandhe-ai/agent-util-skills": {
       "rev": "de332790f78d19fb99ab462820bd8c2e1bce530c",
@@ -11103,8 +11671,8 @@
       "hash": "sha256-WIICx/oyhRD76kI6uUiSIwpVs1YH6HBPMGWuVcxVr54="
     },
     "firecrawl/firecrawl": {
-      "rev": "87202348f7b3c5273c237fe8b47d3c2568f4938c",
-      "hash": "sha256-z5OYtHGZ6kXu35xtUGSwog4GSYR09KWiQOBtkABDc2w="
+      "rev": "f96a5154660165061d5b1defa0091bee28571f5d",
+      "hash": "sha256-o2iOKklZ5Lkx04Z4bkf8G5sKEOxZ4btpdJJRw1a7Sjc="
     },
     "firecrawl/firecrawl-claude-plugin": {
       "rev": "d6e42a497efafa32d5d199c2e0b58ac0a7245450",
@@ -11283,8 +11851,8 @@
       "hash": "sha256-iS9CDODAxApElsxc7QDUyhIpvhm5ye8HfMa74lGloaM="
     },
     "flutter/flutter": {
-      "rev": "b34b017b48ad7b28544b25d20cda6c4a5564ca08",
-      "hash": "sha256-ixYMNz8AeUewhapEpRtA7+9ewtf/gNrCJod6cRpukb4="
+      "rev": "98ed0193a9c327deffb14ad28e042b8a1352713b",
+      "hash": "sha256-IGMqH78E3SmZiY2Cwme94yKhnZI2QG0HyvU2wN9Dpv0="
     },
     "flutter/genui": {
       "rev": "4352e01d8ec98d21f3f3a96500ef86a99b68393b",
@@ -11407,8 +11975,8 @@
       "hash": "sha256-xbx4Lsk7b0cyGP2CJsWDqLS4ESJ3P6wKXocTRjqKr0g="
     },
     "fortunto2/solo-factory": {
-      "rev": "9d82e23b6b84dfca00137bf42b9f48131d3e7a3c",
-      "hash": "sha256-hCblxATpGpCwpCPyc7KXdkZkFfSjc1/2jzLgyUuHgWY="
+      "rev": "bfcdb2f2f91046bb77c32508bb33965389b96586",
+      "hash": "sha256-Y4yZny+1WTu1W/vV+nwJ3FdeyyKyCHK/4j5FuUP3ZYc="
     },
     "forward-future/loopy": {
       "rev": "75966cbd572a4185064971c9fe5e9c52e8f8456d",
@@ -11619,8 +12187,8 @@
       "hash": "sha256-qv75r9KgyCrzD+qksAMeWCqbQErlU7uROoFkES+COxg="
     },
     "frontier-harness-eval/eval": {
-      "rev": "e837a70bd6beb4e72eeeda62dd06e3bd34f6cb63",
-      "hash": "sha256-HEJtkiaqyWgsZzmmG1X6sSw2n3GzyBzeC640Qzsu5Dk="
+      "rev": "84a29789534af5b316df642be279c23c84caa2e4",
+      "hash": "sha256-0BsguPjT3uPhOdkcNi7NU+BEcWdAzZbxMzV2ZeeZPI8="
     },
     "frostant/awesome-claude-skills": {
       "rev": "e2aa8a4144f1867c541a0969827c22d7b66f9af2",
@@ -11959,8 +12527,8 @@
       "hash": "sha256-8WNchGRi6M90ICmNIaKOOCMzDOubKbDZ0CSsWJDhyps="
     },
     "gangfun/gang-launchpad": {
-      "rev": "7dc9d09f52d69564ad0cf06a36df5df3159d5ef1",
-      "hash": "sha256-9Bbajc9dYgfv5kymQ4lulgn+sTyCVGpBRk9fNRLjqYk="
+      "rev": "00ecd367fce3e36732b52b4ebf05d381854af01e",
+      "hash": "sha256-9lYwtO/7EFEZAELvR1ywYAsDev2Ey62+18EnYduDMKY="
     },
     "gannonh/skills": {
       "rev": "5306a295bdc9e37e9f8719e9b386855c1ab8dd54",
@@ -12011,20 +12579,20 @@
       "hash": "sha256-gEp3lMdRV7aC4vOyTIyHX76UhaTiEnKirc7Wsl1CCuE="
     },
     "garrytan/gbrain": {
-      "rev": "33a34dd8f7c70d6c5c1423238d02c1361d815497",
-      "hash": "sha256-Dk1UIEnxCfNiIclKhpMOp7DPsL/vk7Nx2urTzkzWxsM="
+      "rev": "33433faa846d215f94cd8df529ed0e3205f5ba7a",
+      "hash": "sha256-7+lMKjmSmreJhb5K/rOkeAmFmHUkmu1dWrawrbOFCmo="
     },
     "garrytan/gstack": {
-      "rev": "92c6c8a55ca2070c3611d2f7126f14c2f1277581",
-      "hash": "sha256-EtOTmmnUj0PUnHsIhXPR9lTxIxCTzW77c5pe+2oHLqM="
+      "rev": "a529769efd989ac5e83e4ee09f1ac7b199e686d3",
+      "hash": "sha256-B5HftC5nESj9tF8uwDt6eL3XVX8y4S7Uqx8oHZEzRVw="
     },
     "gasserane/personal-skills": {
       "rev": "c9f55c70759166ddc7718ed2e948d4aa5d81bce8",
       "hash": "sha256-VICWPv2xXISShAxrd1qXXVoFkS490HITg0c/oIDKvNI="
     },
     "gastownhall/beads": {
-      "rev": "3a274fbf8f769057e4272be9748087dde0639bca",
-      "hash": "sha256-E6zRPCs1jXXi+rg7Bl8HzsIIotZ3Cjs3OXVW3fvZ0BU="
+      "rev": "dc545e871f0c0865689831477bf0c0a8ef07b920",
+      "hash": "sha256-rZG/IwscEx33NPdiyDRuMZU7QKn90j9L4pY1/2R8peg="
     },
     "gate/gate-skills": {
       "rev": "b96c34099f42538cc80130fae4b3bd07cc52df11",
@@ -12215,20 +12783,20 @@
       "hash": "sha256-WBy/jvKfiwAtPXboHQvbucsht7AIz1sXGawf6y+MX+U="
     },
     "gensyn-ai/gensyn-delphi-skills": {
-      "rev": "da9eb484d6ba8bfff314188a43351ddc86ead3b8",
-      "hash": "sha256-8JIY3al5089FE6H2zbzwOcVzl+zwfq8izqD0kDT0G8U="
+      "rev": "717096e55cdceaece7add67227639a2f1bded593",
+      "hash": "sha256-NvqS4A1tPSym7Mx6M33kBBihlKgJ7QVMUestu05lZFg="
     },
     "gentleman-programming/agent-teams-lite": {
       "rev": "6901875cb1c2387914b57bebfceb686646572253",
       "hash": "sha256-PDCV1aTHI4BTVu0pbVazFBKu7jTBYpi0Vmskbu+RH1U="
     },
     "gentleman-programming/engram": {
-      "rev": "3574363289cbe234aab0b92824fb8b0ae1042616",
-      "hash": "sha256-Y+2SDLJNeNqeeY73oO5qrY+JN7efkR+gZYcIpKaOOd4="
+      "rev": "bc17d2809fc443e614a90e587f5e77c81d882169",
+      "hash": "sha256-vzOPROpJDICl2fUtiPfEnnjx6vCTiBqxjh/nNc14dJo="
     },
     "gentleman-programming/gentle-ai": {
-      "rev": "3fbb80cd684eb270bf7616307ab6168001532451",
-      "hash": "sha256-SYSIeRVRy2DHRqTje1UGCqbBmZFPTieXl12FTs5B9Oc="
+      "rev": "c02d1552f20b45fcf85256aa7122d878c8da6618",
+      "hash": "sha256-YG5F1fYirJCgWP3HBnU4LrukI09QHXptDEGVsuG5XzU="
     },
     "gentleman-programming/gentleman-skills": {
       "rev": "c8036a37893679dc5e942484975405d39689c63b",
@@ -12258,9 +12826,13 @@
       "rev": "9683f442ca9db055d81d5c72c3435eb56145dbb7",
       "hash": "sha256-ckbt7dMIQqn1BklPuTQ7FHx7CsrjO6TToAITaCWk4Fk="
     },
+    "gesso-build/skills": {
+      "rev": "1c3908b7efb56ec24624436dea5c32a371eb487c",
+      "hash": "sha256-2DVH9HUamYL9ti8SMgcIPDT6OUTmDwRJae1sRPY/Hl8="
+    },
     "get-dx/cli": {
-      "rev": "3c6be7e74130506611fdfdeb8fb582ccd5201819",
-      "hash": "sha256-lDICZ8bNHipBLeHATWs6iMItfbherbfyBm97swDsn/Q="
+      "rev": "26ec5e3748075e3d9518a20b4b8dc0873310d22a",
+      "hash": "sha256-HuFpAMFXAGnvPOWztZjNQrbFHUhXiS+gDZfTLQYAxYw="
     },
     "getaero-io/gtm-eng-skills": {
       "rev": "e8d12d11036dfc899103387bccadf297108e9c1b",
@@ -12299,8 +12871,8 @@
       "hash": "sha256-0XgRL9DFE71AsnrnqxVSmo9pgdwMIml51GsKbGNfH/4="
     },
     "getnao/nao": {
-      "rev": "2f723f6d8ce4c2a80f6eb446984d0cd048c39550",
-      "hash": "sha256-MMhISZWmynVGDzc48MUsLOCCt3wXsvw9Laymjc9H4Gc="
+      "rev": "b7d72322fd94f2afc8a73faa271d183156988446",
+      "hash": "sha256-MKphaISjEtppqd3+io5x7Ja4gCLmYaHNvMEPzFnjZIs="
     },
     "getnexor-ai/skills": {
       "rev": "804f8bef70b3c4643d677b6058c262f9b7c10552",
@@ -12311,8 +12883,8 @@
       "hash": "sha256-6L/4YHa+aVC7187WAWjMNRdJF1UAsK1qrXRLbAC2EwI="
     },
     "getpaseo/paseo": {
-      "rev": "7e3826ad6ca0b50bd405a302b345a3a22c087476",
-      "hash": "sha256-mEv3hcNcc4yJcgppH0kh3/ganAIReBybnb9JPqDvU8U="
+      "rev": "27c126d352c4544c6a8f43251527d61228b8d12f",
+      "hash": "sha256-qLBAhuTPVmm9L2yFjTbv0Xs/qat/rBsPyOVs+HmqlbU="
     },
     "getpaykit/skills": {
       "rev": "110aabb1f4ea52835bf37deac591f181342e616f",
@@ -12339,8 +12911,8 @@
       "hash": "sha256-njRC1nnvINOam2vv8667uNjPbrrIWfOh59nt6Vg6p8k="
     },
     "getsentry/sentry": {
-      "rev": "03ad2937c7ce13b4aa369fe8025e6d16b8000ac0",
-      "hash": "sha256-zfFjbPjGqACFvGR5HRqj4yHJI7yXLaZR+n7sqfHcxf4="
+      "rev": "e7c9a081c7504ced2c6a58b7a464d6fb80074a6c",
+      "hash": "sha256-RJSY4YX/A5U3iRSOG/8Aic3lUBlJOmUg1YMXUKmtCrQ="
     },
     "getsentry/sentry-agent-skills": {
       "rev": "9f54eb021916a7cff2c04a9f4e4c1f9439f3202c",
@@ -12359,16 +12931,16 @@
       "hash": "sha256-7jCkEmgUzogLXmHLkLtbaFn4VWC6DRIVi0iS5IVFjJI="
     },
     "getsentry/warden": {
-      "rev": "2d6dfc062c5cd00fc9b928ea86b08f5c9e2b5237",
-      "hash": "sha256-4Ty7eUFr2PoQ3FSznn4GlBYS3un1yVcRtz1yfXcn4PU="
+      "rev": "b81c9d025eff73ad760a4c102f9f2e58b4c2513f",
+      "hash": "sha256-VJ+8kSdIL3ha/GxUolKplxB9BTFbjxVckgU8YIWGSQo="
     },
     "getsesame/skills": {
       "rev": "e3ffadb83fde38d56ee6cdff0419569fd346f185",
       "hash": "sha256-JEp4jpFNm4OsH3gtr8lTzFWMzK/4aGOcUFTtqQ1E93M="
     },
     "getstream/agent-skills": {
-      "rev": "897d246b19185d66be3e88a56bf53a2f3bf420df",
-      "hash": "sha256-3NJTaiT4rM35L858LcWyqOgqXlhGnybsX1fYGvSKGj8="
+      "rev": "18121b572343139e3f6f97c494673aa66df4da59",
+      "hash": "sha256-H7BCCJS5K6W2Z8LbG5zVR5njvktFTz2OGFSQFWpUrfI="
     },
     "getvhs/vhscli-skills": {
       "rev": "13fc6d1cb95827d2f593ebe418a5bdaa4b639411",
@@ -12395,8 +12967,8 @@
       "hash": "sha256-oyGnUYZXiYKhTjdR4nyJWwlOQ/B4N4IJCXBeMlK+b3w="
     },
     "gfx-rs/wgpu": {
-      "rev": "87020ced41699b6261ade7fcb4ddce83274d471c",
-      "hash": "sha256-G5oebC6fQanPozbacWHGEN38p6Vxn9/FfTX2L6KVbXc="
+      "rev": "0432ab7fb70b28cfbfbd77e0d4b2b0c43bc49f70",
+      "hash": "sha256-tvZinLRdeCap7JtU9ZcE+H+II9QTXNCE8GhGlJHPayA="
     },
     "gg-skills/research-online": {
       "rev": "52d1f89b0223d305d79948bab36c7da78d254ef1",
@@ -12451,8 +13023,8 @@
       "hash": "sha256-GlVu7R3Z4E6N9421L0NLZIMRpTZhyNsw7KBjFwCK4u0="
     },
     "gil-1/skills": {
-      "rev": "ee9650583d1d92601cfa2c837c3a5a216ed56884",
-      "hash": "sha256-sECqPFZn50OG88KdRSySwhaxQvlztglA7ghv293JjIc="
+      "rev": "674bd2db0d323cc4ebd15abbeea6fc2fab273ff8",
+      "hash": "sha256-n/AhS8YB1IV0sxKlrNF99rx93j04Bb1ZZHfCUJ62m7k="
     },
     "gilbarbara/react-joyride": {
       "rev": "1fe55f1aedcf6d1fe0bceaf1418c0d5ad9a65bbb",
@@ -12499,8 +13071,8 @@
       "hash": "sha256-ZYMM5E4Wv4jifO+lTjwqNHA+Omcj65upFWnFAiG227k="
     },
     "gitbutlerapp/gitbutler": {
-      "rev": "868099ab8d6ba25bd3fc0531101646bdcf9155dc",
-      "hash": "sha256-857+qfvwh8t9DgVmGFd5x1VhpfHLVvotHhV1dUr4c9M="
+      "rev": "82dc4489a2b0594affb2d5115af53af929e194b7",
+      "hash": "sha256-y4GgaEGBUrUTcZ/G8NvrLlXCwkKRoYiRTTsr0L1X7YA="
     },
     "gitdolucas/wearos-specialist": {
       "rev": "245e813b107ca771dc5a837d311e71aa1eb3c3fe",
@@ -12527,8 +13099,8 @@
       "hash": "sha256-skhEZ4vHIipqeEmfDPVw2afuN0/P8kCK6Tabd7R/P4Y="
     },
     "github/gh-aw": {
-      "rev": "294b7966ab3eefa241f2707ea7eb0c479943ca08",
-      "hash": "sha256-zbaeIZVYHTlaX8iQk0fKWVQiE7NwClEkjoO3KbPhNYQ="
+      "rev": "328b1460ca91c00cac31bc172311bb78559c6c6f",
+      "hash": "sha256-QpNcH08R09f0A5nUZNbX+peA/9+Bi9qKeGDKGsTggpg="
     },
     "github/gh-stack": {
       "rev": "80b6d6e910cc1b7eaa26b961d7721ade21084fed",
@@ -12651,8 +13223,8 @@
       "hash": "sha256-fYGsOn2jBBMcbHfLz0RmAlfUcA/JYwr6djRnKaCpFrM="
     },
     "gmh5225/awesome-game-security": {
-      "rev": "166d7fd239174e69f83267a5818cedbbadf28620",
-      "hash": "sha256-G8oH4XLq2hV/3FKeI5NbeM0fn0RSXpxPHdE5KBM58j4="
+      "rev": "6a80a16c44d3debaab29ed333177c22e15289cc9",
+      "hash": "sha256-Ab5DhaaSMwTzzZAye9nWG/QXJSAmZUzZSTX2GC0Twww="
     },
     "gmh5225/awesome-llvm-security": {
       "rev": "b7609b41421052c4cda2a35b931272f8c1ca51ef",
@@ -12699,8 +13271,8 @@
       "hash": "sha256-4Sy61MKrt9vnyuDRCEW59Hv4l32i52Zv5DfYoEBy/jo="
     },
     "godaddy/cli": {
-      "rev": "44a23ddf9119cd21a8625451623c0c550c9d177f",
-      "hash": "sha256-PXmBDl5sjSijOfAVeePU3fKyW+29W6J8xXB2+SPy1+s="
+      "rev": "ce81a7553c5943e9169bf9f4591cf3ca3af5ca13",
+      "hash": "sha256-HzSmFbmraxZNBsNsWcBgKu/fi9NA+20Oi9nQ1qiL5/M="
     },
     "godaddy/nodejs-hosting-agent-skill": {
       "rev": "2668ffc82a1504a87a76681064a27a92279884eb",
@@ -12803,8 +13375,8 @@
       "hash": "sha256-w/7mhlEZCkCakNpHFPfGrGHr/Q8ZTsdIZRIDmOTxH7s="
     },
     "google-gemini/gemini-cli": {
-      "rev": "d4cb1713fd7fc30f1c03f9ca7cbfed341c97dffd",
-      "hash": "sha256-N/VR2tscTMcuOIiBtx98lku232v9J7Eg9KI9ImX0pSI="
+      "rev": "addc194f5bc414e7134c2bd6a414a40e1b4cbbed",
+      "hash": "sha256-UBoolZ2rqzOrYpq+7PioocJ1fNKORCwFtZOiM6+4sZo="
     },
     "google-gemini/gemini-skills": {
       "rev": "c4d0c62c1240e08a90546186bf320600ab6a039a",
@@ -12831,8 +13403,8 @@
       "hash": "sha256-UDy1rKZoIsJGlhh5Y2wblbhZl5Da+1nLMHEZ5HaonP8="
     },
     "google-labs-code/stitch-skills": {
-      "rev": "4cf4db8e4143b09e40f9bc887429d81f41ab3947",
-      "hash": "sha256-Ux2d8UdMu/0JVi8d4m5DvhrDTBt7/Yo1jWirn9ikxtU="
+      "rev": "62fdcd679747aca0792e5dd6591b10ddfad56825",
+      "hash": "sha256-QftNrEfbwrs/pLa3Eiq/nA35H4zAji0YO/Ff5SqpcHY="
     },
     "google-research/timesfm": {
       "rev": "918df02c9d366b2145bc5876135fa2131d3ed2a6",
@@ -12851,32 +13423,32 @@
       "hash": "sha256-2LW2l9MXp+kSF058bcocCrdRa31/5CKp3pCW/0S2g9A="
     },
     "google/elephant-goldfish-model": {
-      "rev": "70406c4d22cc7ea8299637c2c5b44625c48b3f08",
-      "hash": "sha256-3SLRCV1ssp8SBfszXIuYL1tke4H7Hh6iCwiUtHmyy60="
+      "rev": "49d3f80280437be03d315ff68e69941ee55b5d8b",
+      "hash": "sha256-OZGDq2r3pfmTx2LYDG3c3E1d52BFmb7ktBivOCPQ2qI="
     },
     "google/mantis": {
       "rev": "e2205c759cc4e24f85665028e5e28933719f7df5",
       "hash": "sha256-AphqxKZx8QQMaF6musWycO57stB8BI3W3o8tfpfSeRQ="
     },
     "google/meridian": {
-      "rev": "2e23cdf95747194fba1c8156e9be49c4aadd509e",
-      "hash": "sha256-0jwEcOrCrWmY4Bl+Gx+dXz+ZCM8JhsvKy/pRxe2w+lQ="
+      "rev": "0c859e7dc8b2ff5f0e42be55c06299c89e05d6d7",
+      "hash": "sha256-CTvMZcizz0evoSlSQqFRvsOkfr0qKjyCkpO2fGBX+rI="
     },
     "google/skills": {
-      "rev": "16b41649b3c087253d5c3e5092f8d0378b0feff5",
-      "hash": "sha256-ohQ8817CTlI8EuomyInNKXNGcacUUA6kV9URl9SWUwg="
+      "rev": "219a8ff487ad03c6f0c5edd6c5622b68ccbaf553",
+      "hash": "sha256-ptkB1Gnbik19ClyHXnWOWF0ptqULGUnmc6Ud2wiDVv0="
     },
     "googlechrome/modern-web-guidance": {
       "rev": "64a6d708f5a43f2cd3fde5d4d7db3905ba1bdf65",
       "hash": "sha256-6AKPHsrv7uP0clLZaezrCP8lHXY5EB0hJwQ3gnk4+UI="
     },
     "googlechrome/modern-web-guidance-src": {
-      "rev": "47e23a1428073d9194c5f50232e86a551807e117",
-      "hash": "sha256-zMeU3xxF5U1MFmjFXdSe6nxssX3I3Pjm32j1yAcEJWc="
+      "rev": "e53cb7b6e8713c2903786735f251521679380b18",
+      "hash": "sha256-Kxe9yOXYV+yMQKMqHDt8BaFf6gFvtVozz8NY3iE8QbQ="
     },
     "googlechromelabs/webmcp-tools": {
-      "rev": "35750c1b37f8e9b0696df10e153bd41ff2ab4d65",
-      "hash": "sha256-Lq9o4MCu9oZAFvulVs7xuF62Lg9KvrvB+jnj3Zi0PCc="
+      "rev": "596af768f84748da165879e2452fb39add447f0d",
+      "hash": "sha256-IHJfFfTi91ugory3E0N2Fp/ilJv5Bhn6ORkdJUEhL04="
     },
     "googlecloudplatform/cloud-foundation-fabric": {
       "rev": "02d44383deba7426c088925f92100694ee2972fd",
@@ -12955,8 +13527,8 @@
       "hash": "sha256-GwhGzBj98552MjcwS6DsySR/E8Rhad5eS93RLs/dJYg="
     },
     "gotempsh/temps": {
-      "rev": "c8dd2cefc522d4072adb03fa5313e1ae28e923ee",
-      "hash": "sha256-NU1fIoSKEPjCWWuAOnVwaCtVkM+muAtKKoSA4YSKTK0="
+      "rev": "bd988cc4724d038faab6085d2dbf3dc796b1bc53",
+      "hash": "sha256-fxWiR9w9t7vZOZdX6l5CZAv8NChUydrw+mY6yzGIAEQ="
     },
     "goul4rt/lgpd-skills": {
       "rev": "65e625daf56f84a2c8d9b8b063d1d70481abba3d",
@@ -13007,12 +13579,12 @@
       "hash": "sha256-MBPA0pmKbajxtDzAfs0gKug3IyN6mIrbOAKs0PuA1aY="
     },
     "grafana/gcx": {
-      "rev": "3ad6e1dedaf0fb6a03a50d2f198373903c437d37",
-      "hash": "sha256-7fT0RzbEI/FUCzoXQcqAgwFHuV3gzJ7OvGep/97iYIM="
+      "rev": "18e7e9a139365053cf6338e495ad1c9256e4fde7",
+      "hash": "sha256-H7VS4Jx0BmWLyT5ld+gXq7ePYGLlGnlNK+/yHcSV3Tc="
     },
     "grafana/loki": {
-      "rev": "46f526e54b4e470cbba33fbb8b21183939b2fca1",
-      "hash": "sha256-+g2ujqQGT8SSbyGSpL1ux1pMf4PYYUx/7aCcHrdHPcs="
+      "rev": "7a178b16dd1ca739f177ef6284d4c5b631fd3e6a",
+      "hash": "sha256-fXcY68vqk7luYOE47cET/VrCA5UxQh4dUw/tnjqyy7c="
     },
     "grafana/skills": {
       "rev": "8fb72a527961f05e708f53d2a0500709e12d7970",
@@ -13071,8 +13643,8 @@
       "hash": "sha256-Qb+9jYj9UD7ri49XvFNJdujyJt3479vxs8o/vXWqB0k="
     },
     "greedychipmunk/agent-skills": {
-      "rev": "e300bae36b328a977d23c66f8aed0832bccd9ed6",
-      "hash": "sha256-MgnsNrEhjssS320WoHqoZp+Um659nZTtu/qzf7Zs3tg="
+      "rev": "a0eb9bc0a26579bd594ce2f912ea6e402d47e37a",
+      "hash": "sha256-KZkhpZHIv7a7to24jNOL+K6R+9uBOzqNVX4WNuGol9E="
     },
     "greekr4/playwright-bot-bypass": {
       "rev": "26efbdea7370814467a8bac296fec6b3a4cdef2a",
@@ -13155,8 +13727,8 @@
       "hash": "sha256-ba98UP4jp05iJHJup/BGIOg3fSRHIIv+26tQu/mT/18="
     },
     "gtrabanco/agentic-workflow": {
-      "rev": "c5fb2ba58156053e539783c3442fe76c97239c39",
-      "hash": "sha256-bnZas+EqpqEk3PZYnD98RJHYszLdDbHXuErQKSO9QPM="
+      "rev": "fc17d9661919879dead04d5e2ce8751dbfa84ec8",
+      "hash": "sha256-SBnzxS83qCGfxaQysDAAd5MFb87W0QtBPNh9ZWx/OtA="
     },
     "guanyang/open-agent-hub": {
       "rev": "334b8308c6b57ba0a579b1cd09f8f3e2ab7981fe",
@@ -13551,8 +14123,8 @@
       "hash": "sha256-+WY+sGA8q9MDVEUNKsq5J2IIA7efa5snUCgitWqI/a4="
     },
     "harshanandak/forge": {
-      "rev": "1773edf9b769c81294062b37164b5077dbd49c25",
-      "hash": "sha256-ZsmQXV5btA2fO+jDwwcykEU7UtCVqxPkPIij2ixKBzc="
+      "rev": "4f03be2cdd8b57f25337538b89f72f3202ed33de",
+      "hash": "sha256-VrtERlW3aFfFcaEXOqGqC6ObbfVs3u4dH4gNhmHTDJg="
     },
     "harshaneel/humanize": {
       "rev": "9c3dec34dc8e0ed9d26de14a869900a714da8f9e",
@@ -13603,8 +14175,8 @@
       "hash": "sha256-569lPDJqYyXKqQbXksfUod/GZ+0Ial8GoTPc88Vy1d4="
     },
     "hatchet-dev/hatchet": {
-      "rev": "f36eb1f82d73426d37211ef82d59f50fda385d53",
-      "hash": "sha256-cxIgQX34Lz1rLFaU2Lopix8Itd3gPXIa97Wir9y6u2w="
+      "rev": "91d6ee911c18613a0281c1eb3cc28ff1078e0911",
+      "hash": "sha256-cbGfiAMCLqEvA+flZDLWV1NBUD/VC662bFXQpnNDkhw="
     },
     "hau823823/gen-paylink-govilo": {
       "rev": "08f6c7ada0da3b5f510e4cedb6c1cbbb5df4a8b5",
@@ -13835,8 +14407,8 @@
       "hash": "sha256-jetqCTk0Wo0zINf15YzNwu4usk1lel14ImiEljboDDE="
     },
     "heygen-com/hyperframes": {
-      "rev": "88c22a77f4cd7c3daa0ebbb6023181e9c8a897da",
-      "hash": "sha256-NPw2MgHo1mNiruGCAi8Jh4Wfr5GI5zm/BnlzrTOklg8="
+      "rev": "c50ec09d28e2b1b0680d25ebab7302b07bf148b3",
+      "hash": "sha256-W6r5SeDotvsYkQPxrCsdk0MyIEqpibmmezKeBcCfHII="
     },
     "heygen-com/hyperframes-community-skills": {
       "rev": "ba7a0bb6d3567d124c51f6074625043bfe0b32eb",
@@ -14059,8 +14631,8 @@
       "hash": "sha256-ZopedGXtkILfBwCFUL9EYyAD0njqXMROUb1r7Wwh5FI="
     },
     "homarr-labs/homarr": {
-      "rev": "bba80ad92579fa9ab43bd4757a92302029ef1dab",
-      "hash": "sha256-jEx2CZFyOW1fg69HGI/LYs/sZT4IR7I0sZ/7Ly+G8V0="
+      "rev": "f01f0e347c8ee42acf567cddd39759121eae5f14",
+      "hash": "sha256-ZA4b69Xdz6Y3xIjLNYPFyWFk6itn5BEWwQ94b4h9X0A="
     },
     "home-assistant/core": {
       "rev": "f98ff1e57314a01545ebf874f10dbba22c1fd981",
@@ -14091,8 +14663,8 @@
       "hash": "sha256-dncgaLaQJoxUr1peQbpe9hKYDCRfnA3MWg5qbl+GN24="
     },
     "hookdeck/webhook-skills": {
-      "rev": "556a89753e3e66e85d2a3ce50558e95b96c08571",
-      "hash": "sha256-XWmuLr7aEfSgNeN51pKKVOPWeqdY5/zEFW9MXPx/ZtE="
+      "rev": "60c323851294d450f10e87fde68ca3ec5130a4a9",
+      "hash": "sha256-AOBKu+lO+lbR6TlFLkJn8TmBHA34s9sodYBJOHg3lzM="
     },
     "hookmyapp/agent-skills": {
       "rev": "d6366a25ec7f3d6954c7204f1fa9e67ba5576eeb",
@@ -14275,8 +14847,8 @@
       "hash": "sha256-KpTffVtpUKZ76n12l5VnUAOV6yHoUFHLTk01BiZWqvo="
     },
     "huggingface/kernels": {
-      "rev": "b0bf5a2418da965879146c93b453166fe6df42fe",
-      "hash": "sha256-adeOCg4mFDnloYDNKwh1AK0UpLqez+daGLmV9ZZmcSk="
+      "rev": "93313ff703c914bbaf1139f47d78720e59f7bf87",
+      "hash": "sha256-2Llf0CuM+yomtiFOxWetMvqUs6gUN3kLw3z9X3knzuI="
     },
     "huggingface/skills": {
       "rev": "5291c2b9365e06b175dc04817610c778623f4836",
@@ -14479,8 +15051,8 @@
       "hash": "sha256-OVvvV+zdVLoar+aYdzTWIg671aivjig7kjYG+YsR0FM="
     },
     "hyperlane-xyz/hyperlane-monorepo": {
-      "rev": "b88e58ca04899eebd1744f8537f97c2416455057",
-      "hash": "sha256-XI4E54P5m2XUjYCvYKlVGKyhu3QoDFkQjdByC46GDCo="
+      "rev": "c3425c775540ad265c0789ccfa84afeaf7fe31ab",
+      "hash": "sha256-dgzM8Zah6rGqMuYw6Ho7y3j+sqDQuvWRptdLfMTBvw0="
     },
     "hyperlogue/r3": {
       "rev": "34c1c6915ebf295e17b9087744e9e11d5ecd2db4",
@@ -15023,8 +15595,8 @@
       "hash": "sha256-jIJokYDf0Ia4i8j5V4N4oqXa9eK1PlEJ+IspkAcbd08="
     },
     "inflatable-cookie/northstar": {
-      "rev": "757badaba8a01c0b59a37609346f97ec665e2cfd",
-      "hash": "sha256-fwGh4IQ8Om2ih+Xu9aqXhh2I21Za88hdUdLIftuipcs="
+      "rev": "a59639e0b6e28ca2b21ba865bc49435693053434",
+      "hash": "sha256-zdG80U5qn2qLaNyuAUO8YEonEKU3UsH+UYLOXY3o5ng="
     },
     "inflightsoftware/skills": {
       "rev": "b708f63cfee49ab76077bcfdaa7b90b792ed28c8",
@@ -15175,8 +15747,8 @@
       "hash": "sha256-JozZh4SkLSRN9wOGQJqytYYRtI6APzM2TEUGWZ5kWkE="
     },
     "ionfury/homelab": {
-      "rev": "dd39eb7e6a339060fc9b7de2b69764a58cb51d2e",
-      "hash": "sha256-IKIjkc7WTwWoms7StPmMBjqS4igbHWdbVzO0ySkQyBI="
+      "rev": "6336ee43ddd44ed054ca6938328013c771da5ff1",
+      "hash": "sha256-dToyTKzwcdnfK+r9y94j2Pu+3X2i2q0IqnxIcA+v4K0="
     },
     "ionic-team/capacitor-skills": {
       "rev": "1329ecd80621c4aeca37858f4af7071d1ecfeac2",
@@ -15243,8 +15815,8 @@
       "hash": "sha256-ZiI+mpGf+qMAdx4SGntHLMEXoF6jnnq7a0+B9fY6Ps0="
     },
     "iskron-ai/skills": {
-      "rev": "046a782f3258489804623234d8fc3b95d20e0d1e",
-      "hash": "sha256-L/tqsYhAfLVUfO0x3awD2i/nCK/IUhIhj9WIE+lK96E="
+      "rev": "d574dcc131a0f1696392a5c9a9bdb21048cff8ac",
+      "hash": "sha256-Not2fUxLelfGKAyeuo5XpzK92+clZv089mZYCCQvn14="
     },
     "islambaraka90/fintech-algorithms-library": {
       "rev": "ac369665764a7ae41d24a83111e48222aa9a5a7f",
@@ -16139,8 +16711,8 @@
       "hash": "sha256-OLjdYeXLen/E2utTjhNeMAt4k0TxsSmVSxW1V2CEpZY="
     },
     "jiji262/wechat-publisher": {
-      "rev": "ca0e23293aeb080d323a85029bac42a15dbdcf08",
-      "hash": "sha256-ldKjgxClFdfnDE1zPDGJM/QUwsW4hW2LhEuLD6qMYPs="
+      "rev": "7e1b69677715af670d937f714803ea14f1615f87",
+      "hash": "sha256-S1chyZovW3G6aqHs1/tN54+WGu5/PqOMbd1Bvy/jpkY="
     },
     "jim60105/blog": {
       "rev": "a535a834bec30d6b8e3b8b13c6febfe58eb99cf5",
@@ -16159,8 +16731,8 @@
       "hash": "sha256-k4VKNwAcuHtVxlLZGGvchqUMOWzCETvsN/qWdhMNgcw="
     },
     "jimliu/open-artifact": {
-      "rev": "4e5818fdbf00d904d058a4b909946e03d6fd4884",
-      "hash": "sha256-wQv2kt8FWDuBcdBhPhLk3qH/YR7Y8ccSuf2BNBBOEJc="
+      "rev": "6ce5f956f5046ab42ba9a2f1e8002ac5a5fc969f",
+      "hash": "sha256-+IXSnCyWjW4F67svzTJuXZQApm9atbZcTgk6Ww/QnZw="
     },
     "jimmc414/kosmos": {
       "rev": "73f4d2af1af6a6e71e45663a9462b20331932a06",
@@ -16359,8 +16931,8 @@
       "hash": "sha256-czwHVtpujVvm4aU4Jq+pg+Zy5lrT8OoiRTLL3hhep0k="
     },
     "joelhooks/rat-stack": {
-      "rev": "e1d7a713c3094a1b771ac29d1bbda12691263b7d",
-      "hash": "sha256-KxPR4CymXEdrVQZGLAl+DBMMcu/IWZW4ur+pOJq0VdA="
+      "rev": "f6299e40ca5f7e242ac47a62ea97044828a1eeba",
+      "hash": "sha256-NSLzCDVjxEwBgTDZMGY1xYkn2eSCTuBTaFkgtW55oG4="
     },
     "joelhooks/skills": {
       "rev": "14ebbc3dca50bc83921c73291d63b35a76643727",
@@ -16683,8 +17255,8 @@
       "hash": "sha256-dnkirWHzBpjhZ4ZYh5NaQ1XAg8VHTv84hsxTtdXqyAE="
     },
     "joshmedeski/sesh": {
-      "rev": "7a32eb82529817dbc037d1c791b46813af4f0235",
-      "hash": "sha256-RPSNfJNOYZ6/LfJsL6u1w9mEZX22UkWAJ19EKHnr9nA="
+      "rev": "b3b3aa28040c2962fc1be30e8f68df5261e6d954",
+      "hash": "sha256-mQZNvgOGS2kyEja59pc6/TpKighgnpnsiTMB1hw5414="
     },
     "joshuadavidthomas/agent-skills": {
       "rev": "516dee7a422b90937b2958d11c03694154ab9c09",
@@ -16873,6 +17445,10 @@
     "julianoczkowski/designer-skills": {
       "rev": "c259656c76d9758d7ead46b0d2f125cbe84f8665",
       "hash": "sha256-C77fz7npS7Wh1tvcMxRV9bTPF7djZF8F+Mrt1CE3jXQ="
+    },
+    "julianoczkowski/product-manager": {
+      "rev": "b408a093a5d0171937ce5f9035c2e3b073689e97",
+      "hash": "sha256-3FcBk7PXmUEmXwDr4wjR/tNd5bL6MEYzQbdSmm1y7kI="
     },
     "julianromli/ai-skills": {
       "rev": "a94ccf46c103df64aa237d1dea8927dc7fd1e0b2",
@@ -17163,8 +17739,8 @@
       "hash": "sha256-QD200uJO6BaqXEDdfzhlVJEKRi+847WVLyP6S8b67Fc="
     },
     "kajisho5/ffmpeg-skill": {
-      "rev": "45df6b9ab0740cecc15d0169165e8cfbcefdfb0b",
-      "hash": "sha256-KptnhpDiCHEMs98V1mw2FDSMFlfAPaBUpCou6p7OGLI="
+      "rev": "8a859771fbe6eb1b9a97cfe87bbfc73cf0226201",
+      "hash": "sha256-3SYBjU+qUcMUGr9s9mnD5YOANJViCiR5OhDHma7L8lc="
     },
     "kalarislabs/research-agent-skills": {
       "rev": "a74b0dbe5fa865d73b9f250ba5b0c9f107bd1baa",
@@ -17791,8 +18367,8 @@
       "hash": "sha256-kCg0Q4QQOl2f0TIl40Jv6bFODUoSg9F/u7jFE5efQoQ="
     },
     "kjaylee/misskim-skills": {
-      "rev": "c527712a582ddd5cce5bb2b71507d9e27e33825b",
-      "hash": "sha256-zpxQbMnJ9KnaWTc/6/6mmrSPnd2DKj0A3qaG1hj/yMw="
+      "rev": "371e938e068628edb7836fbb6c66e49cc86fa195",
+      "hash": "sha256-MiOMO7HKMx8AwpgktFIgan7JEvypORcg4x7HuYQ3JWA="
     },
     "kjetilhartveit/kjetils-skills": {
       "rev": "ca50249a0581f4f957a318209a6ce08e2ef489f3",
@@ -18095,8 +18671,8 @@
       "hash": "sha256-jzfWNNBFyhy5hrdpYIiDwZ8Eu4+NvSlodR0m3ydLxvI="
     },
     "kubai087/kubai-icons": {
-      "rev": "bc3e32102c5679f1f9ddaec7bf0dd402b9f6d9f3",
-      "hash": "sha256-U/IiDcBX6idSxhrEIvBP35JCtIPQ5xLPVL9wL0ea/j0="
+      "rev": "ef31a206cc139fc83fec2ca9397749262f8c033e",
+      "hash": "sha256-1suyBAvdZ46QI91XNLwrtukBsygL8mGW6zUmoWxXk0Y="
     },
     "kubb-labs/kubb": {
       "rev": "a72ee493ada5a35565972386ef015663a3b021da",
@@ -18115,8 +18691,8 @@
       "hash": "sha256-yS1SmW8fEvtxa//tfFzQQb5ZTslegKNGLVRAwZhMBgw="
     },
     "kucherenko/jscpd": {
-      "rev": "f79ae2bc1af034143b1a017b9a7bf835adc2de8d",
-      "hash": "sha256-jElQ+sOV/Hk+u1Jc5QeVdWmSCzrqfvFdV/aKzKHhDNI="
+      "rev": "2930cacc3b40237e3433d5460e4a3d0b6139626b",
+      "hash": "sha256-ye3/WnhHJqGrArBbdX7PdDzF5VujKx5mT8cLba9tlOs="
     },
     "kucoin/kucoin-skills-hub": {
       "rev": "a9bda62ce7f6cbf1d848b48eb489781fe874f962",
@@ -18147,8 +18723,8 @@
       "hash": "sha256-5vI4iTE8pv9lkdNQ3RZsMDs04AYUdO32eTpbC1AxHuI="
     },
     "kunchenguid/axi": {
-      "rev": "65630218384182a8a316ebe1b892379b259f5250",
-      "hash": "sha256-cj3ZnlIB/xQj2XQQXRGOiVFP5f25xHJcs08jCp9itgg="
+      "rev": "f338c0849fadb457c4ce69ad7b55d78470403c41",
+      "hash": "sha256-3QVmI6abTw7lwsry8FUC/7UJuS5ra+EWxWoLX+QYsVM="
     },
     "kunchenguid/chrome-devtools-axi": {
       "rev": "1dbdac1ca1122e1d2b76d889bbc8a2dd2eb2dcd7",
@@ -18287,8 +18863,8 @@
       "hash": "sha256-SOrARxNcgpB4kKYwTj6n+4wwY+viYg9y/1+C37jU0Zc="
     },
     "l0ng-ai/tty7": {
-      "rev": "208a93e816f5de3654fc801550e9cb85f761658b",
-      "hash": "sha256-jarAq8ywb5iqrDT8vy2+ik2GvMxPIMb7juCtrCQeGbU="
+      "rev": "5cc39fd486becd36425691184f98beb56ec4d8a2",
+      "hash": "sha256-HpRI6mvt78J5KfbS24x3ToNPp0qv5hpIM+2L1R/Jx4c="
     },
     "l3ad3r1/hermes-skills": {
       "rev": "359709ec9993ba74bf99de83306d92efe92f2f52",
@@ -18347,8 +18923,8 @@
       "hash": "sha256-5RJ6UckkK8X9d/bIjNnZ/2eyxR7eLuqIm1mfjHPDn4A="
     },
     "lancedb/lancedb": {
-      "rev": "a2176f9bcda18de74b5ec571f0bfa08e68f2f35c",
-      "hash": "sha256-w+mF7e4CQ5o98Fs4iXbwEkf3NGTR9mDEcxF1tdAJE/0="
+      "rev": "1658c8d7626a21adb00353221079aee7e87ba36e",
+      "hash": "sha256-Au2Z+vAWz4GlPvSAM1VuzQbxvFLCmAtBk6dtELpY5Do="
     },
     "lancelin111/crawl4ai-skill": {
       "rev": "e1bdcff8034f685977bfea661b90e4456bc708bc",
@@ -18363,16 +18939,16 @@
       "hash": "sha256-d27cZZkSq9ZSGzVdhDd7p7Gaynu8hZVbcLzdAaQeVuk="
     },
     "langchain-ai/deepagents": {
-      "rev": "654ceb3bc78066717a25da44bc5185691b571b41",
-      "hash": "sha256-joX7PHXjOHBzjTTwK0Ev9tg0aAaMNVH+MGpqrOlDWwI="
+      "rev": "f2f09e3906053a57b97ba6c0eab7537871f3ae77",
+      "hash": "sha256-/N6HB34hNWE/XonslptER1AbJPFRiostnzTKoTNAqzg="
     },
     "langchain-ai/deepagentsjs": {
       "rev": "cc136b0ef58f326066b018e18a2ed95e12b3f4a9",
       "hash": "sha256-VI8bkKf3tadVkSRt+qEwDlC4jnWXUCmZerIumGmyHpQ="
     },
     "langchain-ai/docs": {
-      "rev": "e445594df0c4de83af5aa46849ca0beb2af2f0f5",
-      "hash": "sha256-u6BGxBZHZZ0L0Izq1WYahXVNoierehKKdF66GuE6jdk="
+      "rev": "7c6a61bd4e042b267cba747c4e5818dcc72fa958",
+      "hash": "sha256-4WL9dlqFPf3/kDWjVTA7804CjiII+JUbVE9wEJGqV24="
     },
     "langchain-ai/langchain-skills": {
       "rev": "fb22e0603bb6e9528bf4c9a58a2e633fe17c5267",
@@ -18399,8 +18975,8 @@
       "hash": "sha256-9Q7XTUJo9niETqbOQYz1qaqt50CHRESoYTxvaczzGc0="
     },
     "langfuse/langfuse": {
-      "rev": "be7e6767f96b1c09e9f79355703f4b597ef19e1d",
-      "hash": "sha256-egsnw1iC/K3w44GNN0BNB/GljifZvz9ijDBqU5fIBBk="
+      "rev": "cc11c0b060e7dde3122cc8320f207a0eea78639b",
+      "hash": "sha256-kUc/14OfvPKokrQwkkpM2NNaDzQIOTaroRYcEEoMl3s="
     },
     "langfuse/skills": {
       "rev": "f0bcb13088b490c04b3f4870bace17f6d57b199c",
@@ -18459,8 +19035,8 @@
       "hash": "sha256-vRLpvPSe5qqqsqqFMf/gRSTLOGzdXIsg782a8vI8iNI="
     },
     "laravel/ai": {
-      "rev": "7e951132ec406cb590c3661ddeb71051b2820459",
-      "hash": "sha256-nnZTZ+er1KUC7p41WooszpJa6ZRa3JwqNYPoVx9nXmw="
+      "rev": "dc036502667418d96aed7297c02f4da3ef4591b7",
+      "hash": "sha256-pG5+XI821RyQ0RHoDtZGnDpbrTWSnksgXsltVCHUCX8="
     },
     "laravel/boost": {
       "rev": "6004f09e71fe199880a671df6dc34a6e731ba1ea",
@@ -18575,8 +19151,8 @@
       "hash": "sha256-DdRQJLHB8+sKox+pr5PBEBI3dvhWk8eSq465a032sdI="
     },
     "learnprompt/ai-news-radar": {
-      "rev": "5fd5ae7e127a4f061e6b567368365eea6cdc0e73",
-      "hash": "sha256-dwuoHO6qqsnRdwaAcwRz+d4ViVg3qkReQS8ykqsYMJo="
+      "rev": "1d20d3d0e5beb2ecdae3ee2cb0ec5025b28da8c2",
+      "hash": "sha256-2ZREulDHu1zl0ZztEP4vfHVWF5uJK7seuDgU+0gGZH4="
     },
     "learnprompt/andrej-karpathy-skills": {
       "rev": "9e46dec18990f53edae7cbd6ddae1981fd477255",
@@ -18683,8 +19259,8 @@
       "hash": "sha256-5t1c2ZKIbvmQZ5WN8z4Fraht2RDBsEpAf/dSDDuHxRs="
     },
     "leek/agent-skills": {
-      "rev": "16c74331d152f441dc3d01437c8d8ff269ea12c6",
-      "hash": "sha256-2F5PRWlsybGQmOXi5nsPhJRCfN9M9C/inlh3Xfh908k="
+      "rev": "93094519e5303df079653807410b4d0ba033a179",
+      "hash": "sha256-EporS7EETm3jR5mlfKxbFA8S9IXQUNadq3JkW0+OJC0="
     },
     "leekensei/agent-skills": {
       "rev": "23917feaef272a88b6bb36344e8a8f0365c47c14",
@@ -18743,8 +19319,8 @@
       "hash": "sha256-4E3jzWC1o/oW9Pi6OlVH9an0PMm1cJ9GrvIjbReJlsM="
     },
     "lemonface0309/charles-skills": {
-      "rev": "595e8d86d2bfabcb8554831c8a3d3fc93f89bfa6",
-      "hash": "sha256-Nf4KDZUgLSznx88vl9Mxv1pJL1P8xUci+k+bl5v7Nfg="
+      "rev": "4fc00ba7b56b7856d602067c1e876aa2389f9561",
+      "hash": "sha256-vH9d3DETH/yAytOwBxbW7g6FIBlHDe+uafOYWE0LKEk="
     },
     "lemonhall/asd-ste100-skill-zh": {
       "rev": "01345c50d240ab5f5ee34c95702adb6078a70f1b",
@@ -18919,8 +19495,8 @@
       "hash": "sha256-f31jd/xpm8QVpJeyFYaozPCxyJW9d4g8O+IXYrOAqH0="
     },
     "letta-ai/letta-code": {
-      "rev": "758735789b96bd0a370de909308655840e4cd42b",
-      "hash": "sha256-GFepZGWcMKfQMhJ+zr4Bs/bdLfppZhJRh36hdAk8VNE="
+      "rev": "17436c8e419bfc91a6be6eece5710e26181be77c",
+      "hash": "sha256-QbVK4+lmO7JopT0qwkpnhgSMfkGYCE8ggvNLnzU/pkk="
     },
     "letta-ai/skills": {
       "rev": "6785511e7d3913d9ec598435a77ae637cd45fc89",
@@ -19103,8 +19679,8 @@
       "hash": "sha256-gohAjoL2s7+wmYbYxXfUbJ1vuM8Gx3adX4K4Lb9LiG4="
     },
     "lightdash/lightdash": {
-      "rev": "c2a47e4217b6be322f658428a1070de3b4818d95",
-      "hash": "sha256-L8UFIKhRieSTy97930pBRbxPfdIJwCDjbo2ylNpHh3g="
+      "rev": "c237a8be56998bf3a4219c85892a1315f9ac54cf",
+      "hash": "sha256-U4LPTGWAaBKIxmm9FEPwx8HjQVLbgLM2JA6kJF9kXDA="
     },
     "lightforgelabsstudio/godot-skills": {
       "rev": "970a8ec3f459d7702d07e7869160c269262b0bef",
@@ -19391,8 +19967,8 @@
       "hash": "sha256-gCArcetDc/Gj+u5O2yK++eWeKuw8LtzAa2I04z1y93s="
     },
     "livekit/agent-skills": {
-      "rev": "edf33524a9a80b5b85768ec71017e02e077e21d2",
-      "hash": "sha256-62fGsUqfgx5GTGZ4fsIcb4fuM3dvNIvqkGnKLSe+fTI="
+      "rev": "378fb2b6998c5a9a4dc135dfbf65af05d0d6c8ac",
+      "hash": "sha256-9CBWYzNj4yS88MbYe8p6Qe4s8qW4nJsXA2cjE64FnX4="
     },
     "livsy90/ios-performance-agent-skills": {
       "rev": "c259885045dd50f3a27b4df0eeab537b58799777",
@@ -19443,8 +20019,8 @@
       "hash": "sha256-tU3fAIPPnFjB+JrniTV8ONp2qBgO4G+gIvgzE9WqtF8="
     },
     "lllllllama/rigorpilot-skills": {
-      "rev": "1f3dce362dd4688b0f8e559ae114a95d0b9613bb",
-      "hash": "sha256-vvDAQE8WDJtwbXhmuM3ELTnbQiYozRnaNXWi977IIBk="
+      "rev": "47036640f38e06095a97fa35ffefb699df76288b",
+      "hash": "sha256-ICvFAimsk2aorKAyOKDLqDPkOHKSytPHJjMxbyG/pqI="
     },
     "llmquant/skills": {
       "rev": "1918237467c2dff4cc97a18ebc0892dfd46e8129",
@@ -19479,8 +20055,8 @@
       "hash": "sha256-sopkDOpW5BUadEQKSkPaxQW9s/rGLMDCwxHRB1WZVUM="
     },
     "lobehub/lobehub": {
-      "rev": "579099b1849c09091c3db4b17a60fbb891bb8014",
-      "hash": "sha256-/Yud3S3oWwTgU9QXZi+OpW2eY2jnc0uKnffdj5D4biQ="
+      "rev": "8a4ce321384c5424c4be7cbf67c0920cd270e8a3",
+      "hash": "sha256-FQGnJlSStLKvoH4qiOH36Th36VK4YkYVyacX89gr2ig="
     },
     "lobzyjay/motion-design-with-claude-and-codex": {
       "rev": "a4d48c55ccb54a3b8bc4e100e34f6dcaca3bbfea",
@@ -19543,8 +20119,8 @@
       "hash": "sha256-k+Hk4z+QtbW4HZMnq1iaE44gbfeRZdOqEMb76BFICJw="
     },
     "longbridge/nsh": {
-      "rev": "a09da7c4235a0b55717bc365ce79a24302481d12",
-      "hash": "sha256-seD0Z29IPo58TbmcivozZ5a+BnkegXlE5Q5K9S6VrQo="
+      "rev": "a9bf6adff340a2a6784f02798191fe168b279940",
+      "hash": "sha256-Vf7f3tVl/PfKBxwFgMCXtMWChbYvSfvcSldf1omhhm4="
     },
     "longbridge/skills": {
       "rev": "38900e9884027782c1f4e480b451d5f55a479d95",
@@ -19651,8 +20227,8 @@
       "hash": "sha256-NM3nhWFEoY4kzpxjn4MSAOthzqP6lVjwviPm4el/CIY="
     },
     "lowlysre/lowly-writing-framework": {
-      "rev": "6808b2f98149e5c9b7f63cc7537d32ef6792f22f",
-      "hash": "sha256-E+Bp5OfJd+Szb6RpDYIRV2tF9JcRfcCLmIwVLGesAhk="
+      "rev": "8dcc87da60ab88d302064fff5b1175477bda065a",
+      "hash": "sha256-d42Y6nBKsx6agF+FEXqIkg6efRaONWYXX09cFokc9yM="
     },
     "lox/notion-cli": {
       "rev": "f237f53ead3475716757caf726e6068d73bc4060",
@@ -19991,8 +20567,8 @@
       "hash": "sha256-cK9BMNfv7dLeeRvS5d//Wn0Nfownayz8aBLAu71LwQ0="
     },
     "machina-sports/sports-skills": {
-      "rev": "c672f5f8785f4ce1ac305a5394f9712a7995f4f7",
-      "hash": "sha256-8KI4PwYf9SccWwbkt3kq2ThrNatXix71NnzCEUcSuYk="
+      "rev": "d2339de0c9247e6ab791417d00cf222b01d18078",
+      "hash": "sha256-IETg2vxwNRyGQyZzuG/l7jBDA59JJeWkb79Zq5F61Oc="
     },
     "machineroom-dev/codeprobe": {
       "rev": "0049854145f3c38fe9f7ea2611725c61ab372b4d",
@@ -20199,8 +20775,8 @@
       "hash": "sha256-2dS/qHD27Kbj2EYpOPnEQT77XAPuNtfUF7f8waSOOC8="
     },
     "manaflow-ai/cmux": {
-      "rev": "d53af6ef21e7c1b0be59399ab3e851895df32313",
-      "hash": "sha256-XyKUHk0TPg9wrJRaQBF1sN2PfPKztLlKoko0wK9tes8="
+      "rev": "4f71257eacca90790e8bff62604167eb53cee203",
+      "hash": "sha256-NHsgHvpkAwYgzpeIj95FRYhERTTTGt8Mi1m+ZECEtlo="
     },
     "manaflow-ai/cmux-skills": {
       "rev": "34027c77c9ffa33f47f5d81012d01296976b4240",
@@ -20271,8 +20847,8 @@
       "hash": "sha256-g1TECIRsvUeWV/u6FH2HZcyGkUH4uM1zVOqaaqzz3zA="
     },
     "mapbox/mapbox-agent-skills": {
-      "rev": "c9530700dd77aac37a42c823fe987e48b8865503",
-      "hash": "sha256-T5JcFowPKC6x4yDDGEYEx0ES/8ZAFum007aCsOEqpAM="
+      "rev": "846b74cdd35227dbfa82adaeaa40387e76bea77a",
+      "hash": "sha256-ann1R3x3ayiK10agtWDV0J3xXEO1e7fEqsyVVJR28eg="
     },
     "mapbox/mcp-devkit-server": {
       "rev": "e3672d40cd6296242175eb3cacc64491110ee0fa",
@@ -20287,8 +20863,8 @@
       "hash": "sha256-8XIdbJT4zj7ikbZuW2r9evRR1vKoOlFThgEDaqgDKIg="
     },
     "mapletechlabs/maple": {
-      "rev": "8da44f6bb103a794d148741f81215fb7cf14e5cf",
-      "hash": "sha256-QyK+bdD2f8VLVKr1rw0A3rBDziaSds4C7S1ysGatP6k="
+      "rev": "152b1edbe8cf96c1109357b4797ad67f52f2ec2f",
+      "hash": "sha256-2xmiON7Jwd8AKwZH0SOYrBKlhzt7rNUn3nfezhmTEww="
     },
     "maplibre/maplibre-agent-skills": {
       "rev": "247a37b5b37ade54876176fe309f2205c26baf12",
@@ -20431,8 +21007,8 @@
       "hash": "sha256-t08LgU2G9+8fk1/jdMF5W63sZJhhRKmjQCXaqhn/nNY="
     },
     "marko-js/marko": {
-      "rev": "74a44ad3dec6fbbf32f7ce5726b4734e16787a9d",
-      "hash": "sha256-z4YkCnXobnSbH1RNMGyHqRBEiBVy7/Z3QMOSVbcl8VQ="
+      "rev": "86f8198fe53f891185e74c1acbd1dc36fb7358a9",
+      "hash": "sha256-kwA6AHV930uGwhiQUIfLT6uOP1HUtYxC8a+0kNpIeig="
     },
     "markoa/clean-code-skill": {
       "rev": "cf34d5e491ac7e1ba26411f523b4d9f9a92b98a8",
@@ -20611,8 +21187,8 @@
       "hash": "sha256-0sR2iRJkNQ95DbfPfmSfiZ/d5E6DY2VWT+sGDicRGlI="
     },
     "mastra-ai/mastra": {
-      "rev": "92c21ec1bb9409de2e321211a49a9c18f3046285",
-      "hash": "sha256-/Nnkkts8K9fEKlsUY6KhWmQG8VQNQJFXquB/OOihFTk="
+      "rev": "0b739325f8726cc14168600fd87e90c267e0f467",
+      "hash": "sha256-zMRwjxq9/VXys8ZsGJq5r50l408fsKGh3supIDXZzWk="
     },
     "mastra-ai/skills": {
       "rev": "045740138738bee82d5c9bbebea2f4373b5ca2dc",
@@ -20671,8 +21247,8 @@
       "hash": "sha256-cJc3Ga0mTcs86eI9wnLEF2yBcA9NgdSNGG0P7QdCmgs="
     },
     "matlab/matlab-agentic-toolkit": {
-      "rev": "b58be8124631cccb03a67aa79dcef1c9720243e2",
-      "hash": "sha256-ZWkPI6Dwte6ejVi6KE2a21298Dw8bAdk92O37t2PI64="
+      "rev": "2fb6c8b8fee9464d116b4add4fc1af864e4a9fff",
+      "hash": "sha256-fp8GxOzWQYeLvyNMOEOSIZowylJHH3hlU+4+zcdNXU0="
     },
     "matlab/simulink-agentic-toolkit": {
       "rev": "bdfaf9ac37876dc38276325a6b2919fa522b33c7",
@@ -20847,8 +21423,8 @@
       "hash": "sha256-FMu4/mrYoGRTRYKOHGsQwedeIlMZcfqfCAsPmYXgWYk="
     },
     "mayswind/ezbookkeeping": {
-      "rev": "1eb4316c51af358fa5c4f6a92e93ef68f916f0bb",
-      "hash": "sha256-V9roajmxPfQliSNETlRXHwzLDE1Oh/y9ybUk2qJp6hk="
+      "rev": "d19ba8853afbb12191b6f5cf3110bd00dd796ab4",
+      "hash": "sha256-je3jV5LYMBrCoitdz/I6oU2wNsyu8xu9dlZ/MDhvVGk="
     },
     "mbailey/voicemode": {
       "rev": "9164a89094b372a53cadc98e6e46f24c6139e44f",
@@ -20923,8 +21499,8 @@
       "hash": "sha256-Be/EUGrw5GQ82rmPD46iMYcqKgYvq4gLytIGc6uXAQg="
     },
     "mcpjam/inspector": {
-      "rev": "301e905e5b4d81651010bf2c03cd023e935694a7",
-      "hash": "sha256-fn/MtBx4Md4bqulPKQhf1IEMd6yhrhn+Wn2Z6zbIXNU="
+      "rev": "518004fbd5236b4540cf66e26c5bbf0b0b809da5",
+      "hash": "sha256-Zvz/SSK4+F1VP0kUT95OVXHqx0ovkUrDsfbAW09EqO0="
     },
     "mcvickerlab/genvarloader": {
       "rev": "2053ec8e5beeff6f7bca6f353142882bed8e1c32",
@@ -20974,6 +21550,10 @@
       "rev": "b136dc8906c006272e7c031a850c48b2d293d83b",
       "hash": "sha256-ZmS/AVTE/RPtrNdkzizGr0EryymLu/tNOi2avEZmIvA="
     },
+    "mediavee/term": {
+      "rev": "4e577fb7959a839eb9b37a58c82a34307c9d69b2",
+      "hash": "sha256-ni5C5t7lpsVFEBwDVH2S1ZtKWgAJ0PTiqT6SBnab1A8="
+    },
     "medusajs/medusa-agent-skills": {
       "rev": "c5a56b4646b2c39d49b1da10c8a5404236b6b4ba",
       "hash": "sha256-KMUsiZ5FHPPc7nILu9xJw61CJRYNsTFOwNrdQ2Z7330="
@@ -20995,8 +21575,8 @@
       "hash": "sha256-J9x88bqZFe3OvqhSduHgAG+Oobg0LUws9DWuqr0wW1s="
     },
     "mehmetbaykar/codex-docs-skill": {
-      "rev": "4a1e67d23be24501d70aa971af22a75d4008351c",
-      "hash": "sha256-feJTinrex0dOcmtj2Y555aVtTjoSdbhyS9929wTbJVc="
+      "rev": "7f4c09bccc94e4bb38c1f17aa66d2cc18e703ae3",
+      "hash": "sha256-Dt/drBvuwUjQx1lLKWZuIA2r66f+pLnUu/ZOodDjLMM="
     },
     "meimingqi222/my-agent-skills": {
       "rev": "c23e042ee9fed792a5463eb7d28d1d31e3e90b70",
@@ -21035,8 +21615,8 @@
       "hash": "sha256-MsS5v2jN6pJZO5L+hO6Xi0TlZzrggzmbMcylXSyrQP8="
     },
     "melodic-software/claude-code-plugins": {
-      "rev": "7a0d07fc4958c365ae8ea4bb7deb25a97905fa06",
-      "hash": "sha256-/o5bZALfxLyaFk/JI+P66Y1/fQbBZ+WYZD0s2u50IrU="
+      "rev": "37579888d6960575ea79a05f673f630305f25625",
+      "hash": "sha256-MRQWA27oph5fupXaSYhF1IJC47pJfJrsgXy7ze7qW7E="
     },
     "melonask/sqlx-skills": {
       "rev": "df2e50bf8ebbcf72dd8d6d109408a65452edc04c",
@@ -21227,12 +21807,12 @@
       "hash": "sha256-oulTwzTKW1m7m63CwQKZ4nN6+76ko/43rQ/9EnSbLfk="
     },
     "meta/astryx": {
-      "rev": "aeedc8d721be2104630f017ed8af82b32dcb5348",
-      "hash": "sha256-ZiR8/7AzB8UErFksbYf6ssV5XsGWNnrbRzU6Zh6oUhQ="
+      "rev": "8a5008a7ececb7e6296a3148597117026e5ade3e",
+      "hash": "sha256-7+i4k0CeI5y7yE8bIJZ7Mdim/25HBRWAfg+jJlqhWtY="
     },
     "meta/hermes": {
-      "rev": "84c4f0024ddb8cc754338e0361a8f67ba2863e9f",
-      "hash": "sha256-dMSErkRqWyySnBUsmBw6PcSmjcwjsTGEpsvOtC9NfvI="
+      "rev": "b96a55083d751a2279f333dba8263893762c0832",
+      "hash": "sha256-+sAAEPye4/27clVD0zVGFLocdB3Vl+P0cvy6elbvJTw="
     },
     "meta/relay": {
       "rev": "f990bb0fc6f263fc12639d9e6ff698dbed965407",
@@ -21243,8 +21823,8 @@
       "hash": "sha256-O0U2SddQw6MeD77ybFOHe5ZP0jCGMq26yznXQjQ7Dvk="
     },
     "metabase/metabase": {
-      "rev": "bd0b995db19b9346323a0ee6986629a734abcbfb",
-      "hash": "sha256-D+d6YsFytJBw3YMKUxYT76fA1WLqXEhzOT9pwo+wJ3k="
+      "rev": "7fad81650235547d017ab3a16611a43d35329c3a",
+      "hash": "sha256-gUZct8yC8+BXrJZAAfLsDd3I16kuYAuNiggdZvOyRIs="
     },
     "metalagman/agent-skills": {
       "rev": "023dfe82afa5fbbb4a630c5dc73d43cdd124932a",
@@ -21483,8 +22063,8 @@
       "hash": "sha256-o25cgAbB7hmEgByFag5peAw25stCBo7uZLI6Ki/RUpI="
     },
     "microsoft/azure-skills": {
-      "rev": "e86a60a721a39e6d8fa1621fcaa6750ad5e0e17d",
-      "hash": "sha256-4H5CLSBln9SYhlCjPqxmzOWDy3i4TQcbrJtBMmNKlHM="
+      "rev": "7847020998043c6231929b364c35393b7cdab270",
+      "hash": "sha256-Srpa7IqqAbHZrKbf0KGR8GM1CqkoGmBZQ9CVA+B+5Nc="
     },
     "microsoft/azure-sql-database-container": {
       "rev": "c966c74ca563c66b21d604180ea138bdbe20023d",
@@ -21527,8 +22107,8 @@
       "hash": "sha256-7GjRFsW08dP7TlJhVYp1L/wMUTonH+gATe89XRuiCeo="
     },
     "microsoft/playwright": {
-      "rev": "a018f24a4fc76e2120d3b35d2415f1e5bd4b073e",
-      "hash": "sha256-YRfWbSBqBRSGXjwlH1j3+TzCSemxHMkqhx2UCZyRynk="
+      "rev": "2f1592a70bdd82049f5086df18c4359ca64d415b",
+      "hash": "sha256-dvvTRw3uDOCKci26b6mZcC3DGFMDPLrP8/mqjHJfJ6Y="
     },
     "microsoft/playwright-cli": {
       "rev": "c872a33cec77fa03c28fa7c6d1ad99d15d04ce42",
@@ -21555,8 +22135,8 @@
       "hash": "sha256-rqbRTNhCz0q73XBBLnzuBOVgaHBjAzBwORizKV5DaF4="
     },
     "microsoft/skills": {
-      "rev": "0d60658e34d07c05a5cd0514d3e64ccd653e8539",
-      "hash": "sha256-K75/Wh8SWVtBFgsS32hsTqSWu9ksOY+GJv3fvoph/gM="
+      "rev": "47eb3888eb42aef074fcb617931bf6e5934e45d9",
+      "hash": "sha256-BTyVFCwhviWu2Pnbtfb3QPuby420ltnI97yPmerqjQQ="
     },
     "microsoft/skills-for-copilot-studio": {
       "rev": "9c42d3a612c6e06389b6e5b4eed579aaed1a8b63",
@@ -21567,12 +22147,12 @@
       "hash": "sha256-aasVUGKDOImhMPq+pUZtyDt4AAqCDQc4EK0dyH75zfw="
     },
     "microsoft/teams-sdk": {
-      "rev": "e947b57583a249dcc331e1a59fb79f2fcfee294e",
-      "hash": "sha256-y8/7RVvMM3VNizTS1tdXa9no9DDwKpCs9ojlpsqgSRM="
+      "rev": "73ecb833d9bf9fd3c2230248540ed805a00ddd4d",
+      "hash": "sha256-zVBRumD/EmjENRnEcFB7ToJS87KGAigFmTJF19XD7lw="
     },
     "microsoft/vscode": {
-      "rev": "9ff88485860a552ea4e1f391e3b630407d98c63b",
-      "hash": "sha256-8MX2nB66EIzfUDcgN7ym1aREB1LrP91ABiwSQRxE+Rw="
+      "rev": "20c481e4c47cbf67cd409a8f309ade35ae80a02b",
+      "hash": "sha256-NFr2vPT0Sgu/vbga2NHg2kZ2QZvTEjqWdNhcEGvPTd8="
     },
     "microsoft/vscode-copilot-chat": {
       "rev": "5863f5a7088958050792b5dccbe8b46c6e13eccc",
@@ -21831,8 +22411,8 @@
       "hash": "sha256-7N3VvIWjrSkJRPyNCuBjMWGkWa1ew0/qUQtbFgOJjdQ="
     },
     "mintlify/docs": {
-      "rev": "ab3190d57fd4b0f79b212b97ffb64e071204c446",
-      "hash": "sha256-6KbotYzevAp/i7rqylgfsCwMy8Rc4JGz+uXNDcJ06FQ="
+      "rev": "e094a5601fc0d78d38fdc49453bc73e711d2e730",
+      "hash": "sha256-2hR5gw7CidRWnqr9AchxgO79cX306Ic9APG572WnxIE="
     },
     "mintlify/mintlify-claude-plugin": {
       "rev": "5a574784063682fa4c6781b6b94b976d56dbf7b2",
@@ -22063,8 +22643,8 @@
       "hash": "sha256-n6GP6KTtVoVjcvHfmS5sukIIEH424Gc7HD7mAwnoxbQ="
     },
     "modernrelay/omnigraph": {
-      "rev": "5c37a377bf3eb33e0ff51fae7b4b5e9f2503971a",
-      "hash": "sha256-qYUvXgicqOzqV1mFLO7krKSrpXi8WWFES8z0A+MVnPo="
+      "rev": "6921b10101c5c5266882a49a4da27de63684e115",
+      "hash": "sha256-XrxWvuNxu2CUaw7EWsYCxnn5hOK4TrSs7yl0Tt1nw60="
     },
     "modoojunko/awesome-novel-agent": {
       "rev": "dcd1920faab812822c04aae83cc19a2fbfb7fe93",
@@ -22099,8 +22679,8 @@
       "hash": "sha256-P7ZZxmFiS6X5QrH14Dhi3TAKeZ6u7dKI7Az+FSFHhYA="
     },
     "moeru-ai/airi": {
-      "rev": "fece6eed3fe6129b205e767506f61a0e29e8a77a",
-      "hash": "sha256-aOJCuQ1O371HojqNR8oELzrn8AR/PLzJhFjoi0lYMmo="
+      "rev": "32ffe96dce3dbe58d00dbdb974cfa202428ec94e",
+      "hash": "sha256-GOL6PaIYXlCYas2nYznXTBEoYmTwVsJdfW5W6NS3Z00="
     },
     "moexalgo/algopack-skills": {
       "rev": "56c2c7291ed61f442e4571138113d71119be1be7",
@@ -22211,8 +22791,8 @@
       "hash": "sha256-YxQoKeYZU98YNt4K9H7K28G505iQairBjsp8X1apqh8="
     },
     "mongodb/agent-skills": {
-      "rev": "ff9a88211c5a9fa74012bfa8b797132d510f9b44",
-      "hash": "sha256-ZpbJ4bBmZKFFcbqCSKvT8sUegxHcM8WwgrQJmg5j2rA="
+      "rev": "b021341da88746ce2ebe8e89a58eed12bd73257e",
+      "hash": "sha256-rcupNdXwfmaHBMRsoPkxN1AcvsnTcw4Mi4tWmygIgfs="
     },
     "monid-ai/cli": {
       "rev": "f4807e1da83e900117e2437af3502f998b171e22",
@@ -22303,8 +22883,8 @@
       "hash": "sha256-WkSTDrcccKFgqruDE1UrsDFrrumCdsI0SXMnwD7MQIU="
     },
     "moq-dev/moq": {
-      "rev": "a759e4cf6466a758eeb39de8d3f982a616472d65",
-      "hash": "sha256-NJ3n5MGUbN4LwQZOKIpfnwyyhlVwUmO6tcy/WfdPyWk="
+      "rev": "9828a20caba51c28ecf04b83d8d1c7bb4bfed2c0",
+      "hash": "sha256-W9BUG6ygxpI6Z/9piUMXuM6crle1NXR7EEpqYE0yWE8="
     },
     "more-io/claude-apple-bridges": {
       "rev": "a2b0087907af7c304e245af632f8ba6a104aca29",
@@ -22319,8 +22899,8 @@
       "hash": "sha256-U4ZFkR//DVSfmFxyuEN5Y0vB/FwLeLQ2wehaY32zc84="
     },
     "morluto/rea": {
-      "rev": "35595de07a06bf655613fa7dfcc642c0c79d7ae1",
-      "hash": "sha256-4RT2++ADfm7GmP2H4JXw2Bfxc7O8a/QDy4iBxqG0Bv0="
+      "rev": "c0d3f2ea9359649c4da705e1755feee44808bf92",
+      "hash": "sha256-ZILjJoUPoaKCdq+QdBTmRrm8wY/k1886HvsvkwIugBU="
     },
     "morphet81/cheat-sheets": {
       "rev": "42600fda51f4ba532cf8ccf4eda17f8db2af339c",
@@ -22631,8 +23211,8 @@
       "hash": "sha256-4z/wRdYH7UXRzF8RJU0sw8xbpx0BW/7CBv5sVEC2knY="
     },
     "multica-ai/multica": {
-      "rev": "58b5c66a9b948122fe6d934032e91b2e646f3b4d",
-      "hash": "sha256-PZtRpfwGy/08uX+ExHWzPcPoWL+rZwvFoEXNmiFfF/o="
+      "rev": "d405319d18fdcbfbca8ed3ae5b19b94cd9ada818",
+      "hash": "sha256-r4vtgWhQaSNEoPqjd+KRLNkJUzKiKIhEDeryOlOE71U="
     },
     "multica-ai/multica-cli": {
       "rev": "f391633862eed012760bb905d8c6d6df17f0e484",
@@ -22695,8 +23275,8 @@
       "hash": "sha256-tvyw0/jr01Ofi5u09nxA4Tcccd/nArqEBrhP7cVTnVA="
     },
     "mutonby/openshorts": {
-      "rev": "884dcaae3647583678ca472632d2fd766dc63302",
-      "hash": "sha256-X0vmTDIEUPZK7Rn1hOk0lWgBgq+UOBJVg1JCi1+NfTY="
+      "rev": "946087dc3906c9fd8f2a920d738b16749f440ea6",
+      "hash": "sha256-T66loki75jF2AV+w+s9MqKtRIOCBe6PI5wnwN38ceJw="
     },
     "muxinc/skills": {
       "rev": "caa80a8ae7c1e5e6d974a9ad93c9325e80471d38",
@@ -22739,8 +23319,8 @@
       "hash": "sha256-vNXMk8XMHnzhdidz34toABk0NF6Mv+nKJnn1KbpAc8M="
     },
     "mvschwarz/openrig": {
-      "rev": "48d22eb2068c2ba166f5545c44382de75cace307",
-      "hash": "sha256-GsKk+ktcMALy4COaZ9hNgFS3dTJSnYGZWbEA5OwsPAQ="
+      "rev": "44878ef0a39e5ccff3a5ff1eaaabd5c5ec22e5a7",
+      "hash": "sha256-BKaMFyu5CypxJ1zoS0SfISyS+JPbXoDSVynNmlkobqE="
     },
     "mwguerra/claude-code-plugins": {
       "rev": "965b237b341068ac9c8706e0fda68e7c326d448e",
@@ -22835,8 +23415,8 @@
       "hash": "sha256-56G7J+tTuDlSoPeJOf1Nvk/Cvoe6rZS27aAAkykVaXs="
     },
     "n8n-io/n8n": {
-      "rev": "8c86d496b9a9ce760c4073ba967757306fae53b6",
-      "hash": "sha256-pJe8DlJb69VykvA4HtS8Dt7cX5VWcIlVNt31ZOLo6YY="
+      "rev": "5bd8e21ac6fa6a15d56671af962915758549d905",
+      "hash": "sha256-Ak28Z3Db4NqmOUJl/63T+HFXrUfeqzcL40aC/VVCOlk="
     },
     "n8n-io/skills": {
       "rev": "626f50fdf2934116eea2c5469339e03d2d524e83",
@@ -22899,8 +23479,8 @@
       "hash": "sha256-/j+tmGXRD1yecCx7jMR8rAgCW7v70+ndo79gl5hy7co="
     },
     "nank1ro/flutter-shadcn-ui": {
-      "rev": "8723952ef8866c714836cd703905ea160729295d",
-      "hash": "sha256-jVWU5qSP93w3IOsYKAYNGnVbGzCtZCnjTt5EOIr68mQ="
+      "rev": "548324d212834fae8955bcef16fb889bc0a66b63",
+      "hash": "sha256-fYddmzeMTZ2KxJu/8w3y3dkpp7uEPryUxr9p9VW3b3o="
     },
     "nanmicoder/claude-code-skills": {
       "rev": "5f1af0d45a85da08006c41cee58ad3e6b468d048",
@@ -23143,8 +23723,8 @@
       "hash": "sha256-4ONIAHP5faPYjibClVoAXOnDboxCeSRDrQRC7rV5GLA="
     },
     "neondatabase/mcp-server-neon": {
-      "rev": "a7c11580da748b3c95ca1d8ce7adbedeaca2e439",
-      "hash": "sha256-yutk+9l2cCmp6SPRXMPJwF3cNtalSAcSi6iEgMMMdGQ="
+      "rev": "9407b5ddf0bed0ebded3b95d344d0360c97912f6",
+      "hash": "sha256-yQ3WhjJFZFcE3UNuDN1hXu+9xRb1FrHAD3w7xV1p7hQ="
     },
     "neondatabase/neon-for-agent-platforms": {
       "rev": "5ca68b0817c1cdbfb5eb260911465a5b7e44be0c",
@@ -23211,8 +23791,8 @@
       "hash": "sha256-kKIP0+e0dZiNPl/3xHUFj7eT1RQXsmCfhDGXCOLN4fs="
     },
     "netlify/context-and-tools": {
-      "rev": "f75a2839ff954314d6b653d811341d601d509b07",
-      "hash": "sha256-6Z4f8Pdn+G4xLjLYlFuQF8NgSnavufXYKmT/kqQAofM="
+      "rev": "b111e771432aecedc81782d64cac42530a9cd1eb",
+      "hash": "sha256-mq+8xCdotdQSiZ+1Eoa/vKrffGDhDgWi8jGKKy8s4dc="
     },
     "netlogo-mobile/plweb-skill": {
       "rev": "7dc2cfb19bd95389baee44f6706db4103571e008",
@@ -23243,8 +23823,8 @@
       "hash": "sha256-BY6+QHg3s0CBBRmC6TPx+AvNqWKxIxw164ct69Y7qTs="
     },
     "netresearch/data-tools-skill": {
-      "rev": "2eba1818beea3f571bc676aa120116e078d8056e",
-      "hash": "sha256-dFLWS9WWjGmeZrIoHE8qnIjcNJSjLDkQKIfPUIP+QhU="
+      "rev": "742fa50853f7d7a3c27072777a2bb7e576349d6b",
+      "hash": "sha256-03htSL8yqJ1ZUBfFTAdUzsN8pN7/YE702ZaQUxyNlkM="
     },
     "netresearch/docker-development-skill": {
       "rev": "c300dede375c7ea7640d960f38b37b310a3f671b",
@@ -23267,8 +23847,8 @@
       "hash": "sha256-K0K8/fhK54XyvihkJ2LXzjZZrtUxjmo496pHs1h9vXM="
     },
     "netresearch/github-project-skill": {
-      "rev": "dda6206f268c87388657eb7f03360de1110449f1",
-      "hash": "sha256-EsXjFczO+iZFWBce5xqvnSOXWVpJtpY7H/97MgICih8="
+      "rev": "b8e0b7c8399341b2e640d63f849f2c31c0da8022",
+      "hash": "sha256-RFNwzXDLdeJ90hdDAJjQHZBrJBu/2ldIAX0Wc4rsgZw="
     },
     "netresearch/go-development-skill": {
       "rev": "6b7025cb6f65f378036e649d0b181c607d0ead8c",
@@ -23307,8 +23887,8 @@
       "hash": "sha256-YKIFuEG38HW86V4NMLCLJPQTbaqpkayQtGmdXxNx5nk="
     },
     "netresearch/typo3-conformance-skill": {
-      "rev": "441feb2a9498367c35e1fc49d77d3afbb8f7c357",
-      "hash": "sha256-KdEn3AoYCPqVdWqsGfsW10Z1/3N6gT+hvUlhAosKdWg="
+      "rev": "12a3885472812502d0f6392e5e8e636bbacc8e1f",
+      "hash": "sha256-PT9iiL0jljGboXjgs8L1qckdiGVpi1L7C4xpJilHLn0="
     },
     "netresearch/typo3-ddev-skill": {
       "rev": "888947f2c6ac536c915dd14e7d1d269185a55ccd",
@@ -23327,8 +23907,8 @@
       "hash": "sha256-wkP+XaQgUk1TDM+r66FqxZwxRBHsmScun3JeJ7maOFg="
     },
     "netresearch/typo3-typoscript-ref-skill": {
-      "rev": "d496607c09f5f6abd8a655bb500cf343a48df015",
-      "hash": "sha256-VxQ1ziG1waJ8TRGgLBkrmECU3fNAUk6w4hFdy2YLoWI="
+      "rev": "e4db83487b4c4b50311b6141b5aebd6fb153c34c",
+      "hash": "sha256-JSgEVx6Y0MlgvMhmej71wtVcQFcQ8aruFGBIFr/eidc="
     },
     "neurofoo/agent-skills": {
       "rev": "0e7ac2aa4d094352a082ebeedf1dbb4c52b77782",
@@ -23651,8 +24231,8 @@
       "hash": "sha256-oeXFu1k8x0c19cUZtSqRQm8/VWDHcHz2aFmsYiW3onM="
     },
     "ningzimu/awesome-ai-ppt": {
-      "rev": "0e2274b4c77736f8c8af949c8ae483cfca4034fb",
-      "hash": "sha256-2Rt5BJYidOSekqJ56tTI6YAIqVc92cMIttKsaKTtA5g="
+      "rev": "af284530a019ed50144f58a4f3e16ad2c5b4b204",
+      "hash": "sha256-HYDI+qSm7jDhgX7ybeNE99zoGkefaCF8zddWKXBbh8w="
     },
     "ningzimu/codex-gpt-image": {
       "rev": "8128ce3bf21d3edf89d0371cd8dbdbd96d3deeb2",
@@ -23687,8 +24267,8 @@
       "hash": "sha256-Jy5I5Om4rwoM+thPbNoAJanvsqGOVr9ZZON5qpLj3fw="
     },
     "nirholas/xactions": {
-      "rev": "21446bd93be1f227d39ed0b780b668108bee323c",
-      "hash": "sha256-+YJ9BD2zgs2B/i6+yN5xQQ3Sdi1lXo4vBfzYDHeSpB8="
+      "rev": "3aac3180c0b01e98a902b03216e6173a7a062405",
+      "hash": "sha256-KvaB8vaiUH9+VkBSsSLJFpIfKfAJ0betCed62V/A2oU="
     },
     "nishant-tiwari24/cracked": {
       "rev": "6a094e9bd8499126f65be1d8b771b73fe0cc2039",
@@ -23807,8 +24387,8 @@
       "hash": "sha256-KHG8OEBukwBDDRZ4wnONfio9PUO8pi/5mGvAQu/tDYA="
     },
     "noir-lang/noir": {
-      "rev": "78e11a84a7b5ab58b4cfcc99083f6b8d0f3653a3",
-      "hash": "sha256-CKXXBowTI25b43Pcxijz7FVANuNUqK8r/eZKD3CKHmM="
+      "rev": "ea5b3f8b62585ad368f5dafc0252852df2f7e31e",
+      "hash": "sha256-813e7ubUzzKfjV7Z2EEMT61sUzYk6OIGCQNDnBg2wuo="
     },
     "noizai/skills": {
       "rev": "779f30af588ebf4dd17fc0acaa590ae147a0d3f5",
@@ -23943,8 +24523,8 @@
       "hash": "sha256-XWrgWS7vM+yoUAI5+yc0B4x5ralxoK1J1PbTYGiUT50="
     },
     "nousresearch/hermes-agent": {
-      "rev": "2de9f51b8008a7d49a49221c184f2f11cbfc4af1",
-      "hash": "sha256-gDIVg8og5FKsSlLKJMroKwLMU2tHry64D8xY+iIZj0k="
+      "rev": "514e2cbda616f57d35e7dd9e703d5db20a564bba",
+      "hash": "sha256-f/ZwPCiJUfUxL6qH1DZ7xP1ObNpkcuytpJdPOXTIrn8="
     },
     "novainsilico/jinko-skills": {
       "rev": "eebb5b8050e83a643479375633dde7970c3b34f4",
@@ -24003,8 +24583,8 @@
       "hash": "sha256-vPKvcevjNHoJbdn/5IMZxx06jnymwUN4F6DgLAP623U="
     },
     "nrwl/nx": {
-      "rev": "d77ebe0d1ae37e0dcf5c8ddbbb7b05ebc0432f4a",
-      "hash": "sha256-S2jdK/sbRjGlmplaEYCpZ2RWRK+d7o6EjwESESfxyWE="
+      "rev": "b76402218513a1c13343ddc638f6a04b93284360",
+      "hash": "sha256-iXR5fhqYp0++ljfKL128P9+5ghNqkQ/tkrDfCXs1HD8="
     },
     "nrwl/nx-ai-agents-config": {
       "rev": "c48696730a83a180dadf4a3ce759a682e2268ddd",
@@ -24175,8 +24755,8 @@
       "hash": "sha256-hXgNRIn3vYH3i0ABAHxkz9o/ZRQ9vFqPNTo7fIj/iNw="
     },
     "nuxt/ui": {
-      "rev": "853356f769ba06b89b0c5d305e135732c11311fa",
-      "hash": "sha256-46iZYAl+B1LRz9lioCAXrZhjzhmcw2KSUGYhgdLkYjQ="
+      "rev": "422d015e288bdae82a62c6aeeb7a722ad3070a83",
+      "hash": "sha256-fTUSlxanjF3uUqyzFGHweUXLwZLx0/+yBdz0mizL39M="
     },
     "nuyoah-ai-works/nuyoah-image-reverse-prompt": {
       "rev": "f56616e2e0db10f5344645d8f6c09f3915ce0d25",
@@ -24191,8 +24771,8 @@
       "hash": "sha256-QT5RwcdKiClN2scpljfxBy5yJwtzSrdzucrHBJvDU9k="
     },
     "nvidia-nemo/datadesigner": {
-      "rev": "1881d6d27619f50064e29e4f3094a9a51a338460",
-      "hash": "sha256-iSP2mC4nL+d0DfQkYmziLBSmtUzpSkpZTRRmtht1Moo="
+      "rev": "b8028000cd8e705f57ea16fcb95c45e9a808135a",
+      "hash": "sha256-VQscUNoFSN/U1KE3eBcQI29K9iI97e9F8ibrWkKBj+o="
     },
     "nvidia/auto-ontology": {
       "rev": "f3c310c7a279fcdfadf559d3fd7cd34e976d73e0",
@@ -24211,12 +24791,12 @@
       "hash": "sha256-suP5cesmDiA4nfBjEco8BY+vFNdkCTcWF9T2gn8sZH8="
     },
     "nvidia/skillevaluator": {
-      "rev": "1dd97c85701d3175f1b95a7aa79057769c6e6c2f",
-      "hash": "sha256-WmP62x8vLFsJs+bTOzrK8BiKbCT7De+qNoCYbWAMYlI="
+      "rev": "9667134b75875c0aff83f43a4f86df1a5cc69d68",
+      "hash": "sha256-hWUs8xaaA6UovR10Tdf1Z+fFRjly9t2Txeywmpx/LTQ="
     },
     "nvidia/skills": {
-      "rev": "6b75e9e3c9737a4985ab87462d2ecb02d5b2ada7",
-      "hash": "sha256-cSNSHkMaau/RUjA3AiG4G6eOTpjAkvEbOUTL5Xx4qds="
+      "rev": "815716d9c0abefe3e3122c9efc0a54f5c3294f26",
+      "hash": "sha256-tWaWXV2g3ottkrFIdwQZb7LmrVhwWTWgmSVqiIC9nhI="
     },
     "nvidia/skillspector": {
       "rev": "48e0f942ea1f5fdb7aa096a6f65a0adeda2ecc4e",
@@ -24339,8 +24919,8 @@
       "hash": "sha256-HRMUQfGbtU36gEGABsUu8M6W2iHZKLFjY6OTRYMe7yk="
     },
     "objectstack-ai/objectstack": {
-      "rev": "d280de9f604bff3a1a046b25ff3b5852c5b9b51c",
-      "hash": "sha256-X7WwqI46/9YCYzn/gm7nx8st/lrNRRE29GC0F83Ukxw="
+      "rev": "cf16935f580d3181539bab181efdd812431d6f3d",
+      "hash": "sha256-o7TirMpEomNmDR8aEVTOQ3G9NXOoB6RbvYGvStHJJU0="
     },
     "obra/clank": {
       "rev": "2db8793f93061c6dbe924aec3a8080b748d7970f",
@@ -24387,8 +24967,8 @@
       "hash": "sha256-rhU+l6wlkazuq+P6h4VmOn6tNxpxkyJNrmMBaMoVVv8="
     },
     "obsidianmd/obsidian-skills": {
-      "rev": "462a27fa456e43a68bd645fef457217326bfd369",
-      "hash": "sha256-1F98a3cEGf9OKruuJT4tEMrm3+WPPpwquHHpAlu+9rk="
+      "rev": "b110b2f8e9eb1f287892f937050dfd40af862cbb",
+      "hash": "sha256-L6qIfM2TKp+g3j0J2SxfWf5qeqahCe7+YcSOMPoePOs="
     },
     "oceanbase/oceanbase-skills": {
       "rev": "3062102dcf2692bcd556cfc35ee5dafd1126613b",
@@ -24451,8 +25031,8 @@
       "hash": "sha256-l12FilYCc/0Sbj1pEGcmuw/kIapcIe0BZmq2oRh/bns="
     },
     "oekazuma/svelte-meta-tags": {
-      "rev": "4c7d34aa29d40c93d726e88f92aca8b3c0fd013e",
-      "hash": "sha256-pU9CqxdDNpD0GVbARftJLvTxViD/TE/z2JCCOwjP7vQ="
+      "rev": "905504e067779dbd26671555729a7e72612a14e2",
+      "hash": "sha256-5WeLesTBBEegzsH4oIrpJlg1bjeQg2qhB3nn1v4oSCg="
     },
     "ofershap/ai-humanizer": {
       "rev": "f5a1156bafd57179a2f6eed18b3cbbaddab14b10",
@@ -24623,8 +25203,8 @@
       "hash": "sha256-FeykM+y7R3o6PsyCzfrlIgoO0Krgu/7yOlVxGjyFT0U="
     },
     "oil-oil/oil-ui": {
-      "rev": "81f2657f41410f04ae47ba77f902fcc0567eaab2",
-      "hash": "sha256-Pm8IZjIcQNeyF6XyzttBX1a3wqOM+MimY9TUjGHNZbw="
+      "rev": "1a4b6e564b332873ad6eeb5923aba5bb20c46545",
+      "hash": "sha256-tL57RGbipMAud6zEWspcw81GW4Y6lm6QdjdYh8s1vPA="
     },
     "oil-oil/vibe-hub-skill": {
       "rev": "8d7715464e5279b341193e00e33b3bd43390aeea",
@@ -24827,8 +25407,8 @@
       "hash": "sha256-85Y4B2YrP23/AGQl42qyZmOioEckZdNSkUVzkZiDfA4="
     },
     "onyx-dot-app/onyx": {
-      "rev": "0135795fdf8f28f2c8bd8b52361a5b7f2172586f",
-      "hash": "sha256-zgoT/L6PjMGD+MkR94WCkS7cbx8hYJ5cpFwPHdKZfpo="
+      "rev": "b60e8f084b5043ae5bc53619d906c26a327cfabb",
+      "hash": "sha256-ZbKrvrqPTGZDaWRAdohiotvYKLR4/nFa8ubDrFy8Fx0="
     },
     "oocx/tfplan2md": {
       "rev": "480250e7d7d70855d373944fcaebde5d6ee6ddcc",
@@ -24923,16 +25503,16 @@
       "hash": "sha256-O+FR0pTkQMz3bi3KT28cSeplRPKoSZQYrrdAVaLfp0I="
     },
     "open-edge-platform/dlstreamer": {
-      "rev": "45fb7dc9e97b37d4301b8d9aec3d7941e5ed9a7c",
-      "hash": "sha256-4yJY+GTYW4zpF2fBKAIOflSP0aMCmZHK4mYvScj0+So="
+      "rev": "50a0ed4538c8163d981643751223c6e9cd506389",
+      "hash": "sha256-FjJ8JoT5eZK9CgpibeMGjOjHVatoqHxdi/unqBxYY0o="
     },
     "open-edge-platform/edge-ai-libraries": {
       "rev": "fda2e3a0ff71f907a3a572687f0b2050d671ea5c",
       "hash": "sha256-rgShemUJs6DKUbwEubdMbCriHJhhzH3bsNvW3yH1x7Q="
     },
     "open-edge-platform/geti": {
-      "rev": "24447f70283c85e4424f85edeae9ebefabf1d81a",
-      "hash": "sha256-KhOYp8khwHGMUu3C47tj1HshoubobTPHGGdM6D1Won0="
+      "rev": "97b4f2e61d074c983b52cade033671b538bf5492",
+      "hash": "sha256-ZBcIXiGOHe6ito8l7ArUzPXv9NVILZBX+vvyx54u9Xs="
     },
     "open-edge-platform/physical-ai-studio": {
       "rev": "7702c249e8932bc3a49766c8920f2a20c40cc20b",
@@ -24943,8 +25523,8 @@
       "hash": "sha256-4p4FpJ9+39XoeYJoqQeV2ZXuc1B+MQS5Ei2K763OM1s="
     },
     "open-gsd/gsd-core": {
-      "rev": "530e767bef2c7d5c8aff82913f7b7c3270687237",
-      "hash": "sha256-p6uDSHQVVQAqSbIiolwpA0ahE6sOSR2WSiEsm/MK5+8="
+      "rev": "0a172879d8fb05608c0bc99ef0946b1124f9fe1a",
+      "hash": "sha256-Kw+Emlj32n31CtipgseDm5rmhz8c7TgpINn2Moo9I7E="
     },
     "open-horizon-labs/skills": {
       "rev": "79dc1fd745407fc90efb95cbdf332850893e1454",
@@ -24963,16 +25543,16 @@
       "hash": "sha256-aMr2rQXNDCk6D2/2xG3ae4LIorx3YO7CNxSsNDjvJlc="
     },
     "open-mercato/skills": {
-      "rev": "fd6cff1b46c656a7239f0f1f4f08554e61062fca",
-      "hash": "sha256-Cyt+DBq1sJB5P0XC9YXHOq4Q6Y2aVDYO+ECevrlGJY8="
+      "rev": "dae9e72584ba68e388b29684c1306669319308ab",
+      "hash": "sha256-IEkTMhfTEVF4JuVjIV1E2MSbxxqZluOsHB8ktZ3UbJg="
     },
     "open-metadata/openmetadata": {
-      "rev": "401b36c32a67b27f46b88cd01cd530b16d5d5a58",
-      "hash": "sha256-HjqfslveXOj6ow249iARDU5o5e2ynWtInvfTxUVEs70="
+      "rev": "0b8b4e875530e3a6cf20cc5f1638d77bbd72c484",
+      "hash": "sha256-z9BrI+nQwV027L04IjvFytF2msXgxXNO2CkJPgDDXz8="
     },
     "open-pencil/open-pencil": {
-      "rev": "047fe141ff9ba0b4f0fea9ec4136ff470878614c",
-      "hash": "sha256-SayaK6C4MZjCzP7iuoEDTDxOCgdop3r+UBWeFLFLEfU="
+      "rev": "53627487573538fd2b7784dd920b19f37f1a9ac5",
+      "hash": "sha256-UZTwRaNy5LUaGu+Z/Dh0b64KKMVTpyJ1UrVJOe/VoBE="
     },
     "open-pencil/skills": {
       "rev": "0d850d25f0ccd2066ad47877bd5884e6f433dbd0",
@@ -24991,16 +25571,16 @@
       "hash": "sha256-/GqW74DJHyNUIs9M7z8tGm24pkh8RQB44RC3LzfELmQ="
     },
     "openagentsinc/openagents": {
-      "rev": "d1105d2b49002ac63eb2caae1b4c7d28da235b93",
-      "hash": "sha256-hm7hxYVNP7OC+MTS84YyciNOfHtOZuaDi4CgYtAZ7MU="
+      "rev": "943152f2d85750fbafb47fa4ae4e6841ce846a9c",
+      "hash": "sha256-R35Tlpdkrpl9G1j+/NBTb6f9WnG4faYsaCNUf4Z5B+s="
     },
     "openags/paper-search-mcp": {
       "rev": "cab1b5cc276a0cd004a0044003926a6440088049",
       "hash": "sha256-KyAGr1CuBsJeM+H4Ex5knD1fL0A1h7yKO9qVO7fDiIg="
     },
     "openai/codex": {
-      "rev": "bb5b9c6240136de8ff4d30215e2341c44559aa04",
-      "hash": "sha256-QG7CTtr50kEqWXaPWXRzBZ3Czfs5cpaLf+3DTXGz5d8="
+      "rev": "51f4b8af01db1fb04e0cc6235444573ecceda716",
+      "hash": "sha256-CA1b796UonIiWPcYQxo66ZTYQr9l9/77e6cGukjWDp0="
     },
     "openai/codex-plugin-cc": {
       "rev": "db52e28f4d9ded852ab3942cea316258ae4ef346",
@@ -25083,8 +25663,8 @@
       "hash": "sha256-QHDEQf5Ij9apeoqYmc+ghNmyWrRYSDC5wvBtOR5jaSw="
     },
     "openclaw/openclaw": {
-      "rev": "9ebaece107930c0f97b6300f3f848b274b35d65b",
-      "hash": "sha256-bWToMb21jnfLOFjl7aNBHl7W+L4xgjjIOJCmnGzJH10="
+      "rev": "79ff6c3ee7de4c283e86b87e7953c84dc02b76e5",
+      "hash": "sha256-1oZ5VBsbbFtlG7qORalxMLT9aDKRivUZcgGdbwohGw8="
     },
     "openclawby/openclawby-skills": {
       "rev": "898a4168ea63f4d5e31bc89d698831345b6e62ca",
@@ -25243,8 +25823,8 @@
       "hash": "sha256-0cF0JTKxWUpjTgSbwnZUU3r3/lAQ4H6cImk1/Gws+u0="
     },
     "openweb-ninja/openwebninja-skills": {
-      "rev": "0f8be0c0811ba16d5fc659441bc02478e7e34b00",
-      "hash": "sha256-/FwKjVWllv06McoFZ1QL+dTRojHaKHlUH/WpfHyVUuo="
+      "rev": "35cdcda297ca25d7a4e7cf6c512e1c61ed94236d",
+      "hash": "sha256-HfzQ2hAjsXAjq1dMAsJ/ubIXExznEc2fKRDzsYBNf2g="
     },
     "openwhispr/openwhispr": {
       "rev": "007826d936af15e89291c1106042f1b280a75933",
@@ -25291,8 +25871,8 @@
       "hash": "sha256-gPU7pilc2VOqg4rQdJ0t+8+PXBG/SwsB7EoojwOp4yc="
     },
     "orangeviolin/content-pipeline": {
-      "rev": "976283c66d35338527a580f13edae15bb8dc9b49",
-      "hash": "sha256-btK1f+CWg5RWUFQTM8Zvdah94Jpx7ivjopd51SUlFpc="
+      "rev": "b137e668992a0faddf8a43fa8340316e1206e6ee",
+      "hash": "sha256-fjc2+gpED3xuIrikv/saIKNFhEGs7JeLibj7g6YHr08="
     },
     "orangon/learning2peak": {
       "rev": "b2ed0a05a2d2d050f3243f79ec35451aba50f99f",
@@ -25387,8 +25967,8 @@
       "hash": "sha256-H8QA39nE3BLuHWdtTXuvq8yyu8TNaQt7TtnHvLXfqZo="
     },
     "othmanadi/planning-with-files": {
-      "rev": "0fd1ce9c7e229c7788a3967f90aaa3472a698840",
-      "hash": "sha256-4sf6+TewwmcbDdD6SFCqKuT8w38UPNBycjl4DL7aauQ="
+      "rev": "adcd0b0a0a636c9e0ced71e6404b071d9eb4c1ed",
+      "hash": "sha256-ubXgsT4E37lLQkaGeVUfTsBvUH9z23NxhA2NZfIT1VY="
     },
     "otnc/skills_ai-agent-saving-tech": {
       "rev": "7849faab4cf917ce6312cc949946f1cb8fce18ae",
@@ -25475,8 +26055,8 @@
       "hash": "sha256-lND38ZBVswTkwbP1JHNDz/dQDJOq4f1w9IhzC9oGfoQ="
     },
     "owid/etl": {
-      "rev": "e2875fe830b9d0bbc3459b075631414b6e9ea4f4",
-      "hash": "sha256-vpI51VOjXtsOpPN73bMBpam7DjQgbXFd+ohHBiVU+H8="
+      "rev": "e79c547db073712e21d7ed37f1fce2c8b93144ae",
+      "hash": "sha256-MJwl4X8OitFyaxlUu06CVYiBYLWVSAIuQwN4q0P+gzc="
     },
     "owl-listener/ai-design-skills": {
       "rev": "f41b650435b62dec6d5b1dc3598ac4679f8b7ae7",
@@ -25679,8 +26259,8 @@
       "hash": "sha256-ovVcezg/ALapane1kuuCJJXOzKT+8UlUQahltEAhUXw="
     },
     "paperclipai/paperclip": {
-      "rev": "0e38c80323b4a5c9c50da31c86f64fbd9eb2bcef",
-      "hash": "sha256-Dvqyvxm6zkfAvKB/NnpLKyLPMUQiKfl/3qVJ/+9Oz4o="
+      "rev": "f4a3f85b89b2dae7889b0a9c7fee07ed47b554cb",
+      "hash": "sha256-XzqEYiO0SQ36Y4scY33NQqX2gPVqWKFTlX/gEKPfpio="
     },
     "paradedb/agent-skills": {
       "rev": "91cdeb6066efae2b2fb6e28dc9a58200e8db4913",
@@ -25763,8 +26343,8 @@
       "hash": "sha256-KHG90vO1DqLi2qmXY/OV/W8E3yvGBBFlLUwTP+grC+g="
     },
     "patrick-fu/awesome-skills": {
-      "rev": "6a8c96ce70b8c1ed1f1ea98c3ef9ae5bb846ce82",
-      "hash": "sha256-b8tbW7udMKgOzHSKepvcZaA3d+Gzb91gE0x8u9o8bAk="
+      "rev": "8f5dd22cdc54cacbd91e9f50680b20830b1966ff",
+      "hash": "sha256-/5R1oBHc8TkO5R+bdOAHiMDmlIPO7TQFKYmIrhDkxq8="
     },
     "patrickporto/desktop-agent": {
       "rev": "c68e947448b17eddb0f9fd53513093523541862d",
@@ -25827,8 +26407,8 @@
       "hash": "sha256-EgVdozM2mArhDs6HATkqhBfvb4gnZV+vbQudizSU0dg="
     },
     "payloadcms/payload": {
-      "rev": "8beadba817e6a9e35bca94d2ec20d838f5c339bd",
-      "hash": "sha256-cFgBVOq8zMx1aSe2XzkIzjj5kKYf9/4urE+lIYiOniw="
+      "rev": "75759ccfc3c8a5274f3acc898fb8df0bbe722903",
+      "hash": "sha256-io1Lq8v6iD/aaKD+iRcYZ8vLA1zkBEYErWSCfZpqtR8="
     },
     "payloadcms/skills": {
       "rev": "832d5bc4258ae784f08cb7f03a3a674d6b2fa5f1",
@@ -26175,7 +26755,7 @@
       "hash": "sha256-X9a9SurVC81t5jpO/TqtGY4wnzAA7++szry0Tcicxzg="
     },
     "phpstan/phpstan": {
-      "rev": "b0f753910056100325fbfa4b5f255de6a51f6a03",
+      "rev": "187745a860680cd0c262a72336623e91acc28249",
       "hash": "sha256-BAKqsL+35T8ooFXV7dtymGJFETIuOgFcDtoQPxLa21I="
     },
     "phumwiwat/fivem-redm-best-practice-network": {
@@ -26579,12 +27159,12 @@
       "hash": "sha256-Jobbk/n+LZsD9uYamdYiPFQSc/p7IAgcomoqbSFZiYI="
     },
     "polarsource/polar": {
-      "rev": "f1007f8ed970a283f1befb459e1328ff55cf198e",
-      "hash": "sha256-scNhYICx7Q2vOfiMkY3VZ8Vut5zlH0GJdnbAgFkZ4xs="
+      "rev": "8b639f74ede4da2c7e30689c54a2c11017796b4c",
+      "hash": "sha256-+Rkdi/p/vXnhZTnhcUhaakEXzq3nciV6oKnCvjMbDi4="
     },
     "pollinations/pollinations": {
-      "rev": "13e86e78f7447690b24801fed1a54c3f7f0dbfa7",
-      "hash": "sha256-IROA6N0uwZhNtqZikg/Q4iZjSuAHgJKwE5zmzOD6SQ0="
+      "rev": "f07bd66d4c9d92cdd76957e11fe46721c76fe2cc",
+      "hash": "sha256-Xy3+8L6idT36kd54nqxaql7jIeK6swk8H1peRFuFg3E="
     },
     "polloaiofficial/pollo-skills": {
       "rev": "3ad332bf6ea9978ec3e3d403c0003f6acba9e80d",
@@ -26635,8 +27215,8 @@
       "hash": "sha256-VMr8upkhPZS+utjyps/i+cXUdh3d3yWH0lqR8Qp3t7U="
     },
     "posit-dev/positron": {
-      "rev": "61595fe6a45ff8bc4598dae965fcb5744f781bc2",
-      "hash": "sha256-e5/w0Qov6a5xP9mSb40npumRcGmrJafKmpcn7QbnkLM="
+      "rev": "b478d804f0090482ff2f8a867b503ce0c40b1d1e",
+      "hash": "sha256-HxaNZj7fU/WeNFa/ueV8KEsk+mqrG/ZPP4nOjvgqoZ8="
     },
     "posit-dev/skills": {
       "rev": "951959403f4ecc9d0274adf35538fc67153b6f31",
@@ -26663,8 +27243,8 @@
       "hash": "sha256-DPQUfUjwAR227nndlJ33V0AQ+gaDPUaYFvsuNBQLquw="
     },
     "posthog/posthog": {
-      "rev": "573ed146815aacdd3a724ca1900738d8de7fa1b1",
-      "hash": "sha256-uF9s3L5v72CGBlD/EVUSJ4gTTlwoQH3OdLOm6aZoCUY="
+      "rev": "11f4dfb8ef20bcefac0a106871caba3f4ad536f1",
+      "hash": "sha256-U2YF1geFALL764oXFxiJ+r/lmpHbmvwEL1F+feNSmiA="
     },
     "posthog/posthog-for-claude": {
       "rev": "4122119322584efc7a3e483b9c1cc2e4903ebeec",
@@ -26779,8 +27359,8 @@
       "hash": "sha256-QLebRyDqxgG3egPcrpEsySk8CZHWdFnT9+SqKl7tC2A="
     },
     "prefecthq/fastmcp": {
-      "rev": "c0185fcf3a346c0d11b69562aaa6c971f82c5c20",
-      "hash": "sha256-96PHLL5WKRF2BJ8zDZ8RRuE5TEx4ieafcOuaKKdSpKI="
+      "rev": "16b16737e768c433e65d1e87f233d5ebfb910d28",
+      "hash": "sha256-L2CcHVDlfzI6Gd1cNJjBXpRVoSIkaqrhzjYrt4wdv1Y="
     },
     "presenton/skills": {
       "rev": "bab82f10b0a77d4c8248c034f61e6bcb315a4982",
@@ -26819,8 +27399,8 @@
       "hash": "sha256-+0J/XEWWpkYOKcNgWTfVnl/mSL0xJNaQ82gcAoq4xcI="
     },
     "prisma/orm": {
-      "rev": "bb5cace05e25c4e1aa453816e5da6beb47cbd440",
-      "hash": "sha256-Yv9MMFKGSYsT2bPOuZNTx5sZ11yg6tw2Cx2o9ut+5dA="
+      "rev": "f1712a228a7a3a4c46098c3ea7c9a09248337aeb",
+      "hash": "sha256-oFYbFxmPCJcpPD8UDXpV6vMgNRTqFPTjd218iRLLiTE="
     },
     "prisma/prisma-next": {
       "rev": "55458c441d2cf452028c22eed21370447720840a",
@@ -26847,8 +27427,8 @@
       "hash": "sha256-EXmA8tx13TM/2uUMOqUhpl0oxGcz4qsPvRJdYySGBHs="
     },
     "probabl-ai/skore-skills": {
-      "rev": "24bdf0f0ba9e40b24a0f9b05ad7bbf7ac4ec1ded",
-      "hash": "sha256-8SLP4Sd+JZo6bWk/cMFTste1KAVEYeyxbJSaLuMXGhw="
+      "rev": "d779f3fcfc0edbc4657404ff9faa917ff8ec0317",
+      "hash": "sha256-k70s+FejrTcVRep1N/6eHr36y+ciKtLOrETEd7aJYUg="
     },
     "probichaux/clawdskills": {
       "rev": "70d9d8fd0f3ca9452246895177b054648148fa64",
@@ -26879,8 +27459,8 @@
       "hash": "sha256-YDfvXi/aIXFFf3InuVnxkaE2vDTs/gomvdoNfmLqDhU="
     },
     "profpowell/vanilla-breeze": {
-      "rev": "51817a1a43535a54fa741eb7c529316586f494c4",
-      "hash": "sha256-y5qct/qF5f8SyrogvUWCmo4JZTh/IuAFPtjDrsWl5lc="
+      "rev": "c015f70fcd4ce2791d1e66f3cedc3309e3094a5f",
+      "hash": "sha256-eLcWuw45zvdbLMxnJT3adKLt9UwlUDFOMyiYPbC4/oo="
     },
     "profsynapse/professor-synapse": {
       "rev": "3401e1acf6d6fb03cffed143e5bc9c7f5d67b8cb",
@@ -26895,8 +27475,8 @@
       "hash": "sha256-1t8o8HbtCMTZeUOd+DaegfHtVALT+JQD4YWvKMv+Ifg="
     },
     "project-n-e-k-o/n.e.k.o": {
-      "rev": "332cc0e567114779f500db6db67cdc8ec552b563",
-      "hash": "sha256-PiTx51jTDEXrlQvT/nTFSPedbkfb/EN99yQCJRg3kqo="
+      "rev": "8ec7c796d4b87c8eff9463f08ea15ff7760bfefb",
+      "hash": "sha256-4JUi874iuqzxvyBj4Y7a3Qth/KAnGimp/EcghLf7iyk="
     },
     "projectedanx/academic-research-skills": {
       "rev": "c66adbd043a4502ca9a8d72240dc8f07d0d295b7",
@@ -26923,8 +27503,8 @@
       "hash": "sha256-FtnIVFumuAzWWLvQdH+J1fbOcQWNk23zoV/UU/46ukY="
     },
     "promovaweb/specsfy": {
-      "rev": "24eb1b30d438dc438511e0950fda86db5339eb34",
-      "hash": "sha256-QX9nyeO1kVg/buOenf/dHLNLNMBE9fSU36fovtRRC+Q="
+      "rev": "aa0384382a46717b9cae224503b773062fa20064",
+      "hash": "sha256-+Q4tt8/kEkOTqGRV0FxI51x9tOXGQHrqsyP/C+2p9t0="
     },
     "prompt-security/clawsec": {
       "rev": "3ecb8953445aea865d26efe30a712fc273eae0e6",
@@ -26939,8 +27519,8 @@
       "hash": "sha256-MKtc6gf7tcDPNE/Gwj++GeCn1EUWqQfdVRoIIsaFmNA="
     },
     "promptdriven/pdd": {
-      "rev": "5b03d62f26456e239c075c998b52c31b60f18b62",
-      "hash": "sha256-owddjDUUFnYNA9f9rJIBt5CobEVoVzHj53ZaFAssqhs="
+      "rev": "133dc4c2970b1c9c7c5625b488dc3d67a660dd1f",
+      "hash": "sha256-HXx84/Nmy2aD3+PxRGvESIV3RfwrA7deMUOQxPRfMXM="
     },
     "promptfoo/promptfoo": {
       "rev": "0fc519130226bf0d5384856df596300caeef09fe",
@@ -27183,8 +27763,8 @@
       "hash": "sha256-E3L9sdwFpAu9gDLncQB8cqDQd26ebFpmu+psSY3xTXg="
     },
     "pytorch/pytorch": {
-      "rev": "44def8320fb412de2d69eb75879feba8e0ac9574",
-      "hash": "sha256-jj4H1OHDczVu0BpagtZPOc+UCOiZkUwNqsN9BGbu8UE="
+      "rev": "57594236766202b21c402d0e68eaaf987e1d467c",
+      "hash": "sha256-aNqMDShd4xAQTDTMz7f2brJqVe7CaLk8MMxyg86wPos="
     },
     "pzep1/xcode-build-skill": {
       "rev": "9b5c31392971116b207f79525eeb8a3e57fbf227",
@@ -27583,8 +28163,8 @@
       "hash": "sha256-BZxZB8is9CtdMyrIj6MeIH793Jj8Iscr+6pVw9p3ahQ="
     },
     "raphaelsalaja/skills": {
-      "rev": "c59c94cec96979d0fde5d256d2ae9320f339123f",
-      "hash": "sha256-rd/KJCSFODg34scI+poebtNh109y7VHtkTRdbWwHFiM="
+      "rev": "b05d5cb91a0587dbf284dc2e4e9dfcf60469c3df",
+      "hash": "sha256-VV5jIBExnol5NBviJD8Ld0yoKtK3wHK1tJGzH39asRc="
     },
     "raphaelsalaja/userinterface-wiki": {
       "rev": "256a954080c8bcf1b1ceb1e2a4079d1f24cf593a",
@@ -27691,8 +28271,8 @@
       "hash": "sha256-DydTCUyguEa6ldimsEkX1zGwKbg2zumME2Dr4kHzSo0="
     },
     "react/react": {
-      "rev": "e04279e76e2703ceb0d99c3599f0b74f01770dd4",
-      "hash": "sha256-s5x5nuSnV+ur53bH6UUwYtsbqtqtAd4oUfA3U2qQb00="
+      "rev": "7b22099e3cfde41ea2fa27ebfbfc34623b4d1a4b",
+      "hash": "sha256-AR+vYtfttbLdYQeomgO3DezCwvw1h2GBXTWPVHfOQa4="
     },
     "reactive-resume/reactive-resume": {
       "rev": "897bcf8e740a4ee918ac27d0dc17e1edd105446a",
@@ -27847,8 +28427,8 @@
       "hash": "sha256-SSHrERN76d1n1tzUM9TP9t4Ilvps/r+9BBGN0Jc7RXk="
     },
     "redhat-developer/rhdh-skills": {
-      "rev": "b3c1c52690606983d397e044eab6e2fda1df1021",
-      "hash": "sha256-CN9qSXYU0WvRNIvrK0yuH2XrkDKLrWLyQspVKi9sN+I="
+      "rev": "9b3fcd7498a2a00528a0d15c3da24bb34f00bf5c",
+      "hash": "sha256-srk9eWQtxfcPuX1WRlWZl4fk7uiKyKTuNmYmfwjmbG8="
     },
     "redis/agent-skills": {
       "rev": "74708dab4b3f81a9845803c3f642a4f7d443af69",
@@ -27927,12 +28507,12 @@
       "hash": "sha256-2eG3wEqSSe2qGteGvCTZgC4r6uMGgsFngRpWAcCQrE4="
     },
     "remix-run/react-router": {
-      "rev": "59a272b74f82b6cefdf6a39cd12f9d163b11e8f0",
-      "hash": "sha256-6nVMR9NbxGNyLYBO5EDyEfqaL2mvYGzySiA9o7CM9JI="
+      "rev": "c6e9351acf0895e1f6f3c8f1922bbd9293c87599",
+      "hash": "sha256-sY2AvzbmyJzokeEX6D3a02jQUANr7qleZH7XRHQsp34="
     },
     "remix-run/remix": {
-      "rev": "760d9a4c6bda38102a34ba9c488b8e5e5cecf678",
-      "hash": "sha256-s8hKrF1JbfTu4Ulaqgp8koSWJ5P8jbJs14dVZYb3rB0="
+      "rev": "01e5b5d4c1d034642dc01274661f83c83b3c235f",
+      "hash": "sha256-oRCzylYtMMEbgCbuuQMWYeXnkru1Z7iuwghNHL58vM0="
     },
     "remocn/remocn": {
       "rev": "d4c968a690332981e42b6242e996f5ba7c84ba9c",
@@ -27967,8 +28547,8 @@
       "hash": "sha256-DyuBtofSUnmFbXmySFkm4XxuJHeloHuI46GW9NVkDkw="
     },
     "remotion-dev/remotion": {
-      "rev": "638eaef2258f113756aa6b6ac17aef5dea7cf78b",
-      "hash": "sha256-ihhCHtAB6L8TXT5OYeQJ1lZHRCF3TSp4yjrBAgYfrjo="
+      "rev": "410d075c00de5a9c384bef0335ea3bcf1407e473",
+      "hash": "sha256-4F6mMhaefLLDBW6YoIz/e3QAYw5UGPr05Z1htjBYIGM="
     },
     "remotion-dev/skills": {
       "rev": "6f55706d1069e512430582ad86e4e57dc07afe1b",
@@ -28027,8 +28607,8 @@
       "hash": "sha256-Rwv+W5EucB+PKK1FJ8YwLvuS8YPBNkXkBDJwfCrS+Xs="
     },
     "rerun-io/rerun": {
-      "rev": "a49689d4223bbb2cb5086cf25d70b1335259cbd1",
-      "hash": "sha256-83CTSDHctMX2603cHCsjvCgPsNZ0/rbCkiPuPGc6msE="
+      "rev": "5a8759e18e0c6dcb6a6826ebc99360065faceb8f",
+      "hash": "sha256-RJFeyJvVb2ABAzE4o0Sm+ATBpf2SVgY9g6k2WF+nkfk="
     },
     "resciencelab/opc-skills": {
       "rev": "3270550216e7d17d4c46248c8368520a09d2bd80",
@@ -28083,8 +28663,8 @@
       "hash": "sha256-IS1Ow5mtHra7I+KyhM5dxigKGHvkkYSpYMPouaeiUZs="
     },
     "reticlehq/reticle": {
-      "rev": "da0b57ac5004ba8e318ba0038c390b3ad3e15a5b",
-      "hash": "sha256-mC5tlHEM1Zv7ZDKNxfgJnq+c+OST+zExHUHGNmhdHAY="
+      "rev": "4fbfe3bf920bbff2b7c0a64d2c55d98f4ce17466",
+      "hash": "sha256-wwxX9TJhw//tGcMV+5fzrTuUQyD4r3i+hEuCvH7SbbY="
     },
     "revenuecat/ai-toolkit": {
       "rev": "4e658115c3449d8d120a9443bfc5005ff5de8fa8",
@@ -28135,8 +28715,8 @@
       "hash": "sha256-Ua3SW0DD+wWFt91Dflx3RSSD4VG1aTVlULm2HTvdQ+M="
     },
     "rexleimo/aios": {
-      "rev": "d7b1fa4269d8db2388845df36521ad6fb7c0e52a",
-      "hash": "sha256-M6VSkspg3nUG10EbF2KSxcjgASFdymhLW+1CmX9d1dc="
+      "rev": "abeb83a3d905dad8dea10002f2721f62a5df0ee3",
+      "hash": "sha256-LvA74TljUMi4AJ6mXQkMWGhsDu5nwadk3J2tLV9/1Hs="
     },
     "reymerekar7/rm-skills": {
       "rev": "f8dac2678c77b67ed606d450c11d522a251d5650",
@@ -28386,6 +28966,10 @@
       "rev": "3185d182c8d358d17a62485cb20f13024a81e429",
       "hash": "sha256-mZIq47rDC2HkoVR7fjPWZLvSQQvjxC963YmbJcl20tw="
     },
+    "robertalvv/flutter-skills": {
+      "rev": "4772c71f182e628df8601b4868ded9b6482d3891",
+      "hash": "sha256-Md6HvtY1aN9C1B9Do6FL9nBcoR4yqUJpn/i2xx3ozP0="
+    },
     "robertguss/claude-code-toolkit": {
       "rev": "f7fd35efcf63c54997d216f9bfc7572aa7009c97",
       "hash": "sha256-M+xnDnzEx0rExwIskRWapg67PNjcljx2CTDKMoO+IlA="
@@ -28471,8 +29055,8 @@
       "hash": "sha256-PnoyFrR8a8pevjW5W8ABbFeZpN2WXpF3S4PkxHC4f1A="
     },
     "robthepcguy/claude-patent-creator": {
-      "rev": "6e0492c9a630c06e4fa51acfd01ae28779eec113",
-      "hash": "sha256-tD6J+ujgG01i5armLSIbP0MQIXmLtfgXn2DnVkGTuEg="
+      "rev": "bec5732d808720f8242e65101d65f317999ba524",
+      "hash": "sha256-5IvZOBKXe9iFI+qLPDQQXA29rT7MgIPYknaanyB3CBk="
     },
     "robzolkos/skill-rails-upgrade": {
       "rev": "d9a3432b19efa898692c4cff16e4c74b700dcf93",
@@ -28727,8 +29311,8 @@
       "hash": "sha256-Nv5pUyVARktRjd9nAFzUNHY+OoMT2eANaq9tIzKE4cQ="
     },
     "rtk-ai/rtk": {
-      "rev": "5315347b56ef23534bb39972a0f08f7601e14670",
-      "hash": "sha256-9lG3MPJzrOYLsYB70sgQk1U0JHZaA1wCFm30m1iQPho="
+      "rev": "1deaf9155f219196a2ec4d46817db38123424c28",
+      "hash": "sha256-1icrGuUZ84eTBCDqlBUEExBEalWJnwK73ZXf6SF1VtM="
     },
     "ruan-cat/monorepo": {
       "rev": "d092039c3949c0dea364b1b62d157b5a580d08de",
@@ -28991,8 +29575,8 @@
       "hash": "sha256-7bf02rr8H0Ch0kAay3GgH7adLTi1q66AwYC45lF7INU="
     },
     "sakanaai/shinkaevolve": {
-      "rev": "1bf7113e97dd89349f1a337babe48d98c92d7e10",
-      "hash": "sha256-yW5QKdamOZsbo0F9n2DXj4D5VX2KESBjkULwBKugf2g="
+      "rev": "706276f611bee7c3348ee34aca8c9589ebc2939c",
+      "hash": "sha256-/+NM/xSL5gc0IP0hnUZipxzxIHaDskWqE48WRSn7c/A="
     },
     "sakumyz/skills": {
       "rev": "03613c38fd24ed24c0e18c4b0e055988b485b680",
@@ -29015,8 +29599,8 @@
       "hash": "sha256-rEaA0rG/SmHw9tQsZlwqaOgJNiDVecSvnY8bEhqvDic="
     },
     "salesforcecommercecloud/b2c-developer-tooling": {
-      "rev": "7c62d2c6bc28d9486460c074a329d42b783d68fe",
-      "hash": "sha256-Mky1XmwerZWh/LLrXkLNC3c5QQwCe6ML/wayIWdErys="
+      "rev": "d7ff38c7ca2b1411cd718b9554500c9416f00266",
+      "hash": "sha256-SwlygHsu5Grulg0AsjlTDiIo0ipL8lEr/bOR7+PGXYk="
     },
     "salesforcediariesbysanket/copilot-skills-salesforce": {
       "rev": "6632c3b31d77f4690a982ecd1bd9033b2ff12c26",
@@ -29283,8 +29867,8 @@
       "hash": "sha256-aunVXep/KYX1iWu30tSnZ1sotJ4LGg5o9hl+7oofI90="
     },
     "scalar/scalar": {
-      "rev": "4311be3577773fbfcd63f7758161a8af8c2adf28",
-      "hash": "sha256-jLCafAUt5i8++IQZO8cciNTgOaZ7838TLKTncFq/4nM="
+      "rev": "fc17fc5efd2d2ec6d1b4a086ac8bf2ab833afdfc",
+      "hash": "sha256-UkB01V0WzXLvW6J2LD1rmnFlDa2Nnu+TSF9mZrLcAyw="
     },
     "scalebrick/founder-marketing-skills": {
       "rev": "9ab4b99d7e93af3a71b44c7af3e27af6fdd5bec6",
@@ -29359,8 +29943,8 @@
       "hash": "sha256-wLcRTL4p3IXJwoMkd8WVVph5/Vw1bKsqs1T10mNkPtM="
     },
     "scottwater/skills": {
-      "rev": "33fa0537e9b0947f3802cb4a54e34fa66ac6208f",
-      "hash": "sha256-AvajpivPvioB+0ovfjR/Nek7ghV4vyFanA49YgrKLmo="
+      "rev": "41da1f6375485904d17b850d581cbe6f67b57ad1",
+      "hash": "sha256-iJL805aj29/HvOYyq9KY8rFsyR4Lu7IxUxkrvwoP/J8="
     },
     "scrapecreators/agent-skills": {
       "rev": "0b31b63bde94a61521ab0960c1a054364a3df786",
@@ -29987,8 +30571,8 @@
       "hash": "sha256-aAyRCcHQZjGEqMs4u5ZckqnKinqOPTbvYM8fOTpimf8="
     },
     "shihyuho/pangu.skill": {
-      "rev": "532e313e270f192e62afa92b334ecd7db5dafaff",
-      "hash": "sha256-f5n5OQWxh4qFAraTyPaIibv1MlQikojA6oYLZZ3RSBQ="
+      "rev": "91ca3754c3ab389a182c77ab765c612b4c06b1fe",
+      "hash": "sha256-CS37NAlyM4WQSl3LQHx/YtJA/MS3gk8KntFjMbHZpPk="
     },
     "shihyuho/skills": {
       "rev": "fe1c38c3881529966e208c37f71a4bdc100b95bc",
@@ -30007,8 +30591,8 @@
       "hash": "sha256-axZ7IEAgVh7+gYmxtZYywD3w0Y+/Y5dl6VusFVASX+Y="
     },
     "shino369/claude-code-personal-workspace": {
-      "rev": "08db9fb890975ebdb3afa06e4f763b1b83c4ce98",
-      "hash": "sha256-eVr5RDl0G1g23kPtJaAqgejkIXDt2Z6aUzWLjwRCr+o="
+      "rev": "7eda2d4d75fe37fca66820f7241ffa7e5ee4fe2a",
+      "hash": "sha256-dPdgQm+/zwKBazP1LfMW8dN0KX5ACgt2FZNTJLwXi3s="
     },
     "shinpr/claude-code-workflows": {
       "rev": "c40b060ccfe07aabc9cf2bfebc3c39ea87bf89d3",
@@ -30187,8 +30771,8 @@
       "hash": "sha256-Ip6hB5RAGslx+GUGwKSVSZhyYUV2uBe+CB4P5vMvUdI="
     },
     "sickn33/agentic-awesome-skills": {
-      "rev": "4a52ab5ef117bdce2c6ba8d87dd64df0c840dfea",
-      "hash": "sha256-5zHL+KUz9NlS9uM7p9dz5cFiI/LZxAxVPoKE1zk3H4Y="
+      "rev": "4b1fe9d526f673a0e03ef9e42148e22d93ab52ac",
+      "hash": "sha256-YsfI5id4yrleLcfYbXYifZUNCkP/rpgpF5VT5sMRGOU="
     },
     "siddhu7007/screen-time-api-agent-skill": {
       "rev": "4713419a311a75b56e44860bdebb07eb40d52cf6",
@@ -30331,8 +30915,8 @@
       "hash": "sha256-8yU2hxketx1uA3XoqIcyKXMNb6I+kOH5efyrP6mgVJc="
     },
     "sirkirby/unifi-mcp": {
-      "rev": "8c3b08f8e11fa03d7361ea8102e951f1a437cd85",
-      "hash": "sha256-2W8eNvHm1bcnpVDLrDdUuJnWjpqTDgpHymL2x7ra2+g="
+      "rev": "ed007acc619235343a745c972cce5ba550c1f2bf",
+      "hash": "sha256-hEtaPS8O7QXM0mrbRuV43GgjQ1Vkpi5Hi0oNc9hqg2k="
     },
     "sivaprasadreddy/learning-skill": {
       "rev": "c6ce214e821347d4744505b407a59b24752116c4",
@@ -30791,8 +31375,8 @@
       "hash": "sha256-9fXF7LsM5PrzX1ypHfK0Sma8jYxSz3XJ2K4j5S1QfYs="
     },
     "software-mansion/argent": {
-      "rev": "99d6204adfae9de2f2399fd2f94667f5a984ec3f",
-      "hash": "sha256-Du8e0nPBZTn2CRsdhprOOJtEQ+9mqN2p7JmoEV0ZXI4="
+      "rev": "d0d519e8920fc111ea2e1487e57bc7b01724f03e",
+      "hash": "sha256-lTat+mgxN8DKEdEIAf/TMl9J0JDI1LDczNHjDYgM2uk="
     },
     "software-mansion/react-native-gesture-handler": {
       "rev": "c09aaa6af4d4e9f5189247b59f72d5124b3911f2",
@@ -31007,8 +31591,8 @@
       "hash": "sha256-B2Dyao0QJDQTePBb8MGbQPHFUgVa3G80hTZTQkw5Yj8="
     },
     "specstoryai/getspecstory": {
-      "rev": "0545eee671f5d7724af1245ba800c289874ab360",
-      "hash": "sha256-UvWgy/U8M8xKE7oeENceN4/d6xCXzpUrrm68K7W9QPM="
+      "rev": "2c76031ecb116f06a59b84ef13e00e6ca7f68353",
+      "hash": "sha256-E6/43ssE6BIotX7GXZr0GwytRbiWq7EtZqLnc6tJKR8="
     },
     "specterops/skills": {
       "rev": "f5dbbb23059c1186c695c832eedf88c8f3a0fcb4",
@@ -31219,8 +31803,8 @@
       "hash": "sha256-0eeI3Tvb4LWDXkXvvjUQyHB8UkQ/nksFHMBkFx8ZAqI="
     },
     "stablyai/orca": {
-      "rev": "52eb100132228287ebf9b931863dbbf2fd5f0722",
-      "hash": "sha256-n46sKjksJfOqCbnxlH/ZBF8Gz5Km2Te1bEt6NBGu3HM="
+      "rev": "0de6561686940b2d2736101d611320226e3b930c",
+      "hash": "sha256-K1vctjfJ1xIY17FAfFE0qaTDmsYxrFOKxr/dkb7yMoQ="
     },
     "stacdev/stac": {
       "rev": "5f316a6c7846a4124c79a692f3dc098287923454",
@@ -31303,8 +31887,8 @@
       "hash": "sha256-4r7fjNxuh09QxEe16evorI0GoaIVjkyT7uKUVuBC2c8="
     },
     "statelyai/skills": {
-      "rev": "db6b56f68ad89ecad64c9c40911a22b99d185fca",
-      "hash": "sha256-d58MXdOsPzwNOs7LyUh0mdznovN3aZozWZmcIhAsdeA="
+      "rev": "4a5e987536e972698b4fd6c89a4c96ccf21916f5",
+      "hash": "sha256-5vbLTyEO9uCryyufH3YijYjjFiYYabwV81kPG6Z6AiY="
     },
     "statsig-io/agent-skills": {
       "rev": "8bfd0e62685d2f2fbc6df250653ca37bfe789faa",
@@ -31327,8 +31911,8 @@
       "hash": "sha256-J3C9vBrLZCK5v1q9pBKtqVVW0jTGuW3qurmDokvABLY="
     },
     "steerlabs/opensteer": {
-      "rev": "776bc7f2f297bd516041902a91d49674936282c1",
-      "hash": "sha256-erWuCeUC3mb953jacAviLFNUnW0Mgwh7tz/9QfzdFiY="
+      "rev": "b888f8ec26ac61b35d2beeb5e5935455a70d1c69",
+      "hash": "sha256-35AP6uQ0q7rHaUFVOv+r3VCAavdOrInDYgu0xUiDYuA="
     },
     "steipete/agent-scripts": {
       "rev": "2f82700ba9f3e7e93d3583e1990992584561eadc",
@@ -31455,8 +32039,8 @@
       "hash": "sha256-QEGuwtKg4vDJQdivHqrojiSlAD/zw8U0ftxKO1JU4wU="
     },
     "storybookjs/storybook": {
-      "rev": "ff2a5cb4bcd1942a45b92709b000e69bf822b3c8",
-      "hash": "sha256-cHwW0cQxVA6i+s7KHhaNWF7YIHTBbkGthFsoQ8wjBsQ="
+      "rev": "20075e60242c908616d9ce8783a0686fc0ba896d",
+      "hash": "sha256-aB5O4AZfZPDHpgqHR51UvU5Y4YdFOP5t6N3v3ldxghI="
     },
     "storyclaw-official/talenthub": {
       "rev": "13ba84030b26410740d7c211e89b374fd5c1122f",
@@ -31499,12 +32083,12 @@
       "hash": "sha256-Kj2I9WgKd3C+XOg7e2pGm0NNlyjEsuokzxQllZEHecI="
     },
     "stripe/ai": {
-      "rev": "119bc4a8de4eb4370db1f5838275bc9e7a0d8e4a",
-      "hash": "sha256-qsxqHdsNcNSfK9BCTsymhxsxEfRcjn531a2asVZe8T0="
+      "rev": "cfaab55a397fab873b2899f5b430bcf3527909c7",
+      "hash": "sha256-XS6RG9a6e9AP08fRaqhRcKwl/dJEfkY0w45yYgfjG1U="
     },
     "stripe/link-cli": {
-      "rev": "6c7bb3c9026f1f5d130625919d9f9690e7ef3eda",
-      "hash": "sha256-K+6wY9Penfhc+9SF79fQvAukv9Eiidk86XlSlRSP6tg="
+      "rev": "7e2b368c8664098920ac76cf277d73d4525eb196",
+      "hash": "sha256-ATco4+H6JJK40YLjSZSfu6aKlNZrhAojY5bzwhfk9Hg="
     },
     "stripe/purl": {
       "rev": "862bb25b9da9f21ed190f519e3298f3b8b12fcbc",
@@ -31683,8 +32267,8 @@
       "hash": "sha256-cJA/nuPf7d8hX4QGiRrqPS/wP95ZfQomOEZSrr2AS1Y="
     },
     "supabase/supabase": {
-      "rev": "53f2bb416d7960b7764f3475bc0571757a53e30b",
-      "hash": "sha256-ufFt2RbxNPHOwdoOZqCdManBrdV4Ws2xxvwgk66Vv9A="
+      "rev": "584b9588d9d9009e5120a32f8b0032506ac40227",
+      "hash": "sha256-TZlzbscbbb0IHAiP0HSSlHPaQvDNpDoq0Yykuej0B5M="
     },
     "supabitapp/supaterm-skills": {
       "rev": "0d023e15c42b42a481812cb85311dec1f1546cdb",
@@ -32003,8 +32587,8 @@
       "hash": "sha256-fNYFjKl8k5z1aNzY54m+1LcLHlXLgYO4y+2iS0OQqLQ="
     },
     "synthesisengineering/synthesis-skills": {
-      "rev": "6ee38c085f0ee5a4eab0e10cb67f6118a1626556",
-      "hash": "sha256-QSxieECrddYuzLjU3jeTDKeZYr6e2QEVGs/Nd7o7Nxk="
+      "rev": "0dc05a92496e6cee08ac93bc260cf8dfdc561458",
+      "hash": "sha256-y68fWTnKvtM2hooJ3lZI8fA0JA7497q4JcvAbdweIRU="
     },
     "syphodev-yt/roblox-ai-skills": {
       "rev": "5aad881d1e6553cc3671ad549fdf01b8191bdc37",
@@ -32055,8 +32639,8 @@
       "hash": "sha256-aSebl3K1JOh6x6Isyvyo1yhwItd2b1ZWxBr87TQgYi4="
     },
     "t4sh/skills4sh": {
-      "rev": "24113959101a07ed627aad91bb1a5d97560e2299",
-      "hash": "sha256-v8MWEIt1fw8rso1leHfC+qRh1rn9HWtai5rKRELMXEg="
+      "rev": "f7bfcf31755397075b9681fe2bcaa8a926e1ce4b",
+      "hash": "sha256-FK20f4dDg/OuDhZX0t3kiI00FjIxFauV9cxTOF09hlY="
     },
     "t8y2/dbx": {
       "rev": "c6df43e321f301144e743e9614a0de0a7f7182f5",
@@ -32123,8 +32707,8 @@
       "hash": "sha256-U/kMH8CzV4klIPk7YK1zr96zwV1YYo92r5kTL0HnHiU="
     },
     "takeokunn/nixos-configuration": {
-      "rev": "6bb635b7903d598961157a7afc3a0c0578b4302d",
-      "hash": "sha256-FHTtqbVe2Q14KdLjpHGi01sHBKYddK7odKdLGthkaEk="
+      "rev": "b1c7741efe1fbb915d7bfb234b6c9cc0741b0680",
+      "hash": "sha256-d/nG/xn7wxb0Nt9MFhiWCZBMzfF60xNiOfxWeh4dqL8="
     },
     "takuan-osho/ccmarketplace": {
       "rev": "85bdfa9b9a3df821705ee52f2fde673b8bfb96fb",
@@ -32175,8 +32759,8 @@
       "hash": "sha256-O6gbXZWWBo72L6H9l3hkkzzeJVCUbuIOWcO6DdU2hQE="
     },
     "tangency-labs/solidcraft": {
-      "rev": "f523fdf6302dc70fa7654b3368d54d6ab7bf2552",
-      "hash": "sha256-PEpjavQI8Fa4a/1sOEqd2gDupEgo2axmSxybNRlCvWc="
+      "rev": "4a0b6960b4c2438ff36b6a1fd810d73214a5b765",
+      "hash": "sha256-CogQGPr49rEHx7E38RQVwF+f6l6AKN0ia2+24eEGcQk="
     },
     "tangqihy/openclaw-map-skills": {
       "rev": "9409e168f40356d791450b04bdc2995f06b17013",
@@ -32213,6 +32797,10 @@
     "tanstack/table": {
       "rev": "1cfb2e57cbfecf25e3d4ee1bda32fbd65e4e0327",
       "hash": "sha256-y1JFTO7TJHqF5lVu8aCuWkmKH/e54eDGOhgdxezZsfk="
+    },
+    "tansuo2021/adtokeil": {
+      "rev": "56ab07dbfc1a1252e941a3ad8567957fee269fd0",
+      "hash": "sha256-nr/uwPWxyhS4ObbbNm06bf7UthiiSTBjwFtir7o+fYM="
     },
     "tanweai/pua": {
       "rev": "e6e6cd237ad17750d179674bff52f8184abea8fd",
@@ -32323,8 +32911,8 @@
       "hash": "sha256-IeBvS6lv0ZQiXMHe7M/C0mz56dLFoqVOpYrMsrsmQU8="
     },
     "tdimino/claude-code-minoan": {
-      "rev": "53be6a66abdaa22909a678cab1fda8d971ec0632",
-      "hash": "sha256-fWBv6Xwc7eY2hEc6Yo8P7BUZkm76iYpfVI6MpX0VH7s="
+      "rev": "5cde8cd357d56f30c3b7a9ea94b04f13e32aee7a",
+      "hash": "sha256-f1GKXiWigHS3FEcwEahY0fCl3HoEpZtPdvHwqZ5shV4="
     },
     "teableio/agent-skills": {
       "rev": "b1e46356c0acd795f5861a592e35ffc8307327f9",
@@ -32815,8 +33403,8 @@
       "hash": "sha256-5qWrIe9Sih/i4AAWOF50//t4RfF76id2xc2eTmhUryo="
     },
     "thedotmack/claude-mem": {
-      "rev": "c0f37d60b2e4860851575e3cbb003f23fc340d4e",
-      "hash": "sha256-CsSm5w3Mwb7nJe9JOgULgs537DSzcUkNMffgXEabmkU="
+      "rev": "ea1cfde657d6796bfa6c5d7de9d1e4570c3290eb",
+      "hash": "sha256-d9SL9Qtv+F8d5CeY++5gSLeY4M2Y9+tMBpFSqkeM6wM="
     },
     "theepan/ai-agent-skills": {
       "rev": "30d13529e8a1259a2844508927fa03ccbde1d059",
@@ -33095,16 +33683,16 @@
       "hash": "sha256-MC4AvgtOIGGdXoeH+G4vkeV4BUw+F765CCtupCfIghY="
     },
     "tiiny-host/skills": {
-      "rev": "b4f1ef58af2ace30c95f60bb424d736669bf8922",
-      "hash": "sha256-dLpB6/FWARTTniExzu9l+tXHxbOt89he4a09MF2AB1c="
+      "rev": "ff9af3796ab7316f474f7fb852a86d1ba3289439",
+      "hash": "sha256-iuZ8FQPSvnZkDBMOZ5GuMbdszNIUFuHnGvCDlL7q+Bw="
     },
     "tikalk/adlc-team-skills": {
-      "rev": "2cf3f5357c51c3b8363f2c6b783c5e025cd947ea",
-      "hash": "sha256-r9igtDdd9KpPZNxr4aVYhEdEk2vmSF48QFJHc2lUI7M="
+      "rev": "97e72013dadc3b5c9de311b4b245f8b5dbbfa482",
+      "hash": "sha256-BEV4g6cq7/QBJY0t0VhOGaak3XJSk8IbYRQUkAesEY0="
     },
     "tikoci/routeros-skills": {
-      "rev": "aa007fb1a1ba85433e1e8e7a368b939fde044eec",
-      "hash": "sha256-nEj8rgv7Hu9s8otmwlMEPBbPdCocMoF0vMSKAHY5pMo="
+      "rev": "345c1f6d98f955769e39258a8e1b21390a3c44cb",
+      "hash": "sha256-8/2IwvjL1EdJBekpjb+giH5GSXxP/kCb/q7hjzQj4dc="
     },
     "tilebox/skills": {
       "rev": "5615356697c04894724541ed51173c48f84e98be",
@@ -33315,8 +33903,8 @@
       "hash": "sha256-bHkD3ZrOnG/Ao+4mbMOIvb6xzeSEoOydhLIGF4RVLaM="
     },
     "todoist/todoist-cli": {
-      "rev": "87062b3ad3b8f83e69189facc5ff4fd778cbaa69",
-      "hash": "sha256-m3y36JZRM3lRkFiGXmigS7e9UAzl0H2Tg4IS4pc79G8="
+      "rev": "3d92439ee78ee16728df661de863354842d5baa1",
+      "hash": "sha256-HtEXXwFnnLUSMc5hAdjNMix4+TdOQOEbawLKlKSjCY8="
     },
     "togethercomputer/skills": {
       "rev": "3ed076418115b66196c6250fd0a39c9c15a352bf",
@@ -33539,16 +34127,16 @@
       "hash": "sha256-ySY+GRfH3BJuJJjjFcDttxk2Ti8J3OoPeBm3iFhK3F4="
     },
     "tracewayapp/traceway": {
-      "rev": "3ac09cdff57841b6b3329991e3a30c8c1af24903",
-      "hash": "sha256-6GEo+L2m3wNiBV/5p9a2+ShzsLD4g8v1+44Ujqig3/U="
+      "rev": "823229a438532811df2a81e55d3cc4af73c3562b",
+      "hash": "sha256-OyimdZo3bZG2f/OJBViqUZ2f3WhfUP1SI42qo28QlNw="
     },
     "tradeinsight-info/investment-analysis-skills": {
       "rev": "1524226cb76f590e9d577d1dc7cae7e0813bb975",
       "hash": "sha256-rA5LY9QUAhzYKi2xu3QHM3l+n3MPymtmK4oP8cm3zqo="
     },
     "tradermonty/claude-trading-skills": {
-      "rev": "f95e770591b56fd83b9917175f5a7e8fe9ac47dc",
-      "hash": "sha256-osME+1wxlDzf+okWkkwBRo87h4YxGlGSMmFCtxA9UY0="
+      "rev": "901985468f4dd4a9c45f460345b7df1991302b24",
+      "hash": "sha256-mkgiVqaPIgYxR5EeayIkPwq8VcrrS843fUfHRIo/eG8="
     },
     "traderspost/pinescript-agents": {
       "rev": "ebc382f88b6103fcda2569fe666a38b00fe714c5",
@@ -33563,8 +34151,8 @@
       "hash": "sha256-pDV3MnTsTZxyZHlAcSJfFCfc8ayVQzj2uL5oLX4cZCA="
     },
     "tradingstrategy-ai/web3-ethereum-defi": {
-      "rev": "f540fdf59a934ae2f5feee7ba6f66a32f5c2ab33",
-      "hash": "sha256-yd0FYzNN+G5HBRByjbJb9ZxGSI6S4TC9cUAelDsQTwA="
+      "rev": "bb6d1af9d7772274911d43902e42b0feb5c41f05",
+      "hash": "sha256-HPRuOTTCB6lWkFSPNMa8qT4VaK5f/tDv8dkAz92BH6A="
     },
     "tradingview/lightweight-charts": {
       "rev": "dbd6ae7831fe9496996794687206bc5fc212afa7",
@@ -33631,8 +34219,8 @@
       "hash": "sha256-yIoNJjIvDacczzOZD6Z6VUhMroWtVq7v+CWHKBazoEA="
     },
     "triggerdotdev/trigger.dev": {
-      "rev": "3b0ec9873bc5c4087588728bf187450ebffdaaf4",
-      "hash": "sha256-OPkinubRejAtWPBWjnOHW6eUVo36N1lppfnwWx9qnPc="
+      "rev": "a3a8810c72eb348b9d7f9c04d3871c489f12710c",
+      "hash": "sha256-Cpi9DKJDzfQY97x5y5Kx3rqX1PQ/wC76AkmNKyHjN2w="
     },
     "trilwu/secskills": {
       "rev": "ca53957bcd8e3b83b5d4d190bb3ad008a4f15c84",
@@ -33719,16 +34307,16 @@
       "hash": "sha256-9ZJyD11anUYa2zoh8XD/vEMnYP6q4GTJc63FzAr1XJ0="
     },
     "trycua/cua": {
-      "rev": "e1e159df51ae623d8301b041c8a97f026f688ef0",
-      "hash": "sha256-1DR2WssCnpd+mjwVmGkPdjJhQdjrNPCCL7Bx29rDyO4="
+      "rev": "ceeda722bf54590f730698c093f4052a28f47cfa",
+      "hash": "sha256-kvUGlfhaHGgKMUrhnXL+Ftt6rO105jLYb5r3XeBJMAI="
     },
     "tryflask/video-feedback-collaboration": {
       "rev": "1ed25d27861eb6040961b461e64b69efd1a8b859",
       "hash": "sha256-Jd/IMopEBF2SmByeOgL9M/aySHNN2ZcvD60kPpmxokw="
     },
     "tryghost/ghost": {
-      "rev": "9c535829627bc598f1df51dfced87a11d4f05181",
-      "hash": "sha256-Czil6YKqAGn4dTwij/y5r5XfYHvaZ7gGIUABZCf8DPw="
+      "rev": "439932687856694de61d7270b69a0958ee7207cf",
+      "hash": "sha256-OfI2Vdzcwz+k/tN5S6+wilxYUwnmVeS858lm8bIPVz4="
     },
     "tryhuset/agent-skills": {
       "rev": "3771a217ca0c156b03b0f1e35352abc1f251cbe8",
@@ -33747,8 +34335,8 @@
       "hash": "sha256-+gCXgMCviq18eB0c1Ek66kqLx+0WdV6Pi9fCvTI33MU="
     },
     "tryterra/agent-skills": {
-      "rev": "82b2e4751b929f724a8706bc2a5455e546a8d384",
-      "hash": "sha256-Rin+TJG4cT/sY3GIhDPGbPg7PEWOkS7a0Xcb/Q5hbLo="
+      "rev": "df8136664a5c2510a1c8181500a7a5e77dce764c",
+      "hash": "sha256-pjrHds6HJAjLE7zd45CL6TGX1MAS8sw8z8LNzbHe0rc="
     },
     "tsale/awesome-dfir-skills": {
       "rev": "6e52942c6273a760296c38ca6ce950bbed4dfbdf",
@@ -33791,8 +34379,8 @@
       "hash": "sha256-LJD5XodB5qoOfghLvJvCTXNvlJc4ncXI2KxiaLo95ww="
     },
     "tubelabhq/youtube-research-skills": {
-      "rev": "eec37da6e3d5c685d0440aac6ca3105022526dcd",
-      "hash": "sha256-8l+gd+OospJq6VxqeYRSmzybNzzoQT2WG2GADuU/tWk="
+      "rev": "5543412721b97fcd42091e2b12abac2342f51e3c",
+      "hash": "sha256-CcjapjgFl3885TU9E1CJ8ffATyG1Dy3RJ3veXAF+goU="
     },
     "tubone24/midi-agent-skill": {
       "rev": "19625c682a18e2c7471890c4cdf8568e291b1765",
@@ -33811,8 +34399,8 @@
       "hash": "sha256-Fn8oWmQsHOgm5qs5be9lvbVjd7O7+ivsHkWzFrozNP0="
     },
     "tuist/tuist": {
-      "rev": "857981eed6736b6fc2871162a9c06d2032323a7f",
-      "hash": "sha256-1gDpbVm67kw3fgntxQJvWX5TqlcZeVw0BHCS3G9O3Gw="
+      "rev": "1169eeed7025393c51994c052ff6c2140d2a7306",
+      "hash": "sha256-F7PIfFojvuhoX+2KqZ8HhLPvN7tnrtPPoTOVymzPme4="
     },
     "tumf/skills": {
       "rev": "0ec0ba7811b566f04d299d3f9033c64ae8bd34c4",
@@ -33835,8 +34423,8 @@
       "hash": "sha256-KVB6dw+d3kryJLe+ghUzOwsQkR+795e33CRX5QKvJrU="
     },
     "tursodatabase/turso": {
-      "rev": "0d7eb99b41301fb89306df2684bc3644559fa77d",
-      "hash": "sha256-irwmaw27qCVkfbdBGKafvKYPjbdkwljVf6rT3htTcRk="
+      "rev": "936484848db23139056ad1ed2f133f9d2e4aa082",
+      "hash": "sha256-JQo/DC1RJ0EXkBtq7LRqU31yebSyop5Lcn0Gtj3xzuM="
     },
     "tushaarmehtaa/tushar-skills": {
       "rev": "8c24e61a2718f44f36648a92e1f7cc03aaf33b2f",
@@ -33871,12 +34459,12 @@
       "hash": "sha256-PzopsmtfpRss8+k8Zt+Fof7AmeirmpnAshYHkhwmmPI="
     },
     "twbs/bootstrap": {
-      "rev": "50976e1798fd09f5b887dae2e7ee890ca2b67837",
-      "hash": "sha256-wNwgk3Fi2dXu5RfLKvBmfNbNwXrQcwn/KdmibaWk5Yc="
+      "rev": "7ade1dd99671bbfdd5d80f79ac84c9a98fd9bbeb",
+      "hash": "sha256-FU/HM8ACBVXFXp/mxk50YXRwBeR2ml/pqib2KBHfnwE="
     },
     "twentyhq/twenty": {
-      "rev": "a9bfbd74d373c36981693009208602924e5e4815",
-      "hash": "sha256-GOEkQ740jr2AZ0PTBwInxWwKFdolyA4OrW1B9tuLLSE="
+      "rev": "b7d9499a57a60e3758e848605945dc58abef030c",
+      "hash": "sha256-uE7x7I69RYC02Y5TxwCIMfZtwTthwjRJ/KVsDnMFIfE="
     },
     "twilio/ai": {
       "rev": "bb61456b5ac968d70d185f0a3df59511e58951ae",
@@ -33963,20 +34551,20 @@
       "hash": "sha256-iTWswLEm1CS9tTL9ObyWvknSxdrTBd3AmucNv17qAVM="
     },
     "udecode/dotai": {
-      "rev": "0171d1b491df24f6f6e56b82521552c9d629b808",
-      "hash": "sha256-9Y0wK/78LBFbPvub3aU8TMGRyZCFakGB/P6ibrC/ZDA="
+      "rev": "0b0905a542f397523298b40d2e27bd0c60e0c363",
+      "hash": "sha256-6Af5mXhUNsoHlkkf7sa9N44AsJ0BxK7Ct3MiQgbnKEo="
     },
     "udecode/kitcn": {
       "rev": "fba09cba05a1eaa911d7c690657fe84fefd45b44",
       "hash": "sha256-7A8/N45zzpzifuKo8D3Bsg6L2tFfJpaqzPvAVlmUpTI="
     },
     "udecode/plate": {
-      "rev": "1e39c0c1ba42b9fb12749bb3a25cb5c050a2686f",
-      "hash": "sha256-z1VGrUfHoc9zyKEXfJdbRBtr4p6jCH7G78kwdr6OkLY="
+      "rev": "f49c5e78e44830541180bb735408eb40e7165d12",
+      "hash": "sha256-RbrN86Uq7iJCbXYMpx2IZE3BLIi+L9Q8TB4ge5uv/RY="
     },
     "uditakhourii/adhd": {
-      "rev": "47beee24e4842fb748bd30c55e66ae77d6bb22f9",
-      "hash": "sha256-JVvuURolWdTUW4//Tfk/0Ct2mg34qDPEPocend5mvLk="
+      "rev": "7487ffe382567b6250dad8cfad490eb08f70a124",
+      "hash": "sha256-DUHrqasrB9/h9nYK1jv+sZ4DJ+aHno/lde6KxeNzNXc="
     },
     "uditakhourii/neuroarxiv": {
       "rev": "7d59a92553762e6307b973312e0d2ed32118e6a8",
@@ -33987,8 +34575,8 @@
       "hash": "sha256-DapoBvuMAVHm7M/6NT/J6zdWNKno55Ans9+cxFWeHj8="
     },
     "ueberdosis/tiptap": {
-      "rev": "1f72c1a7388f803df8883903c8ba3e39a0d983b8",
-      "hash": "sha256-oVfoZ/BFkpDdMWQAq8aE3V1eREDIKcawD57NDmHFmp4="
+      "rev": "55973725332c05dc8ade713b4c146bcee1ce9e8d",
+      "hash": "sha256-acUHjYnMeB1/AXtb9xunJVP6QK6hrE/eHAGeNGcHT8M="
     },
     "ui5/plugins-coding-agents": {
       "rev": "2bab38df88951e8712f864238eb43284cb3149c7",
@@ -34011,7 +34599,7 @@
       "hash": "sha256-IjK374NQ1f6QB4MckqqCXlBHRnm5LT8SaRAgdhqeyTE="
     },
     "uipath/skills": {
-      "rev": "89ea0ada8d6b3d8dc1781ac5b41d0fd4c6ae68e8",
+      "rev": "85da44a7d78b3c44ec26711c80fe3ab515c638dc",
       "hash": "sha256-puhH5LKoMxEusjTa1j4gMUPwKHFzz8eHv7uqQIxQE4U="
     },
     "uiverify/uiverify": {
@@ -34027,8 +34615,8 @@
       "hash": "sha256-irnAR39gXaN9LDbqJf+3c1G/hlpb877Xch9xxSKF6u8="
     },
     "ukgovernmentbeis/inspect_ai": {
-      "rev": "2a99717c7e2b49a6876bba22a911bd2ba0f5b709",
-      "hash": "sha256-PBNmf3t4YuBQPlbjfpjq3Dpyi29LzoXvXbQblyBBh50="
+      "rev": "c3b14699e2748e41fc0af0fffd48ed1a4f9acff1",
+      "hash": "sha256-4f+fcWrPMI+bdjLsZegOkJaULhabQUlr+5m16nftMTk="
     },
     "ulpi-io/skills": {
       "rev": "b3e5e33424cfcccdbc0468fb66f06bb56f4e2a1f",
@@ -34407,8 +34995,8 @@
       "hash": "sha256-PBKOsz5zd3jNjctipqxiuF+spkJIGsf5uEiiahO8q/I="
     },
     "vamseeachanta/workspace-hub": {
-      "rev": "e0699062c838c049e6f912edcb91cfb7f39600aa",
-      "hash": "sha256-8VOqqre4dp+R94lUFxqWQlzgNE3EGDMy8yE2Hy0O+HU="
+      "rev": "bd419f62b2f963eec1c3a83f0be1f4667df0163a",
+      "hash": "sha256-dWeo5kavhQYgz5G7ftwWz51hJXvd7uc8SH7n6e24TAI="
     },
     "vanab/swiftdata-agent-skill": {
       "rev": "4819a5381fa5fdce894451822917b1135c19e050",
@@ -34495,8 +35083,8 @@
       "hash": "sha256-9odq7h5McT+zNf0LkCmNRFcWEooYfF31o1w5yCX4WNA="
     },
     "vectorize-io/hindsight": {
-      "rev": "7f225b52134497fb02677f1950cd103ebc780226",
-      "hash": "sha256-R+3tXG0hw5EITpfJJduGqzSfaCOnqy9v9MZsGtJgCqM="
+      "rev": "1ee4d90a25898afb9cb04f65e3fe8512d4759227",
+      "hash": "sha256-Eg4NSHIv6n2Bs51tu1qUx7u/llVejWkOi5lOIqdQGjk="
     },
     "vectorize-io/hindsight-skills": {
       "rev": "86ee174325352083849679ecb01b829a36b85f65",
@@ -34559,8 +35147,8 @@
       "hash": "sha256-3VU2s2vZRYScIWnb0PYgQo4FDXiFdPuzZkAR75bKwyA="
     },
     "veniceai/skills": {
-      "rev": "3819b794322d9e8af699341ee8f0d666a4d180d8",
-      "hash": "sha256-03J6ufph/eHKfi/ZjPqrWHFDMMElQBDp5T9bDG+ugyE="
+      "rev": "8c2c26b101fb1f366fd5e1b20241cf277c05bb2a",
+      "hash": "sha256-2e5j2dIIQM4h8gsrObdxMvzA3toGVCCYDUiXw5PhWcQ="
     },
     "venture-formations/aiprodaily": {
       "rev": "a5d0d408ebfe045b7f24a4784d87e6085ce011ed",
@@ -34699,8 +35287,8 @@
       "hash": "sha256-KG6X8z4CUvgcabzmuXBxEwYjVjJir3l51dah956dpwg="
     },
     "vercel-labs/ui": {
-      "rev": "b4dbe88209ecf4dc555225f630268095f510ad49",
-      "hash": "sha256-NdUWVqb9tjuCeMo5mY5Y9I29Nh0qf8So7g6iw9YrV70="
+      "rev": "855bc7fd4df3d61aee33d9d975dc3e4f71debc6c",
+      "hash": "sha256-Eiy49xUpIOyPS/+2BIEoatk2jg8sVhCPw/83Z8cA3wY="
     },
     "vercel-labs/vercel-deploy-codex-skill": {
       "rev": "baeeb9d6d0acca47400dd4939aa6499100bbd0f0",
@@ -34719,16 +35307,16 @@
       "hash": "sha256-XYKbXtQQCuJ4AvX9ZtE6EqyUCFM3ohPVqhi/V552oJo="
     },
     "vercel/ai": {
-      "rev": "a8f0e9dc55d73f2237759abd263da6ae674de523",
-      "hash": "sha256-m8ec/baQb4ZjHjus/i6CR7wBaqVjNSmJlOu76wtqCGo="
+      "rev": "beccad37665bbc56afd85542a932e430bdbc4e2e",
+      "hash": "sha256-COMBZn5QvCLBYi2jhgTwqKY/jw9R8KQM0sBclKifAuM="
     },
     "vercel/ai-elements": {
       "rev": "ca8be600bfd01b3131f9bf6134b51602a71f4374",
       "hash": "sha256-Rqk8P4ZE0gKv4P+Q1KZKhivSr3j0NZHENnZvqnjonPE="
     },
     "vercel/board": {
-      "rev": "b9ae9eac224e91afd95d6d3f67d0ca034681d92a",
-      "hash": "sha256-Top8ztu+oP0fwNGhSC0QkLv1HD5FSfAiaujH7Br8uQY="
+      "rev": "86694bdfa7e011af3d632e33e74cae002f6045d3",
+      "hash": "sha256-CpigQPXhxB3lry7UPVRJG1zC9nU4MLPJlepo25mRwo0="
     },
     "vercel/chat": {
       "rev": "66f2672d2879d8c0016ca50449e7768cc3c3a428",
@@ -34743,8 +35331,8 @@
       "hash": "sha256-4Hix6L+cstp1prdMFZ4ImWt9V2mayihGHX/uKj3nFRM="
     },
     "vercel/eve": {
-      "rev": "c11b641ad6dcb2d3219335c9238f8fa1615c06f8",
-      "hash": "sha256-bjZrs9T3FZP35Lg+wIjE89RMJ3y1HWOhwded/U315ks="
+      "rev": "d989ef99f92aee107ebad8f218aa3b7a334a99be",
+      "hash": "sha256-nwH9AuBvirAyHDTK6ItUnQq+vdzx9w+gynEa2jssQ5s="
     },
     "vercel/examples": {
       "rev": "a4b4827297bec79b81ddb2ff22a53089ebe88cd8",
@@ -34763,8 +35351,8 @@
       "hash": "sha256-TJwRe5ZkrdJErXR0TxJXVd4wrEEn4RK5bGV+GO1GzN0="
     },
     "vercel/next.js": {
-      "rev": "fe94c9de4931aec86d0dfadd3a9d58c4ff8ee37c",
-      "hash": "sha256-EcBC2IEcDzAIyHq0eAG/93LzjfB23v7LSHRQ6bXnAh8="
+      "rev": "c6a5569f087e098ba0c376aed15263bc6ab41426",
+      "hash": "sha256-vZUza6PGp8BsRqrpBYDydtaV4ORxah3T1HjE1Xhas/w="
     },
     "vercel/sandbox": {
       "rev": "13b6e6803fc050928b9395fe190330312adbb6a6",
@@ -34795,8 +35383,8 @@
       "hash": "sha256-QqFUh4ywzdpe7UnGoXUV+KWBRyUsjqVZBdWULQgtcM4="
     },
     "vercel/workflow": {
-      "rev": "16c62b46e16023c66bc4e3c60b4605e43a31af62",
-      "hash": "sha256-V6i7P1PY56h/EfFLYbVC0JWKEsJxUW2AU6zEM9SrZSw="
+      "rev": "b5fa392f27f28a915ad18d733da0dfbb0aa7acc6",
+      "hash": "sha256-plAhjU6QYKIoUU1QXJ3blcEQBRXQ7KlpDvO7j7N6NbU="
     },
     "verging-ai/agent-skills": {
       "rev": "a0fd6647dcfa1f9e0fd791b5472ad064274f4884",
@@ -35115,8 +35703,8 @@
       "hash": "sha256-MMUFyKr2AgG31nODvisZZfKC6Ksn1su3gDO3ToOsk4M="
     },
     "vitorpamplona/amethyst": {
-      "rev": "883225742f68b064ee5fcd9a30902f512970ef6c",
-      "hash": "sha256-p3fjkJr0CnHxX8zxyx3IV6ar2ya+USsaFrCVGf4U8OE="
+      "rev": "1105ad2e77ce1a0399d3eb6c0eb72da6e4da5f42",
+      "hash": "sha256-hK8de8k6gyDN36BJhBGoO5/lGMEwQRBsTrnRssT4aiI="
     },
     "vivswan/skills": {
       "rev": "5117181c7ebdc0eda58f9b7ca13bf76db790712b",
@@ -35223,8 +35811,8 @@
       "hash": "sha256-6DWHsX8mPGc3QTySB6GoPjIGOKLHz66lJ7aI+47p4PQ="
     },
     "volcengine/openviking": {
-      "rev": "ee71998f2a85b8e706cc7039ced4862a6e65b5d8",
-      "hash": "sha256-jwbY8nPxaw0lBQBTlZvMFwRbC5V9JS8WNiQqQcyez4A="
+      "rev": "aa885b902075e17b13756266049de3c21ac4ae43",
+      "hash": "sha256-gyxI7ZLVQNUmRc9TtCe1Br4Q6+tWbd9edwqSRd8FNR8="
     },
     "volcengine/volcengine-agent-toolkit": {
       "rev": "8f1a05778fe397a22f10394be2c01084fe342b92",
@@ -35267,8 +35855,8 @@
       "hash": "sha256-CZkeDu91JcQJovo7IihA0w63kJVLFTHZ84Ynp48NuAg="
     },
     "voxel51/fiftyone-skills": {
-      "rev": "8a1304e765752822fdd70cb8a9e948f6d52adf01",
-      "hash": "sha256-9/rjf30PpKuGPwI8TU5xbQrSoI42GqZCC1gZGx8hsLI="
+      "rev": "f5e14fbb9ba493866630a4df89c453813af3216b",
+      "hash": "sha256-+3THmJglHzNQCwatiRcvv3uVmp8OidCnlmy2jddLKvE="
     },
     "voxflowstudio/skills": {
       "rev": "a0f623ea7bce21bc1e3108d8cd5f97772f1ec672",
@@ -35325,10 +35913,6 @@
     "vulcanusalex/free-search-aggregator": {
       "rev": "34bcffb718097da09448802ba81d8dd4dd0f4389",
       "hash": "sha256-DGWbQENYYyqIv/v2MI998rC8kxuRGwTZXqMKZVyH0+M="
-    },
-    "vulhunt-re/skills": {
-      "rev": "52a1443464bd94ede2e265241f5af0f2722b47e1",
-      "hash": "sha256-55dvpEfXtOeZG81Nw0j+W9HPafJwQ1qq+BjLgjnSh60="
     },
     "vuralserhat86/antigravity-agentic-skills": {
       "rev": "f033922af67487f7740d6597b8ce42e32e613670",
@@ -35499,8 +36083,8 @@
       "hash": "sha256-Ft+8xpclqfOZ+kUS0ACIjZTFBBBfTLm9R/prGfFlCa8="
     },
     "wayai-pro/wayai-skill": {
-      "rev": "4b20caf0b5accc348f8e4ab63d1580b86dbeadf8",
-      "hash": "sha256-/NQYsr0tGX6v30BK9gHc9tUhmC9eCP9wN/DdPitOuKg="
+      "rev": "ef440ea36871c6943d9f3141c355a3c872131247",
+      "hash": "sha256-KOUfyQN128M83sJp5AZx7UDSSx563F8svIXZLZj/+1g="
     },
     "waybarrios/opencode-power-pack": {
       "rev": "c3328ad1633c1561026532f29b718a2380bc52ee",
@@ -35543,8 +36127,8 @@
       "hash": "sha256-OgobJ7YVOZAzu/t0OBW47RDslpoPkKxXYUQ4O+A6G64="
     },
     "weapp-vite/weapp-vite": {
-      "rev": "994e9c54db2a234b924eae297fae4863bca1674c",
-      "hash": "sha256-QQON3f8qrW7b6eet5eBOADYq88j+lYmpZ/1+kghLAU4="
+      "rev": "276ffde23daffecda1412b962a4792e14ee99b67",
+      "hash": "sha256-yxAUorDkc/pbdASmzsO0TPxolWd/pP+TZ3Jj/eAOULs="
     },
     "wearemonad/security-advisor": {
       "rev": "477bb159e65d07fa95a15c2bbba3bd8c1e0f0811",
@@ -35838,10 +36422,6 @@
       "rev": "167581a0b2715eb3f651c238fb92011b04bb6df9",
       "hash": "sha256-E+ZFNihvzng/AdBoLcT/yYuHF3WqvGPS3lisyQIOVVQ="
     },
-    "will-17173/wechat-article-to-markdown-skill": {
-      "rev": "4586b4822ce23b2f2ac559d1007b8a81bf958c80",
-      "hash": "sha256-HLZHfnhbX2u5RpxJqzhNAzjlPrV51lbhAnvJp8KB+WE="
-    },
     "will-hxw/drawio-diagram-builder": {
       "rev": "a922507ccd51815f4e8764846d640a65b5fb6f7e",
       "hash": "sha256-Xk00j01IqrBekNIvooB0FzMUwQkPD8O5VzFbSBXKGWM="
@@ -35887,8 +36467,8 @@
       "hash": "sha256-yZD3aY58I/UEzjgdhAiGLyxCG9mEFe6vae02091q7iY="
     },
     "wiltodelta/remove-ai-watermarks": {
-      "rev": "d5d9cd556260c919708658f3595401e0e5910498",
-      "hash": "sha256-oQ5fXnENRLcwydlrn1gMFpnAk3PhRo+bjSb6jNkw/Ko="
+      "rev": "02715e3545bcb40fc25def2acbcdf83f91104378",
+      "hash": "sha256-yVUO64aCScE9Cv0hq5nlCsOJ5w1BT7AduYW6un/H6WI="
     },
     "wilu222/unpolish-ai-writing": {
       "rev": "b167370983d10944fa3e094db527995a028957e1",
@@ -35905,10 +36485,6 @@
     "win-hao/music-mv": {
       "rev": "4be9cf255ad69abb6de6411f89a8cd34137da57e",
       "hash": "sha256-ZjCXW86gvt6JT22Q+rSiQR7kmMvD32v2ewWiHOcA2Cg="
-    },
-    "win4r/agent-skills-code-review-router": {
-      "rev": "417983592753c3ac6b3e20f712bd50af104b5fc9",
-      "hash": "sha256-4+dO8XNdJyY/elUMf74NLmzkgdCv0wH2GuU0AXGRyDc="
     },
     "win4r/antigravity-image-gen": {
       "rev": "6375f5b8d17a9b28c4db4da7abee1ba4e399dccd",
@@ -35939,8 +36515,8 @@
       "hash": "sha256-X8sx0GVNnM65g9ng+8GtWtAbNagDB5tTRfMrCTYu9pc="
     },
     "windmill-labs/windmill": {
-      "rev": "5819ced95b0dcfdc73f6ce3cc1a2caab339f9dd6",
-      "hash": "sha256-ZApkVn8MoYTb7Yf2btHGW+ffcjruHFRaptI0YnAS0gU="
+      "rev": "184b97d2f6ab375dd8d5bd8baa9d6d5fc2ce84b5",
+      "hash": "sha256-jJiZeqsClpFc1JFYKIzff4foI83IdIxKZ1FemKoQTlQ="
     },
     "windsland52/maallmwiki": {
       "rev": "ee6638fef28a8dd51670fed2d40f58ec49c05bb8",
@@ -36019,8 +36595,8 @@
       "hash": "sha256-etT+0bhaWGF9mktLER8HF+lSAtVT2zayG6ckN37Y02Y="
     },
     "wjgoarxiv/litgravity": {
-      "rev": "391899de2015005c87e6db032a61cf5174d2d5de",
-      "hash": "sha256-80M+Nt59yYbMFTpfu5KAuQQFr70AZ5hPOXP8HCHzRrA="
+      "rev": "a52fa3b9d4eaa88178637b9d19c41d52c1d0fd38",
+      "hash": "sha256-QvxsygAAmzoHGsbrO9RrzmNSdfQO6Bby9V0O2yuFI9I="
     },
     "wkentaro/agent-skills": {
       "rev": "44167a8f2a87395c5539758e326df9a96ac6889f",
@@ -36099,8 +36675,8 @@
       "hash": "sha256-b66ewIHSL0U938S1EsN6bzZSbldsVI0QBuI1OHZj6uw="
     },
     "woocommerce/woocommerce": {
-      "rev": "9c81c2719e8d8f359eaa6ca9ac3dc8ba68fcfc6c",
-      "hash": "sha256-yRnSqSJ8/zmefBfYKSofmJZbp3mwKppHRWpNLgPhDw4="
+      "rev": "61795c85b4f830015c412d0e04e7591692d3852a",
+      "hash": "sha256-LiBTc7sgU6bpGoUESQu5EUKpKE3m8XGmpQB/m/soWFM="
     },
     "woodfantasy/seedance-shotdesign-skills": {
       "rev": "05e5c3f1aded04d816d71a2c376d132b9a2f5aaf",
@@ -36387,16 +36963,16 @@
       "hash": "sha256-nXAXKuvQxdVFTU7eYLoxskF/ag71kK/atwbL4+TLCrc="
     },
     "xberg-io/xberg": {
-      "rev": "c594b67975525043cc4ce395274895a5281675f4",
-      "hash": "sha256-rKX8FWxKyQ5Ysd03z+V28z5Me1J0cfCBnNa31huLj+w="
+      "rev": "ca5bb476dbf872d60de8fa25d6fe3eb9f97a022f",
+      "hash": "sha256-VK/5quslwENRx5u9QZXVFr/8GAparUOC10KNhHNl/14="
     },
     "xbklairith/kisune": {
       "rev": "80a1018c9d24d5d4a6dd7159b596bc71b6643fcf",
       "hash": "sha256-myWWObHiiPChRUq8q/7V7AnzWXvRcNN9WP7w7VWqmP0="
     },
     "xbtlin/ai-berkshire": {
-      "rev": "50826a017bc657640a8137fd9001b1ee6f0d57e5",
-      "hash": "sha256-nzcDfWqOZtCKed5MfOnPZYE58Sye1+oSaenyAiCpZZY="
+      "rev": "0795aac8424520fd5c83f4e55eee49eed3d6ee9d",
+      "hash": "sha256-Hh07s9gCgCrkTxbYg0VeLow7Cvi4NXdtUC9hELnGMN4="
     },
     "xbuilderlab/cheat-on-content": {
       "rev": "6fdeb95deccf1b0523d2641a8dab23981d4aeb0a",
@@ -36465,10 +37041,6 @@
     "xiaodong-wu/web-design-studio": {
       "rev": "ae9496272d48dc6625d5f8f6dc49d616125371b6",
       "hash": "sha256-qqUcnVNCB4vDRAyCzMSRKUpaaiZVz6leNQoHYqjNA7k="
-    },
-    "xiaoduoya/codex-with-chatgpt": {
-      "rev": "535a07dbb7aee887924c53767d985c09d405319d",
-      "hash": "sha256-QY0ut0oEPKJy8sW0NP98rj6HBCXE7TYOLNR6kYFG++I="
     },
     "xiaofenggan01/aigc-reduce": {
       "rev": "3cc20dcc87cc314fcc5333b09b469b839471d219",
@@ -36583,8 +37155,8 @@
       "hash": "sha256-ua/nGSSxwsAi67NH3xCLx2erKzg/UIi0me0zENErCgY="
     },
     "xixihhhh/clipforge": {
-      "rev": "3deca99c9c867fddf51d8a8922feecc9a779042d",
-      "hash": "sha256-yPEfCxeQt6+Lj7lukmvoE00xVTn0H5dt7rEETvac7nI="
+      "rev": "bded6ceaa46649068e8da5882d7c29fd8c977a3b",
+      "hash": "sha256-ntdckXxdPWjfYlzX0vs0VvI3roblgk4jXe5FdJtOiUc="
     },
     "xixu-me/skills": {
       "rev": "64c638dcf6a792877f70bf8755543f6708b1d75b",
@@ -36777,10 +37349,6 @@
     "yaklang/hack-skills": {
       "rev": "6fbf0bc8d5c71830d62543a308d8744606c43d7c",
       "hash": "sha256-AtZm/8M0KJpl2+LyFubRZ+QZmFKdC2QWrwL+9EN+2do="
-    },
-    "yaklang/irify-sast-skill": {
-      "rev": "74de7fc112ea602503fe70e6dda4c524a42c326b",
-      "hash": "sha256-vQi93YHeTyWoofDDPag6cCJLHo0VcuJ/TagxiAeh2UY="
     },
     "yaklang/yak-skills": {
       "rev": "071464c04b95a5d1fe2b330df48483adb5ce5400",
@@ -37042,10 +37610,6 @@
       "rev": "40ef9f8c45d48e7d58087da4dfeb6394c9533495",
       "hash": "sha256-ocQFnuNjADcIU1UCQf2JNQ23E93gdTddFvcRmPc75yg="
     },
-    "yfge/salt-story": {
-      "rev": "61188e7676a6ff46aedca11f5b970ae3e300c8a1",
-      "hash": "sha256-dW1UpQrkIW9rOuWjN7rTqlx8mlA6O8JaP+lvHlaC4UQ="
-    },
     "yigitkonur/skills-by-yigitkonur": {
       "rev": "a66a0d6181cea9a51bd768368802bbf052603889",
       "hash": "sha256-bFU7X4jdzF4IZX+MJc+3ufXusnBXqKLjMSUKUqIvqrg="
@@ -37093,10 +37657,6 @@
     "yitongcodes/weibo_trends_analyzer_web": {
       "rev": "c307cbdc5750a1af39ed361851444f13e85ffefa",
       "hash": "sha256-Nmeapm9vuhFj8jSh7WL9RK6o1+oBYNvv3Cu2Pa9K3xI="
-    },
-    "yixiajack/dating-master-skill": {
-      "rev": "a6c92c664c818e776571ddc6f3aa8464e236ef7d",
-      "hash": "sha256-TJ+4GpWoX3XDhXTHVBSE6kFUF6j2cbOk8WsEAYfKYCo="
     },
     "yixiajack/feng-ge-skill": {
       "rev": "9416674e9a2682bbcda6f3c6fade3f3f69ff6328",
@@ -37155,8 +37715,8 @@
       "hash": "sha256-Id4xcWaTyDg63t+2CFZg2djmg7/0aVfMOHaHpdgX38c="
     },
     "yknothing/skills-refiner": {
-      "rev": "4d8a196e44c1fa06cb786c06c2aaf24028664c01",
-      "hash": "sha256-wbs4cMmjsCiMk0bbjCx5uU+oR2MxctCoZY3raHoCJ3Q="
+      "rev": "502a8bc75bab81a237f6c3af87b489c286747439",
+      "hash": "sha256-AS5HArBspegsdtPezHluhvzg3k4wU98vblJkeQ05kA0="
     },
     "ylongw/embedded-review": {
       "rev": "bb500aa00fc3e548365305b537b211663323a3d9",
@@ -37211,8 +37771,8 @@
       "hash": "sha256-tvzP/rwwohqbO6NGtg6CjiU1dld6x2f2L0SQtlfAMi8="
     },
     "yonatangross/orchestkit": {
-      "rev": "0d4e2d5b5f8e3d918230a09e43c6c5ed8cd4ed16",
-      "hash": "sha256-+b4JVcbX3CkA2acRAbRF8DjVeV0KMbzmeIRox4bjnVo="
+      "rev": "c53a3ea1366c831f8545de5fbb382381be072f98",
+      "hash": "sha256-RGFnfRbfghhqbt4R7tjjbYz5TPDpRcNSOSioYcaSagU="
     },
     "yonatankarp/software-design-skills": {
       "rev": "e312055086e1e377dcd5c666e6a0f5c6255b869e",
@@ -37422,10 +37982,6 @@
       "rev": "6af552580188c25001f1caebd7061644e69d36da",
       "hash": "sha256-HwaTfl/1K2VkXMcWWt0hesW8FSHq8fR7DmgiEHPWKmY="
     },
-    "yuwen-lu/unslop-ui": {
-      "rev": "df1e58a1ab2e75beeaac295ec86c74b3824456db",
-      "hash": "sha256-Lia6NyhmxT65Nuxu0mCqdac4dPaOmYhCkST4RmH3Y+o="
-    },
     "yux1azhengye/bestserenityskillfromat": {
       "rev": "1eeb91f10f1e7781797f2b2c9fc6fffadb1bdc37",
       "hash": "sha256-0TZuGouLiN+9R00t/cU/Lkejj0wsZAgvedl/6uqgoRo="
@@ -37619,8 +38175,8 @@
       "hash": "sha256-1JW2gJURzd+7/oPvtp3zBDkblG+7xUfhtyHbrXVErfI="
     },
     "zed-industries/zed": {
-      "rev": "10d1b2a564604dba7b8f05b157b7f9e8ed35255b",
-      "hash": "sha256-HEZpws55Gr0F5eRNZ1ajCn+gnwu6UDMs3NSgVpCyfO4="
+      "rev": "0a514d7ef59c6357878a244fdf8365d03c504767",
+      "hash": "sha256-yLLlAd8Z70F1fywl9pTu+HoM8YhMDG+uFloqw9m2Uxk="
     },
     "zeejay0/gathered-scenes-zine-skill": {
       "rev": "b9edb836c9dd5c5d80995e89ebcaba34b75fd58f",
@@ -37754,10 +38310,6 @@
       "rev": "d5e10b4ffe694a1e99bcf88fc953cde6cde23930",
       "hash": "sha256-CqNlvAJj/TwKsspW00Ti7Kk7M3wwqJYzV7a3/7Qd18k="
     },
-    "zetic-ai/melange-cli": {
-      "rev": "d1fe9f83369c4c77a93adca1ab52e26c8c7dda27",
-      "hash": "sha256-fPOVTi+Fux3SE1uRPzBWGyDT/bP7OdhodCLGe6WMXwc="
-    },
     "zettersten/skills": {
       "rev": "567c013555a4a049cb675993da0ffab263de6c4b",
       "hash": "sha256-kjB8pudi1EUBuODAB21HEE53a0mkgpE9JBIB75M1SPM="
@@ -37813,10 +38365,6 @@
     "zhangyongcun/feishu-doc-reader": {
       "rev": "325788e93b29b958e68e008deebc23d1b1941baf",
       "hash": "sha256-1MCnecNlusI8B00hFg6pYOPgnyJ8+64yHAjcUxH24Vc="
-    },
-    "zhangzhangco/film-production-skills": {
-      "rev": "47b2a6a432235e716fa2aa0d08eefae76fdb34fd",
-      "hash": "sha256-X+dYQSdhhlhs/WosyPwvMZNDo6x3ncvsgjy53M5YFx0="
     },
     "zhaoli-ai/ghostcut-ai": {
       "rev": "038d466e74beca96a04be0c9578e0cd2e217f24a",
@@ -37877,10 +38425,6 @@
     "zhongerxin/cowart": {
       "rev": "38bdafeff47374ddbc11b12bddbc4f1f4cf14587",
       "hash": "sha256-Ofuc8IYgsGXf26dfbKCGfpdmVPRrHa+geZhXdrCTLxE="
-    },
-    "zhongjiaxiong/web-reverse-skill-notes-20260319": {
-      "rev": "813b2a8a84dfc76e3ebdd6578c3bc7e2096c518e",
-      "hash": "sha256-02FDInN3KMxLcdo5ty2DzDPgpZGZF+HIc6d4rMUeN2w="
     },
     "zhouwei713/gpt-image-2-prompting-skill": {
       "rev": "dd0b07d763477c381288963f7073b1752af1bee0",
@@ -38049,10 +38593,6 @@
     "zoom/skills": {
       "rev": "efd419d5ecfdc789364bd26d54b432c78d6d9c72",
       "hash": "sha256-NnqdPyKl5oxc9KdTAbSe+kEuzoah+Q9Jg0EMTWJZHKg="
-    },
-    "zoonk/zoonk": {
-      "rev": "0b10e815a91c52f6762a517e89203bc80c44cfd6",
-      "hash": "sha256-+TzobT4eWESLsNVYGhoR6xy+TEyRCYR8VigjPk8R6xw="
     },
     "zou172866/agy-cmd": {
       "rev": "982ac084cd28d397ef5361179d02610a0e0029db",
