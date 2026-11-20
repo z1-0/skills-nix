@@ -68,6 +68,37 @@ fetch_batch() {
   return 1
 }
 
+# Resolve one chunk of repos. Failed chunks are queued in RETRY_QUEUE instead of
+# being dropped, so the caller can retry them with smaller queries.
+RETRY_QUEUE=()
+
+resolve_chunk() {
+  local -a chunk=("$@")
+  local n=${#chunk[@]} k owner name query inputs resp decided
+  ((n == 0)) && return 0
+
+  query="{"
+  for ((k = 0; k < n; k++)); do
+    IFS='/' read -r owner name <<<"${chunk[$k]}"
+    query+="r${k}: repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
+  done
+  query+="}"
+
+  inputs=$(printf '%s\n' "${chunk[@]}" | jq -Rs 'split("\n") | map(select(length > 0))')
+
+  if ! fetch_batch "$query"; then
+    RETRY_QUEUE+=("${chunk[@]}")
+    return 1
+  fi
+
+  decided=$(jq -c --argjson inputs "$inputs" --slurpfile cache "$CACHE" "$DECIDE_JQ" <<<"$resp")
+
+  jq -c 'select(.status == "reuse")' <<<"$decided" >>"$REUSED"
+  jq -c 'select(.status == "hash")' <<<"$decided" >>"$PENDING"
+  jq -c 'select(.status == "error")' <<<"$decided" >>"$FAILED"
+  jq -c 'select(.status != "error" and .input != .key)' <<<"$decided" >>"$REDIRECTS"
+}
+
 # Turn one GraphQL batch response into JSON Lines decisions:
 #   {key, name, input, rev, status:"reuse", hash}
 #   {key, name, input, rev, status:"hash",  url}
@@ -98,8 +129,23 @@ DECIDE_JQ='
   end
 '
 
+# Download a URL with retries; a transient CDN blip should not cost a whole week.
+fetch_url() {
+  local url="$1" attempt
+  for attempt in 1 2 3; do
+    if curl -fsSL --max-time 120 "$url"; then
+      return 0
+    fi
+    log "    download attempt ${attempt}/3 failed: ${url}"
+    if ((attempt < 3)); then
+      sleep $((attempt * 2))
+    fi
+  done
+  return 1
+}
+
 discover_skill_sitemaps() {
-  curl -fsSL --max-time 60 "$SKILLS_SITEMAP_INDEX" \
+  fetch_url "$SKILLS_SITEMAP_INDEX" \
     | grep -oE 'https://www\.skills\.sh/sitemap-skills-[0-9]+\.xml' \
     | sort -u
 }
@@ -124,24 +170,30 @@ urls_to_repos() {
 # The owners source is ~4.4x larger; the skills source is kept as a cheap
 # safety net in case the two sitemaps are generated out of sync.
 collect_repos_from_sitemaps() {
-  local skill_sitemaps="$1" tmp sm
+  local skill_sitemaps="$1" tmp raw sm
   tmp=$(mktemp)
+  raw=$(mktemp)
 
   log "  ${OWNERS_SITEMAP}"
-  curl -fsSL --max-time 60 "$OWNERS_SITEMAP" \
-    | grep -oE '<loc>[^<]+</loc>' \
-    | urls_to_repos 2 >>"$tmp"
+  if ! fetch_url "$OWNERS_SITEMAP" >"$raw"; then
+    log "ERROR: cannot download ${OWNERS_SITEMAP}"
+    rm -f "$tmp" "$raw"
+    return 1
+  fi
+  grep -oE '<loc>[^<]+</loc>' "$raw" | urls_to_repos 2 >>"$tmp"
 
   while read -r sm; do
     [[ -z "$sm" ]] && continue
     log "  ${sm}"
-    curl -fsSL --max-time 60 "$sm" \
-      | grep -oE '<loc>[^<]+</loc>' \
-      | urls_to_repos 3 >>"$tmp"
+    if ! fetch_url "$sm" >"$raw"; then
+      log "WARNING: cannot download ${sm}, continuing without it"
+      continue
+    fi
+    grep -oE '<loc>[^<]+</loc>' "$raw" | urls_to_repos 3 >>"$tmp"
   done <<<"$skill_sitemaps"
 
   sort -u "$tmp"
-  rm -f "$tmp"
+  rm -f "$tmp" "$raw"
 }
 
 # ---- Main ----
@@ -154,7 +206,15 @@ if [[ -z "$SKILL_SITEMAPS" ]]; then
 fi
 
 log "Fetching repos from sitemap-owners + skill sitemaps..."
-mapfile -t repos < <(collect_repos_from_sitemaps "$SKILL_SITEMAPS")
+repo_list=$(collect_repos_from_sitemaps "$SKILL_SITEMAPS") || {
+  log "ERROR: repo collection failed, keeping the current registry untouched"
+  exit 1
+}
+if [[ -z "$repo_list" ]]; then
+  log "ERROR: repo list is empty, keeping the current registry untouched"
+  exit 1
+fi
+mapfile -t repos <<<"$repo_list"
 
 total=${#repos[@]}
 if ((LIMIT > 0 && LIMIT < total)); then
@@ -203,31 +263,27 @@ fi
 
 for ((i = 0; i < total; i += BATCH)); do
   log "  Batch $((i / BATCH + 1))/${batches}..."
-
-  query="{"
-  for ((j = i; j < i + BATCH && j < total; j++)); do
-    IFS='/' read -r owner name <<<"${repos[$j]}"
-    query+="r$((j - i)): repository(owner: \"${owner}\", name: \"${name}\") { nameWithOwner defaultBranchRef { target { oid } } }"
-  done
-  query+="}"
-
-  inputs=$(printf '%s\n' "${repos[@]:i:BATCH}" | jq -Rs 'split("\n") | map(select(length > 0))')
-
-  if ! fetch_batch "$query"; then
-    log "    Batch $((i / BATCH + 1))/${batches} failed (API error)"
-    jq -c --argjson inputs "$inputs" -n \
-      '$inputs[] | . as $i | { key: ($i | ascii_downcase), input: $i, status: "error", error: "graphql batch failed" }' \
-      >>"$FAILED"
-    continue
-  fi
-
-  decided=$(jq -c --argjson inputs "$inputs" --slurpfile cache "$CACHE" "$DECIDE_JQ" <<<"$resp")
-
-  jq -c 'select(.status == "reuse")' <<<"$decided" >>"$REUSED"
-  jq -c 'select(.status == "hash")' <<<"$decided" >>"$PENDING"
-  jq -c 'select(.status == "error")' <<<"$decided" >>"$FAILED"
-  jq -c 'select(.status != "error" and .input != .key)' <<<"$decided" >>"$REDIRECTS"
+  resolve_chunk "${repos[@]:i:BATCH}" || true
 done
+
+# Retries: a failed batch is transient on GitHub's side, so re-ask in smaller
+# chunks (10, then 1) instead of dropping every repo it contained.
+for retry_size in 10 1; do
+  ((${#RETRY_QUEUE[@]} == 0)) && break
+  current=("${RETRY_QUEUE[@]}")
+  RETRY_QUEUE=()
+  log "  Retrying ${#current[@]} repos, ${retry_size} per query"
+  for ((r = 0; r < ${#current[@]}; r += retry_size)); do
+    resolve_chunk "${current[@]:r:retry_size}" || true
+  done
+done
+
+if ((${#RETRY_QUEUE[@]} > 0)); then
+  log "WARNING: ${#RETRY_QUEUE[@]} repo(s) unresolved after retries, dropped this run"
+  printf '%s\n' "${RETRY_QUEUE[@]}" | jq -Rsc 'split("\n") | map(select(length > 0))' \
+    | jq -c '.[] | . as $i | { key: ($i | ascii_downcase), input: $i, status: "error", error: "graphql batch failed after retries" }' \
+      >>"$FAILED"
+fi
 
 got_reused=$(wc -l <"$REUSED")
 got_pending=$(wc -l <"$PENDING")
