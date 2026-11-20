@@ -1,13 +1,12 @@
 **/.nixos-test-history
 .direnv
-.vercel
 CLAUDE.md
 docs/
 result
 result-*
 .mimocode
 
-# registry generation intermediates (scripts/generate-registry-*.sh)
+# registry generation intermediates (scripts/generate-registry.sh)
 hashes.json
 urls.txt
 redirects.txt
